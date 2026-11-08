@@ -1,0 +1,210 @@
+{
+  "checked_at": "2026-09-13T18:09:18.273757+00:00",
+  "repo": "JerBouma/FinanceDatabase",
+  "meta": {
+    "description": "This is a database of 300.000+ symbols containing Equities, ETFs, Funds, Indices, Currencies, Cryptocurrencies and Money Markets.",
+    "license": "MIT",
+    "stars": 9016,
+    "forks": 927,
+    "size_kb": 5088317,
+    "default_branch": "main",
+    "pushed_at": "2026-09-13T15:10:39Z",
+    "created_at": "2021-01-28T18:36:09Z",
+    "archived": false,
+    "topics": [
+      "analysis",
+      "cryptocurrencies",
+      "currencies",
+      "database",
+      "equities",
+      "etfs",
+      "finance",
+      "financials",
+      "fundamental-analysis",
+      "fundamentals",
+      "funds",
+      "futures",
+      "indices",
+      "moneymarkets",
+      "openbb",
+      "python",
+      "sector-analysis",
+      "stock-data",
+      "stock-market"
+    ],
+    "homepage": "https://www.jeroenbouma.com/projects/financedatabase"
+  },
+  "root": [
+    {
+      "name": ".github",
+      "type": "dir",
+      "size": 0
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "size": 2085
+    },
+    {
+      "name": ".pre-commit-config.yaml",
+      "type": "file",
+      "size": 795
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "size": 14154
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "size": 1069
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "size": 44134
+    },
+    {
+      "name": "compression",
+      "type": "dir",
+      "size": 0
+    },
+    {
+      "name": "database",
+      "type": "dir",
+      "size": 0
+    },
+    {
+      "name": "examples",
+      "type": "dir",
+      "size": 0
+    },
+    {
+      "name": "financedatabase",
+      "type": "dir",
+      "size": 0
+    },
+    {
+      "name": "pyproject.toml",
+      "type": "file",
+      "size": 2700
+    },
+    {
+      "name": "tests",
+      "type": "dir",
+      "size": 0
+    },
+    {
+      "name": "uv.lock",
+      "type": "file",
+      "size": 428009
+    }
+  ],
+  "financedatabase": [
+    {
+      "name": "Cryptos.py",
+      "type": "file",
+      "size": 5921
+    },
+    {
+      "name": "Currencies.py",
+      "type": "file",
+      "size": 6113
+    },
+    {
+      "name": "ETFs.py",
+      "type": "file",
+      "size": 11606
+    },
+    {
+      "name": "Equities.py",
+      "type": "file",
+      "size": 15860
+    },
+    {
+      "name": "Funds.py",
+      "type": "file",
+      "size": 11370
+    },
+    {
+      "name": "Indices.py",
+      "type": "file",
+      "size": 9281
+    },
+    {
+      "name": "Moneymarkets.py",
+      "type": "file",
+      "size": 5082
+    },
+    {
+      "name": "__init__.py",
+      "type": "file",
+      "size": 328
+    },
+    {
+      "name": "helpers.py",
+      "type": "file",
+      "size": 14299
+    },
+    {
+      "name": "validation",
+      "type": "dir",
+      "size": 0
+    }
+  ],
+  "compression": [
+    {
+      "name": "README.md",
+      "type": "file",
+      "size": 1951
+    },
+    {
+      "name": "categories",
+      "type": "dir",
+      "size": 0
+    },
+    {
+      "name": "compression.ipynb",
+      "type": "file",
+      "size": 82049
+    },
+    {
+      "name": "cryptos.bz2",
+      "type": "file",
+      "size": 33041
+    },
+    {
+      "name": "currencies.bz2",
+      "type": "file",
+      "size": 46149
+    },
+    {
+      "name": "equities.bz2",
+      "type": "file",
+      "size": 15287957
+    },
+    {
+      "name": "etfs.bz2",
+      "type": "file",
+      "size": 1282566
+    },
+    {
+      "name": "funds.bz2",
+      "type": "file",
+      "size": 1852957
+    },
+    {
+      "name": "indices.bz2",
+      "type": "file",
+      "size": 1189707
+    },
+    {
+      "name": "moneymarkets.bz2",
+      "type": "file",
+      "size": 20577
+    }
+  ],
+  "readme_status": 200,
+  "readme_head": "<img src=\"https://user-images.githubusercontent.com/46355364/220746807-669cdbc1-ac67-404c-b0bb-4a3d67d9931f.jpg\" alt=\"Logo\">\n\n[![GitHub Sponsors](https://img.shields.io/badge/Sponsor_this_Project-grey?logo=github)](https://github.com/sponsors/JerBouma)\n[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-grey?logo=buymeacoffee)](https://www.buymeacoffee.com/jerbouma)\n[![LinkedIn](https://img.shields.io/badge/LinkedIn-grey?logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/boumajeroen/)\n[![Documentation](https://img.shields.io/badge/Documentation-grey?logo=readme)](https://www.jeroenbouma.com/projects/financedatabase)\n[![Supported Python Versions](https://img.shields.io/pypi/pyversions/financedatabase)](https://pypi.org/project/financedatabase/)\n[![PYPI Version](https://img.shields.io/pypi/v/financedatabase)](https://pypi.org/project/financedatabase/)\n[![PYPI Downloads](https://static.pepy.tech/badge/financedatabase/month)](https://pepy.tech/project/financedatabase)\n\n| **Call for Contributors to the FinanceDatabase**    |\n|:------------------------------------------------------:|\n| The **FinanceDatabase** serves the role of providing anyone with any type of financial product categorization entirely for free. To achieve this, the FinanceDatabase relies on community involvement to add, edit, and remove tickers over time. This is made easy enough that anyone, even those with a lack of coding experience, can contribute because of the use of CSV files that can be manually edited with ease.\n**I'd like to invite you to go to the [Contributing Guidelines](https://github.com/JerBouma/FinanceDatabase/blob/main/CONTRIBUTING.md) to understand how you can help. Thank you!** |\n\nAs a private investor, the sheer amount of information that can be found on the internet is rather daunting. Trying to understand what types of companies or ETFs are available is incredibly challenging, with millions of companies and derivatives available on the market. Sure, the most traded companies and ETFs can quickly be found simply because they are known to the public (for example, Microsoft, Tesla, S&P 500 ETF, or an All-World ETF). However, what else is out there is often unknown.\n\n**This database tries to solve that**. It features 300,000+ symbols containing Equities, ETFs, Funds, Indices, Currencies, Cryptocurrencies, and Money Markets. It therefore allows you to obtain a broad overview of sectors, industries, types of investments, and much more.\n\nThe aim of this database is explicitly _not_ to provide up-to-date fundamentals or stock data, as those can be obtained with ease (with the help of this database) by using the [Finance Toolkit 🛠️](https://github.com/JerBouma/FinanceToolkit). Instead, it gives insights into the products that exist in each country, industry, and sector and provides the most essential information about each product. With this information, you can analyze specific areas of the financial world and/or find a product that is hard to find. For examples of how you can combine this database with the earlier mentioned packages, see the [Usage](#usage) section.\n\nSome key statistics of the database:\n\n| Product           | Quantity   | Sectors    | Industries    | Countries | Exchanges |\n| ----------------- | ---------- | ---------- | ------------- | --------- | --------- |\n| Equities          | 112.690    | 11         | 80            | 117       | 84        |\n\n| Product           | Quantity   | Families   | Categories    | Exchanges |\n| ----------------- | ---------- | ---------- | ------------- | --------- |\n| ETFs              | 36.481     | 313        | 44            | 51        |\n| Funds             | 57.853     | 1.540      | 74            | 33        |\n\n| Product           | Quantity  | Category              |\n| ----------------- | --------- | --------------------- |\n| Currencies        | 2.556     | 175 Currencies        |\n| Cryptocurrencies  | 3.367     | 351 Cryptocurrencies  |\n| Indices           | 91.181    | 63 Exchanges          |\n| Money Markets     | 1.367     | 2 Exchanges           |\n\n___\n\n# Installation\n\nBefore installation, consider starring the project on GitHub, which helps others find the project as well.\n\n<img width=\"1353\" alt=\"image\" src=\"https://github.com/JerBouma/FinanceDatabase/assets/46355364/4132edde-72f9-4e32-adfe-8872207f46ff\">\n\nTo install the FinanceDatabase, simply use the following:\n\n```\npip install financedatabase -U\n```\n\nThen within Python use:\n\n```python\nimport financedatabase as fd\n```\n\n# Usage\nThis section explains in detail how the database can be queried with the related `financedatabase` package. Note that examples here are purposely cut off to a maximum of 10 entries due to the sheer size of the database. Furthermore, the summary column is also omitted for readability. For the full detailed results, see the Notebook [here](https://www.jeroenbouma.com/projects/financedatabase/getting-started). Let's start by importing the package:\n\n```python\nimport financedatabase as fd\n```\n\nInitialization of each asset class is only required <u>once</u>. It is therefore important that you save the class to a variable so that you can query the database much more quickly. A simple example is shown below.\n\n```python\nequities = fd.Equities()\n\nequities.select()\n```\n\nA sample of the output is shown below:\n\n| symbol   | name                           | currency   | sector                 | industry_group                                 | industry                               | exchange   | market                    | country       | state   | city                | zipcode    | website                          | market_cap   | isin         | cusip     | figi         | composite_figi   | shareclass_figi   |\n|:---------|:-------------------------------|:-----------|:-----------------------|:-----------------------------------------------|:---------------------------------------|:-----------|:--------------------------|:--------------|:--------|:--------------------|:"
+}

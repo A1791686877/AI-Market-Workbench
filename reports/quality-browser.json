@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-09-06T09:39:26.845Z",
+  "passed": true,
+  "checks": [
+    {
+      "subject": "crypto-btc",
+      "instrument": "CRYPTO:BTCUSDT:SPOT",
+      "barCount": 240,
+      "candlesMatch": true,
+      "fvgCount": 21,
+      "fvgMatch": true,
+      "divergenceCount": 4,
+      "divergenceMatch": true,
+      "vpvrMatch": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5814,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T09:37:23.268133Z",
+        "actual_start_at": "2026-07-07T20:00:00Z",
+        "latest_bar_at": "2026-09-06T09:30:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "LOCAL_PAGE_BUDGET",
+        "history_cursor_end": "2026-07-07T20:00:00Z"
+      }
+    },
+    {
+      "subject": "crypto-btc",
+      "instrument": "CRYPTO:BTCUSDT:PERP",
+      "barCount": 240,
+      "candlesMatch": true,
+      "fvgCount": 22,
+      "fvgMatch": true,
+      "divergenceCount": 4,
+      "divergenceMatch": true,
+      "vpvrMatch": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5002,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T09:37:33.539899Z",
+        "actual_start_at": "2026-07-16T07:00:00Z",
+        "latest_bar_at": "2026-09-06T09:30:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "LOCAL_PAGE_BUDGET",
+        "history_cursor_end": "2026-07-16T07:00:00Z"
+      }
+    },
+    {
+      "subject": "crypto-eth",
+      "instrument": "CRYPTO:ETHUSDT:SPOT",
+      "barCount": 240,
+      "candlesMatch": true,
+      "fvgCount": 24,
+      "fvgMatch": true,
+      "divergenceCount": 4,
+      "divergenceMatch": true,
+      "vpvrMatch": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5024,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T09:37:48.082851Z",
+        "actual_start_at": "2026-07-16T01:30:00Z",
+        "latest_bar_at": "2026-09-06T09:30:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "LOCAL_PAGE_BUDGET",
+        "history_cursor_end": "2026-07-16T01:30:00Z"
+      }
+    },
+    {
+      "subject": "crypto-eth",
+      "instrument": "CRYPTO:ETHUSDT:PERP",
+      "barCount": 240,
+      "candlesMatch": true,
+      "fvgCount": 25,
+      "fvgMatch": true,
+      "divergenceCount": 7,
+      "divergenceMatch": true,
+      "vpvrMatch": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5002,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T09:37:56.527233Z",
+        "actual_start_at": "2026-07-16T07:00:00Z",
+        "latest_bar_at": "2026-09-06T09:30:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "LOCAL_PAGE_BUDGET",
+        "history_cursor_end": "2026-07-16T07:00:00Z"
+      }
+    }
+  ],
+  "errors": [],
+  "taskPosts": [],
+  "previewText": "仅冻结数据，模型调用 0；截止 2026-09-06T09:38:07.742315Z；snapshot-c7a53095b5e341be93bb34a0c79cd599\n\nCRYPTO:ETHUSDT:SPOT / 15m / SIGNAL / AVAILABLE / 行情 2026-09-06T09:30:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:SPOT / 1h / SIGNAL / AVAILABLE / 行情 2026-09-06T09:00:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:SPOT / 195m / SIGNAL / AVAILABLE / 行情 2026-09-06T08:45:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:SPOT / 4h / SIGNAL / AVAILABLE / 行情 2026-09-06T08:00:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:SPOT / 1d / STRUCTURE / AVAILABLE / 行情 2026-09-06T00:00:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:SPOT / 1w / BACKGROUND / AVAILABLE / 行情 2026-08-31T00:00:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:SPOT / 1mo / BACKGROUND / AVAILABLE / 行情 2026-09-01T00:00:00Z / 完整历史=false / 证据 19\n\nCRYPTO:ETHUSDT:PERP / 15m / SIGNAL / AVAILABLE / 行情 2026-09-06T09:30:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:PERP / 1h / SIGNAL / AVAILABLE / 行情 2026-09-06T09:00:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:PERP / 195m / SIGNAL / AVAILABLE / 行情 2026-09-06T08:45:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:PERP / 4h / SIGNAL / AVAILABLE / 行情 2026-09-06T08:00:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:PERP / 1d / STRUCTURE / AVAILABLE / 行情 2026-09-06T00:00:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:PERP / 1w / BACKGROUND / AVAILABLE / 行情 2026-08-31T00:00:00Z / 完整历史=false / 证据 22\n\nCRYPTO:ETHUSDT:PERP / 1mo / BACKGROUND / AVAILABLE / 行情 2026-09-01T00:00:00Z / 完整历史=false / 证据 19\n\n冻结平台情景 BULLISH：区间 2448.2916666667–2496.0208333333，触发 CLOSE_ABOVE_UPPER，失效 CLOSE_BELOW_LOWER，到期 2026-09-13T09:38:07.742315Z。仅15分钟收盘确认，不是模型命中率。\n\n冻结平台情景 NEUTRAL：区间 2448.2916666667–2496.0208333333，触发 CLOSE_INSIDE_INCLUSIVE，失效 CLOSE_OUTSIDE，到期 2026-09-13T09:38:07.742315Z。仅15分钟收盘确认，不是模型命中率。\n\n冻结平台情景 BEARISH：区间 2448.2916666667–2496.0208333333，触发 CLOSE_BELOW_LOWER，失效 CLOSE_ABOVE_UPPER，到期 2026-09-13T09:38:07.742315Z。仅15分钟收盘确认，不是模型命中率。\n\n15m: requested history incomplete; actual start 2026-07-16 01:30:00+00:00\n\n15m: requested history incomplete; actual start 2026-07-16 07:00:00+00:00\n\n195m: requested history incomplete; actual start 2026-07-16 02:15:00+00:00\n\n195m: requested history incomplete; actual start 2026-07-16 08:45:00+00:00\n\n1d: requested history incomplete; actual start 2018-01-11 00:00:00+00:00\n\n1d: requested history incomplete; actual start 2020-01-01 00:00:00+00:00\n\n1h: requested history incomplete; actual start 2026-02-10 01:00:00+00:00\n\n1mo: requested history incomplete; actual start 2018-02-01 00:00:00+00:00\n\n1mo: requested history incomplete; actual start 2020-01-01 00:00:00+00:00\n\n1w: requested history incomplete; actual start 2018-01-15 00:00:00+00:00\n\n1w: requested history incomplete; actual start 2020-01-06 00:00:00+00:00\n\n4h: requested history incomplete; actual start 2024-05-26 04:00:00+00:00\n\n公开市场上下文 2026-09-06T09:38:06.895000Z；各字段保留自己的时间，缺失不补造。"
+}

@@ -1,0 +1,119 @@
+[
+  {
+    "symbol": "AAPL",
+    "cik": 320193,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2025-09-27",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 15004697000.0,
+    "implied_market_cap_if_absolute": 3792.8873,
+    "implied_market_cap_if_millions": 3792887307.66,
+    "looks_like_millions": false
+  },
+  {
+    "symbol": "AMZN",
+    "cik": 1018724,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2025-12-31",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 10827000000.0,
+    "implied_market_cap_if_absolute": 2736.8491,
+    "implied_market_cap_if_millions": 2736849060.0,
+    "looks_like_millions": false
+  },
+  {
+    "symbol": "GOOG",
+    "cik": 1652044,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2025-12-31",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 12230000000.0,
+    "implied_market_cap_if_absolute": 3091.4994,
+    "implied_market_cap_if_millions": 3091499400.0,
+    "looks_like_millions": false
+  },
+  {
+    "symbol": "GOOGL",
+    "cik": 1652044,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2025-12-31",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 12230000000.0,
+    "implied_market_cap_if_absolute": 3091.4994,
+    "implied_market_cap_if_millions": 3091499400.0,
+    "looks_like_millions": false
+  },
+  {
+    "symbol": "MCD",
+    "cik": 63908,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2025-12-31",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 716.4,
+    "implied_market_cap_if_absolute": 0.0002,
+    "implied_market_cap_if_millions": 181.0916,
+    "looks_like_millions": true
+  },
+  {
+    "symbol": "META",
+    "cik": 1326801,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2025-12-31",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 2574000000.0,
+    "implied_market_cap_if_absolute": 650.6557,
+    "implied_market_cap_if_millions": 650655720.0,
+    "looks_like_millions": false
+  },
+  {
+    "symbol": "MSFT",
+    "cik": 789019,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2026-06-30",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 7453000000.0,
+    "implied_market_cap_if_absolute": 1883.9693,
+    "implied_market_cap_if_millions": 1883969340.0,
+    "looks_like_millions": false
+  },
+  {
+    "symbol": "NVDA",
+    "cik": 1045810,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2026-01-25",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 24514000000.0,
+    "implied_market_cap_if_absolute": 6196.6489,
+    "implied_market_cap_if_millions": 6196648920.0,
+    "looks_like_millions": false
+  },
+  {
+    "symbol": "TSLA",
+    "cik": 1318605,
+    "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "end": "2025-12-31",
+    "unit_key": [
+      "shares"
+    ],
+    "raw_value": 3528000000.0,
+    "implied_market_cap_if_absolute": 891.8078,
+    "implied_market_cap_if_millions": 891807840.0,
+    "looks_like_millions": false
+  }
+]

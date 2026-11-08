@@ -1,0 +1,54 @@
+{
+  "probed_at": "2026-09-05T11:35:35.610575+00:00",
+  "account_or_api_key_used": false,
+  "checks": [
+    {
+      "label": "BTC-USDT spot candles",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "provider_code": "0",
+      "row_count": 8,
+      "sha256": "d36123bc850d9af2007b0b2fd80c3772228d11414312986828c314f88764a2d6"
+    },
+    {
+      "label": "ETH-USDT spot candles",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "provider_code": "0",
+      "row_count": 8,
+      "sha256": "50c8b722cd55f869a141ef25e6ce06cddb03391ed99c0c54ff103af7d19ea5d5"
+    },
+    {
+      "label": "BTC-USDT-SWAP candles",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "provider_code": "0",
+      "row_count": 8,
+      "sha256": "dc6da659a32daaf67b7f97ff686ed2e529d79de02a79c545cb702f31f95986f2"
+    },
+    {
+      "label": "ETH-USDT-SWAP candles",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "provider_code": "0",
+      "row_count": 8,
+      "sha256": "70f43ab6bb21bcd1aaa1eb43bcc3bb8ee852cb5e29e66088e5a3a9720ed7918f"
+    },
+    {
+      "label": "BTC funding",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "provider_code": "0",
+      "row_count": 1,
+      "sha256": "06ee68d3d360d03329eed757886f37be280e35f317dc18c015cf13e30f7b2475"
+    },
+    {
+      "label": "BTC open interest",
+      "status": "SUCCESS",
+      "http_status": 200,
+      "provider_code": "0",
+      "row_count": 1,
+      "sha256": "0a37f41d1abfdff9f731fd2748613dd4692c8074aeb4d7ccfa43d2ede203e7c1"
+    }
+  ]
+}

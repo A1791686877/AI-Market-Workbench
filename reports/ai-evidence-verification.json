@@ -1,0 +1,262 @@
+{
+  "checked_at": "2026-09-06T03:27:46.056515+00:00",
+  "real_model_checks": [
+    {
+      "subject": "crypto-btc",
+      "analysis_id": "analysis-effa2b2dec80458fbbc0b46d61dc5b9e",
+      "snapshot_sha256": "509e748ff078593ae0059e19fd35ee4ab85e3ac55d6d3ed2593a9e83c2994d31",
+      "raw_response_hash_match": true,
+      "schema_and_referenced_price_validation": "PASS",
+      "volume_normalization": "base currency v2",
+      "history": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 4999,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T03:02:00.136964Z",
+        "actual_start_at": "2026-07-16T01:15:00Z",
+        "latest_bar_at": "2026-09-06T03:00:00Z",
+        "history_complete": false,
+        "stale_reason": null
+      },
+      "audit": {
+        "prompt_version": "scenario-v2",
+        "provider": "CODEX_CLI",
+        "model": "gpt-5.6-terra",
+        "model_revision": null,
+        "started_at": "2026-09-06T03:02:34.411405Z",
+        "finished_at": "2026-09-06T03:03:22.793126Z",
+        "input_tokens": 18231,
+        "output_tokens": 2164,
+        "cost": null,
+        "cost_currency": null,
+        "raw_response_sha256": "f1df16e965100332364c0cf61774da028e211369aa2dc8ac3b87936507fa397d"
+      }
+    },
+    {
+      "subject": "crypto-eth",
+      "analysis_id": "analysis-cb2947321c7d4413bd90b589881179b0",
+      "snapshot_sha256": "80c783cf9c815b7797eaf3932f2a36ea120082e787d86536fe3558b34cde1c51",
+      "raw_response_hash_match": true,
+      "schema_and_referenced_price_validation": "PASS",
+      "volume_normalization": "base currency v2",
+      "history": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 4999,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T03:03:23.066926Z",
+        "actual_start_at": "2026-07-16T01:15:00Z",
+        "latest_bar_at": "2026-09-06T03:00:00Z",
+        "history_complete": false,
+        "stale_reason": null
+      },
+      "audit": {
+        "prompt_version": "scenario-v2",
+        "provider": "CODEX_CLI",
+        "model": "gpt-5.6-terra",
+        "model_revision": null,
+        "started_at": "2026-09-06T03:03:56.649275Z",
+        "finished_at": "2026-09-06T03:04:45.234129Z",
+        "input_tokens": 17958,
+        "output_tokens": 2287,
+        "cost": null,
+        "cost_currency": null,
+        "raw_response_sha256": "039cd6af88c24cb9186e692c8dff2a37fb222a8387bc415580f72eeaef0d54e5"
+      }
+    }
+  ],
+  "mcp_passed": true,
+  "mcp_exact_citations": {
+    "crypto-eth": {
+      "cited_ids": [
+        "ev_adx-okx-eth-usdt-15m-1788662700000",
+        "ev_rsi-okx-eth-usdt-15m-1788662700000",
+        "ev_tech_level_resistance_okx-eth-usdt-15m-1788660000000",
+        "ev_trend_crypto-ethusdt-spot_15m",
+        "ev_vpvr_vpvr-crypto-ethusdt-spot-15m"
+      ],
+      "known_ids": [
+        "ev_adx-okx-eth-usdt-15m-1788662700000",
+        "ev_atr-okx-eth-usdt-15m-1788662700000",
+        "ev_bollinger_bands-okx-eth-usdt-15m-1788662700000",
+        "ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788221700000",
+        "ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788332400000",
+        "ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788601500000",
+        "ev_ema-okx-eth-usdt-15m-1788662700000",
+        "ev_fvg_fvg-okx-eth-usdt-15m-1788659100000",
+        "ev_macd-okx-eth-usdt-15m-1788662700000",
+        "ev_obv-okx-eth-usdt-15m-1788662700000",
+        "ev_rsi-okx-eth-usdt-15m-1788662700000",
+        "ev_sma-okx-eth-usdt-15m-1788662700000",
+        "ev_tech_level_resistance_okx-eth-usdt-15m-1788579000000",
+        "ev_tech_level_resistance_okx-eth-usdt-15m-1788601500000",
+        "ev_tech_level_resistance_okx-eth-usdt-15m-1788660000000",
+        "ev_tech_level_support_okx-eth-usdt-15m-1788611400000",
+        "ev_tech_level_support_okx-eth-usdt-15m-1788615900000",
+        "ev_tech_level_support_okx-eth-usdt-15m-1788651000000",
+        "ev_trend_crypto-ethusdt-spot_15m",
+        "ev_volume_price_relation-okx-eth-usdt-15m-1788662700000",
+        "ev_vpvr_vpvr-crypto-ethusdt-spot-15m",
+        "ev_vwap-okx-eth-usdt-15m-1788662700000"
+      ]
+    },
+    "crypto-btc": {
+      "cited_ids": [
+        "ev_adx-okx-btc-usdt-15m-1788662700000",
+        "ev_rsi-okx-btc-usdt-15m-1788662700000",
+        "ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000",
+        "ev_trend_crypto-btcusdt-spot_15m",
+        "ev_vpvr_vpvr-crypto-btcusdt-spot-15m"
+      ],
+      "known_ids": [
+        "ev_adx-okx-btc-usdt-15m-1788662700000",
+        "ev_atr-okx-btc-usdt-15m-1788662700000",
+        "ev_bollinger_bands-okx-btc-usdt-15m-1788662700000",
+        "ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788221700000",
+        "ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788365700000",
+        "ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788471000000",
+        "ev_ema-okx-btc-usdt-15m-1788662700000",
+        "ev_fvg_fvg-okx-btc-usdt-15m-1788643800000",
+        "ev_macd-okx-btc-usdt-15m-1788662700000",
+        "ev_obv-okx-btc-usdt-15m-1788662700000",
+        "ev_rsi-okx-btc-usdt-15m-1788662700000",
+        "ev_sma-okx-btc-usdt-15m-1788662700000",
+        "ev_tech_level_resistance_okx-btc-usdt-15m-1788598800000",
+        "ev_tech_level_resistance_okx-btc-usdt-15m-1788611400000",
+        "ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000",
+        "ev_tech_level_support_okx-btc-usdt-15m-1788605100000",
+        "ev_tech_level_support_okx-btc-usdt-15m-1788615900000",
+        "ev_tech_level_support_okx-btc-usdt-15m-1788651000000",
+        "ev_trend_crypto-btcusdt-spot_15m",
+        "ev_volume_price_relation-okx-btc-usdt-15m-1788662700000",
+        "ev_vpvr_vpvr-crypto-btcusdt-spot-15m",
+        "ev_vwap-okx-btc-usdt-15m-1788662700000"
+      ]
+    }
+  },
+  "unknown_citations": [],
+  "manual_review": "Reviewed BTC/ETH prices, RSI, MACD, ADX, trend and VPVR statements against frozen observations. Conditional scenarios are interpretations, not validated forecasts.",
+  "superseded_runs": [
+    "run-b860007625a049daaed5c4bac414a3c6",
+    "run-e5e2a15cb9de43669be1e28fe70eda9f"
+  ],
+  "superseded_reason": "Old OKX spot quote-volume normalization and old FVG midpoint type. Retain as call proof, exclude from indicator/performance acceptance.",
+  "usage_all_saved_runs_including_failed_acceptance": {
+    "input_tokens": 319065,
+    "output_tokens": 18980,
+    "cached_input_tokens": 131584,
+    "completed_turns": 10
+  },
+  "runs": [
+    {
+      "run": "mcp-client-58f9ecfd86cb4ea28674b76eceb8c522",
+      "usage": {
+        "input_tokens": 97555,
+        "cached_input_tokens": 71936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1125,
+        "reasoning_output_tokens": 274
+      }
+    },
+    {
+      "run": "mcp-client-ed719e4e1a7b43d783d94cf6f4cc29cf",
+      "usage": {
+        "input_tokens": 36011,
+        "cached_input_tokens": 16896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 378,
+        "reasoning_output_tokens": 110
+      }
+    },
+    {
+      "run": "mcp-client-fcbfcf9025b84272ad08d61cc8bc3dc6",
+      "usage": {
+        "input_tokens": 56161,
+        "cached_input_tokens": 28928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1287,
+        "reasoning_output_tokens": 66
+      }
+    },
+    {
+      "run": "run-00ce27f72d914f299eec7d788d36208f",
+      "usage": {
+        "input_tokens": 17958,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2287,
+        "reasoning_output_tokens": 100
+      }
+    },
+    {
+      "run": "run-13fe7af045914c7da5bd5c96dbfac887",
+      "usage": {
+        "input_tokens": 18231,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2164,
+        "reasoning_output_tokens": 103
+      }
+    },
+    {
+      "run": "run-37857d8e65454ab8956371ac3aeb0a00",
+      "usage": {
+        "input_tokens": 20170,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2754,
+        "reasoning_output_tokens": 173
+      }
+    },
+    {
+      "run": "run-5da99005045e4155ab38659893aa1064",
+      "usage": {
+        "input_tokens": 18223,
+        "cached_input_tokens": 6912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2156,
+        "reasoning_output_tokens": 112
+      }
+    },
+    {
+      "run": "run-74bbb7654457409ea5d4c28603814284",
+      "usage": {
+        "input_tokens": 18222,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2100,
+        "reasoning_output_tokens": 70
+      }
+    },
+    {
+      "run": "run-b860007625a049daaed5c4bac414a3c6",
+      "usage": {
+        "input_tokens": 18261,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2557,
+        "reasoning_output_tokens": 73
+      }
+    },
+    {
+      "run": "run-e5e2a15cb9de43669be1e28fe70eda9f",
+      "usage": {
+        "input_tokens": 18273,
+        "cached_input_tokens": 6912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2172,
+        "reasoning_output_tokens": 75
+      }
+    }
+  ],
+  "model_cost_usd": null,
+  "data_subscription_usd": 0,
+  "limitations": [
+    "Token totals are provider-reported; cached input is a subset, not additional input.",
+    "Shared ChatGPT account quota percentages cannot be attributed to these tests.",
+    "No realized prediction accuracy or profitability has been validated."
+  ]
+}

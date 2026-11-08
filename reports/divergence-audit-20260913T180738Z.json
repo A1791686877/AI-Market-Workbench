@@ -1,0 +1,1545 @@
+{
+  "generated_at": "2026-09-13T18:07:38.794238+00:00",
+  "results": [
+    {
+      "interval": "1d",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 648.03,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 23,
+        "REGULAR_BULLISH": 6,
+        "HIDDEN_BEARISH": 9,
+        "REGULAR_BEARISH": 23
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2025-10-29T20:00:00+00:00",
+            "field": "high",
+            "value": "757.19"
+          },
+          "price_anchor_2": {
+            "at": "2025-12-08T21:00:00+00:00",
+            "field": "high",
+            "value": "674.95"
+          },
+          "oscillator_anchor_1": "4.8911983918",
+          "oscillator_anchor_2": "10.4635262311",
+          "signal_at": "2025-12-11T21:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 190,
+          "bars_since_signal": 187,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2024-10-30T20:00:00+00:00",
+            "field": "high",
+            "value": "597.76"
+          },
+          "price_anchor_2": {
+            "at": "2024-11-12T21:00:00+00:00",
+            "field": "high",
+            "value": "596.23"
+          },
+          "oscillator_anchor_1": "-1.066234864",
+          "oscillator_anchor_2": "0.0108020559",
+          "signal_at": "2024-11-15T21:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 457,
+          "bars_since_signal": 454,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-06-11T20:00:00+00:00",
+            "field": "low",
+            "value": "556.49"
+          },
+          "price_anchor_2": {
+            "at": "2026-06-25T20:00:00+00:00",
+            "field": "low",
+            "value": "540.18"
+          },
+          "oscillator_anchor_1": "-4.8377556858",
+          "oscillator_anchor_2": "-3.2788501805",
+          "signal_at": "2026-06-30T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 54,
+          "bars_since_signal": 51,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2025-01-14T21:00:00+00:00",
+            "field": "low",
+            "value": "585.66"
+          },
+          "price_anchor_2": {
+            "at": "2025-02-25T21:00:00+00:00",
+            "field": "low",
+            "value": "638.7"
+          },
+          "oscillator_anchor_1": "-1.094581812",
+          "oscillator_anchor_2": "-9.9665918582",
+          "signal_at": "2025-03-04T21:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 388,
+          "bars_since_signal": 383,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 190 bars old (relevance threshold 20)",
+      "symbol": "META"
+    },
+    {
+      "interval": "15m",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 648.23,
+      "divergence_counts": {
+        "REGULAR_BULLISH": 17,
+        "HIDDEN_BULLISH": 25,
+        "HIDDEN_BEARISH": 27,
+        "REGULAR_BEARISH": 20
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-08T17:00:00+00:00",
+            "field": "high",
+            "value": "620.03"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-08T19:15:00+00:00",
+            "field": "high",
+            "value": "624.8"
+          },
+          "oscillator_anchor_1": "62.3687942044",
+          "oscillator_anchor_2": "59.0912901296",
+          "signal_at": "2026-09-08T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 81,
+          "bars_since_signal": 78,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-01T16:15:00+00:00",
+            "field": "high",
+            "value": "583.4383"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-01T18:15:00+00:00",
+            "field": "high",
+            "value": "584.95"
+          },
+          "oscillator_anchor_1": "69.5687752443",
+          "oscillator_anchor_2": "66.1712888664",
+          "signal_at": "2026-09-01T19:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 189,
+          "bars_since_signal": 186,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-09T17:00:00+00:00",
+            "field": "low",
+            "value": "649.27"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-09T18:30:00+00:00",
+            "field": "low",
+            "value": "649.84"
+          },
+          "oscillator_anchor_1": "73.0364375256",
+          "oscillator_anchor_2": "67.5267194281",
+          "signal_at": "2026-09-09T19:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 58,
+          "bars_since_signal": 55,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": true
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-08-27T13:45:00+00:00",
+            "field": "low",
+            "value": "567.62"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-27T15:45:00+00:00",
+            "field": "low",
+            "value": "570.31"
+          },
+          "oscillator_anchor_1": "-0.6796370883",
+          "oscillator_anchor_2": "-1.2085281977",
+          "signal_at": "2026-08-27T16:30:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 277,
+          "bars_since_signal": 274,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 81 bars old (relevance threshold 60)",
+      "symbol": "META"
+    },
+    {
+      "interval": "1d",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 332.27,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 24,
+        "REGULAR_BULLISH": 16,
+        "REGULAR_BEARISH": 31,
+        "HIDDEN_BEARISH": 10
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-07-17T20:00:00+00:00",
+            "field": "high",
+            "value": "334.7"
+          },
+          "price_anchor_2": {
+            "at": "2026-07-29T20:00:00+00:00",
+            "field": "high",
+            "value": "344.27"
+          },
+          "oscillator_anchor_1": "3.33108158",
+          "oscillator_anchor_2": "1.3074444084",
+          "signal_at": "2026-08-03T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 31,
+          "bars_since_signal": 28,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2025-10-03T20:00:00+00:00",
+            "field": "high",
+            "value": "258.29"
+          },
+          "price_anchor_2": {
+            "at": "2025-10-21T20:00:00+00:00",
+            "field": "high",
+            "value": "264.31"
+          },
+          "oscillator_anchor_1": "71.0457423848",
+          "oscillator_anchor_2": "66.7637447879",
+          "signal_at": "2025-10-24T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 223,
+          "bars_since_signal": 220,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-06-10T20:00:00+00:00",
+            "field": "low",
+            "value": "287.13"
+          },
+          "price_anchor_2": {
+            "at": "2026-06-25T20:00:00+00:00",
+            "field": "low",
+            "value": "273.51"
+          },
+          "oscillator_anchor_1": "-3.5042521627",
+          "oscillator_anchor_2": "-2.7921770675",
+          "signal_at": "2026-06-30T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 54,
+          "bars_since_signal": 51,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2025-11-18T21:00:00+00:00",
+            "field": "low",
+            "value": "264.6"
+          },
+          "price_anchor_2": {
+            "at": "2025-12-18T21:00:00+00:00",
+            "field": "low",
+            "value": "266.23"
+          },
+          "oscillator_anchor_1": "-1.2839413209",
+          "oscillator_anchor_2": "-1.5105843961",
+          "signal_at": "2025-12-23T21:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 182,
+          "bars_since_signal": 179,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 31 bars old (relevance threshold 20)",
+      "symbol": "AAPL"
+    },
+    {
+      "interval": "15m",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 332.23,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 24,
+        "REGULAR_BULLISH": 19,
+        "HIDDEN_BEARISH": 10,
+        "REGULAR_BEARISH": 24
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-09-10T15:45:00+00:00",
+            "field": "high",
+            "value": "324.35"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-10T17:45:00+00:00",
+            "field": "high",
+            "value": "325.68"
+          },
+          "oscillator_anchor_1": "0.8846092464",
+          "oscillator_anchor_2": "0.3173360159",
+          "signal_at": "2026-09-10T18:30:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 35,
+          "bars_since_signal": 32,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": true
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-01T14:45:00+00:00",
+            "field": "high",
+            "value": "325.86"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-01T16:30:00+00:00",
+            "field": "high",
+            "value": "327.3"
+          },
+          "oscillator_anchor_1": "85.6401185575",
+          "oscillator_anchor_2": "78.0723503631",
+          "signal_at": "2026-09-01T17:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 196,
+          "bars_since_signal": 193,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-09-09T15:30:00+00:00",
+            "field": "low",
+            "value": "312.11"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-09T18:30:00+00:00",
+            "field": "low",
+            "value": "309.9"
+          },
+          "oscillator_anchor_1": "-0.2662250053",
+          "oscillator_anchor_2": "-0.1223781384",
+          "signal_at": "2026-09-09T19:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 58,
+          "bars_since_signal": 55,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": true
+        },
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-08T16:30:00+00:00",
+            "field": "low",
+            "value": "315.46"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-08T19:00:00+00:00",
+            "field": "low",
+            "value": "314.9"
+          },
+          "oscillator_anchor_1": "25.9320328334",
+          "oscillator_anchor_2": "30.8207300739",
+          "signal_at": "2026-09-08T19:45:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 82,
+          "bars_since_signal": 79,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 35 bars old (relevance threshold 60)",
+      "symbol": "AAPL"
+    },
+    {
+      "interval": "1d",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 218.29,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 29,
+        "REGULAR_BULLISH": 11,
+        "REGULAR_BEARISH": 23,
+        "HIDDEN_BEARISH": 9
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-04-27T20:00:00+00:00",
+            "field": "high",
+            "value": "216.33"
+          },
+          "price_anchor_2": {
+            "at": "2026-05-14T20:00:00+00:00",
+            "field": "high",
+            "value": "236"
+          },
+          "oscillator_anchor_1": "2.3877566596",
+          "oscillator_anchor_2": "2.2129689695",
+          "signal_at": "2026-05-19T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 82,
+          "bars_since_signal": 79,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        },
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2025-08-28T20:00:00+00:00",
+            "field": "high",
+            "value": "184.02"
+          },
+          "price_anchor_2": {
+            "at": "2025-09-11T20:00:00+00:00",
+            "field": "high",
+            "value": "179.85"
+          },
+          "oscillator_anchor_1": "-0.7484374757",
+          "oscillator_anchor_2": "0.0557004167",
+          "signal_at": "2025-09-18T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 251,
+          "bars_since_signal": 246,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-06-09T20:00:00+00:00",
+            "field": "low",
+            "value": "199.12"
+          },
+          "price_anchor_2": {
+            "at": "2026-06-29T20:00:00+00:00",
+            "field": "low",
+            "value": "189.59"
+          },
+          "oscillator_anchor_1": "-2.6533213907",
+          "oscillator_anchor_2": "-1.9059365912",
+          "signal_at": "2026-07-02T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 52,
+          "bars_since_signal": 49,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-05-04T20:00:00+00:00",
+            "field": "low",
+            "value": "194.3"
+          },
+          "price_anchor_2": {
+            "at": "2026-05-27T20:00:00+00:00",
+            "field": "low",
+            "value": "208.3"
+          },
+          "oscillator_anchor_1": "-1.1943337601",
+          "oscillator_anchor_2": "-2.1604024393",
+          "signal_at": "2026-06-03T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 74,
+          "bars_since_signal": 69,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 82 bars old (relevance threshold 20)",
+      "symbol": "NVDA"
+    },
+    {
+      "interval": "15m",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 218.19,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 20,
+        "REGULAR_BULLISH": 10,
+        "REGULAR_BEARISH": 28,
+        "HIDDEN_BEARISH": 15
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-09T13:45:00+00:00",
+            "field": "high",
+            "value": "226.18"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-09T17:15:00+00:00",
+            "field": "high",
+            "value": "224.49"
+          },
+          "oscillator_anchor_1": "35.9291374309",
+          "oscillator_anchor_2": "42.220464028",
+          "signal_at": "2026-09-09T18:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 63,
+          "bars_since_signal": 60,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-04T17:00:00+00:00",
+            "field": "high",
+            "value": "232.235"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-08T13:45:00+00:00",
+            "field": "high",
+            "value": "233.71"
+          },
+          "oscillator_anchor_1": "55.8987050919",
+          "oscillator_anchor_2": "48.9715204202",
+          "signal_at": "2026-09-08T14:30:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 103,
+          "bars_since_signal": 100,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-08-27T16:00:00+00:00",
+            "field": "low",
+            "value": "224.84"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-27T19:00:00+00:00",
+            "field": "low",
+            "value": "225.35"
+          },
+          "oscillator_anchor_1": "74.1406814691",
+          "oscillator_anchor_2": "57.3268879581",
+          "signal_at": "2026-08-27T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 264,
+          "bars_since_signal": 260,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-08-26T17:00:00+00:00",
+            "field": "low",
+            "value": "209.47"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-26T20:00:00+00:00",
+            "field": "low",
+            "value": "209.23"
+          },
+          "oscillator_anchor_1": "-0.2424127458",
+          "oscillator_anchor_2": "0.0062627885",
+          "signal_at": "2026-08-27T14:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 286,
+          "bars_since_signal": 283,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 63 bars old (relevance threshold 60)",
+      "symbol": "NVDA"
+    },
+    {
+      "interval": "1d",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 495.63,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 29,
+        "REGULAR_BULLISH": 8,
+        "REGULAR_BEARISH": 23,
+        "HIDDEN_BEARISH": 10
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-08-10T20:00:00+00:00",
+            "field": "high",
+            "value": "512.76"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-28T20:00:00+00:00",
+            "field": "high",
+            "value": "517.78"
+          },
+          "oscillator_anchor_1": "11.9869013045",
+          "oscillator_anchor_2": "-1.0747566095",
+          "signal_at": "2026-09-03T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 9,
+          "bars_since_signal": 5,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": true
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-08-10T20:00:00+00:00",
+            "field": "high",
+            "value": "512.76"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-28T20:00:00+00:00",
+            "field": "high",
+            "value": "517.78"
+          },
+          "oscillator_anchor_1": "79.1490235292",
+          "oscillator_anchor_2": "73.5320645062",
+          "signal_at": "2026-09-02T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 9,
+          "bars_since_signal": 6,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": true
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2025-09-25T20:00:00+00:00",
+            "field": "low",
+            "value": "500.92"
+          },
+          "price_anchor_2": {
+            "at": "2025-10-14T20:00:00+00:00",
+            "field": "low",
+            "value": "501.87"
+          },
+          "oscillator_anchor_1": "0.4584522739",
+          "oscillator_anchor_2": "-1.0348711394",
+          "signal_at": "2025-10-21T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 228,
+          "bars_since_signal": 223,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2025-03-04T21:00:00+00:00",
+            "field": "low",
+            "value": "376.58"
+          },
+          "price_anchor_2": {
+            "at": "2025-03-11T20:00:00+00:00",
+            "field": "low",
+            "value": "372.54"
+          },
+          "oscillator_anchor_1": "-1.593649331",
+          "oscillator_anchor_2": "-1.2249424066",
+          "signal_at": "2025-03-14T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 378,
+          "bars_since_signal": 375,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 9 bars old (relevance threshold 20)",
+      "symbol": "MSFT"
+    },
+    {
+      "interval": "15m",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 495.58,
+      "divergence_counts": {
+        "REGULAR_BULLISH": 22,
+        "HIDDEN_BULLISH": 28,
+        "HIDDEN_BEARISH": 18,
+        "REGULAR_BEARISH": 19
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-03T16:15:00+00:00",
+            "field": "high",
+            "value": "514.98"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-03T18:30:00+00:00",
+            "field": "high",
+            "value": "515.65"
+          },
+          "oscillator_anchor_1": "75.6078287173",
+          "oscillator_anchor_2": "69.1672091757",
+          "signal_at": "2026-09-03T19:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 136,
+          "bars_since_signal": 133,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-03T14:30:00+00:00",
+            "field": "high",
+            "value": "512.92"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-03T16:15:00+00:00",
+            "field": "high",
+            "value": "514.98"
+          },
+          "oscillator_anchor_1": "81.5135831571",
+          "oscillator_anchor_2": "75.6078287173",
+          "signal_at": "2026-09-03T17:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 145,
+          "bars_since_signal": 142,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-09-09T14:30:00+00:00",
+            "field": "low",
+            "value": "489.8"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-09T16:30:00+00:00",
+            "field": "low",
+            "value": "491.1"
+          },
+          "oscillator_anchor_1": "0.2516580791",
+          "oscillator_anchor_2": "0.102444845",
+          "signal_at": "2026-09-09T17:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 66,
+          "bars_since_signal": 63,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-08T19:00:00+00:00",
+            "field": "low",
+            "value": "490.15"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-09T14:30:00+00:00",
+            "field": "low",
+            "value": "489.8"
+          },
+          "oscillator_anchor_1": "31.2852319383",
+          "oscillator_anchor_2": "35.7997926435",
+          "signal_at": "2026-09-09T15:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 74,
+          "bars_since_signal": 71,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 136 bars old (relevance threshold 60)",
+      "symbol": "MSFT"
+    },
+    {
+      "interval": "1d",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 335.45,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 17,
+        "REGULAR_BULLISH": 10,
+        "REGULAR_BEARISH": 28,
+        "HIDDEN_BEARISH": 12
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-06-16T20:00:00+00:00",
+            "field": "high",
+            "value": "373.36"
+          },
+          "price_anchor_2": {
+            "at": "2026-07-07T20:00:00+00:00",
+            "field": "high",
+            "value": "370.65"
+          },
+          "oscillator_anchor_1": "-0.8575248915",
+          "oscillator_anchor_2": "1.6107698763",
+          "signal_at": "2026-07-10T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 47,
+          "bars_since_signal": 44,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-01-13T21:00:00+00:00",
+            "field": "high",
+            "value": "340.53"
+          },
+          "price_anchor_2": {
+            "at": "2026-02-03T21:00:00+00:00",
+            "field": "high",
+            "value": "349.47"
+          },
+          "oscillator_anchor_1": "1.6117110047",
+          "oscillator_anchor_2": "0.534174901",
+          "signal_at": "2026-02-06T21:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 152,
+          "bars_since_signal": 149,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-02-17T21:00:00+00:00",
+            "field": "low",
+            "value": "296.32"
+          },
+          "price_anchor_2": {
+            "at": "2026-03-09T20:00:00+00:00",
+            "field": "low",
+            "value": "293.56"
+          },
+          "oscillator_anchor_1": "-4.3458535964",
+          "oscillator_anchor_2": "-0.9320641042",
+          "signal_at": "2026-03-12T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 129,
+          "bars_since_signal": 126,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-02-17T21:00:00+00:00",
+            "field": "low",
+            "value": "296.32"
+          },
+          "price_anchor_2": {
+            "at": "2026-03-09T20:00:00+00:00",
+            "field": "low",
+            "value": "293.56"
+          },
+          "oscillator_anchor_1": "30.422698455",
+          "oscillator_anchor_2": "34.229901465",
+          "signal_at": "2026-03-12T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 129,
+          "bars_since_signal": 126,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 47 bars old (relevance threshold 20)",
+      "symbol": "GOOG"
+    },
+    {
+      "interval": "15m",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 335.49,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 29,
+        "REGULAR_BULLISH": 13,
+        "HIDDEN_BEARISH": 21,
+        "REGULAR_BEARISH": 26
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-09T17:30:00+00:00",
+            "field": "high",
+            "value": "329.34"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-09T19:30:00+00:00",
+            "field": "high",
+            "value": "329.08"
+          },
+          "oscillator_anchor_1": "43.5786219172",
+          "oscillator_anchor_2": "46.6677954627",
+          "signal_at": "2026-09-10T13:45:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 54,
+          "bars_since_signal": 51,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": true
+        },
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-08-31T15:30:00+00:00",
+            "field": "high",
+            "value": "335.37"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-31T17:30:00+00:00",
+            "field": "high",
+            "value": "335.2299"
+          },
+          "oscillator_anchor_1": "30.5248660452",
+          "oscillator_anchor_2": "36.8535061119",
+          "signal_at": "2026-08-31T18:30:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 218,
+          "bars_since_signal": 214,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-08-24T13:45:00+00:00",
+            "field": "low",
+            "value": "339.62"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-24T19:00:00+00:00",
+            "field": "low",
+            "value": "344.64"
+          },
+          "oscillator_anchor_1": "-0.0810523727",
+          "oscillator_anchor_2": "-0.4076591445",
+          "signal_at": "2026-08-24T19:45:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 342,
+          "bars_since_signal": 339,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-08-24T13:45:00+00:00",
+            "field": "low",
+            "value": "339.62"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-24T19:00:00+00:00",
+            "field": "low",
+            "value": "344.64"
+          },
+          "oscillator_anchor_1": "53.1718918226",
+          "oscillator_anchor_2": "48.4763364386",
+          "signal_at": "2026-08-24T19:45:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 342,
+          "bars_since_signal": 339,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 54 bars old (relevance threshold 60)",
+      "symbol": "GOOG"
+    },
+    {
+      "interval": "1d",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 256.78,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 31,
+        "REGULAR_BULLISH": 13,
+        "REGULAR_BEARISH": 27,
+        "HIDDEN_BEARISH": 10
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2025-05-13T20:00:00+00:00",
+            "field": "high",
+            "value": "214.84"
+          },
+          "price_anchor_2": {
+            "at": "2025-06-11T20:00:00+00:00",
+            "field": "high",
+            "value": "218.4"
+          },
+          "oscillator_anchor_1": "3.5333846094",
+          "oscillator_anchor_2": "0.8029260342",
+          "signal_at": "2025-06-16T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 314,
+          "bars_since_signal": 311,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2024-08-21T20:00:00+00:00",
+            "field": "high",
+            "value": "182.385"
+          },
+          "price_anchor_2": {
+            "at": "2024-09-24T20:00:00+00:00",
+            "field": "high",
+            "value": "195.37"
+          },
+          "oscillator_anchor_1": "1.8139432433",
+          "oscillator_anchor_2": "1.6193848124",
+          "signal_at": "2024-09-27T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 492,
+          "bars_since_signal": 489,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-06-12T20:00:00+00:00",
+            "field": "low",
+            "value": "233.59"
+          },
+          "price_anchor_2": {
+            "at": "2026-06-25T20:00:00+00:00",
+            "field": "low",
+            "value": "225.55"
+          },
+          "oscillator_anchor_1": "-3.8853697308",
+          "oscillator_anchor_2": "-1.7457677678",
+          "signal_at": "2026-06-30T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 54,
+          "bars_since_signal": 51,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-01-02T21:00:00+00:00",
+            "field": "low",
+            "value": "224.7"
+          },
+          "price_anchor_2": {
+            "at": "2026-01-21T21:00:00+00:00",
+            "field": "low",
+            "value": "226.88"
+          },
+          "oscillator_anchor_1": "0.3005531673",
+          "oscillator_anchor_2": "-0.9778205773",
+          "signal_at": "2026-01-27T21:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 161,
+          "bars_since_signal": 157,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 314 bars old (relevance threshold 20)",
+      "symbol": "AMZN"
+    },
+    {
+      "interval": "15m",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 256.79,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 15,
+        "REGULAR_BULLISH": 11,
+        "HIDDEN_BEARISH": 19,
+        "REGULAR_BEARISH": 11
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-09T15:00:00+00:00",
+            "field": "high",
+            "value": "252.69"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-09T17:30:00+00:00",
+            "field": "high",
+            "value": "252.58"
+          },
+          "oscillator_anchor_1": "22.8120213451",
+          "oscillator_anchor_2": "39.1179060788",
+          "signal_at": "2026-09-09T18:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 62,
+          "bars_since_signal": 59,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-03T18:45:00+00:00",
+            "field": "high",
+            "value": "259.5"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-04T13:45:00+00:00",
+            "field": "high",
+            "value": "261.12"
+          },
+          "oscillator_anchor_1": "65.6641225638",
+          "oscillator_anchor_2": "58.1948509237",
+          "signal_at": "2026-09-04T14:30:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 129,
+          "bars_since_signal": 126,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-09-11T16:45:00+00:00",
+            "field": "low",
+            "value": "255.4"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-11T18:30:00+00:00",
+            "field": "low",
+            "value": "256.19"
+          },
+          "oscillator_anchor_1": "0.0280508264",
+          "oscillator_anchor_2": "-0.0133879848",
+          "signal_at": "2026-09-11T19:30:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 6,
+          "bars_since_signal": 2,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": true
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-08-24T17:45:00+00:00",
+            "field": "low",
+            "value": "261.5"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-24T19:15:00+00:00",
+            "field": "low",
+            "value": "261.65"
+          },
+          "oscillator_anchor_1": "-0.0752846774",
+          "oscillator_anchor_2": "-0.1446753491",
+          "signal_at": "2026-08-25T13:45:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 341,
+          "bars_since_signal": 337,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 62 bars old (relevance threshold 60)",
+      "symbol": "AMZN"
+    },
+    {
+      "interval": "1d",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 365.44,
+      "divergence_counts": {
+        "REGULAR_BULLISH": 10,
+        "HIDDEN_BULLISH": 16,
+        "HIDDEN_BEARISH": 22,
+        "REGULAR_BEARISH": 16
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-07-01T20:00:00+00:00",
+            "field": "high",
+            "value": "432.8599"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-21T20:00:00+00:00",
+            "field": "high",
+            "value": "366.5"
+          },
+          "oscillator_anchor_1": "2.7483796544",
+          "oscillator_anchor_2": "6.2294647143",
+          "signal_at": "2026-08-26T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 14,
+          "bars_since_signal": 11,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": true
+        },
+        {
+          "kind": "HIDDEN_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-03-25T20:00:00+00:00",
+            "field": "high",
+            "value": "396.23"
+          },
+          "price_anchor_2": {
+            "at": "2026-04-01T20:00:00+00:00",
+            "field": "high",
+            "value": "383.14"
+          },
+          "oscillator_anchor_1": "-0.5780324343",
+          "oscillator_anchor_2": "-0.3931128535",
+          "signal_at": "2026-04-07T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 112,
+          "bars_since_signal": 109,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-06-10T20:00:00+00:00",
+            "field": "low",
+            "value": "380.15"
+          },
+          "price_anchor_2": {
+            "at": "2026-06-26T20:00:00+00:00",
+            "field": "low",
+            "value": "368.6"
+          },
+          "oscillator_anchor_1": "-6.2154271618",
+          "oscillator_anchor_2": "-3.9106740174",
+          "signal_at": "2026-07-01T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 53,
+          "bars_since_signal": 50,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-04-27T20:00:00+00:00",
+            "field": "low",
+            "value": "364.02"
+          },
+          "price_anchor_2": {
+            "at": "2026-05-19T20:00:00+00:00",
+            "field": "low",
+            "value": "393.63"
+          },
+          "oscillator_anchor_1": "1.1790953667",
+          "oscillator_anchor_2": "-0.8617502814",
+          "signal_at": "2026-05-27T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 79,
+          "bars_since_signal": 74,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 14 bars old (relevance threshold 20)",
+      "symbol": "TSLA"
+    },
+    {
+      "interval": "15m",
+      "bars": 1200,
+      "last_bar": "2026-09-11T20:00:00+00:00",
+      "last_close": 365.47,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 18,
+        "REGULAR_BULLISH": 13,
+        "REGULAR_BEARISH": 19,
+        "HIDDEN_BEARISH": 13
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-08-31T14:45:00+00:00",
+            "field": "high",
+            "value": "365.81"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-31T16:00:00+00:00",
+            "field": "high",
+            "value": "367.15"
+          },
+          "oscillator_anchor_1": "82.9422063799",
+          "oscillator_anchor_2": "79.3800899502",
+          "signal_at": "2026-08-31T17:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 224,
+          "bars_since_signal": 220,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-08-26T17:45:00+00:00",
+            "field": "high",
+            "value": "346.93"
+          },
+          "price_anchor_2": {
+            "at": "2026-08-26T19:15:00+00:00",
+            "field": "high",
+            "value": "347.44"
+          },
+          "oscillator_anchor_1": "0.4422322126",
+          "oscillator_anchor_2": "0.3740307839",
+          "signal_at": "2026-08-26T20:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 289,
+          "bars_since_signal": 286,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-09T15:30:00+00:00",
+            "field": "low",
+            "value": "367.25"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-09T17:30:00+00:00",
+            "field": "low",
+            "value": "367.78"
+          },
+          "oscillator_anchor_1": "53.0895815627",
+          "oscillator_anchor_2": "48.8664443696",
+          "signal_at": "2026-09-09T18:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 62,
+          "bars_since_signal": 59,
+          "second_anchor_level_exceeded_after_signal": true,
+          "recent": false
+        },
+        {
+          "kind": "REGULAR_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-09-01T19:00:00+00:00",
+            "field": "low",
+            "value": "352.96"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-02T14:00:00+00:00",
+            "field": "low",
+            "value": "349.92"
+          },
+          "oscillator_anchor_1": "-0.3994633485",
+          "oscillator_anchor_2": "-0.2574666266",
+          "signal_at": "2026-09-02T14:45:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 180,
+          "bars_since_signal": 177,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 224 bars old (relevance threshold 60)",
+      "symbol": "TSLA"
+    }
+  ]
+}

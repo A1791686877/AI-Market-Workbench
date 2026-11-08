@@ -1,0 +1,46 @@
+[
+  {
+    "instrument_id": "CRYPTO:BTCUSDT:SPOT",
+    "interval": "1d",
+    "target_start": "2000-01-01T00:00:00Z",
+    "cursor_end": "2018-01-11T00:00:00Z",
+    "status": "REQUEST_FAILED",
+    "committed_pages": 0,
+    "last_error_type": "RuntimeError",
+    "updated_at": "2026-09-06T09:28:51.184021Z",
+    "limitation": "Provider-empty is only a statement about this endpoint/cursor, not proof of global asset inception. Internal gaps are evaluated separately."
+  },
+  {
+    "instrument_id": "CRYPTO:BTCUSDT:PERP",
+    "interval": "1d",
+    "target_start": "2000-01-01T00:00:00Z",
+    "cursor_end": "2020-01-01T00:00:00Z",
+    "status": "REQUEST_FAILED",
+    "committed_pages": 0,
+    "last_error_type": "RuntimeError",
+    "updated_at": "2026-09-06T09:28:52.378653Z",
+    "limitation": "Provider-empty is only a statement about this endpoint/cursor, not proof of global asset inception. Internal gaps are evaluated separately."
+  },
+  {
+    "instrument_id": "CRYPTO:ETHUSDT:SPOT",
+    "interval": "1d",
+    "target_start": "2000-01-01T00:00:00Z",
+    "cursor_end": "2018-01-11T00:00:00Z",
+    "status": "REQUEST_FAILED",
+    "committed_pages": 0,
+    "last_error_type": "RuntimeError",
+    "updated_at": "2026-09-06T09:28:53.573017Z",
+    "limitation": "Provider-empty is only a statement about this endpoint/cursor, not proof of global asset inception. Internal gaps are evaluated separately."
+  },
+  {
+    "instrument_id": "CRYPTO:ETHUSDT:PERP",
+    "interval": "1d",
+    "target_start": "2000-01-01T00:00:00Z",
+    "cursor_end": "2020-01-01T00:00:00Z",
+    "status": "REQUEST_FAILED",
+    "committed_pages": 0,
+    "last_error_type": "RuntimeError",
+    "updated_at": "2026-09-06T09:28:54.740361Z",
+    "limitation": "Provider-empty is only a statement about this endpoint/cursor, not proof of global asset inception. Internal gaps are evaluated separately."
+  }
+]

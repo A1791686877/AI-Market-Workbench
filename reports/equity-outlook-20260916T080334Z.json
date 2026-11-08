@@ -1,0 +1,2254 @@
+{
+  "generated_at": "2026-09-16T08:03:34.711469+00:00",
+  "rules_version": "btc-outlook-rules-v1",
+  "market": "EQUITY",
+  "refreshed": true,
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "GOOGL",
+    "AMZN",
+    "NVDA",
+    "META",
+    "TSLA",
+    "GOOG"
+  ],
+  "freeze_offsets": [
+    0
+  ],
+  "history_notes": {
+    "AAPL": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+    "MSFT": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+    "GOOGL": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+    "AMZN": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+    "NVDA": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+    "META": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+    "TSLA": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+    "GOOG": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)"
+  },
+  "recorded_entries": [
+    "outlook-4430f84982104a5cb60952c08edea76a",
+    "outlook-7ee2c51aa8cc4929936b5f2fd27ba0f8",
+    "outlook-95302598417c413192e94cf58aa36659",
+    "outlook-abf1cfee17934f6280eecfdb21f292ff",
+    "outlook-cb3e75b1a55e40159f2c77dc92eb7999",
+    "outlook-12b8e6df31a74788a94137b054b3da85",
+    "outlook-cac05abb85e24b25a513e39d14639750",
+    "outlook-fc476f24608d436a9b4747ef89bc4727"
+  ],
+  "recorded_by_origin": {
+    "FORWARD": 8,
+    "REPLAY": 0
+  },
+  "sector_metadata": {
+    "AAPL": {
+      "sector": "Information Technology",
+      "industry_group": "Technology Hardware & Equipment",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba"
+    },
+    "MSFT": {
+      "sector": "Information Technology",
+      "industry_group": "Software & Services",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba"
+    },
+    "GOOGL": {
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba"
+    },
+    "AMZN": {
+      "sector": "Consumer Discretionary",
+      "industry_group": "Retailing",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba"
+    },
+    "NVDA": {
+      "sector": "Information Technology",
+      "industry_group": "Semiconductors & Semiconductor Equipment",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba"
+    },
+    "META": {
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba"
+    },
+    "TSLA": {
+      "sector": "Consumer Discretionary",
+      "industry_group": "Automobiles & Components",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba"
+    },
+    "GOOG": {
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba"
+    }
+  },
+  "sector_metadata_note": null,
+  "divergence_audit": {
+    "NVDA": {
+      "checked": true,
+      "live_top": null,
+      "live_top_count": 0,
+      "retired_top": 16,
+      "counts": {
+        "REGULAR_BEARISH": 12,
+        "HIDDEN_BEARISH": 5,
+        "REGULAR_BULLISH": 5,
+        "HIDDEN_BULLISH": 9
+      },
+      "most_recent_top": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "pressure": "TOP",
+          "oscillator": "MACD_HISTOGRAM",
+          "first_anchor_at": "2026-04-27T20:00:00+00:00",
+          "second_anchor_at": "2026-05-14T20:00:00+00:00",
+          "first_price": "216.33",
+          "second_price": "236",
+          "first_oscillator": "2.3877566596",
+          "second_oscillator": "2.2129689695",
+          "bars_since_second_anchor": 84,
+          "signal_at": "2026-05-19T20:00:00+00:00",
+          "retired": false,
+          "recent": false,
+          "mattered": false,
+          "flag": "RECENT_TOP"
+        }
+      ],
+      "relevance_bars": 20,
+      "note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。"
+    },
+    "AMZN": {
+      "checked": true,
+      "live_top": null,
+      "live_top_count": 0,
+      "retired_top": 20,
+      "counts": {
+        "REGULAR_BEARISH": 12,
+        "REGULAR_BULLISH": 6,
+        "HIDDEN_BEARISH": 8,
+        "HIDDEN_BULLISH": 8
+      },
+      "most_recent_top": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "pressure": "TOP",
+          "oscillator": "MACD_HISTOGRAM",
+          "first_anchor_at": "2025-05-13T20:00:00+00:00",
+          "second_anchor_at": "2025-06-11T20:00:00+00:00",
+          "first_price": "214.84",
+          "second_price": "218.4",
+          "first_oscillator": "3.5333846094",
+          "second_oscillator": "0.8029260342",
+          "bars_since_second_anchor": 316,
+          "signal_at": "2025-06-16T20:00:00+00:00",
+          "retired": true,
+          "recent": false,
+          "mattered": false,
+          "flag": "RECENT_TOP"
+        }
+      ],
+      "relevance_bars": 20,
+      "note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。"
+    },
+    "MSFT": {
+      "checked": true,
+      "live_top": "2 个未失效顶背离（MACD_HISTOGRAM+RSI_LINE），11 根前，压制位 517.78",
+      "live_top_count": 2,
+      "retired_top": 14,
+      "counts": {
+        "REGULAR_BULLISH": 4,
+        "HIDDEN_BEARISH": 7,
+        "HIDDEN_BULLISH": 12,
+        "REGULAR_BEARISH": 9
+      },
+      "most_recent_top": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "pressure": "TOP",
+          "oscillator": "MACD_HISTOGRAM",
+          "first_anchor_at": "2026-08-10T20:00:00+00:00",
+          "second_anchor_at": "2026-08-28T20:00:00+00:00",
+          "first_price": "512.76",
+          "second_price": "517.78",
+          "first_oscillator": "11.9869013045",
+          "second_oscillator": "-1.0747566095",
+          "bars_since_second_anchor": 11,
+          "signal_at": "2026-09-03T20:00:00+00:00",
+          "retired": false,
+          "recent": true,
+          "mattered": true,
+          "flag": "RECENT_TOP"
+        }
+      ],
+      "relevance_bars": 20,
+      "note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。"
+    },
+    "AAPL": {
+      "checked": true,
+      "live_top": null,
+      "live_top_count": 0,
+      "retired_top": 17,
+      "counts": {
+        "REGULAR_BULLISH": 7,
+        "HIDDEN_BULLISH": 14,
+        "REGULAR_BEARISH": 12,
+        "HIDDEN_BEARISH": 6
+      },
+      "most_recent_top": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "pressure": "TOP",
+          "oscillator": "MACD_HISTOGRAM",
+          "first_anchor_at": "2026-07-17T20:00:00+00:00",
+          "second_anchor_at": "2026-07-29T20:00:00+00:00",
+          "first_price": "334.7",
+          "second_price": "344.27",
+          "first_oscillator": "3.33108158",
+          "second_oscillator": "1.3074444084",
+          "bars_since_second_anchor": 33,
+          "signal_at": "2026-08-03T20:00:00+00:00",
+          "retired": false,
+          "recent": false,
+          "mattered": false,
+          "flag": "RECENT_TOP"
+        }
+      ],
+      "relevance_bars": 20,
+      "note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。"
+    },
+    "META": {
+      "checked": true,
+      "live_top": null,
+      "live_top_count": 0,
+      "retired_top": 11,
+      "counts": {
+        "REGULAR_BEARISH": 7,
+        "REGULAR_BULLISH": 5,
+        "HIDDEN_BEARISH": 4,
+        "HIDDEN_BULLISH": 10
+      },
+      "most_recent_top": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "pressure": "TOP",
+          "oscillator": "MACD_HISTOGRAM",
+          "first_anchor_at": "2025-10-29T20:00:00+00:00",
+          "second_anchor_at": "2025-12-08T21:00:00+00:00",
+          "first_price": "757.19",
+          "second_price": "674.95",
+          "first_oscillator": "4.8911983918",
+          "second_oscillator": "10.4635262311",
+          "bars_since_second_anchor": 192,
+          "signal_at": "2025-12-11T21:00:00+00:00",
+          "retired": true,
+          "recent": false,
+          "mattered": false,
+          "flag": "RECENT_TOP"
+        }
+      ],
+      "relevance_bars": 20,
+      "note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。"
+    },
+    "GOOG": {
+      "checked": true,
+      "live_top": null,
+      "live_top_count": 0,
+      "retired_top": 19,
+      "counts": {
+        "REGULAR_BEARISH": 11,
+        "HIDDEN_BULLISH": 8,
+        "HIDDEN_BEARISH": 8,
+        "REGULAR_BULLISH": 6
+      },
+      "most_recent_top": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "pressure": "TOP",
+          "oscillator": "MACD_HISTOGRAM",
+          "first_anchor_at": "2026-06-16T20:00:00+00:00",
+          "second_anchor_at": "2026-07-07T20:00:00+00:00",
+          "first_price": "373.36",
+          "second_price": "370.65",
+          "first_oscillator": "-0.8575248915",
+          "second_oscillator": "1.6107698763",
+          "bars_since_second_anchor": 49,
+          "signal_at": "2026-07-10T20:00:00+00:00",
+          "retired": true,
+          "recent": false,
+          "mattered": false,
+          "flag": "RECENT_TOP"
+        }
+      ],
+      "relevance_bars": 20,
+      "note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。"
+    },
+    "GOOGL": {
+      "checked": true,
+      "live_top": null,
+      "live_top_count": 0,
+      "retired_top": 19,
+      "counts": {
+        "REGULAR_BEARISH": 11,
+        "HIDDEN_BULLISH": 8,
+        "HIDDEN_BEARISH": 8,
+        "REGULAR_BULLISH": 5
+      },
+      "most_recent_top": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "pressure": "TOP",
+          "oscillator": "MACD_HISTOGRAM",
+          "first_anchor_at": "2026-07-07T20:00:00+00:00",
+          "second_anchor_at": "2026-07-16T20:00:00+00:00",
+          "first_price": "372.92",
+          "second_price": "375.03",
+          "first_oscillator": "1.8234416138",
+          "second_oscillator": "1.4667476089",
+          "bars_since_second_anchor": 42,
+          "signal_at": "2026-07-21T20:00:00+00:00",
+          "retired": true,
+          "recent": false,
+          "mattered": false,
+          "flag": "RECENT_TOP"
+        }
+      ],
+      "relevance_bars": 20,
+      "note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。"
+    },
+    "TSLA": {
+      "checked": true,
+      "live_top": null,
+      "live_top_count": 0,
+      "retired_top": 19,
+      "counts": {
+        "HIDDEN_BULLISH": 7,
+        "HIDDEN_BEARISH": 15,
+        "REGULAR_BEARISH": 4,
+        "REGULAR_BULLISH": 7
+      },
+      "most_recent_top": [
+        {
+          "kind": "HIDDEN_BEARISH",
+          "pressure": "TOP",
+          "oscillator": "MACD_HISTOGRAM",
+          "first_anchor_at": "2026-07-01T20:00:00+00:00",
+          "second_anchor_at": "2026-08-21T20:00:00+00:00",
+          "first_price": "432.8599",
+          "second_price": "366.5",
+          "first_oscillator": "2.7483796544",
+          "second_oscillator": "6.2294647143",
+          "bars_since_second_anchor": 16,
+          "signal_at": "2026-08-26T20:00:00+00:00",
+          "retired": true,
+          "recent": true,
+          "mattered": false,
+          "flag": "RECENT_TOP"
+        }
+      ],
+      "relevance_bars": 20,
+      "note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。"
+    }
+  },
+  "divergence_audit_note": null,
+  "closest_to_path_a": "NVDA",
+  "ranking": [
+    {
+      "outlook_id": "outlook-cb3e75b1a55e40159f2c77dc92eb7999",
+      "market": "EQUITY",
+      "symbol": "NVDA",
+      "as_of": "2026-09-15T20:00:00+00:00",
+      "primary": "A",
+      "a_weight": 44,
+      "b_weight": 34,
+      "c_weight": 22,
+      "structure_score": 76.0,
+      "momentum_score": 28.0,
+      "price": "212.17",
+      "dip_zone": [
+        "201.77",
+        "208.82"
+      ],
+      "structural_support": "197.42335",
+      "confirm_breakout": "222",
+      "sector": "Information Technology",
+      "industry_group": "Semiconductors & Semiconductor Equipment",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba",
+      "divergence_live_top": null,
+      "divergence_retired_top": 16,
+      "divergence_counts": {
+        "REGULAR_BEARISH": 12,
+        "HIDDEN_BEARISH": 5,
+        "REGULAR_BULLISH": 5,
+        "HIDDEN_BULLISH": 9
+      },
+      "divergence_note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。",
+      "divergence_error": null,
+      "divergence_checked": true
+    },
+    {
+      "outlook_id": "outlook-abf1cfee17934f6280eecfdb21f292ff",
+      "market": "EQUITY",
+      "symbol": "AMZN",
+      "as_of": "2026-09-15T20:00:00+00:00",
+      "primary": "A",
+      "a_weight": 43,
+      "b_weight": 33,
+      "c_weight": 24,
+      "structure_score": 71.0,
+      "momentum_score": 28.0,
+      "price": "248.42",
+      "dip_zone": [
+        "226.1",
+        "235.21"
+      ],
+      "structural_support": "240.02775",
+      "confirm_breakout": "257.59",
+      "sector": "Consumer Discretionary",
+      "industry_group": "Retailing",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba",
+      "divergence_live_top": null,
+      "divergence_retired_top": 20,
+      "divergence_counts": {
+        "REGULAR_BEARISH": 12,
+        "REGULAR_BULLISH": 6,
+        "HIDDEN_BEARISH": 8,
+        "HIDDEN_BULLISH": 8
+      },
+      "divergence_note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。",
+      "divergence_error": null,
+      "divergence_checked": true
+    },
+    {
+      "outlook_id": "outlook-7ee2c51aa8cc4929936b5f2fd27ba0f8",
+      "market": "EQUITY",
+      "symbol": "MSFT",
+      "as_of": "2026-09-15T20:00:00+00:00",
+      "primary": "A",
+      "a_weight": 38,
+      "b_weight": 36,
+      "c_weight": 26,
+      "structure_score": 64.0,
+      "momentum_score": 44.0,
+      "price": "497.12",
+      "dip_zone": [
+        "465.96",
+        "478.27"
+      ],
+      "structural_support": "429.94165",
+      "confirm_breakout": "509.95",
+      "sector": "Information Technology",
+      "industry_group": "Software & Services",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba",
+      "divergence_live_top": "2 个未失效顶背离（MACD_HISTOGRAM+RSI_LINE），11 根前，压制位 517.78",
+      "divergence_retired_top": 14,
+      "divergence_counts": {
+        "REGULAR_BULLISH": 4,
+        "HIDDEN_BEARISH": 7,
+        "HIDDEN_BULLISH": 12,
+        "REGULAR_BEARISH": 9
+      },
+      "divergence_note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。",
+      "divergence_error": null,
+      "divergence_checked": true
+    },
+    {
+      "outlook_id": "outlook-4430f84982104a5cb60952c08edea76a",
+      "market": "EQUITY",
+      "symbol": "AAPL",
+      "as_of": "2026-09-15T20:00:00+00:00",
+      "primary": "B",
+      "a_weight": 35,
+      "b_weight": 52,
+      "c_weight": 13,
+      "structure_score": 80.0,
+      "momentum_score": 78.0,
+      "price": "331.34",
+      "dip_zone": [
+        "319.15",
+        "326.3"
+      ],
+      "structural_support": "285.1022",
+      "confirm_breakout": "336.22",
+      "sector": "Information Technology",
+      "industry_group": "Technology Hardware & Equipment",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba",
+      "divergence_live_top": null,
+      "divergence_retired_top": 17,
+      "divergence_counts": {
+        "REGULAR_BULLISH": 7,
+        "HIDDEN_BULLISH": 14,
+        "REGULAR_BEARISH": 12,
+        "HIDDEN_BEARISH": 6
+      },
+      "divergence_note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。",
+      "divergence_error": null,
+      "divergence_checked": true
+    },
+    {
+      "outlook_id": "outlook-12b8e6df31a74788a94137b054b3da85",
+      "market": "EQUITY",
+      "symbol": "META",
+      "as_of": "2026-09-15T20:00:00+00:00",
+      "primary": "B",
+      "a_weight": 31,
+      "b_weight": 48,
+      "c_weight": 21,
+      "structure_score": 66.0,
+      "momentum_score": 78.0,
+      "price": "670.24",
+      "dip_zone": [
+        "624.8",
+        "642.14"
+      ],
+      "structural_support": "623.0271",
+      "confirm_breakout": "678.87",
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba",
+      "divergence_live_top": null,
+      "divergence_retired_top": 11,
+      "divergence_counts": {
+        "REGULAR_BEARISH": 7,
+        "REGULAR_BULLISH": 5,
+        "HIDDEN_BEARISH": 4,
+        "HIDDEN_BULLISH": 10
+      },
+      "divergence_note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。",
+      "divergence_error": null,
+      "divergence_checked": true
+    },
+    {
+      "outlook_id": "outlook-fc476f24608d436a9b4747ef89bc4727",
+      "market": "EQUITY",
+      "symbol": "GOOG",
+      "as_of": "2026-09-15T20:00:00+00:00",
+      "primary": "B",
+      "a_weight": 27,
+      "b_weight": 44,
+      "c_weight": 29,
+      "structure_score": 52.0,
+      "momentum_score": 78.0,
+      "price": "341.43",
+      "dip_zone": [
+        "330.89",
+        "338.74"
+      ],
+      "structural_support": "335.39605",
+      "confirm_breakout": "346.45",
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba",
+      "divergence_live_top": null,
+      "divergence_retired_top": 19,
+      "divergence_counts": {
+        "REGULAR_BEARISH": 11,
+        "HIDDEN_BULLISH": 8,
+        "HIDDEN_BEARISH": 8,
+        "REGULAR_BULLISH": 6
+      },
+      "divergence_note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。",
+      "divergence_error": null,
+      "divergence_checked": true
+    },
+    {
+      "outlook_id": "outlook-95302598417c413192e94cf58aa36659",
+      "market": "EQUITY",
+      "symbol": "GOOGL",
+      "as_of": "2026-09-15T20:00:00+00:00",
+      "primary": "B",
+      "a_weight": 27,
+      "b_weight": 44,
+      "c_weight": 29,
+      "structure_score": 52.0,
+      "momentum_score": 78.0,
+      "price": "344.98",
+      "dip_zone": [
+        "333.23",
+        "342.1361"
+      ],
+      "structural_support": "336.651",
+      "confirm_breakout": "349.91",
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba",
+      "divergence_live_top": null,
+      "divergence_retired_top": 19,
+      "divergence_counts": {
+        "REGULAR_BEARISH": 11,
+        "HIDDEN_BULLISH": 8,
+        "HIDDEN_BEARISH": 8,
+        "REGULAR_BULLISH": 5
+      },
+      "divergence_note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。",
+      "divergence_error": null,
+      "divergence_checked": true
+    },
+    {
+      "outlook_id": "outlook-cac05abb85e24b25a513e39d14639750",
+      "market": "EQUITY",
+      "symbol": "TSLA",
+      "as_of": "2026-09-15T20:00:00+00:00",
+      "primary": "C",
+      "a_weight": 27,
+      "b_weight": 23,
+      "c_weight": 50,
+      "structure_score": 24.0,
+      "momentum_score": 44.0,
+      "price": "356.58",
+      "dip_zone": [
+        "323",
+        "326.15"
+      ],
+      "structural_support": "398.3173",
+      "confirm_breakout": "368.66",
+      "sector": "Consumer Discretionary",
+      "industry_group": "Automobiles & Components",
+      "mic": "XNAS",
+      "catalog_commit": "a174c97d3bba",
+      "divergence_live_top": null,
+      "divergence_retired_top": 19,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 7,
+        "HIDDEN_BEARISH": 15,
+        "REGULAR_BEARISH": 4,
+        "REGULAR_BULLISH": 7
+      },
+      "divergence_note": "只把「距今 ≤ relevance_bars 且第二锚未被价格突破」的顶背离算作仍有效；引擎只报已确认枢轴。",
+      "divergence_error": null,
+      "divergence_checked": true
+    }
+  ],
+  "reports": [
+    {
+      "rules_version": "btc-outlook-rules-v1",
+      "generated_at": "2026-09-16T08:02:19.383843Z",
+      "market": "EQUITY",
+      "symbol": "AAPL",
+      "instrument_id": "US:AAPL",
+      "data": {
+        "instrument": "US:AAPL",
+        "market": "EQUITY",
+        "refreshed": true,
+        "as_of_days_ago": 0,
+        "bars": {
+          "count": 1300,
+          "first": "2021-07-13T13:30:00+00:00",
+          "last": "2026-09-15T20:00:00+00:00"
+        },
+        "note": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+        "intraday_inputs": "omitted by design: equity ranking uses confirmed daily bars only",
+        "context": null
+      },
+      "structure_score": 80.0,
+      "momentum_score": 78.0,
+      "structure_hits": [
+        {
+          "rule": "price>sma200",
+          "points": 12.0,
+          "detail": "price=331.34 sma200=285.1"
+        },
+        {
+          "rule": "sma200_rising",
+          "points": 6.0,
+          "detail": "sma200=285.1 prev20=280.17"
+        },
+        {
+          "rule": "price>sma50",
+          "points": 6.0,
+          "detail": "price=331.34 sma50=318.7"
+        },
+        {
+          "rule": "daily_DI+>-DI",
+          "points": 6.0,
+          "detail": "+DI=29.94 -DI=21.71"
+        },
+        {
+          "rule": "weekly_DI+>-DI",
+          "points": 5.0,
+          "detail": "+DI=24.87 -DI=13.98"
+        },
+        {
+          "rule": "weekly_macd_hist>0",
+          "points": 5.0,
+          "detail": "hist=0.2"
+        },
+        {
+          "rule": "weekly_hist_improving",
+          "points": 0.0,
+          "detail": "improving=False"
+        },
+        {
+          "rule": "cycle_bottom_window",
+          "points": 0.0,
+          "detail": "equity: four-year cycle rule disabled; days_since_ath=49"
+        },
+        {
+          "rule": "study_63d_median>5%",
+          "points": 0.0,
+          "detail": "median=None n=None"
+        },
+        {
+          "rule": "study_63d_positive>60%",
+          "points": 0.0,
+          "detail": "positive_share=None"
+        },
+        {
+          "rule": "weekly_trend_not_down",
+          "points": 0.0,
+          "detail": "weekly_trend=UPTREND"
+        },
+        {
+          "rule": "monthly_trend_not_down",
+          "points": 0.0,
+          "detail": "monthly_trend=UPTREND"
+        },
+        {
+          "rule": "monthly_hist_not_negative",
+          "points": 0.0,
+          "detail": "monthly_hist=4.56"
+        },
+        {
+          "rule": "monthly_rsi_not_below_50",
+          "points": 0.0,
+          "detail": "monthly_rsi=68.11"
+        },
+        {
+          "rule": "365d_not_below_-20%",
+          "points": 0.0,
+          "detail": "ret365=0.4937"
+        }
+      ],
+      "momentum_hits": [
+        {
+          "rule": "price>sma20",
+          "points": 8.0,
+          "detail": "price=331.34 sma20=319.27"
+        },
+        {
+          "rule": "daily_macd_hist>0",
+          "points": 8.0,
+          "detail": "hist=1.59"
+        },
+        {
+          "rule": "daily_hist_improving",
+          "points": 6.0,
+          "detail": "improving=True"
+        },
+        {
+          "rule": "return_7d>0",
+          "points": 6.0,
+          "detail": "ret7=0.0095"
+        },
+        {
+          "rule": "h4_DI+>-DI",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "h4_rsi>50",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "price>h4_vpvr_val",
+          "points": 0.0,
+          "detail": "4h VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_poc",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "h1_and_m15_uptrend",
+          "points": 0.0,
+          "detail": "1h/15m input missing; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_vah",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        }
+      ],
+      "paths": [
+        {
+          "key": "A",
+          "label": "A 先下后上（回踩后再上）",
+          "score": 53.9,
+          "weight_pct": 35
+        },
+        {
+          "key": "B",
+          "label": "B 直接上（不回踩）",
+          "score": 79.2,
+          "weight_pct": 52
+        },
+        {
+          "key": "C",
+          "label": "C 破位（结构失效）",
+          "score": 20.5,
+          "weight_pct": 13
+        }
+      ],
+      "primary": "B",
+      "levels": {
+        "price": "331.34",
+        "confirm_reclaim": "319.271",
+        "confirm_breakout": "336.22",
+        "dip_zone_low": "319.15",
+        "dip_zone_high": "326.3",
+        "structural_support": "285.1022",
+        "swing_low_20d": "305.74",
+        "target_1": "336.22",
+        "target_2": "254.6955",
+        "cycle_floor": null
+      },
+      "triggers": {
+        "confirm_reclaim": "日线收盘 > 319.271（SMA20）视为动量修复",
+        "confirm_breakout": "日线收盘 > 336.22（近 3 日高点）→ 回踩步骤作废，转 B",
+        "dip_zone": "回踩区 319.15–326.3（daily_BULLISH_FVG fvg-alpaca-sip-aapl-2026-09-11）",
+        "invalidate_A": "日线收盘 < 285.1022（SMA200）→ A 作废",
+        "warning_weekly": "周线收盘 < 305.74 且两周收不回 → 转 C",
+        "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+      },
+      "narrative": "主判断：B 直接上（不回踩）（规则权重 52%）\n一句话：不回踩直接上攻：日线收上 336.22 打开 336.22→254.6955；破 285.1022 认错。\n结构分 80/100，动量分 78/100（50 为中性）\n确认：日线收盘 > 319.271（SMA20）→ 再看 336.22；收上后者，回踩步骤作废。\n回踩区：319.15–326.3（daily_BULLISH_FVG fvg-alpaca-sip-aapl-2026-09-11）\n目标：336.22 → 254.6955\n作废：日线收盘 < 285.1022（SMA200）；周线 < 305.74 两周收不回转 C。\n回撤：距前高 49 天，自前高回撤 -2.5%，顶后最低 299.74。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+      "limitations": [
+        "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+        "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+        "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+        "不是投资建议，不保证盈利。",
+        "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+        "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+      ]
+    },
+    {
+      "rules_version": "btc-outlook-rules-v1",
+      "generated_at": "2026-09-16T08:02:20.761406Z",
+      "market": "EQUITY",
+      "symbol": "MSFT",
+      "instrument_id": "US:MSFT",
+      "data": {
+        "instrument": "US:MSFT",
+        "market": "EQUITY",
+        "refreshed": true,
+        "as_of_days_ago": 0,
+        "bars": {
+          "count": 1300,
+          "first": "2021-07-13T13:30:00+00:00",
+          "last": "2026-09-15T20:00:00+00:00"
+        },
+        "note": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+        "intraday_inputs": "omitted by design: equity ranking uses confirmed daily bars only",
+        "context": null
+      },
+      "structure_score": 64.0,
+      "momentum_score": 44.0,
+      "structure_hits": [
+        {
+          "rule": "price>sma200",
+          "points": 12.0,
+          "detail": "price=497.12 sma200=429.94"
+        },
+        {
+          "rule": "sma200_rising",
+          "points": -6.0,
+          "detail": "sma200=429.94 prev20=430.21"
+        },
+        {
+          "rule": "price>sma50",
+          "points": 6.0,
+          "detail": "price=497.12 sma50=457.65"
+        },
+        {
+          "rule": "daily_DI+>-DI",
+          "points": 6.0,
+          "detail": "+DI=35.01 -DI=17.28"
+        },
+        {
+          "rule": "weekly_DI+>-DI",
+          "points": 5.0,
+          "detail": "+DI=33.22 -DI=16.99"
+        },
+        {
+          "rule": "weekly_macd_hist>0",
+          "points": 5.0,
+          "detail": "hist=12.64"
+        },
+        {
+          "rule": "weekly_hist_improving",
+          "points": 4.0,
+          "detail": "improving=True"
+        },
+        {
+          "rule": "cycle_bottom_window",
+          "points": 0.0,
+          "detail": "equity: four-year cycle rule disabled; days_since_ath=322"
+        },
+        {
+          "rule": "study_63d_median>5%",
+          "points": 0.0,
+          "detail": "median=None n=None"
+        },
+        {
+          "rule": "study_63d_positive>60%",
+          "points": 0.0,
+          "detail": "positive_share=None"
+        },
+        {
+          "rule": "weekly_trend_not_down",
+          "points": 0.0,
+          "detail": "weekly_trend=RANGE_OR_MIXED"
+        },
+        {
+          "rule": "monthly_trend_not_down",
+          "points": 0.0,
+          "detail": "monthly_trend=RANGE_OR_MIXED"
+        },
+        {
+          "rule": "monthly_hist_not_negative",
+          "points": -8.0,
+          "detail": "monthly_hist=-3.33"
+        },
+        {
+          "rule": "monthly_rsi_not_below_50",
+          "points": 0.0,
+          "detail": "monthly_rsi=58.85"
+        },
+        {
+          "rule": "365d_not_below_-20%",
+          "points": 0.0,
+          "detail": "ret365=0.316"
+        }
+      ],
+      "momentum_hits": [
+        {
+          "rule": "price>sma20",
+          "points": 8.0,
+          "detail": "price=497.12 sma20=495.68"
+        },
+        {
+          "rule": "daily_macd_hist>0",
+          "points": -8.0,
+          "detail": "hist=-3.1"
+        },
+        {
+          "rule": "daily_hist_improving",
+          "points": 0.0,
+          "detail": "improving=False"
+        },
+        {
+          "rule": "return_7d>0",
+          "points": -6.0,
+          "detail": "ret7=-0.0255"
+        },
+        {
+          "rule": "h4_DI+>-DI",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "h4_rsi>50",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "price>h4_vpvr_val",
+          "points": 0.0,
+          "detail": "4h VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_poc",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "h1_and_m15_uptrend",
+          "points": 0.0,
+          "detail": "1h/15m input missing; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_vah",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        }
+      ],
+      "paths": [
+        {
+          "key": "A",
+          "label": "A 先下后上（回踩后再上）",
+          "score": 60.4,
+          "weight_pct": 38
+        },
+        {
+          "key": "B",
+          "label": "B 直接上（不回踩）",
+          "score": 56.0,
+          "weight_pct": 36
+        },
+        {
+          "key": "C",
+          "label": "C 破位（结构失效）",
+          "score": 41.0,
+          "weight_pct": 26
+        }
+      ],
+      "primary": "A",
+      "levels": {
+        "price": "497.12",
+        "confirm_reclaim": "495.6825",
+        "confirm_breakout": "509.95",
+        "dip_zone_low": "465.96",
+        "dip_zone_high": "478.27",
+        "structural_support": "429.94165",
+        "swing_low_20d": "476.25",
+        "target_1": "517.78",
+        "target_2": "446.295",
+        "cycle_floor": null
+      },
+      "triggers": {
+        "confirm_reclaim": "日线收盘 > 495.6825（SMA20）视为动量修复",
+        "confirm_breakout": "日线收盘 > 509.95（近 3 日高点）→ 回踩步骤作废，转 B",
+        "dip_zone": "回踩区 465.96–478.27（daily_BULLISH_FVG fvg-alpaca-sip-msft-2026-08-04）",
+        "invalidate_A": "日线收盘 < 429.94165（SMA200）→ A 作废",
+        "warning_weekly": "周线收盘 < 476.25 且两周收不回 → 转 C",
+        "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+      },
+      "narrative": "主判断：A 先下后上（回踩后再上）（规则权重 38%）\n一句话：先回 465.96–478.27 一次，再上 517.78→446.295；日线收盘破 429.94165 认错。\n结构分 64/100，动量分 44/100（50 为中性）\n确认：日线收盘 > 495.6825（SMA20）→ 再看 509.95；收上后者，回踩步骤作废。\n回踩区：465.96–478.27（daily_BULLISH_FVG fvg-alpaca-sip-msft-2026-08-04）\n目标：517.78 → 446.295\n作废：日线收盘 < 429.94165（SMA200）；周线 < 476.25 两周收不回转 C。\n回撤：距前高 322 天，自前高回撤 -7.5%，顶后最低 348.54。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+      "limitations": [
+        "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+        "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+        "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+        "不是投资建议，不保证盈利。",
+        "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+        "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+      ]
+    },
+    {
+      "rules_version": "btc-outlook-rules-v1",
+      "generated_at": "2026-09-16T08:02:22.233870Z",
+      "market": "EQUITY",
+      "symbol": "GOOGL",
+      "instrument_id": "US:GOOGL",
+      "data": {
+        "instrument": "US:GOOGL",
+        "market": "EQUITY",
+        "refreshed": true,
+        "as_of_days_ago": 0,
+        "bars": {
+          "count": 1300,
+          "first": "2021-07-13T13:30:00+00:00",
+          "last": "2026-09-15T20:00:00+00:00"
+        },
+        "note": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+        "intraday_inputs": "omitted by design: equity ranking uses confirmed daily bars only",
+        "context": null
+      },
+      "structure_score": 52.0,
+      "momentum_score": 78.0,
+      "structure_hits": [
+        {
+          "rule": "price>sma200",
+          "points": 12.0,
+          "detail": "price=344.98 sma200=336.65"
+        },
+        {
+          "rule": "sma200_rising",
+          "points": 6.0,
+          "detail": "sma200=336.65 prev20=331.28"
+        },
+        {
+          "rule": "price>sma50",
+          "points": -6.0,
+          "detail": "price=344.98 sma50=346.35"
+        },
+        {
+          "rule": "daily_DI+>-DI",
+          "points": 6.0,
+          "detail": "+DI=30.84 -DI=21.44"
+        },
+        {
+          "rule": "weekly_DI+>-DI",
+          "points": 0.0,
+          "detail": "+DI=20.35 -DI=25.0"
+        },
+        {
+          "rule": "weekly_macd_hist>0",
+          "points": 0.0,
+          "detail": "hist=-4.85"
+        },
+        {
+          "rule": "weekly_hist_improving",
+          "points": 0.0,
+          "detail": "improving=False"
+        },
+        {
+          "rule": "cycle_bottom_window",
+          "points": 0.0,
+          "detail": "equity: four-year cycle rule disabled; days_since_ath=125"
+        },
+        {
+          "rule": "study_63d_median>5%",
+          "points": 0.0,
+          "detail": "median=None n=None"
+        },
+        {
+          "rule": "study_63d_positive>60%",
+          "points": 0.0,
+          "detail": "positive_share=None"
+        },
+        {
+          "rule": "weekly_trend_not_down",
+          "points": -6.0,
+          "detail": "weekly_trend=DOWNTREND"
+        },
+        {
+          "rule": "monthly_trend_not_down",
+          "points": 0.0,
+          "detail": "monthly_trend=UPTREND"
+        },
+        {
+          "rule": "monthly_hist_not_negative",
+          "points": 0.0,
+          "detail": "monthly_hist=5.9"
+        },
+        {
+          "rule": "monthly_rsi_not_below_50",
+          "points": 0.0,
+          "detail": "monthly_rsi=64.54"
+        },
+        {
+          "rule": "365d_not_below_-20%",
+          "points": 0.0,
+          "detail": "ret365=1.2067"
+        }
+      ],
+      "momentum_hits": [
+        {
+          "rule": "price>sma20",
+          "points": 8.0,
+          "detail": "price=344.98 sma20=341.14"
+        },
+        {
+          "rule": "daily_macd_hist>0",
+          "points": 8.0,
+          "detail": "hist=0.93"
+        },
+        {
+          "rule": "daily_hist_improving",
+          "points": 6.0,
+          "detail": "improving=True"
+        },
+        {
+          "rule": "return_7d>0",
+          "points": 6.0,
+          "detail": "ret7=0.0079"
+        },
+        {
+          "rule": "h4_DI+>-DI",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "h4_rsi>50",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "price>h4_vpvr_val",
+          "points": 0.0,
+          "detail": "4h VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_poc",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "h1_and_m15_uptrend",
+          "points": 0.0,
+          "detail": "1h/15m input missing; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_vah",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        }
+      ],
+      "paths": [
+        {
+          "key": "A",
+          "label": "A 先下后上（回踩后再上）",
+          "score": 38.5,
+          "weight_pct": 27
+        },
+        {
+          "key": "B",
+          "label": "B 直接上（不回踩）",
+          "score": 62.4,
+          "weight_pct": 44
+        },
+        {
+          "key": "C",
+          "label": "C 破位（结构失效）",
+          "score": 41.5,
+          "weight_pct": 29
+        }
+      ],
+      "primary": "B",
+      "levels": {
+        "price": "344.98",
+        "confirm_reclaim": "341.136",
+        "confirm_breakout": "349.91",
+        "dip_zone_low": "333.23",
+        "dip_zone_high": "342.1361",
+        "structural_support": "336.651",
+        "swing_low_20d": "327.74",
+        "target_1": "384.23",
+        "target_2": "267.038",
+        "cycle_floor": null
+      },
+      "triggers": {
+        "confirm_reclaim": "日线收盘 > 341.136（SMA20）视为动量修复",
+        "confirm_breakout": "日线收盘 > 349.91（近 3 日高点）→ 回踩步骤作废，转 B",
+        "dip_zone": "回踩区 333.23–342.1361（daily_BULLISH_FVG fvg-alpaca-sip-googl-2026-09-14）",
+        "invalidate_A": "日线收盘 < 336.651（SMA200）→ A 作废",
+        "warning_weekly": "周线收盘 < 327.74 且两周收不回 → 转 C",
+        "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+      },
+      "narrative": "主判断：B 直接上（不回踩）（规则权重 44%）\n一句话：不回踩直接上攻：日线收上 349.91 打开 384.23→267.038；破 336.651 认错。\n结构分 52/100，动量分 78/100（50 为中性）\n确认：日线收盘 > 341.136（SMA20）→ 再看 349.91；收上后者，回踩步骤作废。\n回踩区：333.23–342.1361（daily_BULLISH_FVG fvg-alpaca-sip-googl-2026-09-14）\n目标：384.23 → 267.038\n作废：日线收盘 < 336.651（SMA200）；周线 < 327.74 两周收不回转 C。\n回撤：距前高 125 天，自前高回撤 -14.2%，顶后最低 314.7。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+      "limitations": [
+        "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+        "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+        "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+        "不是投资建议，不保证盈利。",
+        "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+        "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+      ]
+    },
+    {
+      "rules_version": "btc-outlook-rules-v1",
+      "generated_at": "2026-09-16T08:02:23.693441Z",
+      "market": "EQUITY",
+      "symbol": "AMZN",
+      "instrument_id": "US:AMZN",
+      "data": {
+        "instrument": "US:AMZN",
+        "market": "EQUITY",
+        "refreshed": true,
+        "as_of_days_ago": 0,
+        "bars": {
+          "count": 1300,
+          "first": "2021-07-13T13:30:00+00:00",
+          "last": "2026-09-15T20:00:00+00:00"
+        },
+        "note": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+        "intraday_inputs": "omitted by design: equity ranking uses confirmed daily bars only",
+        "context": null
+      },
+      "structure_score": 71.0,
+      "momentum_score": 28.0,
+      "structure_hits": [
+        {
+          "rule": "price>sma200",
+          "points": 12.0,
+          "detail": "price=248.42 sma200=240.03"
+        },
+        {
+          "rule": "sma200_rising",
+          "points": 6.0,
+          "detail": "sma200=240.03 prev20=237.86"
+        },
+        {
+          "rule": "price>sma50",
+          "points": -6.0,
+          "detail": "price=248.42 sma50=255.56"
+        },
+        {
+          "rule": "daily_DI+>-DI",
+          "points": 0.0,
+          "detail": "+DI=23.31 -DI=25.46"
+        },
+        {
+          "rule": "weekly_DI+>-DI",
+          "points": 5.0,
+          "detail": "+DI=22.65 -DI=22.63"
+        },
+        {
+          "rule": "weekly_macd_hist>0",
+          "points": 0.0,
+          "detail": "hist=-0.04"
+        },
+        {
+          "rule": "weekly_hist_improving",
+          "points": 4.0,
+          "detail": "improving=True"
+        },
+        {
+          "rule": "cycle_bottom_window",
+          "points": 0.0,
+          "detail": "equity: four-year cycle rule disabled; days_since_ath=43"
+        },
+        {
+          "rule": "study_63d_median>5%",
+          "points": 6.0,
+          "detail": "median=0.1096 n=72"
+        },
+        {
+          "rule": "study_63d_positive>60%",
+          "points": 4.0,
+          "detail": "positive_share=0.819"
+        },
+        {
+          "rule": "weekly_trend_not_down",
+          "points": 0.0,
+          "detail": "weekly_trend=UPTREND"
+        },
+        {
+          "rule": "monthly_trend_not_down",
+          "points": 0.0,
+          "detail": "monthly_trend=RANGE_OR_MIXED"
+        },
+        {
+          "rule": "monthly_hist_not_negative",
+          "points": 0.0,
+          "detail": "monthly_hist=1.42"
+        },
+        {
+          "rule": "monthly_rsi_not_below_50",
+          "points": 0.0,
+          "detail": "monthly_rsi=58.76"
+        },
+        {
+          "rule": "365d_not_below_-20%",
+          "points": 0.0,
+          "detail": "ret365=0.2927"
+        }
+      ],
+      "momentum_hits": [
+        {
+          "rule": "price>sma20",
+          "points": -8.0,
+          "detail": "price=248.42 sma20=257.86"
+        },
+        {
+          "rule": "daily_macd_hist>0",
+          "points": -8.0,
+          "detail": "hist=-1.3"
+        },
+        {
+          "rule": "daily_hist_improving",
+          "points": 0.0,
+          "detail": "improving=False"
+        },
+        {
+          "rule": "return_7d>0",
+          "points": -6.0,
+          "detail": "ret7=-0.0405"
+        },
+        {
+          "rule": "h4_DI+>-DI",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "h4_rsi>50",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "price>h4_vpvr_val",
+          "points": 0.0,
+          "detail": "4h VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_poc",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "h1_and_m15_uptrend",
+          "points": 0.0,
+          "detail": "1h/15m input missing; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_vah",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        }
+      ],
+      "paths": [
+        {
+          "key": "A",
+          "label": "A 先下后上（回踩后再上）",
+          "score": 71.45,
+          "weight_pct": 43
+        },
+        {
+          "key": "B",
+          "label": "B 直接上（不回踩）",
+          "score": 53.8,
+          "weight_pct": 33
+        },
+        {
+          "key": "C",
+          "label": "C 破位（结构失效）",
+          "score": 39.75,
+          "weight_pct": 24
+        }
+      ],
+      "primary": "A",
+      "levels": {
+        "price": "248.42",
+        "confirm_reclaim": "257.8605",
+        "confirm_breakout": "257.59",
+        "dip_zone_low": "226.1",
+        "dip_zone_high": "235.21",
+        "structural_support": "240.02775",
+        "swing_low_20d": "247.22",
+        "target_1": "282.79",
+        "target_2": "230.147",
+        "cycle_floor": null
+      },
+      "triggers": {
+        "confirm_reclaim": "日线收盘 > 257.8605（SMA20）视为动量修复",
+        "confirm_breakout": "日线收盘 > 257.59（近 3 日高点）→ 回踩步骤作废，转 B",
+        "dip_zone": "回踩区 226.1–235.21（daily_BULLISH_FVG fvg-alpaca-sip-amzn-2026-04-10）",
+        "invalidate_A": "日线收盘 < 240.02775（SMA200）→ A 作废",
+        "warning_weekly": "周线收盘 < 247.22 且两周收不回 → 转 C",
+        "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+      },
+      "narrative": "主判断：A 先下后上（回踩后再上）（规则权重 43%）\n一句话：先回 226.1–235.21 一次，再上 282.79→230.147；日线收盘破 240.02775 认错。\n结构分 71/100，动量分 28/100（50 为中性）\n确认：日线收盘 > 257.8605（SMA20）→ 再看 257.59；收上后者，回踩步骤作废。\n回踩区：226.1–235.21（daily_BULLISH_FVG fvg-alpaca-sip-amzn-2026-04-10）\n目标：282.79 → 230.147\n作废：日线收盘 < 240.02775（SMA200）；周线 < 247.22 两周收不回转 C。\n回撤：距前高 43 天，自前高回撤 -12.5%，顶后最低 247.22。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+      "limitations": [
+        "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+        "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+        "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+        "不是投资建议，不保证盈利。",
+        "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+        "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+      ]
+    },
+    {
+      "rules_version": "btc-outlook-rules-v1",
+      "generated_at": "2026-09-16T08:02:25.265478Z",
+      "market": "EQUITY",
+      "symbol": "NVDA",
+      "instrument_id": "US:NVDA",
+      "data": {
+        "instrument": "US:NVDA",
+        "market": "EQUITY",
+        "refreshed": true,
+        "as_of_days_ago": 0,
+        "bars": {
+          "count": 1300,
+          "first": "2021-07-13T13:30:00+00:00",
+          "last": "2026-09-15T20:00:00+00:00"
+        },
+        "note": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+        "intraday_inputs": "omitted by design: equity ranking uses confirmed daily bars only",
+        "context": null
+      },
+      "structure_score": 76.0,
+      "momentum_score": 28.0,
+      "structure_hits": [
+        {
+          "rule": "price>sma200",
+          "points": 12.0,
+          "detail": "price=212.17 sma200=197.42"
+        },
+        {
+          "rule": "sma200_rising",
+          "points": 6.0,
+          "detail": "sma200=197.42 prev20=194.65"
+        },
+        {
+          "rule": "price>sma50",
+          "points": -6.0,
+          "detail": "price=212.17 sma50=213.02"
+        },
+        {
+          "rule": "daily_DI+>-DI",
+          "points": 0.0,
+          "detail": "+DI=24.47 -DI=30.52"
+        },
+        {
+          "rule": "weekly_DI+>-DI",
+          "points": 5.0,
+          "detail": "+DI=20.93 -DI=13.84"
+        },
+        {
+          "rule": "weekly_macd_hist>0",
+          "points": 5.0,
+          "detail": "hist=0.76"
+        },
+        {
+          "rule": "weekly_hist_improving",
+          "points": 4.0,
+          "detail": "improving=True"
+        },
+        {
+          "rule": "cycle_bottom_window",
+          "points": 0.0,
+          "detail": "equity: four-year cycle rule disabled; days_since_ath=124"
+        },
+        {
+          "rule": "study_63d_median>5%",
+          "points": 6.0,
+          "detail": "median=0.6601 n=17"
+        },
+        {
+          "rule": "study_63d_positive>60%",
+          "points": 4.0,
+          "detail": "positive_share=1.0"
+        },
+        {
+          "rule": "weekly_trend_not_down",
+          "points": 0.0,
+          "detail": "weekly_trend=UPTREND"
+        },
+        {
+          "rule": "monthly_trend_not_down",
+          "points": 0.0,
+          "detail": "monthly_trend=UPTREND"
+        },
+        {
+          "rule": "monthly_hist_not_negative",
+          "points": 0.0,
+          "detail": "monthly_hist=0.04"
+        },
+        {
+          "rule": "monthly_rsi_not_below_50",
+          "points": 0.0,
+          "detail": "monthly_rsi=70.54"
+        },
+        {
+          "rule": "365d_not_below_-20%",
+          "points": 0.0,
+          "detail": "ret365=0.9311"
+        }
+      ],
+      "momentum_hits": [
+        {
+          "rule": "price>sma20",
+          "points": -8.0,
+          "detail": "price=212.17 sma20=218.61"
+        },
+        {
+          "rule": "daily_macd_hist>0",
+          "points": -8.0,
+          "detail": "hist=-1.54"
+        },
+        {
+          "rule": "daily_hist_improving",
+          "points": 0.0,
+          "detail": "improving=False"
+        },
+        {
+          "rule": "return_7d>0",
+          "points": -6.0,
+          "detail": "ret7=-0.0702"
+        },
+        {
+          "rule": "h4_DI+>-DI",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "h4_rsi>50",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "price>h4_vpvr_val",
+          "points": 0.0,
+          "detail": "4h VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_poc",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "h1_and_m15_uptrend",
+          "points": 0.0,
+          "detail": "1h/15m input missing; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_vah",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        }
+      ],
+      "paths": [
+        {
+          "key": "A",
+          "label": "A 先下后上（回踩后再上）",
+          "score": 74.2,
+          "weight_pct": 44
+        },
+        {
+          "key": "B",
+          "label": "B 直接上（不回踩）",
+          "score": 56.8,
+          "weight_pct": 34
+        },
+        {
+          "key": "C",
+          "label": "C 破位（结构失效）",
+          "score": 36.0,
+          "weight_pct": 22
+        }
+      ],
+      "primary": "A",
+      "levels": {
+        "price": "212.17",
+        "confirm_reclaim": "218.6145",
+        "confirm_breakout": "222",
+        "dip_zone_low": "201.77",
+        "dip_zone_high": "208.82",
+        "structural_support": "197.42335",
+        "swing_low_20d": "207.02",
+        "target_1": "234.5",
+        "target_2": "171.381",
+        "cycle_floor": null
+      },
+      "triggers": {
+        "confirm_reclaim": "日线收盘 > 218.6145（SMA20）视为动量修复",
+        "confirm_breakout": "日线收盘 > 222（近 3 日高点）→ 回踩步骤作废，转 B",
+        "dip_zone": "回踩区 201.77–208.82（daily_BULLISH_FVG fvg-alpaca-sip-nvda-2026-08-04）",
+        "invalidate_A": "日线收盘 < 197.42335（SMA200）→ A 作废",
+        "warning_weekly": "周线收盘 < 207.02 且两周收不回 → 转 C",
+        "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+      },
+      "narrative": "主判断：A 先下后上（回踩后再上）（规则权重 44%）\n一句话：先回 201.77–208.82 一次，再上 234.5→171.381；日线收盘破 197.42335 认错。\n结构分 76/100，动量分 28/100（50 为中性）\n确认：日线收盘 > 218.6145（SMA20）→ 再看 222；收上后者，回踩步骤作废。\n回踩区：201.77–208.82（daily_BULLISH_FVG fvg-alpaca-sip-nvda-2026-08-04）\n目标：234.5 → 171.381\n作废：日线收盘 < 197.42335（SMA200）；周线 < 207.02 两周收不回转 C。\n回撤：距前高 124 天，自前高回撤 -9.8%，顶后最低 189.59。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+      "limitations": [
+        "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+        "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+        "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+        "不是投资建议，不保证盈利。",
+        "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+        "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+      ]
+    },
+    {
+      "rules_version": "btc-outlook-rules-v1",
+      "generated_at": "2026-09-16T08:02:26.743636Z",
+      "market": "EQUITY",
+      "symbol": "META",
+      "instrument_id": "US:META",
+      "data": {
+        "instrument": "US:META",
+        "market": "EQUITY",
+        "refreshed": true,
+        "as_of_days_ago": 0,
+        "bars": {
+          "count": 1300,
+          "first": "2021-07-13T13:30:00+00:00",
+          "last": "2026-09-15T20:00:00+00:00"
+        },
+        "note": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+        "intraday_inputs": "omitted by design: equity ranking uses confirmed daily bars only",
+        "context": null
+      },
+      "structure_score": 66.0,
+      "momentum_score": 78.0,
+      "structure_hits": [
+        {
+          "rule": "price>sma200",
+          "points": 12.0,
+          "detail": "price=670.24 sma200=623.03"
+        },
+        {
+          "rule": "sma200_rising",
+          "points": -6.0,
+          "detail": "sma200=623.03 prev20=625.92"
+        },
+        {
+          "rule": "price>sma50",
+          "points": 6.0,
+          "detail": "price=670.24 sma50=603.96"
+        },
+        {
+          "rule": "daily_DI+>-DI",
+          "points": 6.0,
+          "detail": "+DI=33.86 -DI=12.32"
+        },
+        {
+          "rule": "weekly_DI+>-DI",
+          "points": 5.0,
+          "detail": "+DI=24.6 -DI=23.05"
+        },
+        {
+          "rule": "weekly_macd_hist>0",
+          "points": 5.0,
+          "detail": "hist=5.35"
+        },
+        {
+          "rule": "weekly_hist_improving",
+          "points": 0.0,
+          "detail": "improving=False"
+        },
+        {
+          "rule": "cycle_bottom_window",
+          "points": 0.0,
+          "detail": "equity: four-year cycle rule disabled; days_since_ath=399"
+        },
+        {
+          "rule": "study_63d_median>5%",
+          "points": 6.0,
+          "detail": "median=0.2641 n=66"
+        },
+        {
+          "rule": "study_63d_positive>60%",
+          "points": 4.0,
+          "detail": "positive_share=1.0"
+        },
+        {
+          "rule": "weekly_trend_not_down",
+          "points": 0.0,
+          "detail": "weekly_trend=RANGE_OR_MIXED"
+        },
+        {
+          "rule": "monthly_trend_not_down",
+          "points": 0.0,
+          "detail": "monthly_trend=RANGE_OR_MIXED"
+        },
+        {
+          "rule": "monthly_hist_not_negative",
+          "points": -8.0,
+          "detail": "monthly_hist=-25.99"
+        },
+        {
+          "rule": "monthly_rsi_not_below_50",
+          "points": -4.0,
+          "detail": "monthly_rsi=48.72"
+        },
+        {
+          "rule": "365d_not_below_-20%",
+          "points": 0.0,
+          "detail": "ret365=0.1484"
+        }
+      ],
+      "momentum_hits": [
+        {
+          "rule": "price>sma20",
+          "points": 8.0,
+          "detail": "price=670.24 sma20=595.32"
+        },
+        {
+          "rule": "daily_macd_hist>0",
+          "points": 8.0,
+          "detail": "hist=10.44"
+        },
+        {
+          "rule": "daily_hist_improving",
+          "points": 6.0,
+          "detail": "improving=True"
+        },
+        {
+          "rule": "return_7d>0",
+          "points": 6.0,
+          "detail": "ret7=0.0975"
+        },
+        {
+          "rule": "h4_DI+>-DI",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "h4_rsi>50",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "price>h4_vpvr_val",
+          "points": 0.0,
+          "detail": "4h VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_poc",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "h1_and_m15_uptrend",
+          "points": 0.0,
+          "detail": "1h/15m input missing; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_vah",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        }
+      ],
+      "paths": [
+        {
+          "key": "A",
+          "label": "A 先下后上（回踩后再上）",
+          "score": 46.2,
+          "weight_pct": 31
+        },
+        {
+          "key": "B",
+          "label": "B 直接上（不回踩）",
+          "score": 70.8,
+          "weight_pct": 48
+        },
+        {
+          "key": "C",
+          "label": "C 破位（结构失效）",
+          "score": 31.0,
+          "weight_pct": 21
+        }
+      ],
+      "primary": "B",
+      "levels": {
+        "price": "670.24",
+        "confirm_reclaim": "595.318",
+        "confirm_breakout": "678.87",
+        "dip_zone_low": "624.8",
+        "dip_zone_high": "642.14",
+        "structural_support": "623.0271",
+        "swing_low_20d": "537.27",
+        "target_1": "678.87",
+        "target_2": "645.653",
+        "cycle_floor": null
+      },
+      "triggers": {
+        "confirm_reclaim": "日线收盘 > 595.318（SMA20）视为动量修复",
+        "confirm_breakout": "日线收盘 > 678.87（近 3 日高点）→ 回踩步骤作废，转 B",
+        "dip_zone": "回踩区 624.8–642.14（daily_BULLISH_FVG fvg-alpaca-sip-meta-2026-09-10）",
+        "invalidate_A": "日线收盘 < 623.0271（SMA200）→ A 作废",
+        "warning_weekly": "周线收盘 < 537.27 且两周收不回 → 转 C",
+        "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+      },
+      "narrative": "主判断：B 直接上（不回踩）（规则权重 48%）\n一句话：不回踩直接上攻：日线收上 678.87 打开 678.87→645.653；破 623.0271 认错。\n结构分 66/100，动量分 78/100（50 为中性）\n确认：日线收盘 > 595.318（SMA20）→ 再看 678.87；收上后者，回踩步骤作废。\n回踩区：624.8–642.14（daily_BULLISH_FVG fvg-alpaca-sip-meta-2026-09-10）\n目标：678.87 → 645.653\n作废：日线收盘 < 623.0271（SMA200）；周线 < 537.27 两周收不回转 C。\n回撤：距前高 399 天，自前高回撤 -14.9%，顶后最低 519.78。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+      "limitations": [
+        "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+        "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+        "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+        "不是投资建议，不保证盈利。",
+        "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+        "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+      ]
+    },
+    {
+      "rules_version": "btc-outlook-rules-v1",
+      "generated_at": "2026-09-16T08:02:27.997661Z",
+      "market": "EQUITY",
+      "symbol": "TSLA",
+      "instrument_id": "US:TSLA",
+      "data": {
+        "instrument": "US:TSLA",
+        "market": "EQUITY",
+        "refreshed": true,
+        "as_of_days_ago": 0,
+        "bars": {
+          "count": 1300,
+          "first": "2021-07-13T13:30:00+00:00",
+          "last": "2026-09-15T20:00:00+00:00"
+        },
+        "note": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+        "intraday_inputs": "omitted by design: equity ranking uses confirmed daily bars only",
+        "context": null
+      },
+      "structure_score": 24.0,
+      "momentum_score": 44.0,
+      "structure_hits": [
+        {
+          "rule": "price>sma200",
+          "points": -12.0,
+          "detail": "price=356.58 sma200=398.32"
+        },
+        {
+          "rule": "sma200_rising",
+          "points": -6.0,
+          "detail": "sma200=398.32 prev20=405.47"
+        },
+        {
+          "rule": "price>sma50",
+          "points": 6.0,
+          "detail": "price=356.58 sma50=352.54"
+        },
+        {
+          "rule": "daily_DI+>-DI",
+          "points": 6.0,
+          "detail": "+DI=25.49 -DI=20.85"
+        },
+        {
+          "rule": "weekly_DI+>-DI",
+          "points": 0.0,
+          "detail": "+DI=21.66 -DI=22.75"
+        },
+        {
+          "rule": "weekly_macd_hist>0",
+          "points": 0.0,
+          "detail": "hist=-1.11"
+        },
+        {
+          "rule": "weekly_hist_improving",
+          "points": 4.0,
+          "detail": "improving=True"
+        },
+        {
+          "rule": "cycle_bottom_window",
+          "points": 0.0,
+          "detail": "equity: four-year cycle rule disabled; days_since_ath=272"
+        },
+        {
+          "rule": "study_63d_median>5%",
+          "points": 0.0,
+          "detail": "median=-0.1047 n=126"
+        },
+        {
+          "rule": "study_63d_positive>60%",
+          "points": 0.0,
+          "detail": "positive_share=0.278"
+        },
+        {
+          "rule": "weekly_trend_not_down",
+          "points": -6.0,
+          "detail": "weekly_trend=DOWNTREND"
+        },
+        {
+          "rule": "monthly_trend_not_down",
+          "points": 0.0,
+          "detail": "monthly_trend=RANGE_OR_MIXED"
+        },
+        {
+          "rule": "monthly_hist_not_negative",
+          "points": -8.0,
+          "detail": "monthly_hist=-8.4"
+        },
+        {
+          "rule": "monthly_rsi_not_below_50",
+          "points": 0.0,
+          "detail": "monthly_rsi=51.77"
+        },
+        {
+          "rule": "365d_not_below_-20%",
+          "points": 0.0,
+          "detail": "ret365=0.3282"
+        }
+      ],
+      "momentum_hits": [
+        {
+          "rule": "price>sma20",
+          "points": -8.0,
+          "detail": "price=356.58 sma20=356.83"
+        },
+        {
+          "rule": "daily_macd_hist>0",
+          "points": 8.0,
+          "detail": "hist=0.37"
+        },
+        {
+          "rule": "daily_hist_improving",
+          "points": 0.0,
+          "detail": "improving=False"
+        },
+        {
+          "rule": "return_7d>0",
+          "points": -6.0,
+          "detail": "ret7=-0.0526"
+        },
+        {
+          "rule": "h4_DI+>-DI",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "h4_rsi>50",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "price>h4_vpvr_val",
+          "points": 0.0,
+          "detail": "4h VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_poc",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "h1_and_m15_uptrend",
+          "points": 0.0,
+          "detail": "1h/15m input missing; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_vah",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        }
+      ],
+      "paths": [
+        {
+          "key": "A",
+          "label": "A 先下后上（回踩后再上）",
+          "score": 38.4,
+          "weight_pct": 27
+        },
+        {
+          "key": "B",
+          "label": "B 直接上（不回踩）",
+          "score": 32.0,
+          "weight_pct": 23
+        },
+        {
+          "key": "C",
+          "label": "C 破位（结构失效）",
+          "score": 71.0,
+          "weight_pct": 50
+        }
+      ],
+      "primary": "C",
+      "levels": {
+        "price": "356.58",
+        "confirm_reclaim": "356.82875",
+        "confirm_breakout": "368.66",
+        "dip_zone_low": "323",
+        "dip_zone_high": "326.15",
+        "structural_support": "398.3173",
+        "swing_low_20d": "331.12",
+        "target_1": "384.04",
+        "target_2": "372.409",
+        "cycle_floor": null
+      },
+      "triggers": {
+        "confirm_reclaim": "日线收盘 > 356.82875（SMA20）视为动量修复",
+        "confirm_breakout": "日线收盘 > 368.66（近 3 日高点）→ 回踩步骤作废，转 B",
+        "dip_zone": "回踩区 323–326.15（daily_BULLISH_FVG fvg-alpaca-sip-tsla-2026-08-10）",
+        "invalidate_A": "日线收盘 < 398.3173（SMA200）→ A 作废",
+        "warning_weekly": "周线收盘 < 331.12 且两周收不回 → 转 C",
+        "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+      },
+      "narrative": "主判断：C 破位（结构失效）（规则权重 50%）\n一句话：结构已弱：反弹到 356.82875 附近站不上则看 331.12（20 日低）；收回 368.66 才谈修复。\n结构分 24/100，动量分 44/100（50 为中性）\n确认：日线收盘 > 356.82875（SMA20）→ 再看 368.66；收上后者，回踩步骤作废。\n回踩区：323–326.15（daily_BULLISH_FVG fvg-alpaca-sip-tsla-2026-08-10）\n目标：384.04 → 372.409\n作废：日线收盘 < 398.3173（SMA200）；周线 < 331.12 两周收不回转 C。\n回撤：距前高 272 天，自前高回撤 -27.2%，顶后最低 297.38。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+      "limitations": [
+        "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+        "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+        "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+        "不是投资建议，不保证盈利。",
+        "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+        "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+      ]
+    },
+    {
+      "rules_version": "btc-outlook-rules-v1",
+      "generated_at": "2026-09-16T08:02:29.449008Z",
+      "market": "EQUITY",
+      "symbol": "GOOG",
+      "instrument_id": "US:GOOG",
+      "data": {
+        "instrument": "US:GOOG",
+        "market": "EQUITY",
+        "refreshed": true,
+        "as_of_days_ago": 0,
+        "bars": {
+          "count": 1300,
+          "first": "2021-07-13T13:30:00+00:00",
+          "last": "2026-09-15T20:00:00+00:00"
+        },
+        "note": "history_complete=false (actual start 2016-01-04 14:30:00+00:00, download_status=UNASSESSED)",
+        "intraday_inputs": "omitted by design: equity ranking uses confirmed daily bars only",
+        "context": null
+      },
+      "structure_score": 52.0,
+      "momentum_score": 78.0,
+      "structure_hits": [
+        {
+          "rule": "price>sma200",
+          "points": 12.0,
+          "detail": "price=341.43 sma200=335.4"
+        },
+        {
+          "rule": "sma200_rising",
+          "points": 6.0,
+          "detail": "sma200=335.4 prev20=330.38"
+        },
+        {
+          "rule": "price>sma50",
+          "points": -6.0,
+          "detail": "price=341.43 sma50=344.31"
+        },
+        {
+          "rule": "daily_DI+>-DI",
+          "points": 6.0,
+          "detail": "+DI=30.03 -DI=21.44"
+        },
+        {
+          "rule": "weekly_DI+>-DI",
+          "points": 0.0,
+          "detail": "+DI=19.3 -DI=24.16"
+        },
+        {
+          "rule": "weekly_macd_hist>0",
+          "points": 0.0,
+          "detail": "hist=-4.93"
+        },
+        {
+          "rule": "weekly_hist_improving",
+          "points": 0.0,
+          "detail": "improving=False"
+        },
+        {
+          "rule": "cycle_bottom_window",
+          "points": 0.0,
+          "detail": "equity: four-year cycle rule disabled; days_since_ath=125"
+        },
+        {
+          "rule": "study_63d_median>5%",
+          "points": 0.0,
+          "detail": "median=None n=None"
+        },
+        {
+          "rule": "study_63d_positive>60%",
+          "points": 0.0,
+          "detail": "positive_share=None"
+        },
+        {
+          "rule": "weekly_trend_not_down",
+          "points": -6.0,
+          "detail": "weekly_trend=DOWNTREND"
+        },
+        {
+          "rule": "monthly_trend_not_down",
+          "points": 0.0,
+          "detail": "monthly_trend=UPTREND"
+        },
+        {
+          "rule": "monthly_hist_not_negative",
+          "points": 0.0,
+          "detail": "monthly_hist=5.53"
+        },
+        {
+          "rule": "monthly_rsi_not_below_50",
+          "points": 0.0,
+          "detail": "monthly_rsi=63.59"
+        },
+        {
+          "rule": "365d_not_below_-20%",
+          "points": 0.0,
+          "detail": "ret365=1.1592"
+        }
+      ],
+      "momentum_hits": [
+        {
+          "rule": "price>sma20",
+          "points": 8.0,
+          "detail": "price=341.43 sma20=338.0"
+        },
+        {
+          "rule": "daily_macd_hist>0",
+          "points": 8.0,
+          "detail": "hist=0.97"
+        },
+        {
+          "rule": "daily_hist_improving",
+          "points": 6.0,
+          "detail": "improving=True"
+        },
+        {
+          "rule": "return_7d>0",
+          "points": 6.0,
+          "detail": "ret7=0.0076"
+        },
+        {
+          "rule": "h4_DI+>-DI",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "h4_rsi>50",
+          "points": 0.0,
+          "detail": "4h input missing; rule skipped"
+        },
+        {
+          "rule": "price>h4_vpvr_val",
+          "points": 0.0,
+          "detail": "4h VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_poc",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        },
+        {
+          "rule": "h1_and_m15_uptrend",
+          "points": 0.0,
+          "detail": "1h/15m input missing; rule skipped"
+        },
+        {
+          "rule": "price>m15_vpvr_vah",
+          "points": 0.0,
+          "detail": "15m VPVR unavailable; rule skipped"
+        }
+      ],
+      "paths": [
+        {
+          "key": "A",
+          "label": "A 先下后上（回踩后再上）",
+          "score": 38.5,
+          "weight_pct": 27
+        },
+        {
+          "key": "B",
+          "label": "B 直接上（不回踩）",
+          "score": 62.4,
+          "weight_pct": 44
+        },
+        {
+          "key": "C",
+          "label": "C 破位（结构失效）",
+          "score": 41.5,
+          "weight_pct": 29
+        }
+      ],
+      "primary": "B",
+      "levels": {
+        "price": "341.43",
+        "confirm_reclaim": "338.002",
+        "confirm_breakout": "346.45",
+        "dip_zone_low": "330.89",
+        "dip_zone_high": "338.74",
+        "structural_support": "335.39605",
+        "swing_low_20d": "325.63",
+        "target_1": "381.56",
+        "target_2": "266.9425",
+        "cycle_floor": null
+      },
+      "triggers": {
+        "confirm_reclaim": "日线收盘 > 338.002（SMA20）视为动量修复",
+        "confirm_breakout": "日线收盘 > 346.45（近 3 日高点）→ 回踩步骤作废，转 B",
+        "dip_zone": "回踩区 330.89–338.74（daily_BULLISH_FVG fvg-alpaca-sip-goog-2026-09-14）",
+        "invalidate_A": "日线收盘 < 335.39605（SMA200）→ A 作废",
+        "warning_weekly": "周线收盘 < 325.63 且两周收不回 → 转 C",
+        "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+      },
+      "narrative": "主判断：B 直接上（不回踩）（规则权重 44%）\n一句话：不回踩直接上攻：日线收上 346.45 打开 381.56→266.9425；破 335.39605 认错。\n结构分 52/100，动量分 78/100（50 为中性）\n确认：日线收盘 > 338.002（SMA20）→ 再看 346.45；收上后者，回踩步骤作废。\n回踩区：330.89–338.74（daily_BULLISH_FVG fvg-alpaca-sip-goog-2026-09-14）\n目标：381.56 → 266.9425\n作废：日线收盘 < 335.39605（SMA200）；周线 < 325.63 两周收不回转 C。\n回撤：距前高 125 天，自前高回撤 -14.3%，顶后最低 314.69。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+      "limitations": [
+        "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+        "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+        "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+        "不是投资建议，不保证盈利。",
+        "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+        "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+      ]
+    }
+  ]
+}

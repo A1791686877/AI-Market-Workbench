@@ -1,0 +1,506 @@
+[
+  {
+    "symbol": "AAPL",
+    "eps_concept": "EarningsPerShareDiluted",
+    "single_quarters_found": 67,
+    "last_six_quarters": [
+      {
+        "start": "2024-09-29",
+        "end": "2024-12-28",
+        "days": 90,
+        "val": 2.4,
+        "form": "10-Q",
+        "filed": "2026-01-30"
+      },
+      {
+        "start": "2024-12-29",
+        "end": "2025-03-29",
+        "days": 90,
+        "val": 1.65,
+        "form": "10-Q",
+        "filed": "2026-05-01"
+      },
+      {
+        "start": "2025-03-30",
+        "end": "2025-06-28",
+        "days": 90,
+        "val": 1.57,
+        "form": "10-Q",
+        "filed": "2026-07-31"
+      },
+      {
+        "start": "2025-09-28",
+        "end": "2025-12-27",
+        "days": 90,
+        "val": 2.84,
+        "form": "10-Q",
+        "filed": "2026-01-30"
+      },
+      {
+        "start": "2025-12-28",
+        "end": "2026-03-28",
+        "days": 90,
+        "val": 2.01,
+        "form": "10-Q",
+        "filed": "2026-05-01"
+      },
+      {
+        "start": "2026-03-29",
+        "end": "2026-06-27",
+        "days": 90,
+        "val": 2.02,
+        "form": "10-Q",
+        "filed": "2026-07-31"
+      }
+    ],
+    "TTM_EPS": {
+      "value": "8.71",
+      "status": "AVAILABLE",
+      "period_end": "2026-06-27",
+      "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-06-29..2026-06-27",
+      "missing_reason": null
+    },
+    "PE_TTM_note": "PE uses last_close=100 for comparability; the real close comes from bars"
+  },
+  {
+    "symbol": "MSFT",
+    "eps_concept": "EarningsPerShareDiluted",
+    "single_quarters_found": 71,
+    "last_six_quarters": [
+      {
+        "start": "2024-07-01",
+        "end": "2024-09-30",
+        "days": 91,
+        "val": 3.3,
+        "form": "10-Q",
+        "filed": "2025-10-29"
+      },
+      {
+        "start": "2024-10-01",
+        "end": "2024-12-31",
+        "days": 91,
+        "val": 3.23,
+        "form": "10-Q",
+        "filed": "2026-01-28"
+      },
+      {
+        "start": "2025-01-01",
+        "end": "2025-03-31",
+        "days": 89,
+        "val": 3.46,
+        "form": "10-Q",
+        "filed": "2026-04-29"
+      },
+      {
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "days": 91,
+        "val": 3.72,
+        "form": "10-Q",
+        "filed": "2025-10-29"
+      },
+      {
+        "start": "2025-10-01",
+        "end": "2025-12-31",
+        "days": 91,
+        "val": 5.16,
+        "form": "10-Q",
+        "filed": "2026-01-28"
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "days": 89,
+        "val": 4.27,
+        "form": "10-Q",
+        "filed": "2026-04-29"
+      }
+    ],
+    "TTM_EPS": {
+      "value": "17.96",
+      "status": "AVAILABLE",
+      "period_end": "2026-06-30",
+      "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-01..2026-06-30",
+      "missing_reason": null
+    },
+    "PE_TTM_note": "PE uses last_close=100 for comparability; the real close comes from bars"
+  },
+  {
+    "symbol": "GOOGL",
+    "eps_concept": "EarningsPerShareDiluted",
+    "single_quarters_found": 34,
+    "last_six_quarters": [
+      {
+        "start": "2024-07-01",
+        "end": "2024-09-30",
+        "days": 91,
+        "val": 2.12,
+        "form": "10-Q",
+        "filed": "2025-10-30"
+      },
+      {
+        "start": "2025-01-01",
+        "end": "2025-03-31",
+        "days": 89,
+        "val": 2.81,
+        "form": "10-Q",
+        "filed": "2026-04-30"
+      },
+      {
+        "start": "2025-04-01",
+        "end": "2025-06-30",
+        "days": 90,
+        "val": 2.31,
+        "form": "10-Q",
+        "filed": "2026-07-23"
+      },
+      {
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "days": 91,
+        "val": 2.87,
+        "form": "10-Q",
+        "filed": "2025-10-30"
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "days": 89,
+        "val": 5.11,
+        "form": "10-Q",
+        "filed": "2026-04-30"
+      },
+      {
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "days": 90,
+        "val": 9.11,
+        "form": "10-Q",
+        "filed": "2026-07-23"
+      }
+    ],
+    "TTM_EPS": {
+      "value": "19.91",
+      "status": "AVAILABLE",
+      "period_end": "2026-06-30",
+      "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-01..2026-06-30",
+      "missing_reason": null
+    },
+    "PE_TTM_note": "PE uses last_close=100 for comparability; the real close comes from bars"
+  },
+  {
+    "symbol": "GOOG",
+    "eps_concept": "EarningsPerShareDiluted",
+    "single_quarters_found": 34,
+    "last_six_quarters": [
+      {
+        "start": "2024-07-01",
+        "end": "2024-09-30",
+        "days": 91,
+        "val": 2.12,
+        "form": "10-Q",
+        "filed": "2025-10-30"
+      },
+      {
+        "start": "2025-01-01",
+        "end": "2025-03-31",
+        "days": 89,
+        "val": 2.81,
+        "form": "10-Q",
+        "filed": "2026-04-30"
+      },
+      {
+        "start": "2025-04-01",
+        "end": "2025-06-30",
+        "days": 90,
+        "val": 2.31,
+        "form": "10-Q",
+        "filed": "2026-07-23"
+      },
+      {
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "days": 91,
+        "val": 2.87,
+        "form": "10-Q",
+        "filed": "2025-10-30"
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "days": 89,
+        "val": 5.11,
+        "form": "10-Q",
+        "filed": "2026-04-30"
+      },
+      {
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "days": 90,
+        "val": 9.11,
+        "form": "10-Q",
+        "filed": "2026-07-23"
+      }
+    ],
+    "TTM_EPS": {
+      "value": "19.91",
+      "status": "AVAILABLE",
+      "period_end": "2026-06-30",
+      "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-01..2026-06-30",
+      "missing_reason": null
+    },
+    "PE_TTM_note": "PE uses last_close=100 for comparability; the real close comes from bars"
+  },
+  {
+    "symbol": "AMZN",
+    "eps_concept": "EarningsPerShareDiluted",
+    "single_quarters_found": 67,
+    "last_six_quarters": [
+      {
+        "start": "2024-07-01",
+        "end": "2024-09-30",
+        "days": 91,
+        "val": 1.43,
+        "form": "10-Q",
+        "filed": "2025-10-31"
+      },
+      {
+        "start": "2025-01-01",
+        "end": "2025-03-31",
+        "days": 89,
+        "val": 1.59,
+        "form": "10-Q",
+        "filed": "2026-04-30"
+      },
+      {
+        "start": "2025-04-01",
+        "end": "2025-06-30",
+        "days": 90,
+        "val": 1.68,
+        "form": "10-Q",
+        "filed": "2026-07-31"
+      },
+      {
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "days": 91,
+        "val": 1.95,
+        "form": "10-Q",
+        "filed": "2025-10-31"
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "days": 89,
+        "val": 2.78,
+        "form": "10-Q",
+        "filed": "2026-04-30"
+      },
+      {
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "days": 90,
+        "val": 5.75,
+        "form": "10-Q",
+        "filed": "2026-07-31"
+      }
+    ],
+    "TTM_EPS": {
+      "value": "12.43",
+      "status": "AVAILABLE",
+      "period_end": "2026-06-30",
+      "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-01..2026-06-30",
+      "missing_reason": null
+    },
+    "PE_TTM_note": "PE uses last_close=100 for comparability; the real close comes from bars"
+  },
+  {
+    "symbol": "NVDA",
+    "eps_concept": "EarningsPerShareDiluted",
+    "single_quarters_found": 67,
+    "last_six_quarters": [
+      {
+        "start": "2024-07-29",
+        "end": "2024-10-27",
+        "days": 90,
+        "val": 0.78,
+        "form": "10-Q",
+        "filed": "2025-11-19"
+      },
+      {
+        "start": "2025-01-27",
+        "end": "2025-04-27",
+        "days": 90,
+        "val": 0.76,
+        "form": "10-Q",
+        "filed": "2026-05-20"
+      },
+      {
+        "start": "2025-04-28",
+        "end": "2025-07-27",
+        "days": 90,
+        "val": 1.08,
+        "form": "10-Q",
+        "filed": "2026-08-26"
+      },
+      {
+        "start": "2025-07-28",
+        "end": "2025-10-26",
+        "days": 90,
+        "val": 1.3,
+        "form": "10-Q",
+        "filed": "2025-11-19"
+      },
+      {
+        "start": "2026-01-26",
+        "end": "2026-04-26",
+        "days": 90,
+        "val": 2.39,
+        "form": "10-Q",
+        "filed": "2026-05-20"
+      },
+      {
+        "start": "2026-04-27",
+        "end": "2026-07-26",
+        "days": 90,
+        "val": 2.46,
+        "form": "10-Q",
+        "filed": "2026-08-26"
+      }
+    ],
+    "TTM_EPS": {
+      "value": "7.91",
+      "status": "AVAILABLE",
+      "period_end": "2026-07-26",
+      "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-28..2026-07-26",
+      "missing_reason": null
+    },
+    "PE_TTM_note": "PE uses last_close=100 for comparability; the real close comes from bars"
+  },
+  {
+    "symbol": "META",
+    "eps_concept": "EarningsPerShareDiluted",
+    "single_quarters_found": 46,
+    "last_six_quarters": [
+      {
+        "start": "2024-07-01",
+        "end": "2024-09-30",
+        "days": 91,
+        "val": 6.03,
+        "form": "10-Q",
+        "filed": "2025-10-30"
+      },
+      {
+        "start": "2025-01-01",
+        "end": "2025-03-31",
+        "days": 89,
+        "val": 6.43,
+        "form": "10-Q",
+        "filed": "2026-04-30"
+      },
+      {
+        "start": "2025-04-01",
+        "end": "2025-06-30",
+        "days": 90,
+        "val": 7.14,
+        "form": "10-Q",
+        "filed": "2026-07-30"
+      },
+      {
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "days": 91,
+        "val": 1.05,
+        "form": "10-Q",
+        "filed": "2025-10-30"
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "days": 89,
+        "val": 10.44,
+        "form": "10-Q",
+        "filed": "2026-04-30"
+      },
+      {
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "days": 90,
+        "val": 6.18,
+        "form": "10-Q",
+        "filed": "2026-07-30"
+      }
+    ],
+    "TTM_EPS": {
+      "value": "26.54",
+      "status": "AVAILABLE",
+      "period_end": "2026-06-30",
+      "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-01..2026-06-30",
+      "missing_reason": null
+    },
+    "PE_TTM_note": "PE uses last_close=100 for comparability; the real close comes from bars"
+  },
+  {
+    "symbol": "TSLA",
+    "eps_concept": "EarningsPerShareDiluted",
+    "single_quarters_found": 34,
+    "last_six_quarters": [
+      {
+        "start": "2024-07-01",
+        "end": "2024-09-30",
+        "days": 91,
+        "val": 0.62,
+        "form": "10-Q",
+        "filed": "2025-10-23"
+      },
+      {
+        "start": "2025-01-01",
+        "end": "2025-03-31",
+        "days": 89,
+        "val": 0.12,
+        "form": "10-Q",
+        "filed": "2026-04-23"
+      },
+      {
+        "start": "2025-04-01",
+        "end": "2025-06-30",
+        "days": 90,
+        "val": 0.33,
+        "form": "10-Q",
+        "filed": "2026-07-23"
+      },
+      {
+        "start": "2025-07-01",
+        "end": "2025-09-30",
+        "days": 91,
+        "val": 0.39,
+        "form": "10-Q",
+        "filed": "2025-10-23"
+      },
+      {
+        "start": "2026-01-01",
+        "end": "2026-03-31",
+        "days": 89,
+        "val": 0.13,
+        "form": "10-Q",
+        "filed": "2026-04-23"
+      },
+      {
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "days": 90,
+        "val": 0.32,
+        "form": "10-Q",
+        "filed": "2026-07-23"
+      }
+    ],
+    "TTM_EPS": {
+      "value": "1.08",
+      "status": "AVAILABLE",
+      "period_end": "2026-06-30",
+      "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-01..2026-06-30",
+      "missing_reason": null
+    },
+    "PE_TTM_note": "PE uses last_close=100 for comparability; the real close comes from bars"
+  }
+]

@@ -1,0 +1,231 @@
+{
+  "timeframe_synthesis": [],
+  "schema_version": "1.1.0",
+  "analysis_id": "analysis-35becb047f9e4f5b8f1c8db391beca72",
+  "snapshot": {
+    "snapshot_id": "snapshot-0f52a76d721c48e09fd09312e8df9495",
+    "snapshot_sha256": "b8c4e2f43a121fed6b7f803edc4cb94ae78e2bc6953948d7e50fa239d1b96a94",
+    "subject_id": "us-aapl",
+    "cutoff_at": "2026-09-04T20:00:00Z",
+    "created_at": "2026-11-08T18:14:36.002221Z",
+    "completeness": "PARTIAL",
+    "missing_items": [
+      "Fixture mode does not provide a real upcoming earnings date.",
+      "Market context missing at cutoff; no historical reconstruction inferred",
+      "Non-GAAP values are missing rather than inferred.",
+      "Valuation metrics are omitted because fixture prices are synthetic."
+    ]
+  },
+  "subject": {
+    "subject_id": "us-aapl",
+    "subject_type": "EQUITY",
+    "symbol": "AAPL",
+    "primary_instrument_id": "US:AAPL",
+    "instruments": [
+      {
+        "instrument_id": "US:AAPL",
+        "asset_class": "US_EQUITY",
+        "symbol": "AAPL",
+        "venue": "NASDAQ",
+        "quote_currency": "USD",
+        "timezone": "America/New_York",
+        "contract_type": "COMMON_STOCK",
+        "active": true,
+        "market_data_only": true
+      }
+    ],
+    "analysis_scope": "SINGLE_UNDERLYING",
+    "portfolio_analysis": false
+  },
+  "scenarios": [
+    {
+      "evaluation_rule_id": null,
+      "type": "BULLISH",
+      "summary": "【看多突破/修复】当前收盘 249.772（15m 结构 UPTREND）：若价格守住估算价值区下沿 VAL (237.5477520833) 与主峰 POC (241.416409375)，并放量突破 VAH (250.9862458333)，则打开向下一筹码峰上攻空间。",
+      "preconditions": [
+        {
+          "description": "价格站稳 POC (241.416409375) 或在 VAL (237.5477520833)–POC (241.416409375) 主峰区企稳并获 MACD 柱体回升确认。",
+          "evidence_ids": [
+            "ev_vpvr_vpvr-us-aapl-15m"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "ev_sma-bar-aapl-15m-0129",
+        "ev_ema-bar-aapl-15m-0129",
+        "ev_rsi-bar-aapl-15m-0129",
+        "ev_macd-bar-aapl-15m-0129"
+      ],
+      "key_level_ids": [
+        "level_val",
+        "level_poc",
+        "level_vah"
+      ],
+      "invalidation_conditions": [
+        {
+          "description": "确认收盘有效跌破 VAL (237.5477520833) 且动量继续恶化。",
+          "evidence_ids": [
+            "ev_sma-bar-aapl-15m-0129"
+          ]
+        }
+      ]
+    },
+    {
+      "evaluation_rule_id": null,
+      "type": "NEUTRAL",
+      "summary": "【区间震荡/筹码换手】若价格继续在 VAL (237.5477520833) 至 VAH (250.9862458333) 之间围绕 POC (241.416409375) 窄幅换手，大小周期动量尚未形成单边共振，则维持区间震荡判断。",
+      "preconditions": [
+        {
+          "description": "收盘价维持在 VAL (237.5477520833) 与 VAH (250.9862458333) 价值区内围绕 POC (241.416409375) 波动。",
+          "evidence_ids": [
+            "ev_vpvr_vpvr-us-aapl-15m"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "ev_sma-bar-aapl-15m-0129",
+        "ev_ema-bar-aapl-15m-0129",
+        "ev_rsi-bar-aapl-15m-0129",
+        "ev_macd-bar-aapl-15m-0129"
+      ],
+      "key_level_ids": [
+        "level_poc"
+      ],
+      "invalidation_conditions": [
+        {
+          "description": "确认放量突破 VAH (250.9862458333) 或跌破 VAL (237.5477520833) 离开当前价值区。",
+          "evidence_ids": [
+            "ev_vpvr_vpvr-us-aapl-15m"
+          ]
+        }
+      ]
+    },
+    {
+      "evaluation_rule_id": null,
+      "type": "BULLISH",
+      "summary": "【看空受阻/回撤】若价格在 VAH (250.9862458333) 或 POC (241.416409375) 持续受阻并跌破 VAL (237.5477520833)，则将穿过下方低量区（LVN）向下一级筹码峰寻底。",
+      "preconditions": [
+        {
+          "description": "价格确认跌破估算 VAL (237.5477520833) 或在 POC (241.416409375) 下方形成空头排列。",
+          "evidence_ids": [
+            "ev_vpvr_vpvr-us-aapl-15m"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "ev_sma-bar-aapl-15m-0129",
+        "ev_ema-bar-aapl-15m-0129",
+        "ev_rsi-bar-aapl-15m-0129",
+        "ev_macd-bar-aapl-15m-0129"
+      ],
+      "key_level_ids": [
+        "level_val",
+        "level_poc"
+      ],
+      "invalidation_conditions": [
+        {
+          "description": "价格重新收复 POC (241.416409375) 并站稳 VAH (250.9862458333) 上方。",
+          "evidence_ids": [
+            "ev_vpvr_vpvr-us-aapl-15m"
+          ]
+        }
+      ]
+    }
+  ],
+  "key_levels": [
+    {
+      "level_id": "level_val",
+      "kind": "VAL",
+      "price": "237.5477520833",
+      "raw_price_equivalent": null,
+      "price_basis": "SPLIT_ADJUSTED",
+      "currency": "USD",
+      "timeframe": "15m",
+      "evidence_ids": [
+        "ev_vpvr_vpvr-us-aapl-15m"
+      ],
+      "confirmed": true
+    },
+    {
+      "level_id": "level_poc",
+      "kind": "POC",
+      "price": "241.416409375",
+      "raw_price_equivalent": null,
+      "price_basis": "SPLIT_ADJUSTED",
+      "currency": "USD",
+      "timeframe": "15m",
+      "evidence_ids": [
+        "ev_vpvr_vpvr-us-aapl-15m"
+      ],
+      "confirmed": true
+    },
+    {
+      "level_id": "level_vah",
+      "kind": "VAH",
+      "price": "250.9862458333",
+      "raw_price_equivalent": null,
+      "price_basis": "SPLIT_ADJUSTED",
+      "currency": "USD",
+      "timeframe": "15m",
+      "evidence_ids": [
+        "ev_vpvr_vpvr-us-aapl-15m"
+      ],
+      "confirmed": true
+    }
+  ],
+  "conflicts": [],
+  "missing_information": [
+    {
+      "field": "Fixture mode does not provide a real upcoming earnings date.",
+      "reason_code": "NOT_CONFIGURED",
+      "impact": "MEDIUM",
+      "detail": "Fixture mode does not provide a real upcoming earnings date."
+    },
+    {
+      "field": "Market context missing at cutoff; no historical reconstruction inferred",
+      "reason_code": "NOT_CONFIGURED",
+      "impact": "MEDIUM",
+      "detail": "Market context missing at cutoff; no historical reconstruction inferred"
+    },
+    {
+      "field": "Non-GAAP values are missing rather than inferred.",
+      "reason_code": "NOT_CONFIGURED",
+      "impact": "MEDIUM",
+      "detail": "Non-GAAP values are missing rather than inferred."
+    },
+    {
+      "field": "Valuation metrics are omitted because fixture prices are synthetic.",
+      "reason_code": "NOT_CONFIGURED",
+      "impact": "MEDIUM",
+      "detail": "Valuation metrics are omitted because fixture prices are synthetic."
+    }
+  ],
+  "confidence": {
+    "score": 0.35,
+    "is_calibrated_probability": false,
+    "basis": "Evidence completeness and cross-timeframe consistency; not a probability of profit.",
+    "limitations": [
+      "The score is not calibrated against out-of-sample trading outcomes.",
+      "Fixture data limits evidence quality.",
+      "VPVR is a K-line range-allocation estimate, not trade-level volume profile."
+    ]
+  },
+  "disclaimer": {
+    "not_investment_advice": true,
+    "no_profit_guarantee": true,
+    "data_limitations": "Data may be delayed, incomplete, venue-specific, or synthetic; this is not investment advice."
+  },
+  "audit": {
+    "prompt_version": "scenario-v2",
+    "provider": "DETERMINISTIC_DEMO",
+    "model": "evidence-rules-demo-v1",
+    "model_revision": "1",
+    "started_at": "2026-11-08T18:14:36.047515Z",
+    "finished_at": "2026-11-08T18:14:36.048515Z",
+    "input_tokens": null,
+    "output_tokens": null,
+    "cost": "0",
+    "cost_currency": "USD",
+    "raw_response_sha256": "1b56ea34505a39dae15b7818d2cbe4881bfd2d35da3e9dc975f77a1b8e43fba6"
+  }
+}

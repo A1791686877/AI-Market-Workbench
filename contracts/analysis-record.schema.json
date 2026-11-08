@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-market-workbench.local/schemas/analysis-record/1.0.0",
+  "title": "External reference validation wrapper",
+  "$ref": "./ai-analysis.schema.json"
+}

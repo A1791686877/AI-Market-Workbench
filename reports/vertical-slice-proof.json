@@ -1,0 +1,62 @@
+[
+  {
+    "subject_id": "us-aapl",
+    "snapshot_id": "snapshot-3b95510fc6de415faa67dd1e592f55e0",
+    "snapshot_sha256": "7f432d48b07a12ff803b0bbd44309ed092ac6e71f4e527d0fd8707e00c9796f2",
+    "analysis_id": "analysis-d6f34376a7e849ca8653f240eee3f044",
+    "scenario_types": [
+      "BULLISH",
+      "NEUTRAL",
+      "BEARISH"
+    ],
+    "outcome_states": [
+      "PENDING",
+      "PENDING",
+      "PENDING",
+      "PENDING"
+    ],
+    "data_mode": "fixture",
+    "network_enabled": false,
+    "ai_cost_usd": "0"
+  },
+  {
+    "subject_id": "crypto-btc",
+    "snapshot_id": "snapshot-3dfd1bb2a776471e83809f98521d2b9b",
+    "snapshot_sha256": "8b997cf9621aca549fed01aeec4b36c10422c815cc66e12d367d36bc40ee49ab",
+    "analysis_id": "analysis-4dfd3c9b583c49bc83909fdcb37b1586",
+    "scenario_types": [
+      "BULLISH",
+      "NEUTRAL",
+      "BEARISH"
+    ],
+    "outcome_states": [
+      "PENDING",
+      "PENDING",
+      "PENDING",
+      "PENDING"
+    ],
+    "data_mode": "fixture",
+    "network_enabled": false,
+    "ai_cost_usd": "0"
+  },
+  {
+    "subject_id": "crypto-eth",
+    "snapshot_id": "snapshot-fe341d4363e94134a6ada318465eed84",
+    "snapshot_sha256": "4ad749022bc96c10943f7c82f5b5c27e1203141df8f8f7fc9afa20448953c75e",
+    "analysis_id": "analysis-d5632d1d23a246e9a76ee616fe8fe6fb",
+    "scenario_types": [
+      "BULLISH",
+      "NEUTRAL",
+      "BEARISH"
+    ],
+    "outcome_states": [
+      "PENDING",
+      "PENDING",
+      "PENDING",
+      "PENDING"
+    ],
+    "data_mode": "fixture",
+    "network_enabled": false,
+    "ai_cost_usd": "0"
+  }
+]

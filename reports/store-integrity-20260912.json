@@ -1,0 +1,908 @@
+{
+  "checked_at": "2026-09-12T09:26:44.717872+00:00",
+  "database": "E:\\AI-Market-Workbench\\data\\workbench.db",
+  "database_bytes": 619163648,
+  "snapshot_dir": "E:\\AI-Market-Workbench\\data\\snapshots",
+  "snapshot_files": 187,
+  "snapshot_files_bytes": 678508108,
+  "largest_snapshot_bytes": 87628873,
+  "table_rows": {
+    "snapshots": 55,
+    "analyses": 12,
+    "analysis_tasks": 13,
+    "outcomes": 48,
+    "scenario_outcomes": 0
+  },
+  "hash_check_enabled": true,
+  "max_hash_payload_mb": 32.0,
+  "problems": {
+    "orphan_snapshot_files": [
+      {
+        "file": "snapshot-01b383cb71444dc0b23cd59e95b5267b.json",
+        "bytes": 248666
+      },
+      {
+        "file": "snapshot-06dc0a090aac4941940c5f2b5493a3ad.json",
+        "bytes": 509808
+      },
+      {
+        "file": "snapshot-07cc3f099d1f4a2094e476c1ce11c0f3.json",
+        "bytes": 339785
+      },
+      {
+        "file": "snapshot-0985549a1b444f3ca7e459cfecd930fa.json",
+        "bytes": 195310
+      },
+      {
+        "file": "snapshot-0a9a2654b9e64f7f90ef3923757e218f.json",
+        "bytes": 195014
+      },
+      {
+        "file": "snapshot-0ba0c97db5264cd598887aacc1ea23de.json",
+        "bytes": 555178
+      },
+      {
+        "file": "snapshot-0d254a1b5fe34b8d9637b40f8e864746.json",
+        "bytes": 557487
+      },
+      {
+        "file": "snapshot-10aeffcad4a448c2aff30c74ad6ef7ee.json",
+        "bytes": 551831
+      },
+      {
+        "file": "snapshot-14e0e02456774226b46fd2d353ec0876.json",
+        "bytes": 319635
+      },
+      {
+        "file": "snapshot-16e002566e784293954e61cf127e7739.json",
+        "bytes": 331018
+      },
+      {
+        "file": "snapshot-1838a8e0e5c3483d80afbbcc0c07855e.json",
+        "bytes": 333783
+      },
+      {
+        "file": "snapshot-196b3c5df26241e0b0983aea103e9675.json",
+        "bytes": 420298
+      },
+      {
+        "file": "snapshot-1a50b14b2db04c2db03195c457d2c191.json",
+        "bytes": 331018
+      },
+      {
+        "file": "snapshot-1bfa5119f9374eeb93fb9edaa3fd351c.json",
+        "bytes": 1347684
+      },
+      {
+        "file": "snapshot-1c594ce0baee409f9fc92570917a5fda.json",
+        "bytes": 195014
+      },
+      {
+        "file": "snapshot-1f46b55bcf9f41daba57a98c2333a207.json",
+        "bytes": 331018
+      },
+      {
+        "file": "snapshot-1fbbe45bbca24759b4c3fb0253aafe09.json",
+        "bytes": 339785
+      },
+      {
+        "file": "snapshot-20d8517087e14b328cdcbbe1b7736651.json",
+        "bytes": 509808
+      },
+      {
+        "file": "snapshot-239825e647874802926f964a1a9d52ac.json",
+        "bytes": 343629
+      },
+      {
+        "file": "snapshot-23c73f36dab84c73b24901da5f3da173.json",
+        "bytes": 343629
+      },
+      {
+        "file": "snapshot-259c53d7516e421fbb76a9585fe61cc9.json",
+        "bytes": 504402
+      },
+      {
+        "file": "snapshot-2720e58b8a3f4b2595640fa44ab5b14d.json",
+        "bytes": 504402
+      },
+      {
+        "file": "snapshot-2894d775cd594609a929fc06e9733a4a.json",
+        "bytes": 512723
+      },
+      {
+        "file": "snapshot-2a2e1ebb32da4083a30058fc11696edd.json",
+        "bytes": 195014
+      },
+      {
+        "file": "snapshot-2b9d745326454f80bc6ec620ef03307c.json",
+        "bytes": 330740
+      },
+      {
+        "file": "snapshot-2f80c2fa9331420a95f025578ec71f35.json",
+        "bytes": 557662
+      },
+      {
+        "file": "snapshot-2ff27a100c5b4ef68e19deda5b626477.json",
+        "bytes": 504402
+      },
+      {
+        "file": "snapshot-30c7bc7f826043b8b060567c48741392.json",
+        "bytes": 336159
+      },
+      {
+        "file": "snapshot-377e987c99e141e6afa0b694c6a4ac45.json",
+        "bytes": 336159
+      },
+      {
+        "file": "snapshot-3aa662d4f7a5407a8d7829eee497683a.json",
+        "bytes": 328530
+      },
+      {
+        "file": "snapshot-3ad6f2ca5fb149f99cfe5783cdc7388d.json",
+        "bytes": 1359485
+      },
+      {
+        "file": "snapshot-3bbf35266d8c4233a16cb5a076650d2a.json",
+        "bytes": 195014
+      },
+      {
+        "file": "snapshot-3d595d81cd114bb7a40faf3a0ec1598d.json",
+        "bytes": 500834
+      },
+      {
+        "file": "snapshot-409173a1df3742bf8fc3ec6e5708762a.json",
+        "bytes": 332087
+      },
+      {
+        "file": "snapshot-42424df5792648d4aed9a88a5d85d893.json",
+        "bytes": 504402
+      },
+      {
+        "file": "snapshot-48cd44f0bb0748568a59683a6b2c9478.json",
+        "bytes": 557662
+      },
+      {
+        "file": "snapshot-492512aa081345cb8dbfc0a778cb1d55.json",
+        "bytes": 504098
+      },
+      {
+        "file": "snapshot-4a416afc23184b00b90d2a15680f8498.json",
+        "bytes": 309590
+      },
+      {
+        "file": "snapshot-4c96dbeefcf4470298cf2a58efef55b6.json",
+        "bytes": 1359485
+      },
+      {
+        "file": "snapshot-4e64369828194e3fb7cc8d99d87b66eb.json",
+        "bytes": 195014
+      },
+      {
+        "file": "snapshot-4ee84853b9e4423aa5e53cad2da74cf7.json",
+        "bytes": 413563
+      },
+      {
+        "file": "snapshot-5124c922e9494bcdb3ee52fccdaf5075.json",
+        "bytes": 509808
+      },
+      {
+        "file": "snapshot-58ac0b71da7b4dc28e0be19238565657.json",
+        "bytes": 509789
+      },
+      {
+        "file": "snapshot-591c701396a04d85bf2c86c5e664678d.json",
+        "bytes": 309590
+      },
+      {
+        "file": "snapshot-5b6458d22de74bec92d304163a161724.json",
+        "bytes": 309197
+      },
+      {
+        "file": "snapshot-5cf27eaf081d45ffb1fbd7abdb9a12f4.json",
+        "bytes": 557487
+      },
+      {
+        "file": "snapshot-5dd2c405e52b4b858e3d5d2533bda854.json",
+        "bytes": 551831
+      },
+      {
+        "file": "snapshot-5e1df1606cf34635ba7e344288e3fe63.json",
+        "bytes": 417922
+      },
+      {
+        "file": "snapshot-5e8a09dcd2fd440a811024326524e6f1.json",
+        "bytes": 309590
+      },
+      {
+        "file": "snapshot-5ee3c67ceade4689b081b0c674719b87.json",
+        "bytes": 413563
+      },
+      {
+        "file": "snapshot-67e34f2f31824b279718fb37ca74478c.json",
+        "bytes": 509808
+      },
+      {
+        "file": "snapshot-6839d43d47fa4db890ad01f3113407aa.json",
+        "bytes": 509789
+      },
+      {
+        "file": "snapshot-6a39cf1127d54ee99d1672fbd507f008.json",
+        "bytes": 563366
+      },
+      {
+        "file": "snapshot-6a88f9db0d7340218230beeb2fe5cf76.json",
+        "bytes": 411013
+      },
+      {
+        "file": "snapshot-6a8ee9f5928b46ccae4a57563e84deeb.json",
+        "bytes": 560846
+      },
+      {
+        "file": "snapshot-6aded8d3e6ed46ce8b5baae64466dea7.json",
+        "bytes": 420298
+      },
+      {
+        "file": "snapshot-6af913bc2b6549c9be33a97c2e59671e.json",
+        "bytes": 509789
+      },
+      {
+        "file": "snapshot-6b80b50eceee4bb1a8510a14a5a8f7a6.json",
+        "bytes": 247776
+      },
+      {
+        "file": "snapshot-6cd316032275463494338a9ba1b2aaf6.json",
+        "bytes": 309590
+      },
+      {
+        "file": "snapshot-6e36d69b55e34a8586d21e7484067aca.json",
+        "bytes": 343629
+      },
+      {
+        "file": "snapshot-724a58f77ab141ea8e3418ed7202b225.json",
+        "bytes": 416096
+      },
+      {
+        "file": "snapshot-7259e7ad7b164064aa718309f02a86e9.json",
+        "bytes": 510937
+      },
+      {
+        "file": "snapshot-793030073b864a7c9c56125a548acec9.json",
+        "bytes": 553339
+      },
+      {
+        "file": "snapshot-79c8774a9f314e3fadbbf979f70e0700.json",
+        "bytes": 551225
+      },
+      {
+        "file": "snapshot-801f96f3febf4ea590975ac13e0adaa9.json",
+        "bytes": 330740
+      },
+      {
+        "file": "snapshot-838303cc846748979954c63a63b0d7ac.json",
+        "bytes": 343629
+      },
+      {
+        "file": "snapshot-85dda4ac13434fcdb9d03fc51f666fe1.json",
+        "bytes": 309197
+      },
+      {
+        "file": "snapshot-87125f2c937644a08f499159d4fed0b4.json",
+        "bytes": 343629
+      },
+      {
+        "file": "snapshot-8a4a3b57f5da4d96a88fc28c7ae3ac50.json",
+        "bytes": 195310
+      },
+      {
+        "file": "snapshot-90d00d88eb1849a892a7f6c50f414e55.json",
+        "bytes": 551831
+      },
+      {
+        "file": "snapshot-913c4d60da8a4b618d07d423622d4ebb.json",
+        "bytes": 556873
+      },
+      {
+        "file": "snapshot-9188ee19c0554a1fb917ddaf69adc152.json",
+        "bytes": 248666
+      },
+      {
+        "file": "snapshot-918ed78e0a1845fc883df8b0f6cf1b47.json",
+        "bytes": 1359485
+      },
+      {
+        "file": "snapshot-9192bb4e2fd54fc983d685e329df3e3c.json",
+        "bytes": 515243
+      },
+      {
+        "file": "snapshot-92adf3a692a24810b757e8bb734ad790.json",
+        "bytes": 515243
+      },
+      {
+        "file": "snapshot-93d2c3a1c5604791930225197e06cd7b.json",
+        "bytes": 343482
+      },
+      {
+        "file": "snapshot-9695b1b31b3e463d9c3c9088a9b84eed.json",
+        "bytes": 558995
+      },
+      {
+        "file": "snapshot-97c2531356ef471888c858f382482b04.json",
+        "bytes": 490982
+      },
+      {
+        "file": "snapshot-97dba468ea494ac89d0c24fa35e83622.json",
+        "bytes": 551831
+      },
+      {
+        "file": "snapshot-994afee60bc84fd8b9fa8c740842b9cf.json",
+        "bytes": 553405
+      },
+      {
+        "file": "snapshot-998ba681680e4954940aca661730c16c.json",
+        "bytes": 542387
+      },
+      {
+        "file": "snapshot-99ccc8fe1dc9481a82913a98b92d8ab7.json",
+        "bytes": 557487
+      },
+      {
+        "file": "snapshot-9c5f4909615442e18089f5768cd06166.json",
+        "bytes": 414397
+      },
+      {
+        "file": "snapshot-9ed6a978960347e1a4b7d63d14b8bb54.json",
+        "bytes": 504402
+      },
+      {
+        "file": "snapshot-a29877477dd64dcba7ee84537ce15f54.json",
+        "bytes": 504402
+      },
+      {
+        "file": "snapshot-a44726fe2b794da9adb90426f4dd742b.json",
+        "bytes": 515243
+      },
+      {
+        "file": "snapshot-a5450c8a01814eba93d58f367939ab2e.json",
+        "bytes": 557487
+      },
+      {
+        "file": "snapshot-a5bc1f43167748b793a95d9ca88dff01.json",
+        "bytes": 309590
+      },
+      {
+        "file": "snapshot-a5f8597063624ca28925e4ac84ef8a1e.json",
+        "bytes": 339638
+      },
+      {
+        "file": "snapshot-aeddcd6d3a2a4281b8ce40d3d7dae09b.json",
+        "bytes": 556873
+      },
+      {
+        "file": "snapshot-b0010e23376f4d65b68289080a80760f.json",
+        "bytes": 331018
+      },
+      {
+        "file": "snapshot-b24d9065deb84fac8e7b68a7248923c7.json",
+        "bytes": 343629
+      },
+      {
+        "file": "snapshot-b2ae64f697a64e0bbecdba0e04a458db.json",
+        "bytes": 536828
+      },
+      {
+        "file": "snapshot-b32cbff15ee94d9faefc3d5f09a9c6e4.json",
+        "bytes": 515243
+      },
+      {
+        "file": "snapshot-b528649aa501434fadfda239e1de7de3.json",
+        "bytes": 336159
+      },
+      {
+        "file": "snapshot-b57f754922834fbc84754bc787e84cd1.json",
+        "bytes": 414397
+      },
+      {
+        "file": "snapshot-b5f885a1c6c244d78eaaabd4a92a5714.json",
+        "bytes": 331018
+      },
+      {
+        "file": "snapshot-b756369f599e4f7ab3b2fb48288e6216.json",
+        "bytes": 557487
+      },
+      {
+        "file": "snapshot-b87362711fee47a39505cc635bf58107.json",
+        "bytes": 551225
+      },
+      {
+        "file": "snapshot-bbe41e8011b545f0b05ad7b21d7516f5.json",
+        "bytes": 515243
+      },
+      {
+        "file": "snapshot-c1a9a1dda7b9493fb6ad28fb3c619f96.json",
+        "bytes": 414397
+      },
+      {
+        "file": "snapshot-c6a8dda551a44cd7a1ecd3edb963f617.json",
+        "bytes": 336159
+      },
+      {
+        "file": "snapshot-cadd5c7cfbe44dd1b6bafba0a5d173af.json",
+        "bytes": 515243
+      },
+      {
+        "file": "snapshot-caf01cd5ba5c4635a13ef00d7784f4aa.json",
+        "bytes": 509789
+      },
+      {
+        "file": "snapshot-cb6fd95f4643433e802bdb99639148d0.json",
+        "bytes": 507305
+      },
+      {
+        "file": "snapshot-d31c6ec88afc4c739c2438840eba95fb.json",
+        "bytes": 339785
+      },
+      {
+        "file": "snapshot-d476af3df1274d4686b3061cbdbf6d43.json",
+        "bytes": 547757
+      },
+      {
+        "file": "snapshot-d6805d517ffc4df5b5e4b6824dd19983.json",
+        "bytes": 414397
+      },
+      {
+        "file": "snapshot-dcb277902bb247a0a5bfff56e1b1a124.json",
+        "bytes": 195014
+      },
+      {
+        "file": "snapshot-dd2355bb4138416a9e6a42bee4c4f9fd.json",
+        "bytes": 309590
+      },
+      {
+        "file": "snapshot-dd93065f14794ba7baf76dded8ca76df.json",
+        "bytes": 247776
+      },
+      {
+        "file": "snapshot-ddb7197ef5c94c9e94666bc1c6c02d8e.json",
+        "bytes": 400044
+      },
+      {
+        "file": "snapshot-e2e8111549aa4b4e885f6c20508cc427.json",
+        "bytes": 331018
+      },
+      {
+        "file": "snapshot-e32f255103e7434bb00de4f0e17641b1.json",
+        "bytes": 563366
+      },
+      {
+        "file": "snapshot-e5990e3781854948aebf1477909da9c3.json",
+        "bytes": 1359485
+      },
+      {
+        "file": "snapshot-e639bc58729c45649b47a1a6c4c183c9.json",
+        "bytes": 414397
+      },
+      {
+        "file": "snapshot-e80d3ee6e28c4c7eb72a12908a18bcb3.json",
+        "bytes": 551831
+      },
+      {
+        "file": "snapshot-e8b1edc8c7fd47158f15397fb74899be.json",
+        "bytes": 339638
+      },
+      {
+        "file": "snapshot-e97a84341354403a874720fc8d95def4.json",
+        "bytes": 515243
+      },
+      {
+        "file": "snapshot-eb34e9377ce948a0bc81678ac29a9a44.json",
+        "bytes": 500834
+      },
+      {
+        "file": "snapshot-ec25b387d02b4344a5b508cbe320b4fd.json",
+        "bytes": 343629
+      },
+      {
+        "file": "snapshot-ee6b726a630949228be89a8839be61e1.json",
+        "bytes": 505531
+      },
+      {
+        "file": "snapshot-ef82c6245f274743b03fb4493b85d6e9.json",
+        "bytes": 247776
+      },
+      {
+        "file": "snapshot-f2642a3288a24605920a6edf759e18f2.json",
+        "bytes": 512723
+      },
+      {
+        "file": "snapshot-f3087944a4884fc2b1f9e5b6dac06171.json",
+        "bytes": 328530
+      },
+      {
+        "file": "snapshot-f456d480f548479eb2da435e09b1ffcd.json",
+        "bytes": 515243
+      },
+      {
+        "file": "snapshot-f6edb0f30fd74b74b98f64765fa78703.json",
+        "bytes": 504098
+      },
+      {
+        "file": "snapshot-f740bfc290144678b92f6a21ab9efde7.json",
+        "bytes": 309590
+      },
+      {
+        "file": "snapshot-f8487b9a98d3427d97f34fd7496ec36b.json",
+        "bytes": 1349405
+      },
+      {
+        "file": "snapshot-fc4312634a8a4c6bb79f4ad4fe08c931.json",
+        "bytes": 195014
+      },
+      {
+        "file": "snapshot-fc4e9d6b0d464054b6e50b824d03442d.json",
+        "bytes": 509808
+      },
+      {
+        "file": "snapshot-fd61493ada004a74a15f37787b2c6e5f.json",
+        "bytes": 343482
+      }
+    ],
+    "missing_snapshot_files": [],
+    "snapshot_hash_mismatch": [],
+    "snapshot_hash_unchecked": [
+      {
+        "snapshot_id": "snapshot-5013f57091df494d8d45444f5aeec134",
+        "reason": "payload_over_size_guard",
+        "bytes": 87555514
+      },
+      {
+        "snapshot_id": "snapshot-e12bad22a67e46b1b43b7da4a06d5620",
+        "reason": "payload_over_size_guard",
+        "bytes": 86868988
+      },
+      {
+        "snapshot_id": "snapshot-932511e8643241278117b0e436fd64a1",
+        "reason": "payload_over_size_guard",
+        "bytes": 87628873
+      },
+      {
+        "snapshot_id": "snapshot-53879ba89b844b609e5fbda8b4a71c71",
+        "reason": "payload_over_size_guard",
+        "bytes": 86870721
+      },
+      {
+        "snapshot_id": "snapshot-268f530e697d46aeb580b580a558891f",
+        "reason": "payload_over_size_guard",
+        "bytes": 86870478
+      },
+      {
+        "snapshot_id": "snapshot-c7a53095b5e341be93bb34a0c79cd599",
+        "reason": "payload_over_size_guard",
+        "bytes": 86908071
+      }
+    ],
+    "snapshot_schema_unchecked": [
+      {
+        "snapshot_id": "snapshot-5013f57091df494d8d45444f5aeec134",
+        "reason": "payload_over_size_guard",
+        "bytes": 87555514
+      },
+      {
+        "snapshot_id": "snapshot-e12bad22a67e46b1b43b7da4a06d5620",
+        "reason": "payload_over_size_guard",
+        "bytes": 86868988
+      },
+      {
+        "snapshot_id": "snapshot-932511e8643241278117b0e436fd64a1",
+        "reason": "payload_over_size_guard",
+        "bytes": 87628873
+      },
+      {
+        "snapshot_id": "snapshot-53879ba89b844b609e5fbda8b4a71c71",
+        "reason": "payload_over_size_guard",
+        "bytes": 86870721
+      },
+      {
+        "snapshot_id": "snapshot-268f530e697d46aeb580b580a558891f",
+        "reason": "payload_over_size_guard",
+        "bytes": 86870478
+      },
+      {
+        "snapshot_id": "snapshot-c7a53095b5e341be93bb34a0c79cd599",
+        "reason": "payload_over_size_guard",
+        "bytes": 86908071
+      }
+    ],
+    "broken_references": [],
+    "unreadable_records": [
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-e72342d534cc414080a27cc6e3fe894e",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-5f4862ad25ee4984a77b1d48649f7fe9",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-96ac17a7472d40689ff20a6623143f33",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-c4c57bd29b1f451aa247197bef34ce07",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-07d2c18de7344c8d99240f0d19c249bb",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-903c4d0f457848cbb57c0855e5bcbc3d",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-2dab37a3afa740e0afd83aa245eb4025",
+        "error_type": "ValidationError",
+        "detail": "12 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-9d2bfe100c5f4d2cbe158dd7b48c67b4",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-b97c81a5f2b24dd6b7c7186bd8102247",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-3b95510fc6de415faa67dd1e592f55e0",
+        "error_type": "ValidationError",
+        "detail": "12 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-3dfd1bb2a776471e83809f98521d2b9b",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-fe341d4363e94134a6ada318465eed84",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-b6a2a175fbbb4606ab137013cc6e2914",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-0be154f4eb2b43ca9da6800a883bff97",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-6024e245fc614c998a32ab72877d6142",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-d59dfe9492054a069cc6376a9a9f55e5",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-b949c3ea06004ee0abc3bc4b64ba8538",
+        "error_type": "ValidationError",
+        "detail": "6 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-4b08dc6f017b4d58826f47136300a474",
+        "error_type": "ValidationError",
+        "detail": "6 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-6ae165674fac4092ba6df17f8a6aa24d",
+        "error_type": "ValidationError",
+        "detail": "6 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-17ea1ffc48914a8fb0c9117f97c1ed5e",
+        "error_type": "ValidationError",
+        "detail": "6 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-96752cc21a64426ab304781beb13f280",
+        "error_type": "ValidationError",
+        "detail": "4 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-580c93053ed84a6ba50ce298b78e2bad",
+        "error_type": "ValidationError",
+        "detail": "4 validation errors for AnalysisSnapshot"
+      }
+    ]
+  },
+  "problem_count": 166,
+  "quarantined": [
+    "snapshot-01b383cb71444dc0b23cd59e95b5267b.json",
+    "snapshot-06dc0a090aac4941940c5f2b5493a3ad.json",
+    "snapshot-07cc3f099d1f4a2094e476c1ce11c0f3.json",
+    "snapshot-0985549a1b444f3ca7e459cfecd930fa.json",
+    "snapshot-0a9a2654b9e64f7f90ef3923757e218f.json",
+    "snapshot-0ba0c97db5264cd598887aacc1ea23de.json",
+    "snapshot-0d254a1b5fe34b8d9637b40f8e864746.json",
+    "snapshot-10aeffcad4a448c2aff30c74ad6ef7ee.json",
+    "snapshot-14e0e02456774226b46fd2d353ec0876.json",
+    "snapshot-16e002566e784293954e61cf127e7739.json",
+    "snapshot-1838a8e0e5c3483d80afbbcc0c07855e.json",
+    "snapshot-196b3c5df26241e0b0983aea103e9675.json",
+    "snapshot-1a50b14b2db04c2db03195c457d2c191.json",
+    "snapshot-1bfa5119f9374eeb93fb9edaa3fd351c.json",
+    "snapshot-1c594ce0baee409f9fc92570917a5fda.json",
+    "snapshot-1f46b55bcf9f41daba57a98c2333a207.json",
+    "snapshot-1fbbe45bbca24759b4c3fb0253aafe09.json",
+    "snapshot-20d8517087e14b328cdcbbe1b7736651.json",
+    "snapshot-239825e647874802926f964a1a9d52ac.json",
+    "snapshot-23c73f36dab84c73b24901da5f3da173.json",
+    "snapshot-259c53d7516e421fbb76a9585fe61cc9.json",
+    "snapshot-2720e58b8a3f4b2595640fa44ab5b14d.json",
+    "snapshot-2894d775cd594609a929fc06e9733a4a.json",
+    "snapshot-2a2e1ebb32da4083a30058fc11696edd.json",
+    "snapshot-2b9d745326454f80bc6ec620ef03307c.json",
+    "snapshot-2f80c2fa9331420a95f025578ec71f35.json",
+    "snapshot-2ff27a100c5b4ef68e19deda5b626477.json",
+    "snapshot-30c7bc7f826043b8b060567c48741392.json",
+    "snapshot-377e987c99e141e6afa0b694c6a4ac45.json",
+    "snapshot-3aa662d4f7a5407a8d7829eee497683a.json",
+    "snapshot-3ad6f2ca5fb149f99cfe5783cdc7388d.json",
+    "snapshot-3bbf35266d8c4233a16cb5a076650d2a.json",
+    "snapshot-3d595d81cd114bb7a40faf3a0ec1598d.json",
+    "snapshot-409173a1df3742bf8fc3ec6e5708762a.json",
+    "snapshot-42424df5792648d4aed9a88a5d85d893.json",
+    "snapshot-48cd44f0bb0748568a59683a6b2c9478.json",
+    "snapshot-492512aa081345cb8dbfc0a778cb1d55.json",
+    "snapshot-4a416afc23184b00b90d2a15680f8498.json",
+    "snapshot-4c96dbeefcf4470298cf2a58efef55b6.json",
+    "snapshot-4e64369828194e3fb7cc8d99d87b66eb.json",
+    "snapshot-4ee84853b9e4423aa5e53cad2da74cf7.json",
+    "snapshot-5124c922e9494bcdb3ee52fccdaf5075.json",
+    "snapshot-58ac0b71da7b4dc28e0be19238565657.json",
+    "snapshot-591c701396a04d85bf2c86c5e664678d.json",
+    "snapshot-5b6458d22de74bec92d304163a161724.json",
+    "snapshot-5cf27eaf081d45ffb1fbd7abdb9a12f4.json",
+    "snapshot-5dd2c405e52b4b858e3d5d2533bda854.json",
+    "snapshot-5e1df1606cf34635ba7e344288e3fe63.json",
+    "snapshot-5e8a09dcd2fd440a811024326524e6f1.json",
+    "snapshot-5ee3c67ceade4689b081b0c674719b87.json",
+    "snapshot-67e34f2f31824b279718fb37ca74478c.json",
+    "snapshot-6839d43d47fa4db890ad01f3113407aa.json",
+    "snapshot-6a39cf1127d54ee99d1672fbd507f008.json",
+    "snapshot-6a88f9db0d7340218230beeb2fe5cf76.json",
+    "snapshot-6a8ee9f5928b46ccae4a57563e84deeb.json",
+    "snapshot-6aded8d3e6ed46ce8b5baae64466dea7.json",
+    "snapshot-6af913bc2b6549c9be33a97c2e59671e.json",
+    "snapshot-6b80b50eceee4bb1a8510a14a5a8f7a6.json",
+    "snapshot-6cd316032275463494338a9ba1b2aaf6.json",
+    "snapshot-6e36d69b55e34a8586d21e7484067aca.json",
+    "snapshot-724a58f77ab141ea8e3418ed7202b225.json",
+    "snapshot-7259e7ad7b164064aa718309f02a86e9.json",
+    "snapshot-793030073b864a7c9c56125a548acec9.json",
+    "snapshot-79c8774a9f314e3fadbbf979f70e0700.json",
+    "snapshot-801f96f3febf4ea590975ac13e0adaa9.json",
+    "snapshot-838303cc846748979954c63a63b0d7ac.json",
+    "snapshot-85dda4ac13434fcdb9d03fc51f666fe1.json",
+    "snapshot-87125f2c937644a08f499159d4fed0b4.json",
+    "snapshot-8a4a3b57f5da4d96a88fc28c7ae3ac50.json",
+    "snapshot-90d00d88eb1849a892a7f6c50f414e55.json",
+    "snapshot-913c4d60da8a4b618d07d423622d4ebb.json",
+    "snapshot-9188ee19c0554a1fb917ddaf69adc152.json",
+    "snapshot-918ed78e0a1845fc883df8b0f6cf1b47.json",
+    "snapshot-9192bb4e2fd54fc983d685e329df3e3c.json",
+    "snapshot-92adf3a692a24810b757e8bb734ad790.json",
+    "snapshot-93d2c3a1c5604791930225197e06cd7b.json",
+    "snapshot-9695b1b31b3e463d9c3c9088a9b84eed.json",
+    "snapshot-97c2531356ef471888c858f382482b04.json",
+    "snapshot-97dba468ea494ac89d0c24fa35e83622.json",
+    "snapshot-994afee60bc84fd8b9fa8c740842b9cf.json",
+    "snapshot-998ba681680e4954940aca661730c16c.json",
+    "snapshot-99ccc8fe1dc9481a82913a98b92d8ab7.json",
+    "snapshot-9c5f4909615442e18089f5768cd06166.json",
+    "snapshot-9ed6a978960347e1a4b7d63d14b8bb54.json",
+    "snapshot-a29877477dd64dcba7ee84537ce15f54.json",
+    "snapshot-a44726fe2b794da9adb90426f4dd742b.json",
+    "snapshot-a5450c8a01814eba93d58f367939ab2e.json",
+    "snapshot-a5bc1f43167748b793a95d9ca88dff01.json",
+    "snapshot-a5f8597063624ca28925e4ac84ef8a1e.json",
+    "snapshot-aeddcd6d3a2a4281b8ce40d3d7dae09b.json",
+    "snapshot-b0010e23376f4d65b68289080a80760f.json",
+    "snapshot-b24d9065deb84fac8e7b68a7248923c7.json",
+    "snapshot-b2ae64f697a64e0bbecdba0e04a458db.json",
+    "snapshot-b32cbff15ee94d9faefc3d5f09a9c6e4.json",
+    "snapshot-b528649aa501434fadfda239e1de7de3.json",
+    "snapshot-b57f754922834fbc84754bc787e84cd1.json",
+    "snapshot-b5f885a1c6c244d78eaaabd4a92a5714.json",
+    "snapshot-b756369f599e4f7ab3b2fb48288e6216.json",
+    "snapshot-b87362711fee47a39505cc635bf58107.json",
+    "snapshot-bbe41e8011b545f0b05ad7b21d7516f5.json",
+    "snapshot-c1a9a1dda7b9493fb6ad28fb3c619f96.json",
+    "snapshot-c6a8dda551a44cd7a1ecd3edb963f617.json",
+    "snapshot-cadd5c7cfbe44dd1b6bafba0a5d173af.json",
+    "snapshot-caf01cd5ba5c4635a13ef00d7784f4aa.json",
+    "snapshot-cb6fd95f4643433e802bdb99639148d0.json",
+    "snapshot-d31c6ec88afc4c739c2438840eba95fb.json",
+    "snapshot-d476af3df1274d4686b3061cbdbf6d43.json",
+    "snapshot-d6805d517ffc4df5b5e4b6824dd19983.json",
+    "snapshot-dcb277902bb247a0a5bfff56e1b1a124.json",
+    "snapshot-dd2355bb4138416a9e6a42bee4c4f9fd.json",
+    "snapshot-dd93065f14794ba7baf76dded8ca76df.json",
+    "snapshot-ddb7197ef5c94c9e94666bc1c6c02d8e.json",
+    "snapshot-e2e8111549aa4b4e885f6c20508cc427.json",
+    "snapshot-e32f255103e7434bb00de4f0e17641b1.json",
+    "snapshot-e5990e3781854948aebf1477909da9c3.json",
+    "snapshot-e639bc58729c45649b47a1a6c4c183c9.json",
+    "snapshot-e80d3ee6e28c4c7eb72a12908a18bcb3.json",
+    "snapshot-e8b1edc8c7fd47158f15397fb74899be.json",
+    "snapshot-e97a84341354403a874720fc8d95def4.json",
+    "snapshot-eb34e9377ce948a0bc81678ac29a9a44.json",
+    "snapshot-ec25b387d02b4344a5b508cbe320b4fd.json",
+    "snapshot-ee6b726a630949228be89a8839be61e1.json",
+    "snapshot-ef82c6245f274743b03fb4493b85d6e9.json",
+    "snapshot-f2642a3288a24605920a6edf759e18f2.json",
+    "snapshot-f3087944a4884fc2b1f9e5b6dac06171.json",
+    "snapshot-f456d480f548479eb2da435e09b1ffcd.json",
+    "snapshot-f6edb0f30fd74b74b98f64765fa78703.json",
+    "snapshot-f740bfc290144678b92f6a21ab9efde7.json",
+    "snapshot-f8487b9a98d3427d97f34fd7496ec36b.json",
+    "snapshot-fc4312634a8a4c6bb79f4ad4fe08c931.json",
+    "snapshot-fc4e9d6b0d464054b6e50b824d03442d.json",
+    "snapshot-fd61493ada004a74a15f37787b2c6e5f.json"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "rule_version": "price-role-signal-zh-en-v1",
+  "status": "REJECTED",
+  "analysis_id": "analysis-1398be9a43b34a66a4321a35aef3845d",
+  "issues": [
+    {
+      "code": "LEVEL_ROLE",
+      "severity": "ERROR",
+      "location": "key_levels.level_broken_resistance_79768_6666666667",
+      "detail": "RESISTANCE 79768.6666666667 is on the wrong side of last close 79934.4; classify as historical/broken/retest, not current support/resistance.",
+      "quote": "level_broken_resistance_79768_6666666667"
+    },
+    {
+      "code": "PRICE_DIRECTION",
+      "severity": "ERROR",
+      "location": "BEARISH.summary",
+      "detail": "79706.659375 is not BELOW reference price 79691.4666666667.",
+      "quote": "若跌破79691.4666666667且不能收复，79706.659375估算POC及79577.2666666667支撑成为下方参考"
+    }
+  ],
+  "level_positions": [
+    {
+      "level_id": "level_resistance_80064_5",
+      "price": "80064.5",
+      "relative_to_last_close": "ABOVE",
+      "declared_role": "RESISTANCE"
+    },
+    {
+      "level_id": "level_support_79691_4666666667",
+      "price": "79691.4666666667",
+      "relative_to_last_close": "BELOW",
+      "declared_role": "SUPPORT"
+    },
+    {
+      "level_id": "level_support_79577_2666666667",
+      "price": "79577.2666666667",
+      "relative_to_last_close": "BELOW",
+      "declared_role": "SUPPORT"
+    },
+    {
+      "level_id": "level_vpvr_poc_79706_659375",
+      "price": "79706.659375",
+      "relative_to_last_close": "BELOW",
+      "declared_role": "POC"
+    },
+    {
+      "level_id": "level_fvg_midpoint_79817_85_invalidated",
+      "price": "79817.85",
+      "relative_to_last_close": "BELOW",
+      "declared_role": "FVG_MIDPOINT"
+    },
+    {
+      "level_id": "level_broken_resistance_79768_6666666667",
+      "price": "79768.6666666667",
+      "relative_to_last_close": "BELOW",
+      "declared_role": "RESISTANCE"
+    }
+  ],
+  "limits": [
+    "Checks explicit price ordering, current support/resistance roles and claimed signal activity.",
+    "Passing this bounded rule set is not full semantic validation or forecast accuracy.",
+    "Historical divergence has no inferred expiry or active status; cannot be used as a current trigger without a frozen rule."
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "generated_at": "2026-09-13T18:14:26.143214+00:00",
+  "catalog_commit": "a174c97d3bba",
+  "catalog_provenance": {
+    "repo": "JerBouma/FinanceDatabase",
+    "ref": "main",
+    "fetched_at": "2026-09-13T18:09:58.730889+00:00",
+    "commit": "a174c97d3bba96fc1a82b2e1068fb3ec5e02e634",
+    "commit_date": "2026-09-13T15:10:38Z",
+    "assets": [
+      {
+        "asset": "equities",
+        "url": "https://raw.githubusercontent.com/JerBouma/FinanceDatabase/a174c97d3bba96fc1a82b2e1068fb3ec5e02e634/compression/equities.bz2",
+        "bytes": 15287957,
+        "sha256": "41c5a612980f3ab5d1ae360d4ec1ea16eeb8bcd312de7e5bca3093e795b9b578",
+        "cached": false,
+        "peek": {
+          "columns": [
+            "symbol",
+            "name",
+            "summary",
+            "currency",
+            "sector",
+            "industry_group",
+            "industry",
+            "exchange",
+            "mic",
+            "market",
+            "country",
+            "state",
+            "city",
+            "zipcode",
+            "website",
+            "market_cap",
+            "isin",
+            "cusip",
+            "figi",
+            "composite_figi",
+            "shareclass_figi",
+            "delisted"
+          ],
+          "sample": [
+            {
+              "symbol": "000002.SZ",
+              "name": "China Vanke Co., Ltd.",
+              "summary": "China Vanke Co., Ltd., together with its subsidiaries, engag",
+              "currency": "CNY",
+              "sector": "Real Estate",
+              "industry_group": "Real Estate",
+              "industry": "Real Estate Management & Development",
+              "exchange": "SHZ",
+              "mic": "XSHE",
+              "market": "Shenzhen Stock Exchange",
+              "country": "China",
+              "state": "",
+              "city": "Shenzhen",
+              "zipcode": "518083",
+              "website": "http://www.vanke.com",
+              "market_cap": "Large Cap",
+              "isin": "CNE100001SR9",
+              "cusip": "",
+              "figi": "",
+              "composite_figi": "BBG006KY4KD6",
+              "shareclass_figi": "BBG006KY4KG3",
+              "delisted": "False"
+            },
+            {
+              "symbol": "000004.SZ",
+              "name": "Shenzhen GuoHua Network Security Technology Co., Ltd.",
+              "summary": "Shenzhen GuoHua Network Security Technology Co., Ltd. engage",
+              "currency": "CNY",
+              "sector": "Financials",
+              "industry_group": "Diversified Financials",
+              "industry": "Diversified Financial Services",
+              "exchange": "SHZ",
+              "mic": "XSHE",
+              "market": "Shenzhen Stock Exchange",
+              "country": "China",
+              "state": "CA",
+              "city": "San Francisco",
+              "zipcode": "94129",
+              "website": "http://www.sz000004.cn",
+              "market_cap": "Micro Cap",
+              "isin": "",
+              "cusip": "",
+              "figi": "BBG000BZFTX3",
+              "composite_figi": "BBG000BZFT18",
+              "shareclass_figi": "BBG001SJWNX3",
+              "delisted": "False"
+            },
+            {
+              "symbol": "000005.SZ",
+              "name": "Shenzhen Fountain Corporation",
+              "summary": "Shenzhen Fountain Corporation engages in real estate develop",
+              "currency": "CNY",
+              "sector": "Real Estate",
+              "industry_group": "Real Estate",
+              "industry": "Real Estate Management & Development",
+              "exchange": "SHZ",
+              "mic": "XSHE",
+              "market": "Shenzhen Stock Exchange",
+              "country": "China",
+              "state": "",
+              "city": "Shenzhen",
+              "zipcode": "518001",
+              "website": "http://www.fountain.com.cn",
+              "market_cap": "Small Cap",
+              "isin": "CNE0000001L7",
+              "cusip": "",
+              "figi": "",
+              "composite_figi": "",
+              "shareclass_figi": "",
+              "delisted": "False"
+            }
+          ]
+        },
+        "path": "reference\\financedatabase\\a174c97d3bba\\equities.bz2"
+      },
+      {
+        "asset": "etfs",
+        "url": "https://raw.githubusercontent.com/JerBouma/FinanceDatabase/a174c97d3bba96fc1a82b2e1068fb3ec5e02e634/compression/etfs.bz2",
+        "bytes": 1282566,
+        "sha256": "3f1a990a71676a303ec999d744ed7490fec85c2a18723e702a93f29dff3c1a75",
+        "cached": false,
+        "peek": {
+          "columns": [
+            "symbol",
+            "name",
+            "currency",
+            "summary",
+            "category_group",
+            "category",
+            "family",
+            "exchange",
+            "mic",
+            "isin"
+          ],
+          "sample": [
+            {
+              "symbol": "003D.BE",
+              "name": "WISDOMTREE EURO HGD EQ.FD",
+              "currency": "EUR",
+              "summary": "The WisdomTree Euro Hedged Equity Fund aims to provide expos",
+              "category_group": "Financials",
+              "category": "Developed Markets",
+              "family": "WisdomTree Asset Management",
+              "exchange": "BER",
+              "mic": "XBER",
+              "isin": ""
+            },
+            {
+              "symbol": "003H.BE",
+              "name": "WISDOMTREE EM.CURR.STRAT.",
+              "currency": "EUR",
+              "summary": "The WisdomTree Emerging Markets Currency Strategy Fund seeks",
+              "category_group": "Currencies",
+              "category": "Emerging Markets",
+              "family": "WisdomTree Asset Management",
+              "exchange": "BER",
+              "mic": "XBER",
+              "isin": ""
+            },
+            {
+              "symbol": "003I.BE",
+              "name": "WISDOMTREE INTL H.Q.D.GR.",
+              "currency": "EUR",
+              "summary": "The WisdomTree International Hedged Quality Dividend Growth ",
+              "category_group": "Financials",
+              "category": "Developed Markets",
+              "family": "WisdomTree Asset Management",
+              "exchange": "BER",
+              "mic": "XBER",
+              "isin": ""
+            }
+          ]
+        },
+        "path": "reference\\financedatabase\\a174c97d3bba\\etfs.bz2"
+      },
+      {
+        "asset": "indices",
+        "url": "https://raw.githubusercontent.com/JerBouma/FinanceDatabase/a174c97d3bba96fc1a82b2e1068fb3ec5e02e634/compression/indices.bz2",
+        "bytes": 1189707,
+        "sha256": "64be34bee94ae78350f636e8d495c7bc411db9d22abddcd05394bcde24f0b127",
+        "cached": false,
+        "peek": {
+          "columns": [
+            "symbol",
+            "name",
+            "currency",
+            "summary",
+            "category_group",
+            "category",
+            "exchange",
+            "mic"
+          ],
+          "sample": [
+            {
+              "symbol": "000008.SS",
+              "name": "SSE Conglomerates Index",
+              "currency": "CNY",
+              "summary": "The SSE Conglomerates Index aims to reflect the overall perf",
+              "category_group": "Equities",
+              "category": "Equities",
+              "exchange": "SHH",
+              "mic": "XSHG"
+            },
+            {
+              "symbol": "000019.SS",
+              "name": "SSE Corporate Governance Index",
+              "currency": "CNY",
+              "summary": "The SSE Corporate Governance Index evaluates and measures th",
+              "category_group": "Equities",
+              "category": "Equities",
+              "exchange": "SHH",
+              "mic": "XSHG"
+            },
+            {
+              "symbol": "000021.SS",
+              "name": "SSE 180 Corporate Governance In",
+              "currency": "CNY",
+              "summary": "The SSE 180 Corporate Governance Index is designed to measur",
+              "category_group": "Equities",
+              "category": "Equities",
+              "exchange": "SHH",
+              "mic": "XSHG"
+            }
+          ]
+        },
+        "path": "reference\\financedatabase\\a174c97d3bba\\indices.bz2"
+      }
+    ],
+    "license": "MIT (see https://github.com/JerBouma/FinanceDatabase/blob/main/LICENSE)",
+    "notes": [
+      "Community-maintained ticker metadata: sector/industry/exchange/currency classification only.",
+      "Never price evidence. Never a substitute for SEC/venue data. Pin the commit and re-review on refresh.",
+      "Kept as .bz2 and streamed at read time to avoid duplicating a large CSV on disk."
+    ]
+  },
+  "subjects": [
+    {
+      "symbol": "AAPL",
+      "found": true,
+      "name": "Apple Inc.",
+      "sector": "Information Technology",
+      "industry_group": "Technology Hardware & Equipment",
+      "industry": "Electronic Equipment, Instruments & Components",
+      "mic": "XNAS",
+      "market_cap_bucket": "Mega Cap",
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MSFT",
+      "found": true,
+      "name": "Microsoft Corporation",
+      "sector": "Information Technology",
+      "industry_group": "Software & Services",
+      "industry": "Software",
+      "mic": "XNAS",
+      "market_cap_bucket": "Mega Cap",
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GOOGL",
+      "found": true,
+      "name": "Alphabet Inc.",
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "industry": "Diversified Telecommunication Services",
+      "mic": "XNAS",
+      "market_cap_bucket": "Mega Cap",
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GOOG",
+      "found": true,
+      "name": "Alphabet Inc.",
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "industry": "Diversified Telecommunication Services",
+      "mic": "XNAS",
+      "market_cap_bucket": "Mega Cap",
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AMZN",
+      "found": true,
+      "name": "Amazon.com, Inc.",
+      "sector": "Consumer Discretionary",
+      "industry_group": "Retailing",
+      "industry": "Internet & Direct Marketing Retail",
+      "mic": "XNAS",
+      "market_cap_bucket": "Mega Cap",
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NVDA",
+      "found": true,
+      "name": "NVIDIA Corporation",
+      "sector": "Information Technology",
+      "industry_group": "Semiconductors & Semiconductor Equipment",
+      "industry": "Semiconductors & Semiconductor Equipment",
+      "mic": "XNAS",
+      "market_cap_bucket": "Mega Cap",
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "symbol": "META",
+      "found": true,
+      "name": "Meta Platforms Inc Class A",
+      "sector": "Communication Services",
+      "industry_group": "Telecommunication Services",
+      "industry": "Diversified Telecommunication Services",
+      "mic": "XNAS",
+      "market_cap_bucket": "Mega Cap",
+      "country": "United States",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TSLA",
+      "found": true,
+      "name": "Tesla, Inc.",
+      "sector": "Consumer Discretionary",
+      "industry_group": "Automobiles & Components",
+      "industry": "Automobiles",
+      "mic": "XNAS",
+      "market_cap_bucket": "Mega Cap",
+      "country": "United States",
+      "currency": "USD"
+    }
+  ],
+  "asset_stats": {
+    "equities": {
+      "asset": "equities",
+      "commit": "a174c97d3bba",
+      "rows": 112690,
+      "delisted": 10404,
+      "sectors": {
+        "Financials": 16673,
+        "Industrials": 15159,
+        "Materials": 14001,
+        "Health Care": 12281,
+        "Information Technology": 12031,
+        "Consumer Discretionary": 10901,
+        "UNKNOWN": 9222,
+        "Consumer Staples": 5682,
+        "Real Estate": 4993,
+        "Communication Services": 4687,
+        "Energy": 4559,
+        "Utilities": 2501
+      }
+    },
+    "etfs": {
+      "asset": "etfs",
+      "commit": "a174c97d3bba",
+      "rows": 36481,
+      "delisted": 0,
+      "sectors": {
+        "UNKNOWN": 36481
+      }
+    },
+    "indices": {
+      "asset": "indices",
+      "commit": "a174c97d3bba",
+      "rows": 91181,
+      "delisted": 0,
+      "sectors": {
+        "UNKNOWN": 91181
+      }
+    }
+  },
+  "us_universe": {
+    "equities": 27003,
+    "etfs": 2627,
+    "indices": 1423
+  },
+  "sector_concentration": {
+    "distinct_sectors": 3,
+    "note": "Mag 7 只有 3 个 GICS 板块（IT / 通信服务 / 可选消费）→ 横截面排名天生集中，不能当分散投资。"
+  }
+}

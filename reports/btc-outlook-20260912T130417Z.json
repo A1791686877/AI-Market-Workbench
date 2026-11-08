@@ -1,0 +1,216 @@
+{
+  "rules_version": "btc-outlook-rules-v1",
+  "generated_at": "2026-09-12T13:04:17.039417Z",
+  "symbol": "BTC",
+  "instrument_id": "CRYPTO:BTCUSDT:SPOT",
+  "data": {
+    "instrument": "CRYPTO:BTCUSDT:SPOT",
+    "refreshed": false,
+    "fills": {},
+    "bars": {
+      "15m": {
+        "count": 6404,
+        "first": "2026-07-07T20:00:00+00:00",
+        "last": "2026-09-12T13:00:00+00:00",
+        "internal_gaps": 0
+      },
+      "1h": {
+        "count": 5148,
+        "first": "2026-02-10T01:00:00+00:00",
+        "last": "2026-09-12T13:00:00+00:00",
+        "internal_gaps": 0
+      },
+      "4h": {
+        "count": 5036,
+        "first": "2024-05-26T04:00:00+00:00",
+        "last": "2026-09-12T12:00:00+00:00",
+        "internal_gaps": 0
+      },
+      "1d": {
+        "count": 3166,
+        "first": "2018-01-11T00:00:00+00:00",
+        "last": "2026-09-12T00:00:00+00:00",
+        "internal_gaps": 0
+      }
+    },
+    "context": null
+  },
+  "structure_score": 76.0,
+  "momentum_score": 26.0,
+  "structure_hits": [
+    {
+      "rule": "price>sma200",
+      "points": 12.0,
+      "detail": "price=77223.40 sma200=70060.84"
+    },
+    {
+      "rule": "sma200_rising",
+      "points": 6.0,
+      "detail": "sma200=70060.84 prev20=69020.19"
+    },
+    {
+      "rule": "price>sma50",
+      "points": 6.0,
+      "detail": "price=77223.40 sma50=70681.48"
+    },
+    {
+      "rule": "daily_DI+>-DI",
+      "points": 6.0,
+      "detail": "+DI=29.39 -DI=13.44"
+    },
+    {
+      "rule": "weekly_DI+>-DI",
+      "points": 5.0,
+      "detail": "+DI=25.58 -DI=18.26"
+    },
+    {
+      "rule": "weekly_macd_hist>0",
+      "points": 5.0,
+      "detail": "hist=2436.23"
+    },
+    {
+      "rule": "weekly_hist_improving",
+      "points": 4.0,
+      "detail": "improving=True"
+    },
+    {
+      "rule": "cycle_bottom_window",
+      "points": 8.0,
+      "detail": "days_since_ath=340 window=(270, 480)"
+    },
+    {
+      "rule": "study_63d_median>5%",
+      "points": 6.0,
+      "detail": "median=0.1002 n=452"
+    },
+    {
+      "rule": "study_63d_positive>60%",
+      "points": 4.0,
+      "detail": "positive_share=0.631"
+    },
+    {
+      "rule": "weekly_trend_not_down",
+      "points": -6.0,
+      "detail": "weekly_trend=DOWNTREND"
+    },
+    {
+      "rule": "monthly_trend_not_down",
+      "points": -8.0,
+      "detail": "monthly_trend=DOWNTREND"
+    },
+    {
+      "rule": "monthly_hist_not_negative",
+      "points": -8.0,
+      "detail": "monthly_hist=-4772.93"
+    },
+    {
+      "rule": "monthly_rsi_not_below_50",
+      "points": 0.0,
+      "detail": "monthly_rsi=51.04"
+    },
+    {
+      "rule": "365d_not_below_-20%",
+      "points": -4.0,
+      "detail": "ret365=-0.3313"
+    }
+  ],
+  "momentum_hits": [
+    {
+      "rule": "price>sma20",
+      "points": -8.0,
+      "detail": "price=77223.40 sma20=78621.17"
+    },
+    {
+      "rule": "daily_macd_hist>0",
+      "points": -8.0,
+      "detail": "hist=-735.67"
+    },
+    {
+      "rule": "daily_hist_improving",
+      "points": 0.0,
+      "detail": "improving=False"
+    },
+    {
+      "rule": "return_7d>0",
+      "points": -6.0,
+      "detail": "ret7=-0.0306"
+    },
+    {
+      "rule": "h4_DI+>-DI",
+      "points": 6.0,
+      "detail": "+DI=22.7810707335794 -DI=15.100482952886008"
+    },
+    {
+      "rule": "h4_rsi>50",
+      "points": -5.0,
+      "detail": "rsi=42.64"
+    },
+    {
+      "rule": "price>h4_vpvr_val",
+      "points": 5.0,
+      "detail": "price=77223.40 h4_val=77179.25"
+    },
+    {
+      "rule": "price>m15_vpvr_poc",
+      "points": -4.0,
+      "detail": "price=77223.40 m15_poc=77340.009375"
+    },
+    {
+      "rule": "h1_and_m15_uptrend",
+      "points": -4.0,
+      "detail": "h1=RANGE_OR_MIXED m15=RANGE_OR_MIXED"
+    },
+    {
+      "rule": "price>m15_vpvr_vah",
+      "points": 0.0,
+      "detail": "price=77223.40 m15_vah=78192.10625"
+    }
+  ],
+  "paths": [
+    {
+      "key": "A",
+      "label": "A 先下后上（回踩后再上）",
+      "score": 75.1,
+      "weight_pct": 45
+    },
+    {
+      "key": "B",
+      "label": "B 直接上（不回踩）",
+      "score": 56.0,
+      "weight_pct": 33
+    },
+    {
+      "key": "C",
+      "label": "C 破位（结构失效）",
+      "score": 36.5,
+      "weight_pct": 22
+    }
+  ],
+  "primary": "A",
+  "levels": {
+    "price": "77223.4",
+    "confirm_reclaim": "78621.165",
+    "confirm_breakout": "79896.3",
+    "dip_zone_low": "73405.4",
+    "dip_zone_high": "76515",
+    "structural_support": "70060.8385",
+    "swing_low_20d": "75559.5",
+    "target_1": "82285",
+    "target_2": "88250.515",
+    "cycle_floor": "57809.4"
+  },
+  "triggers": {
+    "confirm_reclaim": "日线收盘 > 78621.165（SMA20）视为动量修复",
+    "confirm_breakout": "日线收盘 > 79896.3（近 3 日高点）→ 回踩步骤作废，转 B",
+    "dip_zone": "回踩区 73405.4–76515（daily_BULLISH_FVG fvg-okx-btc-usdt-1d-1787356800000）",
+    "invalidate_A": "日线收盘 < 70060.8385（SMA200）→ A 作废",
+    "warning_weekly": "周线收盘 < 75559.5 且两周收不回 → 转 C",
+    "cycle_turn": "月线收盘 < 57809.4 → 周期'还需深洗'剧本成立"
+  },
+  "narrative": "主判断：A 先下后上（回踩后再上）（规则权重 45%）\n一句话：先回 73405.4–76515 一次，再上 82285→88250.515；日线收盘破 70060.8385 认错。\n结构分 76/100，动量分 26/100（50 为中性）\n确认：日线收盘 > 78621.165（SMA20）→ 再看 79896.3；收上后者，回踩步骤作废。\n回踩区：73405.4–76515（daily_BULLISH_FVG fvg-okx-btc-usdt-1d-1787356800000）\n目标：82285 → 88250.515\n作废：日线收盘 < 70060.8385（SMA200）；周线 < 75559.5 两周收不回转 C。\n周期：距减半 876 天，距顶部 340 天，回撤 -38.1%，顶后最低 57809.4。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+  "limitations": [
+    "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+    "OKX 场所级数据（非全市场）；清算/链上/ETF 流/宏观缺失。",
+    "不是投资建议，不保证盈利。"
+  ]
+}

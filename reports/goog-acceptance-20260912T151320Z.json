@@ -1,0 +1,1447 @@
+{
+  "checked_at": "2026-09-12T15:12:57.018558+00:00",
+  "subject_id": "us-goog",
+  "data_mode": "live",
+  "network_enabled": true,
+  "routing": {
+    "equity_provider": "alpaca",
+    "equity_eod_provider": "alpaca",
+    "alpaca_feed": "sip"
+  },
+  "model_call": "SKIPPED",
+  "bars": {
+    "1d": {
+      "instrument_id": "US:GOOG",
+      "interval": "1d",
+      "bar_count": 400,
+      "first": "2025-02-07T14:30:00+00:00",
+      "last": "2026-09-11T20:00:00+00:00",
+      "last_close": "335.45",
+      "price_basis": [
+        "TOTAL_RETURN_ADJUSTED"
+      ],
+      "all_confirmed": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 86400,
+        "observed_bar_count": 2688,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2006-09-17T15:12:57.018558Z",
+        "actual_start_at": "2016-01-04T14:30:00Z",
+        "latest_bar_at": "2026-09-11T20:00:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "UNASSESSED",
+        "history_cursor_end": null
+      },
+      "bar_quality_flags": [],
+      "sources": [
+        {
+          "source_id": "src-alpaca-sip-goog-daily",
+          "provider": "ALPACA",
+          "dataset": "us_equity_sip_daily_all",
+          "delay": "DELAYED_15M",
+          "basis": "TOTAL_RETURN_ADJUSTED",
+          "is_full_market": true,
+          "limitations": [
+            "Alpaca SIP is the consolidated tape; the free tier is delayed at least 15 minutes.",
+            "Daily bars use adjustment=all (TOTAL_RETURN_ADJUSTED); weekly/monthly are generated locally from these bars.",
+            "Sessions are taken from exchange_calendars XNYS (holidays, half-days and DST included).",
+            "Incremental merge; raw_sha256 is the ordered prior/page hash chain, not a single response hash."
+          ]
+        }
+      ]
+    },
+    "15m": {
+      "instrument_id": "US:GOOG",
+      "interval": "15m",
+      "bar_count": 400,
+      "first": "2026-08-20T17:30:00+00:00",
+      "last": "2026-09-11T20:00:00+00:00",
+      "last_close": "335.49",
+      "price_basis": [
+        "SPLIT_ADJUSTED"
+      ],
+      "all_confirmed": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 3328,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-12T15:12:58.422634Z",
+        "actual_start_at": "2026-03-11T13:30:00Z",
+        "latest_bar_at": "2026-09-11T20:00:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "UNASSESSED",
+        "history_cursor_end": null
+      },
+      "bar_quality_flags": [],
+      "sources": [
+        {
+          "source_id": "src-alpaca-sip-goog",
+          "provider": "ALPACA",
+          "dataset": "us_equity_sip_15m",
+          "delay": "DELAYED_15M",
+          "basis": "SPLIT_ADJUSTED",
+          "is_full_market": true,
+          "limitations": [
+            "Alpaca SIP is the consolidated tape; the free tier is delayed at least 15 minutes.",
+            "US RTH bars are filtered against exchange_calendars XNYS sessions, including holidays, half-days and DST.",
+            "Primary OHLCV is split-adjusted; matching raw OHLCV is stored on each bar when returned by both queries.",
+            "Requested 15m window reached back to 2026-09-11T19:30:00+00:00.",
+            "Incremental merge; raw_sha256 is the ordered prior/page hash chain, not a single response hash."
+          ]
+        }
+      ]
+    }
+  },
+  "indicators": {
+    "1d": {
+      "interval": "1d",
+      "instrument_id": "US:GOOG",
+      "bars_as_of": "2026-09-11T20:00:00+00:00",
+      "indicator_count": 10,
+      "indicators": [
+        {
+          "name": "SMA",
+          "status": "READY",
+          "current": {
+            "primary": "337.8725",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "EMA",
+          "status": "READY",
+          "current": {
+            "primary": "337.748504631",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "RSI",
+          "status": "READY",
+          "current": {
+            "primary": "46.2645686457",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 15,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "MACD",
+          "status": "READY",
+          "current": {
+            "primary": "-3.7950456379",
+            "signal": "-3.5201595354",
+            "histogram": "-0.2748861026",
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 34,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "ATR",
+          "status": "READY",
+          "current": {
+            "primary": "7.7960778409",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 14,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "BOLLINGER_BANDS",
+          "status": "READY",
+          "current": {
+            "primary": "337.8725",
+            "signal": null,
+            "histogram": null,
+            "upper": "346.8124303689",
+            "middle": "337.8725",
+            "lower": "328.9325696311",
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "ADX",
+          "status": "READY",
+          "current": {
+            "primary": "7.0971656178",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": "28.9545601094",
+            "minus_di": "25.249020455"
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 28,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "OBV",
+          "status": "READY",
+          "current": {
+            "primary": "3209205762",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 1,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "VWAP",
+          "status": "READY",
+          "current": {
+            "primary": "335.9833333333",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 1,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "VOLUME_PRICE_RELATION",
+          "status": "READY",
+          "current": {
+            "primary": "1.0299442043",
+            "signal": "0.0153152335",
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        }
+      ],
+      "fvg_count": 645,
+      "divergence_count": 67,
+      "support_resistance": {
+        "result_id": "sr-us-goog-1d",
+        "algorithm_version": "pivot-cluster-3x3-atr025-v1",
+        "input_granularity": "1d",
+        "lookback_bars": 120,
+        "pivot_left": 3,
+        "pivot_right": 3,
+        "cluster_tolerance_atr_multiple": "0.25",
+        "levels": [
+          {
+            "level_id": "tech_level_support_alpaca-sip-goog-2026-09-01",
+            "kind": "SUPPORT",
+            "price": "329.15",
+            "touch_count": 2,
+            "first_touch_at": "2026-04-21T20:00:00Z",
+            "latest_touch_at": "2026-09-01T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-goog-2026-04-21",
+              "alpaca-sip-goog-2026-09-01"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.45"
+          },
+          {
+            "level_id": "tech_level_support_alpaca-sip-goog-2026-05-22",
+            "kind": "SUPPORT",
+            "price": "378.52",
+            "touch_count": 2,
+            "first_touch_at": "2026-05-12T20:00:00Z",
+            "latest_touch_at": "2026-05-22T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-goog-2026-05-12",
+              "alpaca-sip-goog-2026-05-22"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.45"
+          },
+          {
+            "level_id": "tech_level_support_alpaca-sip-goog-2026-08-20",
+            "kind": "SUPPORT",
+            "price": "335.95",
+            "touch_count": 1,
+            "first_touch_at": "2026-08-20T20:00:00Z",
+            "latest_touch_at": "2026-08-20T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-goog-2026-08-20"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.45"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-sip-goog-2026-09-03",
+            "kind": "RESISTANCE",
+            "price": "340.095",
+            "touch_count": 2,
+            "first_touch_at": "2026-04-17T20:00:00Z",
+            "latest_touch_at": "2026-09-03T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-goog-2026-04-17",
+              "alpaca-sip-goog-2026-09-03"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.45"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-sip-goog-2026-07-16",
+            "kind": "RESISTANCE",
+            "price": "373.735",
+            "touch_count": 2,
+            "first_touch_at": "2026-06-16T20:00:00Z",
+            "latest_touch_at": "2026-07-16T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-goog-2026-06-16",
+              "alpaca-sip-goog-2026-07-16"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.45"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-sip-goog-2026-07-07",
+            "kind": "RESISTANCE",
+            "price": "370.05",
+            "touch_count": 2,
+            "first_touch_at": "2026-06-09T20:00:00Z",
+            "latest_touch_at": "2026-07-07T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-goog-2026-06-09",
+              "alpaca-sip-goog-2026-07-07"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.45"
+          }
+        ],
+        "source_refs": [
+          "src-alpaca-sip-goog-daily"
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-sip-goog-2026-09-01",
+            "claim": "Historical confirmed support pivot cluster at 329.15 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 335.45. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-09-01",
+                "field": "low",
+                "value": "329.15",
+                "unit": "price",
+                "observed_at": "2026-09-01T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-goog-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-sip-goog-2026-05-22",
+            "claim": "Historical confirmed support pivot cluster at 378.52 with 2 touch(es); role_status=BROKEN_HISTORICAL versus last close 335.45. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-05-22",
+                "field": "low",
+                "value": "378.52",
+                "unit": "price",
+                "observed_at": "2026-05-22T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-goog-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-sip-goog-2026-08-20",
+            "claim": "Historical confirmed support pivot cluster at 335.95 with 1 touch(es); role_status=BROKEN_HISTORICAL versus last close 335.45. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-08-20",
+                "field": "low",
+                "value": "335.95",
+                "unit": "price",
+                "observed_at": "2026-08-20T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-goog-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-sip-goog-2026-09-03",
+            "claim": "Historical confirmed resistance pivot cluster at 340.095 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 335.45. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-09-03",
+                "field": "high",
+                "value": "340.095",
+                "unit": "price",
+                "observed_at": "2026-09-03T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-goog-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-sip-goog-2026-07-16",
+            "claim": "Historical confirmed resistance pivot cluster at 373.735 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 335.45. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-07-16",
+                "field": "high",
+                "value": "373.735",
+                "unit": "price",
+                "observed_at": "2026-07-16T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-goog-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-sip-goog-2026-07-07",
+            "claim": "Historical confirmed resistance pivot cluster at 370.05 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 335.45. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-07-07",
+                "field": "high",
+                "value": "370.05",
+                "unit": "price",
+                "observed_at": "2026-07-07T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-goog-daily"
+            ],
+            "quality": "HIGH"
+          }
+        ],
+        "limitations": [
+          "Levels are confirmed pivot clusters, not order-book liquidity guarantees.",
+          "The latest three bars cannot form confirmed pivots because pivot_right=3."
+        ]
+      },
+      "trend_structure": {
+        "result_id": "trend-us-goog-1d",
+        "algorithm_version": "confirmed-pivot-hh-hl-3x3-v1",
+        "input_granularity": "1d",
+        "state": "DOWNTREND",
+        "pivot_left": 3,
+        "pivot_right": 3,
+        "high_anchors": [
+          {
+            "bar_id": "alpaca-sip-goog-2026-08-24",
+            "at": "2026-08-24T20:00:00Z",
+            "field": "high",
+            "value": "347.85"
+          },
+          {
+            "bar_id": "alpaca-sip-goog-2026-09-03",
+            "at": "2026-09-03T20:00:00Z",
+            "field": "high",
+            "value": "340.63"
+          }
+        ],
+        "low_anchors": [
+          {
+            "bar_id": "alpaca-sip-goog-2026-08-20",
+            "at": "2026-08-20T20:00:00Z",
+            "field": "low",
+            "value": "335.95"
+          },
+          {
+            "bar_id": "alpaca-sip-goog-2026-09-01",
+            "at": "2026-09-01T20:00:00Z",
+            "field": "low",
+            "value": "329.08"
+          }
+        ],
+        "signal_at": "2026-09-09T20:00:00Z",
+        "confirmation": {
+          "status": "CONFIRMED",
+          "confirmed_at": "2026-09-09T20:00:00Z",
+          "left_window": 3,
+          "right_window": 3,
+          "can_repaint": false
+        },
+        "source_refs": [
+          "src-alpaca-sip-goog-daily"
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ev_trend_us-goog_1d",
+            "claim": "Confirmed swing structure state is DOWNTREND.",
+            "rule": "confirmed-pivot-hh-hl-3x3-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-08-24",
+                "field": "high",
+                "value": "347.85",
+                "unit": "price",
+                "observed_at": "2026-08-24T20:00:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-09-03",
+                "field": "high",
+                "value": "340.63",
+                "unit": "price",
+                "observed_at": "2026-09-03T20:00:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-08-20",
+                "field": "low",
+                "value": "335.95",
+                "unit": "price",
+                "observed_at": "2026-08-20T20:00:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-goog-2026-09-01",
+                "field": "low",
+                "value": "329.08",
+                "unit": "price",
+                "observed_at": "2026-09-01T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-goog-daily"
+            ],
+            "quality": "HIGH"
+          }
+        ],
+        "limitations": [
+          "Trend state compares only the two latest confirmed swing highs and lows.",
+          "A mixed higher/lower swing sequence is classified as RANGE_OR_MIXED."
+        ]
+      },
+      "vpvr": {
+        "poc": "341.72875",
+        "vah": "381.8333333333",
+        "val": "326.5166666667",
+        "is_estimate": true,
+        "window_start": "2026-03-23 13:30:00+00:00",
+        "window_end": "2026-09-11 20:00:00+00:00"
+      },
+      "missing_items": []
+    },
+    "15m": {
+      "interval": "15m",
+      "instrument_id": "US:GOOG",
+      "bars_as_of": "2026-09-11T20:00:00+00:00",
+      "indicator_count": 10,
+      "indicators": [
+        {
+          "name": "SMA",
+          "status": "READY",
+          "current": {
+            "primary": "337.23935",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "EMA",
+          "status": "READY",
+          "current": {
+            "primary": "336.1234458022",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "RSI",
+          "status": "READY",
+          "current": {
+            "primary": "48.0592952952",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 15,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "MACD",
+          "status": "READY",
+          "current": {
+            "primary": "0.4957117861",
+            "signal": "1.0013416913",
+            "histogram": "-0.5056299052",
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 34,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "ATR",
+          "status": "READY",
+          "current": {
+            "primary": "0.8671377558",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 14,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "BOLLINGER_BANDS",
+          "status": "READY",
+          "current": {
+            "primary": "337.23935",
+            "signal": null,
+            "histogram": null,
+            "upper": "339.5618431591",
+            "middle": "337.23935",
+            "lower": "334.9168568409",
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "ADX",
+          "status": "READY",
+          "current": {
+            "primary": "30.8016091886",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": "22.3096900585",
+            "minus_di": "22.2611576751"
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 28,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "OBV",
+          "status": "READY",
+          "current": {
+            "primary": "21921689",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 1,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "VWAP",
+          "status": "READY",
+          "current": {
+            "primary": "336.9224060062",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 1,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "VOLUME_PRICE_RELATION",
+          "status": "READY",
+          "current": {
+            "primary": "3.671135151",
+            "signal": "-0.0005633356",
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        }
+      ],
+      "fvg_count": 456,
+      "divergence_count": 89,
+      "support_resistance": {
+        "result_id": "sr-us-goog-15m",
+        "algorithm_version": "pivot-cluster-3x3-atr025-v1",
+        "input_granularity": "15m",
+        "lookback_bars": 120,
+        "pivot_left": 3,
+        "pivot_right": 3,
+        "cluster_tolerance_atr_multiple": "0.25",
+        "levels": [
+          {
+            "level_id": "tech_level_support_alpaca-goog-1789047000",
+            "kind": "SUPPORT",
+            "price": "325.677",
+            "touch_count": 3,
+            "first_touch_at": "2026-09-09T13:45:00Z",
+            "latest_touch_at": "2026-09-10T13:45:00Z",
+            "anchor_bar_ids": [
+              "alpaca-goog-1788960600",
+              "alpaca-goog-1788966000",
+              "alpaca-goog-1789047000"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.49"
+          },
+          {
+            "level_id": "tech_level_support_alpaca-goog-1789144200",
+            "kind": "SUPPORT",
+            "price": "337.09",
+            "touch_count": 1,
+            "first_touch_at": "2026-09-11T16:45:00Z",
+            "latest_touch_at": "2026-09-11T16:45:00Z",
+            "anchor_bar_ids": [
+              "alpaca-goog-1789144200"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.49"
+          },
+          {
+            "level_id": "tech_level_support_alpaca-goog-1789054200",
+            "kind": "SUPPORT",
+            "price": "326.91",
+            "touch_count": 1,
+            "first_touch_at": "2026-09-10T15:45:00Z",
+            "latest_touch_at": "2026-09-10T15:45:00Z",
+            "anchor_bar_ids": [
+              "alpaca-goog-1789054200"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.49"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-goog-1789146900",
+            "kind": "RESISTANCE",
+            "price": "338.3381",
+            "touch_count": 2,
+            "first_touch_at": "2026-09-11T13:45:00Z",
+            "latest_touch_at": "2026-09-11T17:30:00Z",
+            "anchor_bar_ids": [
+              "alpaca-goog-1789133400",
+              "alpaca-goog-1789146900"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.49"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-goog-1789050600",
+            "kind": "RESISTANCE",
+            "price": "329.33",
+            "touch_count": 2,
+            "first_touch_at": "2026-09-09T17:30:00Z",
+            "latest_touch_at": "2026-09-10T14:45:00Z",
+            "anchor_bar_ids": [
+              "alpaca-goog-1788974100",
+              "alpaca-goog-1789050600"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.49"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-goog-1788896700",
+            "kind": "RESISTANCE",
+            "price": "335.5475",
+            "touch_count": 2,
+            "first_touch_at": "2026-09-04T17:15:00Z",
+            "latest_touch_at": "2026-09-08T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-goog-1788541200",
+              "alpaca-goog-1788896700"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-11T20:00:00Z",
+            "reference_close": "335.49"
+          }
+        ],
+        "source_refs": [
+          "src-alpaca-goog"
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-goog-1789047000",
+            "claim": "Historical confirmed support pivot cluster at 325.677 with 3 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 335.49. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789047000",
+                "field": "low",
+                "value": "325.677",
+                "unit": "price",
+                "observed_at": "2026-09-10T13:45:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-goog"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-goog-1789144200",
+            "claim": "Historical confirmed support pivot cluster at 337.09 with 1 touch(es); role_status=BROKEN_HISTORICAL versus last close 335.49. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789144200",
+                "field": "low",
+                "value": "337.09",
+                "unit": "price",
+                "observed_at": "2026-09-11T16:45:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-goog"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-goog-1789054200",
+            "claim": "Historical confirmed support pivot cluster at 326.91 with 1 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 335.49. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789054200",
+                "field": "low",
+                "value": "326.91",
+                "unit": "price",
+                "observed_at": "2026-09-10T15:45:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-goog"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-goog-1789146900",
+            "claim": "Historical confirmed resistance pivot cluster at 338.3381 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 335.49. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789146900",
+                "field": "high",
+                "value": "338.3381",
+                "unit": "price",
+                "observed_at": "2026-09-11T17:30:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-goog"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-goog-1789050600",
+            "claim": "Historical confirmed resistance pivot cluster at 329.33 with 2 touch(es); role_status=BROKEN_HISTORICAL versus last close 335.49. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789050600",
+                "field": "high",
+                "value": "329.33",
+                "unit": "price",
+                "observed_at": "2026-09-10T14:45:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-goog"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-goog-1788896700",
+            "claim": "Historical confirmed resistance pivot cluster at 335.5475 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 335.49. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1788896700",
+                "field": "high",
+                "value": "335.5475",
+                "unit": "price",
+                "observed_at": "2026-09-08T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-goog"
+            ],
+            "quality": "HIGH"
+          }
+        ],
+        "limitations": [
+          "Levels are confirmed pivot clusters, not order-book liquidity guarantees.",
+          "The latest three bars cannot form confirmed pivots because pivot_right=3."
+        ]
+      },
+      "trend_structure": {
+        "result_id": "trend-us-goog-15m",
+        "algorithm_version": "confirmed-pivot-hh-hl-3x3-v1",
+        "input_granularity": "15m",
+        "state": "RANGE_OR_MIXED",
+        "pivot_left": 3,
+        "pivot_right": 3,
+        "high_anchors": [
+          {
+            "bar_id": "alpaca-goog-1789139700",
+            "at": "2026-09-11T15:30:00Z",
+            "field": "high",
+            "value": "339.95"
+          },
+          {
+            "bar_id": "alpaca-goog-1789146900",
+            "at": "2026-09-11T17:30:00Z",
+            "field": "high",
+            "value": "338.35"
+          }
+        ],
+        "low_anchors": [
+          {
+            "bar_id": "alpaca-goog-1789054200",
+            "at": "2026-09-10T15:45:00Z",
+            "field": "low",
+            "value": "326.91"
+          },
+          {
+            "bar_id": "alpaca-goog-1789144200",
+            "at": "2026-09-11T16:45:00Z",
+            "field": "low",
+            "value": "337.09"
+          }
+        ],
+        "signal_at": "2026-09-11T18:15:00Z",
+        "confirmation": {
+          "status": "CONFIRMED",
+          "confirmed_at": "2026-09-11T18:15:00Z",
+          "left_window": 3,
+          "right_window": 3,
+          "can_repaint": false
+        },
+        "source_refs": [
+          "src-alpaca-goog"
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ev_trend_us-goog_15m",
+            "claim": "Confirmed swing structure state is RANGE_OR_MIXED.",
+            "rule": "confirmed-pivot-hh-hl-3x3-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789139700",
+                "field": "high",
+                "value": "339.95",
+                "unit": "price",
+                "observed_at": "2026-09-11T15:30:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789146900",
+                "field": "high",
+                "value": "338.35",
+                "unit": "price",
+                "observed_at": "2026-09-11T17:30:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789054200",
+                "field": "low",
+                "value": "326.91",
+                "unit": "price",
+                "observed_at": "2026-09-10T15:45:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-goog-1789144200",
+                "field": "low",
+                "value": "337.09",
+                "unit": "price",
+                "observed_at": "2026-09-11T16:45:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-goog"
+            ],
+            "quality": "HIGH"
+          }
+        ],
+        "limitations": [
+          "Trend state compares only the two latest confirmed swing highs and lows.",
+          "A mixed higher/lower swing sequence is classified as RANGE_OR_MIXED."
+        ]
+      },
+      "vpvr": {
+        "poc": "335.3258333333",
+        "vah": "339.055",
+        "val": "328.315",
+        "is_estimate": true,
+        "window_start": "2026-09-04 16:00:00+00:00",
+        "window_end": "2026-09-11 20:00:00+00:00"
+      },
+      "missing_items": []
+    }
+  },
+  "fundamentals": {
+    "subject_id": "us-goog",
+    "accepted_before": "2026-09-12T15:13:05.827156+00:00",
+    "fact_count": 12,
+    "filings": [
+      {
+        "form": "10-Q",
+        "filed_at": "2026-07-23",
+        "report_period": "2026-06-30"
+      },
+      {
+        "form": "10-K",
+        "filed_at": "2026-02-05",
+        "report_period": "2025-12-31"
+      }
+    ],
+    "facts": [
+      {
+        "name": "REVENUE",
+        "value": "402836000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "NET_INCOME",
+        "value": "132170000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "OPERATING_CASH_FLOW",
+        "value": "164713000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "CAPITAL_EXPENDITURE",
+        "value": "91447000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "DILUTED_SHARES",
+        "value": "12230000000",
+        "unit": "shares",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "CASH_AND_EQUIVALENTS",
+        "value": "55911000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2026-06-30",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "FREE_CASH_FLOW",
+        "value": "73266000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": "FREE_CASH_FLOW = OPERATING_CASH_FLOW - CAPITAL_EXPENDITURE",
+        "missing_reason": null
+      },
+      {
+        "name": "TOTAL_DEBT",
+        "value": "100164000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2026-06-30",
+        "basis": "GAAP",
+        "derivation": "TOTAL_DEBT = LongTermDebtNoncurrent + LongTermDebtCurrent + CommercialPaper",
+        "missing_reason": null
+      },
+      {
+        "name": "REVENUE_GROWTH",
+        "value": "0.150901",
+        "unit": "fraction",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": "REVENUE_GROWTH = Revenues FY2025 / FY2024 - 1",
+        "missing_reason": null
+      },
+      {
+        "name": "NET_INCOME_GROWTH",
+        "value": "0.320142",
+        "unit": "fraction",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": "NET_INCOME_GROWTH = NetIncomeLoss FY2025 / FY2024 - 1",
+        "missing_reason": null
+      },
+      {
+        "name": "MARKET_CAP",
+        "value": "4102553500000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": "MARKET_CAP = last confirmed close * weighted-average diluted shares",
+        "missing_reason": null
+      },
+      {
+        "name": "PE_TTM",
+        "value": null,
+        "unit": "fraction",
+        "status": "MISSING",
+        "period_end": null,
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": "TTM EPS policy is not defined; not computed from YTD figures"
+      }
+    ],
+    "missing_items": [
+      "PE_TTM: requires a documented TTM EPS policy (not guessed from YTD XBRL durations)"
+    ],
+    "sources": [
+      "src-sec-goog-companyfacts"
+    ]
+  },
+  "snapshot": {
+    "snapshot_id": "snapshot-82853a170c784ac08207f682125fa752",
+    "snapshot_sha256": "fc69d4e8786508c0b5a4ad43abafd8aea420504645f15b60972ceefecfdcb0fd",
+    "cutoff_at": "2026-09-12T15:13:07.400366+00:00",
+    "evidence_count": 44,
+    "timeframe_coverage": [
+      {
+        "instrument_id": "US:GOOG",
+        "interval": "1d",
+        "role": "STRUCTURE",
+        "bars_as_of": "2026-09-11T20:00:00Z",
+        "status": "AVAILABLE",
+        "history_complete": false,
+        "evidence_ids": [
+          "ev_sma-alpaca-sip-goog-2026-09-11",
+          "ev_ema-alpaca-sip-goog-2026-09-11",
+          "ev_rsi-alpaca-sip-goog-2026-09-11",
+          "ev_macd-alpaca-sip-goog-2026-09-11",
+          "ev_atr-alpaca-sip-goog-2026-09-11",
+          "ev_bollinger_bands-alpaca-sip-goog-2026-09-11",
+          "ev_adx-alpaca-sip-goog-2026-09-11",
+          "ev_obv-alpaca-sip-goog-2026-09-11",
+          "ev_vwap-alpaca-sip-goog-2026-09-11",
+          "ev_volume_price_relation-alpaca-sip-goog-2026-09-11",
+          "ev_tech_level_support_alpaca-sip-goog-2026-09-01",
+          "ev_tech_level_support_alpaca-sip-goog-2026-05-22",
+          "ev_tech_level_support_alpaca-sip-goog-2026-08-20",
+          "ev_tech_level_resistance_alpaca-sip-goog-2026-09-03",
+          "ev_tech_level_resistance_alpaca-sip-goog-2026-07-16",
+          "ev_tech_level_resistance_alpaca-sip-goog-2026-07-07",
+          "ev_trend_us-goog_1d",
+          "ev_vpvr_vpvr-us-goog-1d",
+          "ev_fvg_fvg-alpaca-sip-goog-2026-09-11",
+          "ev_divergence_div-macd_histogram-alpaca-sip-goog-2025-06-10",
+          "ev_divergence_div-macd_histogram-alpaca-sip-goog-2026-02-03",
+          "ev_divergence_div-macd_histogram-alpaca-sip-goog-2026-07-07"
+        ],
+        "missing_reason": null
+      },
+      {
+        "instrument_id": "US:GOOG",
+        "interval": "15m",
+        "role": "SIGNAL",
+        "bars_as_of": "2026-09-11T20:00:00Z",
+        "status": "AVAILABLE",
+        "history_complete": false,
+        "evidence_ids": [
+          "ev_sma-alpaca-goog-1789155900",
+          "ev_ema-alpaca-goog-1789155900",
+          "ev_rsi-alpaca-goog-1789155900",
+          "ev_macd-alpaca-goog-1789155900",
+          "ev_atr-alpaca-goog-1789155900",
+          "ev_bollinger_bands-alpaca-goog-1789155900",
+          "ev_adx-alpaca-goog-1789155900",
+          "ev_obv-alpaca-goog-1789155900",
+          "ev_vwap-alpaca-goog-1789155900",
+          "ev_volume_price_relation-alpaca-goog-1789155900",
+          "ev_tech_level_support_alpaca-goog-1789047000",
+          "ev_tech_level_support_alpaca-goog-1789144200",
+          "ev_tech_level_support_alpaca-goog-1789054200",
+          "ev_tech_level_resistance_alpaca-goog-1789146900",
+          "ev_tech_level_resistance_alpaca-goog-1789050600",
+          "ev_tech_level_resistance_alpaca-goog-1788896700",
+          "ev_trend_us-goog_15m",
+          "ev_vpvr_vpvr-us-goog-15m",
+          "ev_fvg_fvg-alpaca-goog-1789150500",
+          "ev_divergence_div-macd_histogram-alpaca-goog-1786995900",
+          "ev_divergence_div-macd_histogram-alpaca-goog-1787063400",
+          "ev_divergence_div-macd_histogram-alpaca-goog-1787069700"
+        ],
+        "missing_reason": null
+      }
+    ],
+    "missing_items": [
+      "15m: requested history incomplete; actual start 2026-03-11 13:30:00+00:00",
+      "1d: requested history incomplete; actual start 2016-01-04 14:30:00+00:00",
+      "Market context missing at cutoff; no historical reconstruction inferred",
+      "PE_TTM: requires a documented TTM EPS policy (not guessed from YTD XBRL durations)"
+    ],
+    "scenario_rules": [
+      {
+        "rule_id": "rule-bullish-1789225987400366",
+        "version": "VPVR_15M_CLOSE_ENVELOPE_V1",
+        "scenario": "BULLISH",
+        "instrument_id": "US:GOOG",
+        "lower": "328.315",
+        "upper": "339.055",
+        "frozen_at": "2026-09-12T15:13:07.400366Z",
+        "expires_at": "2026-09-19T15:13:07.400366Z",
+        "confirmation_interval": "15m",
+        "trigger": "CLOSE_ABOVE_UPPER",
+        "invalidation": "CLOSE_BELOW_LOWER",
+        "evidence_ids": [
+          "ev_vpvr_vpvr-us-goog-15m"
+        ],
+        "limitation": "Platform-defined close-only scenario protocol using estimated VPVR bounds; not a trade, price target or model accuracy measurement."
+      },
+      {
+        "rule_id": "rule-neutral-1789225987400366",
+        "version": "VPVR_15M_CLOSE_ENVELOPE_V1",
+        "scenario": "NEUTRAL",
+        "instrument_id": "US:GOOG",
+        "lower": "328.315",
+        "upper": "339.055",
+        "frozen_at": "2026-09-12T15:13:07.400366Z",
+        "expires_at": "2026-09-19T15:13:07.400366Z",
+        "confirmation_interval": "15m",
+        "trigger": "CLOSE_INSIDE_INCLUSIVE",
+        "invalidation": "CLOSE_OUTSIDE",
+        "evidence_ids": [
+          "ev_vpvr_vpvr-us-goog-15m"
+        ],
+        "limitation": "Platform-defined close-only scenario protocol using estimated VPVR bounds; not a trade, price target or model accuracy measurement."
+      },
+      {
+        "rule_id": "rule-bearish-1789225987400366",
+        "version": "VPVR_15M_CLOSE_ENVELOPE_V1",
+        "scenario": "BEARISH",
+        "instrument_id": "US:GOOG",
+        "lower": "328.315",
+        "upper": "339.055",
+        "frozen_at": "2026-09-12T15:13:07.400366Z",
+        "expires_at": "2026-09-19T15:13:07.400366Z",
+        "confirmation_interval": "15m",
+        "trigger": "CLOSE_BELOW_LOWER",
+        "invalidation": "CLOSE_ABOVE_UPPER",
+        "evidence_ids": [
+          "ev_vpvr_vpvr-us-goog-15m"
+        ],
+        "limitation": "Platform-defined close-only scenario protocol using estimated VPVR bounds; not a trade, price target or model accuracy measurement."
+      }
+    ],
+    "fundamentals_included": true,
+    "sources": [
+      "src-alpaca-sip-goog-daily",
+      "src-alpaca-sip-goog",
+      "src-sec-goog-companyfacts"
+    ]
+  }
+}

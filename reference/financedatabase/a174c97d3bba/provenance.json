@@ -1,0 +1,235 @@
+{
+  "repo": "JerBouma/FinanceDatabase",
+  "ref": "main",
+  "fetched_at": "2026-09-13T18:09:58.730889+00:00",
+  "commit": "a174c97d3bba96fc1a82b2e1068fb3ec5e02e634",
+  "commit_date": "2026-09-13T15:10:38Z",
+  "assets": [
+    {
+      "asset": "equities",
+      "url": "https://raw.githubusercontent.com/JerBouma/FinanceDatabase/a174c97d3bba96fc1a82b2e1068fb3ec5e02e634/compression/equities.bz2",
+      "bytes": 15287957,
+      "sha256": "41c5a612980f3ab5d1ae360d4ec1ea16eeb8bcd312de7e5bca3093e795b9b578",
+      "cached": false,
+      "peek": {
+        "columns": [
+          "symbol",
+          "name",
+          "summary",
+          "currency",
+          "sector",
+          "industry_group",
+          "industry",
+          "exchange",
+          "mic",
+          "market",
+          "country",
+          "state",
+          "city",
+          "zipcode",
+          "website",
+          "market_cap",
+          "isin",
+          "cusip",
+          "figi",
+          "composite_figi",
+          "shareclass_figi",
+          "delisted"
+        ],
+        "sample": [
+          {
+            "symbol": "000002.SZ",
+            "name": "China Vanke Co., Ltd.",
+            "summary": "China Vanke Co., Ltd., together with its subsidiaries, engag",
+            "currency": "CNY",
+            "sector": "Real Estate",
+            "industry_group": "Real Estate",
+            "industry": "Real Estate Management & Development",
+            "exchange": "SHZ",
+            "mic": "XSHE",
+            "market": "Shenzhen Stock Exchange",
+            "country": "China",
+            "state": "",
+            "city": "Shenzhen",
+            "zipcode": "518083",
+            "website": "http://www.vanke.com",
+            "market_cap": "Large Cap",
+            "isin": "CNE100001SR9",
+            "cusip": "",
+            "figi": "",
+            "composite_figi": "BBG006KY4KD6",
+            "shareclass_figi": "BBG006KY4KG3",
+            "delisted": "False"
+          },
+          {
+            "symbol": "000004.SZ",
+            "name": "Shenzhen GuoHua Network Security Technology Co., Ltd.",
+            "summary": "Shenzhen GuoHua Network Security Technology Co., Ltd. engage",
+            "currency": "CNY",
+            "sector": "Financials",
+            "industry_group": "Diversified Financials",
+            "industry": "Diversified Financial Services",
+            "exchange": "SHZ",
+            "mic": "XSHE",
+            "market": "Shenzhen Stock Exchange",
+            "country": "China",
+            "state": "CA",
+            "city": "San Francisco",
+            "zipcode": "94129",
+            "website": "http://www.sz000004.cn",
+            "market_cap": "Micro Cap",
+            "isin": "",
+            "cusip": "",
+            "figi": "BBG000BZFTX3",
+            "composite_figi": "BBG000BZFT18",
+            "shareclass_figi": "BBG001SJWNX3",
+            "delisted": "False"
+          },
+          {
+            "symbol": "000005.SZ",
+            "name": "Shenzhen Fountain Corporation",
+            "summary": "Shenzhen Fountain Corporation engages in real estate develop",
+            "currency": "CNY",
+            "sector": "Real Estate",
+            "industry_group": "Real Estate",
+            "industry": "Real Estate Management & Development",
+            "exchange": "SHZ",
+            "mic": "XSHE",
+            "market": "Shenzhen Stock Exchange",
+            "country": "China",
+            "state": "",
+            "city": "Shenzhen",
+            "zipcode": "518001",
+            "website": "http://www.fountain.com.cn",
+            "market_cap": "Small Cap",
+            "isin": "CNE0000001L7",
+            "cusip": "",
+            "figi": "",
+            "composite_figi": "",
+            "shareclass_figi": "",
+            "delisted": "False"
+          }
+        ]
+      },
+      "path": "reference\\financedatabase\\a174c97d3bba\\equities.bz2"
+    },
+    {
+      "asset": "etfs",
+      "url": "https://raw.githubusercontent.com/JerBouma/FinanceDatabase/a174c97d3bba96fc1a82b2e1068fb3ec5e02e634/compression/etfs.bz2",
+      "bytes": 1282566,
+      "sha256": "3f1a990a71676a303ec999d744ed7490fec85c2a18723e702a93f29dff3c1a75",
+      "cached": false,
+      "peek": {
+        "columns": [
+          "symbol",
+          "name",
+          "currency",
+          "summary",
+          "category_group",
+          "category",
+          "family",
+          "exchange",
+          "mic",
+          "isin"
+        ],
+        "sample": [
+          {
+            "symbol": "003D.BE",
+            "name": "WISDOMTREE EURO HGD EQ.FD",
+            "currency": "EUR",
+            "summary": "The WisdomTree Euro Hedged Equity Fund aims to provide expos",
+            "category_group": "Financials",
+            "category": "Developed Markets",
+            "family": "WisdomTree Asset Management",
+            "exchange": "BER",
+            "mic": "XBER",
+            "isin": ""
+          },
+          {
+            "symbol": "003H.BE",
+            "name": "WISDOMTREE EM.CURR.STRAT.",
+            "currency": "EUR",
+            "summary": "The WisdomTree Emerging Markets Currency Strategy Fund seeks",
+            "category_group": "Currencies",
+            "category": "Emerging Markets",
+            "family": "WisdomTree Asset Management",
+            "exchange": "BER",
+            "mic": "XBER",
+            "isin": ""
+          },
+          {
+            "symbol": "003I.BE",
+            "name": "WISDOMTREE INTL H.Q.D.GR.",
+            "currency": "EUR",
+            "summary": "The WisdomTree International Hedged Quality Dividend Growth ",
+            "category_group": "Financials",
+            "category": "Developed Markets",
+            "family": "WisdomTree Asset Management",
+            "exchange": "BER",
+            "mic": "XBER",
+            "isin": ""
+          }
+        ]
+      },
+      "path": "reference\\financedatabase\\a174c97d3bba\\etfs.bz2"
+    },
+    {
+      "asset": "indices",
+      "url": "https://raw.githubusercontent.com/JerBouma/FinanceDatabase/a174c97d3bba96fc1a82b2e1068fb3ec5e02e634/compression/indices.bz2",
+      "bytes": 1189707,
+      "sha256": "64be34bee94ae78350f636e8d495c7bc411db9d22abddcd05394bcde24f0b127",
+      "cached": false,
+      "peek": {
+        "columns": [
+          "symbol",
+          "name",
+          "currency",
+          "summary",
+          "category_group",
+          "category",
+          "exchange",
+          "mic"
+        ],
+        "sample": [
+          {
+            "symbol": "000008.SS",
+            "name": "SSE Conglomerates Index",
+            "currency": "CNY",
+            "summary": "The SSE Conglomerates Index aims to reflect the overall perf",
+            "category_group": "Equities",
+            "category": "Equities",
+            "exchange": "SHH",
+            "mic": "XSHG"
+          },
+          {
+            "symbol": "000019.SS",
+            "name": "SSE Corporate Governance Index",
+            "currency": "CNY",
+            "summary": "The SSE Corporate Governance Index evaluates and measures th",
+            "category_group": "Equities",
+            "category": "Equities",
+            "exchange": "SHH",
+            "mic": "XSHG"
+          },
+          {
+            "symbol": "000021.SS",
+            "name": "SSE 180 Corporate Governance In",
+            "currency": "CNY",
+            "summary": "The SSE 180 Corporate Governance Index is designed to measur",
+            "category_group": "Equities",
+            "category": "Equities",
+            "exchange": "SHH",
+            "mic": "XSHG"
+          }
+        ]
+      },
+      "path": "reference\\financedatabase\\a174c97d3bba\\indices.bz2"
+    }
+  ],
+  "license": "MIT (see https://github.com/JerBouma/FinanceDatabase/blob/main/LICENSE)",
+  "notes": [
+    "Community-maintained ticker metadata: sector/industry/exchange/currency classification only.",
+    "Never price evidence. Never a substitute for SEC/venue data. Pin the commit and re-review on refresh.",
+    "Kept as .bz2 and streamed at read time to avoid duplicating a large CSV on disk."
+  ]
+}

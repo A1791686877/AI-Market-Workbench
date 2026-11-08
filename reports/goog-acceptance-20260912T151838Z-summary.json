@@ -1,0 +1,282 @@
+{
+  "report_file": "goog-acceptance-20260912T151838Z.json",
+  "model_call": "ATTEMPTED",
+  "routing": {
+    "equity_provider": "alpaca",
+    "equity_eod_provider": "alpaca",
+    "alpaca_feed": "sip"
+  },
+  "bars": {
+    "1d": {
+      "count": 400,
+      "first": "2025-02-07T14:30:00+00:00",
+      "last": "2026-09-11T20:00:00+00:00",
+      "last_close": "335.45",
+      "basis": [
+        "TOTAL_RETURN_ADJUSTED"
+      ],
+      "history_complete": false,
+      "provider": "ALPACA"
+    },
+    "15m": {
+      "count": 400,
+      "first": "2026-08-20T17:30:00+00:00",
+      "last": "2026-09-11T20:00:00+00:00",
+      "last_close": "335.49",
+      "basis": [
+        "SPLIT_ADJUSTED"
+      ],
+      "history_complete": false,
+      "provider": "ALPACA"
+    }
+  },
+  "indicators": {
+    "1d": {
+      "count": 10,
+      "ready": 10,
+      "fvg": 645,
+      "divergences": 67,
+      "trend": "DOWNTREND",
+      "vpvr": {
+        "poc": "341.72875",
+        "vah": "381.8333333333",
+        "val": "326.5166666667"
+      },
+      "sr_levels": [
+        [
+          "SUPPORT",
+          "329.15",
+          "CORRECT_SIDE_ONLY"
+        ],
+        [
+          "SUPPORT",
+          "378.52",
+          "BROKEN_HISTORICAL"
+        ],
+        [
+          "SUPPORT",
+          "335.95",
+          "BROKEN_HISTORICAL"
+        ],
+        [
+          "RESISTANCE",
+          "340.095",
+          "CORRECT_SIDE_ONLY"
+        ],
+        [
+          "RESISTANCE",
+          "373.735",
+          "CORRECT_SIDE_ONLY"
+        ],
+        [
+          "RESISTANCE",
+          "370.05",
+          "CORRECT_SIDE_ONLY"
+        ]
+      ]
+    },
+    "15m": {
+      "count": 10,
+      "ready": 10,
+      "fvg": 456,
+      "divergences": 89,
+      "trend": "RANGE_OR_MIXED",
+      "vpvr": {
+        "poc": "335.3258333333",
+        "vah": "339.055",
+        "val": "328.315"
+      },
+      "sr_levels": [
+        [
+          "SUPPORT",
+          "325.677",
+          "CORRECT_SIDE_ONLY"
+        ],
+        [
+          "SUPPORT",
+          "337.09",
+          "BROKEN_HISTORICAL"
+        ],
+        [
+          "SUPPORT",
+          "326.91",
+          "CORRECT_SIDE_ONLY"
+        ],
+        [
+          "RESISTANCE",
+          "338.3381",
+          "CORRECT_SIDE_ONLY"
+        ],
+        [
+          "RESISTANCE",
+          "329.33",
+          "BROKEN_HISTORICAL"
+        ],
+        [
+          "RESISTANCE",
+          "335.5475",
+          "CORRECT_SIDE_ONLY"
+        ]
+      ]
+    }
+  },
+  "fundamentals": {
+    "subject_id": "us-goog",
+    "accepted_before": "2026-09-12T15:13:05.827156+00:00",
+    "fact_count": 12,
+    "missing_items": [
+      "PE_TTM: requires a documented TTM EPS policy (not guessed from YTD XBRL durations)"
+    ],
+    "sources": [
+      "src-sec-goog-companyfacts"
+    ]
+  },
+  "snapshot": {
+    "snapshot_id": "snapshot-5cd7dbfa2dcb4137a0862a2d3f645ec1",
+    "snapshot_sha256": "71433eebc037d6ea403d730f9af3ebdf2dc346eaa2065cfa3503cbe896e5d26f",
+    "cutoff_at": "2026-09-12T15:14:09.933799+00:00",
+    "evidence_count": 44,
+    "fundamentals_included": true,
+    "sources": [
+      "src-alpaca-sip-goog-daily",
+      "src-alpaca-sip-goog",
+      "src-sec-goog-companyfacts"
+    ]
+  },
+  "coverage": [
+    [
+      "1d",
+      "STRUCTURE",
+      "AVAILABLE"
+    ],
+    [
+      "15m",
+      "SIGNAL",
+      "AVAILABLE"
+    ]
+  ],
+  "task": {
+    "task_id": "task-fdc486ca5af347b58002f377e3275aa2",
+    "status": "SUCCEEDED",
+    "snapshot_id": "snapshot-5cd7dbfa2dcb4137a0862a2d3f645ec1",
+    "created_at": "2026-09-12T15:14:22.126587Z",
+    "started_at": "2026-09-12T15:14:22.153352Z",
+    "completed_at": "2026-09-12T15:18:38.638210Z",
+    "analysis_id": "analysis-cc89ebcecc8f4ae6af2ee4190d4415d7",
+    "error": null
+  },
+  "analysis": {
+    "analysis_id": "analysis-cc89ebcecc8f4ae6af2ee4190d4415d7",
+    "audit": {
+      "prompt_version": "scenario-v2/codex-public-evidence-v4",
+      "provider": "CODEX_CLI",
+      "model": "gpt-6-astra",
+      "model_revision": null,
+      "started_at": "2026-09-12T15:14:22.754959Z",
+      "finished_at": "2026-09-12T15:18:38.449376Z",
+      "input_tokens": 36068,
+      "output_tokens": 4563,
+      "cost": null,
+      "cost_currency": null,
+      "raw_response_sha256": "1ed9e916d0ae34fd63b3290aeaa346fe8b819d5519cee32c843b74572de15fc1"
+    },
+    "scenario_titles": [
+      [
+        "BULLISH",
+        "条件性向上离开估计价值区。最新335.49低于339.055，不满足该价格条件；冻结后结果未知。这是平台收盘协议，不是价"
+      ],
+      [
+        "NEUTRAL",
+        "条件性维持估计价值区内波动。最新335.49处于区间内且略高于POC 335.3258333333，但该收盘早于规则冻结"
+      ],
+      [
+        "BEARISH",
+        "条件性向下离开估计价值区。最新335.49高于328.315，尚不满足该价格条件；329.33高于下破触发位，不能作为该"
+      ]
+    ],
+    "scenario_rule_ids": [
+      "rule-bullish-1789226049933799",
+      "rule-neutral-1789226049933799",
+      "rule-bearish-1789226049933799"
+    ],
+    "key_levels": [
+      [
+        "level_daily_support",
+        "SUPPORT",
+        "329.15",
+        "1d"
+      ],
+      [
+        "level_daily_resistance",
+        "RESISTANCE",
+        "340.095",
+        "1d"
+      ],
+      [
+        "level_daily_fvg_mid",
+        "FVG_MIDPOINT",
+        "330.945",
+        "1d"
+      ],
+      [
+        "level_intraday_val",
+        "VAL",
+        "328.315",
+        "15m"
+      ],
+      [
+        "level_intraday_vah",
+        "VAH",
+        "339.055",
+        "15m"
+      ],
+      [
+        "level_intraday_poc",
+        "POC",
+        "335.3258333333",
+        "15m"
+      ],
+      [
+        "level_intraday_support",
+        "SUPPORT",
+        "326.91",
+        "15m"
+      ],
+      [
+        "level_broken_resistance_retest",
+        "OTHER",
+        "329.33",
+        "15m"
+      ],
+      [
+        "level_intraday_fvg_mid",
+        "FVG_MIDPOINT",
+        "336.80495",
+        "15m"
+      ]
+    ],
+    "conflict_count": 3,
+    "missing_information_fields": [
+      "weekly_monthly_background",
+      "requested_history",
+      "market_and_derivatives_context",
+      "cross_timeframe_price_basis",
+      "trade_level_volume_profile",
+      "fundamental_comparability",
+      "snapshot_reception_timing"
+    ],
+    "timeframe_synthesis": [
+      [
+        "1d",
+        "STRUCTURE",
+        "AVAILABLE"
+      ],
+      [
+        "15m",
+        "SIGNAL",
+        "AVAILABLE"
+      ]
+    ],
+    "evidence_reference_validation": "PASS: IDs, level IDs and exact cited prices"
+  }
+}

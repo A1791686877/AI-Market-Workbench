@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest_cache_local/
+backups/
+.coverage
+cache/*
+!cache/.gitkeep
+data/*
+!data/.gitkeep
+logs/app/*
+!logs/app/.gitkeep
+logs/audit/*
+!logs/audit/.gitkeep
+tmp/*
+!tmp/.gitkeep
+.env
+config/providers.env
+config/providers.env
+*.db
+*.db-shm
+*.db-wal
+# Vendored reference data: keep provenance.json (pinned commit + license) in version control,
+# but never the multi-MB community data blobs themselves.
+reference/**/*.bz2

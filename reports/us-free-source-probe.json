@@ -1,0 +1,395 @@
+{
+  "phase": "phase-1-us-equity-source-probe",
+  "created_at": "2026-09-12T14:16:21.764715+00:00",
+  "symbols_probed": [
+    "AAPL",
+    "NVDA"
+  ],
+  "monthly_data_subscription_cost_usd": 0,
+  "credentials_logged": false,
+  "trading_endpoints_called": false,
+  "notes": [
+    "The user-supplied Alpaca base URL was a paper-trading endpoint and is deliberately NOT used; only data.alpaca.markets is called.",
+    "Nothing is marked connected unless a real call returned validated XNYS bars.",
+    "Split verdicts come from real closes around known split dates, not from vendor documentation.",
+    "CIK values are verified against SEC submissions (entity name + ticker list), not trusted from memory."
+  ],
+  "results": [
+    {
+      "service": "Alpaca IEX 15m (free)",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "bar_count": 104,
+      "first_bar_at": "2026-09-08T13:30:00+00:00",
+      "last_bar_at": "2026-09-11T20:00:00+00:00",
+      "last_close": "332.245",
+      "provider": "ALPACA",
+      "dataset": "us_equity_iex_15m",
+      "delay_class": "REALTIME_PUBLIC",
+      "market_scope": "EXCHANGE_ONLY",
+      "price_basis": "SPLIT_ADJUSTED",
+      "is_full_market": false,
+      "limitations": [
+        "Alpaca IEX is a single-venue feed (real-time, NOT consolidated); it is not the full US market.",
+        "US RTH bars are filtered against exchange_calendars XNYS sessions, including holidays, half-days and DST.",
+        "Primary OHLCV is split-adjusted; matching raw OHLCV is stored on each bar when returned by both queries."
+      ],
+      "elapsed_ms": 1308.73
+    },
+    {
+      "service": "Alpaca SIP 15m (paid entitlement)",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "bar_count": 104,
+      "first_bar_at": "2026-09-08T13:30:00+00:00",
+      "last_bar_at": "2026-09-11T20:00:00+00:00",
+      "last_close": "332.23",
+      "provider": "ALPACA",
+      "dataset": "us_equity_sip_15m",
+      "delay_class": "DELAYED_15M",
+      "market_scope": "CONSOLIDATED_US_SIP",
+      "price_basis": "SPLIT_ADJUSTED",
+      "is_full_market": true,
+      "limitations": [
+        "Alpaca SIP is the consolidated tape; the free tier is delayed at least 15 minutes.",
+        "US RTH bars are filtered against exchange_calendars XNYS sessions, including holidays, half-days and DST.",
+        "Primary OHLCV is split-adjusted; matching raw OHLCV is stored on each bar when returned by both queries."
+      ],
+      "elapsed_ms": 1649.8
+    },
+    {
+      "service": "Alpaca IEX daily adjustment=all",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "bar_count": 274,
+      "first_bar_at": "2025-08-11T13:30:00+00:00",
+      "last_bar_at": "2026-09-11T20:00:00+00:00",
+      "last_close": "332.245",
+      "provider": "ALPACA",
+      "dataset": "us_equity_iex_daily_all",
+      "delay_class": "REALTIME_PUBLIC",
+      "market_scope": "EXCHANGE_ONLY",
+      "price_basis": "TOTAL_RETURN_ADJUSTED",
+      "is_full_market": false,
+      "limitations": [
+        "Alpaca IEX is a single-venue feed (real-time, NOT consolidated); it is not the full US market.",
+        "Daily bars use adjustment=all (TOTAL_RETURN_ADJUSTED); weekly/monthly are generated locally from these bars.",
+        "Sessions are taken from exchange_calendars XNYS (holidays, half-days and DST included)."
+      ],
+      "elapsed_ms": 521.55
+    },
+    {
+      "service": "Alpaca IEX daily adjustment=split",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "bar_count": 274,
+      "first_bar_at": "2025-08-11T13:30:00+00:00",
+      "last_bar_at": "2026-09-11T20:00:00+00:00",
+      "last_close": "332.245",
+      "provider": "ALPACA",
+      "dataset": "us_equity_iex_daily_split",
+      "delay_class": "REALTIME_PUBLIC",
+      "market_scope": "EXCHANGE_ONLY",
+      "price_basis": "SPLIT_ADJUSTED",
+      "is_full_market": false,
+      "limitations": [
+        "Alpaca IEX is a single-venue feed (real-time, NOT consolidated); it is not the full US market.",
+        "Daily bars use adjustment=split (SPLIT_ADJUSTED); weekly/monthly are generated locally from these bars.",
+        "Sessions are taken from exchange_calendars XNYS (holidays, half-days and DST included)."
+      ],
+      "elapsed_ms": 419.45
+    },
+    {
+      "service": "Twelve Data 15m",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "bar_count": 364,
+      "first_bar_at": "2026-08-24T13:30:00+00:00",
+      "last_bar_at": "2026-09-11T20:00:00+00:00",
+      "last_close": "332.23001",
+      "provider": "TWELVE_DATA",
+      "dataset": "us_equity_twelvedata_15m",
+      "delay_class": "UNKNOWN",
+      "market_scope": "UNKNOWN",
+      "price_basis": "RAW",
+      "is_full_market": false,
+      "limitations": [
+        "Intraday adjustment is unverified (free-tier 15m history does not reach a split); labeled RAW.",
+        "Dividend adjustment is not claimed; only split behavior was tested.",
+        "Consolidation scope is unknown until documented; this is not labeled a full-market feed."
+      ],
+      "elapsed_ms": 936.83
+    },
+    {
+      "service": "Twelve Data daily",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "bar_count": 549,
+      "first_bar_at": "2024-07-05T13:30:00+00:00",
+      "last_bar_at": "2026-09-11T20:00:00+00:00",
+      "last_close": "332.26999",
+      "provider": "TWELVE_DATA",
+      "dataset": "us_equity_twelvedata_1d",
+      "delay_class": "UNKNOWN",
+      "market_scope": "UNKNOWN",
+      "price_basis": "SPLIT_ADJUSTED",
+      "is_full_market": false,
+      "limitations": [
+        "Daily values are split-adjusted (verified on the NVDA 2024-06-10 10:1 boundary).",
+        "Dividend adjustment is not claimed; only split behavior was tested.",
+        "Consolidation scope is unknown until documented; this is not labeled a full-market feed."
+      ],
+      "elapsed_ms": 635.56
+    },
+    {
+      "service": "Alpha Vantage daily (raw, compact)",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "bar_count": 100,
+      "first_bar_at": "2026-04-21T13:30:00+00:00",
+      "last_bar_at": "2026-09-11T20:00:00+00:00",
+      "last_close": "332.2700",
+      "provider": "ALPHA_VANTAGE",
+      "dataset": "us_equity_alphavantage_daily_raw",
+      "delay_class": "END_OF_DAY",
+      "market_scope": "UNKNOWN",
+      "price_basis": "RAW",
+      "is_full_market": false,
+      "limitations": [
+        "Raw split/dividend-unadjusted OHLCV; no adjusted OHLC is derived here.",
+        "Consolidation scope is unknown until documented; not labeled a full-market feed.",
+        "Free tier verified limits: ~25 requests/day, 1 request/second, outputsize=full is premium (only the last ~100 daily bars are available). Use Alpaca/Tiingo for long history."
+      ],
+      "elapsed_ms": 907.17
+    },
+    {
+      "service": "Alpha Vantage adjusted endpoint entitlement (premium?)",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "status_code": 200,
+      "payload_keys": [
+        "Information"
+      ],
+      "messages": {
+        "Information": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantl"
+      },
+      "raw_sha256": "6c7d1922049dcee885744c064435f1e08908552ae382e670f538f765b422aa5d",
+      "elapsed_ms": 12895.7
+    },
+    {
+      "service": "Tiingo Free EOD",
+      "status": "NOT_CONFIGURED"
+    },
+    {
+      "service": "Massive Basic EOD",
+      "status": "NOT_CONFIGURED"
+    },
+    {
+      "service": "SEC EDGAR Company Facts",
+      "status": "SUCCESS",
+      "http_verified": true,
+      "status_code": 200,
+      "payload_keys": [
+        "cik",
+        "entityName",
+        "facts"
+      ],
+      "messages": {},
+      "raw_sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+      "elapsed_ms": 1606.44
+    }
+  ],
+  "adjustment_checks": [
+    {
+      "service": "Alpaca IEX adjustment=all",
+      "symbol": "AAPL",
+      "verdict": "SPLIT_ADJUSTED_SMOOTH",
+      "max_ratio": 1.0514,
+      "min_ratio": 0.9196,
+      "ratios": [
+        1.0222,
+        1.0514,
+        1.0111,
+        0.9931,
+        1.0126,
+        0.9886,
+        0.9981,
+        1.0343,
+        1.0414,
+        0.9786
+      ],
+      "window": "2020-08-19..2020-09-11",
+      "split_at": "2020-08-31",
+      "expected_split_factor": 4.0
+    },
+    {
+      "service": "Alpaca IEX adjustment=all",
+      "symbol": "NVDA",
+      "verdict": "SPLIT_ADJUSTED_SMOOTH",
+      "max_ratio": 1.0517,
+      "min_ratio": 0.9642,
+      "ratios": [
+        0.9644,
+        0.9906,
+        1.0501,
+        1.0125,
+        1.0517,
+        0.9889,
+        0.998,
+        1.009,
+        0.9919,
+        1.036
+      ],
+      "window": "2024-05-29..2024-06-21",
+      "split_at": "2024-06-10",
+      "expected_split_factor": 10.0
+    },
+    {
+      "service": "Alpaca IEX adjustment=raw",
+      "symbol": "AAPL",
+      "verdict": "SPLIT_UNADJUSTED_RAW",
+      "max_ratio": 1.0514,
+      "min_ratio": 0.2586,
+      "ratios": [
+        1.0221,
+        1.0514,
+        1.0111,
+        0.9932,
+        1.0126,
+        0.9886,
+        0.9981,
+        0.2586,
+        1.0414,
+        0.9786
+      ],
+      "window": "2020-08-19..2020-09-11",
+      "split_at": "2020-08-31",
+      "expected_split_factor": 4.0
+    },
+    {
+      "service": "Alpaca IEX adjustment=raw",
+      "symbol": "NVDA",
+      "verdict": "SPLIT_UNADJUSTED_RAW",
+      "max_ratio": 1.0517,
+      "min_ratio": 0.1009,
+      "ratios": [
+        0.9644,
+        0.9906,
+        1.0501,
+        1.0125,
+        1.0517,
+        0.9889,
+        0.998,
+        0.1009,
+        0.9917,
+        1.0361
+      ],
+      "window": "2024-05-29..2024-06-21",
+      "split_at": "2024-06-10",
+      "expected_split_factor": 10.0
+    },
+    {
+      "service": "Twelve Data daily",
+      "symbol": "AAPL",
+      "verdict": "NO_BARS_IN_WINDOW",
+      "samples": 0
+    },
+    {
+      "service": "Twelve Data daily",
+      "symbol": "NVDA",
+      "verdict": "SPLIT_ADJUSTED_SMOOTH",
+      "max_ratio": 1.0516,
+      "min_ratio": 0.9623,
+      "ratios": [
+        0.9623,
+        0.9922,
+        1.049,
+        1.0125,
+        1.0516,
+        0.9882,
+        0.9991,
+        1.0075,
+        0.9928,
+        1.0355
+      ],
+      "window": "2024-05-29..2024-06-21",
+      "split_at": "2024-06-10",
+      "expected_split_factor": 10.0
+    }
+  ],
+  "cik_verification": [
+    {
+      "symbol": "AAPL",
+      "cik": 320193,
+      "status": "SUCCESS",
+      "entity_name": "Apple Inc.",
+      "tickers": [
+        "AAPL"
+      ],
+      "match": true
+    },
+    {
+      "symbol": "MSFT",
+      "cik": 789019,
+      "status": "SUCCESS",
+      "entity_name": "MICROSOFT CORP",
+      "tickers": [
+        "MSFT"
+      ],
+      "match": true
+    },
+    {
+      "symbol": "GOOGL",
+      "cik": 1652044,
+      "status": "SUCCESS",
+      "entity_name": "Alphabet Inc.",
+      "tickers": [
+        "GOOGL",
+        "GOOG",
+        "GOOGM",
+        "GOOGN"
+      ],
+      "match": true
+    },
+    {
+      "symbol": "AMZN",
+      "cik": 1018724,
+      "status": "SUCCESS",
+      "entity_name": "AMAZON COM INC",
+      "tickers": [
+        "AMZN"
+      ],
+      "match": true
+    },
+    {
+      "symbol": "NVDA",
+      "cik": 1045810,
+      "status": "SUCCESS",
+      "entity_name": "NVIDIA CORP",
+      "tickers": [
+        "NVDA"
+      ],
+      "match": true
+    },
+    {
+      "symbol": "META",
+      "cik": 1326801,
+      "status": "SUCCESS",
+      "entity_name": "Meta Platforms, Inc.",
+      "tickers": [
+        "META"
+      ],
+      "match": true
+    },
+    {
+      "symbol": "TSLA",
+      "cik": 1318605,
+      "status": "SUCCESS",
+      "entity_name": "Tesla, Inc.",
+      "tickers": [
+        "TSLA"
+      ],
+      "match": true
+    }
+  ]
+}

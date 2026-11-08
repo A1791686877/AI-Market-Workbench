@@ -1,0 +1,1297 @@
+{
+  "started_at": "2026-09-06T03:09:42.943807+00:00",
+  "finished_at": "2026-09-06T03:10:37.104397+00:00",
+  "client": "codex exec (real model autonomously selecting MCP calls)",
+  "model": "gpt-5.6-terra",
+  "returncode": 0,
+  "usage": {
+    "input_tokens": 56161,
+    "cached_input_tokens": 28928,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1287,
+    "reasoning_output_tokens": 66
+  },
+  "run_directory": "E:\\AI-Market-Workbench\\data\\model-runs\\mcp-client-fcbfcf9025b84272ad08d61cc8bc3dc6",
+  "tool_calls": [
+    {
+      "id": "item_2",
+      "type": "mcp_tool_call",
+      "server": "amw",
+      "tool": "market_search_instruments",
+      "arguments": {
+        "q": "BTC",
+        "limit": 20
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"items\": [\n    {\n      \"instrument_id\": \"CRYPTO:BTCUSDT:PERP\",\n      \"asset_class\": \"CRYPTO_PERPETUAL\",\n      \"symbol\": \"BTCUSDT\",\n      \"venue\": \"ROUTED_PUBLIC\",\n      \"quote_currency\": \"USDT\",\n      \"timezone\": \"UTC\",\n      \"contract_type\": \"USDT_PERPETUAL\",\n      \"active\": true,\n      \"market_data_only\": true,\n      \"subject_id\": \"crypto-btc\"\n    },\n    {\n      \"instrument_id\": \"CRYPTO:BTCUSDT:SPOT\",\n      \"asset_class\": \"CRYPTO_SPOT\",\n      \"symbol\": \"BTCUSDT\",\n      \"venue\": \"ROUTED_PUBLIC\",\n      \"quote_currency\": \"USDT\",\n      \"timezone\": \"UTC\",\n      \"contract_type\": \"SPOT\",\n      \"active\": true,\n      \"market_data_only\": true,\n      \"subject_id\": \"crypto-btc\"\n    }\n  ],\n  \"page\": {\n    \"limit\": 20,\n    \"cursor\": null,\n    \"next_cursor\": null,\n    \"has_more\": false\n  },\n  \"as_of\": \"2026-09-06T03:10:02.251046Z\"\n}"
+          }
+        ],
+        "structured_content": {
+          "items": [
+            {
+              "instrument_id": "CRYPTO:BTCUSDT:PERP",
+              "asset_class": "CRYPTO_PERPETUAL",
+              "symbol": "BTCUSDT",
+              "venue": "ROUTED_PUBLIC",
+              "quote_currency": "USDT",
+              "timezone": "UTC",
+              "contract_type": "USDT_PERPETUAL",
+              "active": true,
+              "market_data_only": true,
+              "subject_id": "crypto-btc"
+            },
+            {
+              "instrument_id": "CRYPTO:BTCUSDT:SPOT",
+              "asset_class": "CRYPTO_SPOT",
+              "symbol": "BTCUSDT",
+              "venue": "ROUTED_PUBLIC",
+              "quote_currency": "USDT",
+              "timezone": "UTC",
+              "contract_type": "SPOT",
+              "active": true,
+              "market_data_only": true,
+              "subject_id": "crypto-btc"
+            }
+          ],
+          "page": {
+            "limit": 20,
+            "cursor": null,
+            "next_cursor": null,
+            "has_more": false
+          },
+          "as_of": "2026-09-06T03:10:02.251046Z"
+        }
+      },
+      "error": null,
+      "status": "completed"
+    },
+    {
+      "id": "item_3",
+      "type": "mcp_tool_call",
+      "server": "amw",
+      "tool": "market_search_instruments",
+      "arguments": {
+        "q": "ETH",
+        "limit": 20
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"items\": [\n    {\n      \"instrument_id\": \"CRYPTO:ETHUSDT:PERP\",\n      \"asset_class\": \"CRYPTO_PERPETUAL\",\n      \"symbol\": \"ETHUSDT\",\n      \"venue\": \"ROUTED_PUBLIC\",\n      \"quote_currency\": \"USDT\",\n      \"timezone\": \"UTC\",\n      \"contract_type\": \"USDT_PERPETUAL\",\n      \"active\": true,\n      \"market_data_only\": true,\n      \"subject_id\": \"crypto-eth\"\n    },\n    {\n      \"instrument_id\": \"CRYPTO:ETHUSDT:SPOT\",\n      \"asset_class\": \"CRYPTO_SPOT\",\n      \"symbol\": \"ETHUSDT\",\n      \"venue\": \"ROUTED_PUBLIC\",\n      \"quote_currency\": \"USDT\",\n      \"timezone\": \"UTC\",\n      \"contract_type\": \"SPOT\",\n      \"active\": true,\n      \"market_data_only\": true,\n      \"subject_id\": \"crypto-eth\"\n    }\n  ],\n  \"page\": {\n    \"limit\": 20,\n    \"cursor\": null,\n    \"next_cursor\": null,\n    \"has_more\": false\n  },\n  \"as_of\": \"2026-09-06T03:10:02.253061Z\"\n}"
+          }
+        ],
+        "structured_content": {
+          "items": [
+            {
+              "instrument_id": "CRYPTO:ETHUSDT:PERP",
+              "asset_class": "CRYPTO_PERPETUAL",
+              "symbol": "ETHUSDT",
+              "venue": "ROUTED_PUBLIC",
+              "quote_currency": "USDT",
+              "timezone": "UTC",
+              "contract_type": "USDT_PERPETUAL",
+              "active": true,
+              "market_data_only": true,
+              "subject_id": "crypto-eth"
+            },
+            {
+              "instrument_id": "CRYPTO:ETHUSDT:SPOT",
+              "asset_class": "CRYPTO_SPOT",
+              "symbol": "ETHUSDT",
+              "venue": "ROUTED_PUBLIC",
+              "quote_currency": "USDT",
+              "timezone": "UTC",
+              "contract_type": "SPOT",
+              "active": true,
+              "market_data_only": true,
+              "subject_id": "crypto-eth"
+            }
+          ],
+          "page": {
+            "limit": 20,
+            "cursor": null,
+            "next_cursor": null,
+            "has_more": false
+          },
+          "as_of": "2026-09-06T03:10:02.253061Z"
+        }
+      },
+      "error": null,
+      "status": "completed"
+    },
+    {
+      "id": "item_5",
+      "type": "mcp_tool_call",
+      "server": "amw",
+      "tool": "market_get_indicator_evidence",
+      "arguments": {
+        "subject_id": "crypto-eth",
+        "instrument_id": "CRYPTO:ETHUSDT:SPOT",
+        "interval": "15m"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"subject_id\": \"crypto-eth\",\n  \"instrument\": {\n    \"instrument_id\": \"CRYPTO:ETHUSDT:SPOT\",\n    \"asset_class\": \"CRYPTO_SPOT\",\n    \"symbol\": \"ETHUSDT\",\n    \"venue\": \"ROUTED_PUBLIC\",\n    \"quote_currency\": \"USDT\",\n    \"timezone\": \"UTC\",\n    \"contract_type\": \"SPOT\",\n    \"active\": true,\n    \"market_data_only\": true\n  },\n  \"interval\": \"15m\",\n  \"cutoff_at\": \"2026-09-06T03:00:00Z\",\n  \"latest_bar\": {\n    \"bar_id\": \"okx-eth-usdt-15m-1788662700000\",\n    \"instrument_id\": \"CRYPTO:ETHUSDT:SPOT\",\n    \"interval\": \"15m\",\n    \"open_at\": \"2026-09-06T02:45:00Z\",\n    \"close_at\": \"2026-09-06T03:00:00Z\",\n    \"open\": \"2502.12\",\n    \"high\": \"2503.85\",\n    \"low\": \"2501.09\",\n    \"close\": \"2503.16\",\n    \"volume\": \"154.865205\",\n    \"trade_count\": null,\n    \"session\": \"CRYPTO_24X7\",\n    \"price_basis\": \"RAW\",\n    \"raw_ohlcv\": null,\n    \"confirmed\": true,\n    \"partial_interval\": false,\n    \"source_ref\": \"src-okx-crypto-ethusdt-spot-15m\",\n    \"quality_flags\": []\n  },\n  \"quality\": {\n    \"request_status\": \"SUCCESS\",\n    \"expected_interval_seconds\": 900,\n    \"observed_bar_count\": 4999,\n    \"missing_bar_count\": 0,\n    \"gaps\": [],\n    \"requested_start_at\": \"2024-09-06T03:10:07.032545Z\",\n    \"actual_start_at\": \"2026-07-16T01:15:00Z\",\n    \"latest_bar_at\": \"2026-09-06T03:00:00Z\",\n    \"history_complete\": false,\n    \"stale_reason\": null\n  },\n  \"sources\": [\n    {\n      \"source_id\": \"src-okx-crypto-ethusdt-spot-15m\",\n      \"provider\": \"OKX\",\n      \"dataset\": \"okx_crypto_spot_15m_bars\",\n      \"endpoint_id\": \"GET /api/v5/market/history-candles\",\n      \"source_at\": \"2026-09-06T03:00:00Z\",\n      \"received_at\": \"2026-09-06T03:09:39.186309Z\",\n      \"delay_class\": \"REALTIME_PUBLIC\",\n      \"market_scope\": \"VENUE_SPECIFIC_CRYPTO\",\n      \"completeness\": \"COMPLETE_FOR_SCOPE\",\n      \"is_full_market\": false,\n      \"price_basis\": \"RAW\",\n      \"timezone\": \"UTC\",\n      \"terms_version\": \"verify-at-enable-time\",\n      \"raw_sha256\": \"997971d5d3606a73b4e5f0b93261a9ba016211dbafa5ba994d6aa66fbf7c6914\",\n      \"limitations\": [\n        \"OKX venue-specific public data; not a consolidated global crypto market.\",\n        \"Volume normalization v2: base currency; SPOT=vol (row 5), perpetual=volCcy (row 6). Not all-exchange volume.\",\n        \"Retrieved 5000 bars from the requested window; history completeness is reported separately.\",\n        \"Provider paging stopped at the phase-one 5,000-bar safety cap or requested start.\"\n      ]\n    }\n  ],\n  \"evidence\": [\n    {\n      \"evidence_id\": \"ev_sma-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"SMA latest confirmed value is 2490.511.\",\n      \"rule\": \"SMA computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-sma-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"2490.511\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_ema-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"EMA latest confirmed value is 2493.0862793412.\",\n      \"rule\": \"EMA computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-ema-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"2493.0862793412\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_rsi-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"RSI latest confirmed value is 67.7110819114.\",\n      \"rule\": \"RSI computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-rsi-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"67.7110819114\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_macd-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"MACD latest confirmed value is 7.0375563868.\",\n      \"rule\": \"MACD computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-macd-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"7.0375563868\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_atr-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"ATR latest confirmed value is 6.0682854056.\",\n      \"rule\": \"ATR computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-atr-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"6.0682854056\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_bollinger_bands-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"BOLLINGER_BANDS latest confirmed value is 2490.511.\",\n      \"rule\": \"BOLLINGER_BANDS computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-bollinger_bands-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"2490.511\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_adx-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"ADX latest confirmed value is 49.0957663776.\",\n      \"rule\": \"ADX computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-adx-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"49.0957663776\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_obv-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"OBV latest confirmed value is 216041.1920319997.\",\n      \"rule\": \"OBV computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-obv-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"216041.1920319997\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_vwap-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"VWAP latest confirmed value is 2497.9661116062.\",\n      \"rule\": \"VWAP computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-vwap-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"2497.9661116062\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_volume_price_relation-okx-eth-usdt-15m-1788662700000\",\n      \"claim\": \"VOLUME_PRICE_RELATION latest confirmed value is 0.2285562931.\",\n      \"rule\": \"VOLUME_PRICE_RELATION computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-volume_price_relation-crypto-ethusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"0.2285562931\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_support_okx-eth-usdt-15m-1788615900000\",\n      \"claim\": \"Confirmed support pivot cluster at 2450.204 with 5 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788615900000\",\n          \"field\": \"low\",\n          \"value\": \"2450.204\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T14:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_support_okx-eth-usdt-15m-1788611400000\",\n      \"claim\": \"Confirmed support pivot cluster at 2452.9933333333 with 3 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788611400000\",\n          \"field\": \"low\",\n          \"value\": \"2452.9933333333\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T12:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_support_okx-eth-usdt-15m-1788651000000\",\n      \"claim\": \"Confirmed support pivot cluster at 2476.89 with 1 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788651000000\",\n          \"field\": \"low\",\n          \"value\": \"2476.89\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T23:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_resistance_okx-eth-usdt-15m-1788601500000\",\n      \"claim\": \"Confirmed resistance pivot cluster at 2460.11 with 2 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788601500000\",\n          \"field\": \"high\",\n          \"value\": \"2460.11\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T10:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_resistance_okx-eth-usdt-15m-1788579000000\",\n      \"claim\": \"Confirmed resistance pivot cluster at 2456.33 with 2 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788579000000\",\n          \"field\": \"high\",\n          \"value\": \"2456.33\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T03:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_resistance_okx-eth-usdt-15m-1788660000000\",\n      \"claim\": \"Confirmed resistance pivot cluster at 2511 with 1 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788660000000\",\n          \"field\": \"high\",\n          \"value\": \"2511\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T02:15:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_trend_crypto-ethusdt-spot_15m\",\n      \"claim\": \"Confirmed swing structure state is UPTREND.\",\n      \"rule\": \"confirmed-pivot-hh-hl-3x3-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788643800000\",\n          \"field\": \"high\",\n          \"value\": \"2493.3\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T21:45:00Z\"\n        },\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788660000000\",\n          \"field\": \"high\",\n          \"value\": \"2511\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T02:15:00Z\"\n        },\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788636600000\",\n          \"field\": \"low\",\n          \"value\": \"2472.73\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T19:45:00Z\"\n        },\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-eth-usdt-15m-1788651000000\",\n          \"field\": \"low\",\n          \"value\": \"2476.89\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T23:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_vpvr_vpvr-crypto-ethusdt-spot-15m\",\n      \"claim\": \"Estimated VPVR POC is 2458.0625.\",\n      \"rule\": \"vpvr-bar-range-uniform-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"VPVR\",\n          \"ref_id\": \"vpvr-crypto-ethusdt-spot-15m\",\n          \"field\": \"poc\",\n          \"value\": \"2458.0625\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        },\n        {\n          \"ref_type\": \"VPVR\",\n          \"ref_id\": \"vpvr-crypto-ethusdt-spot-15m\",\n          \"field\": \"vah\",\n          \"value\": \"2479.375\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        },\n        {\n          \"ref_type\": \"VPVR\",\n          \"ref_id\": \"vpvr-crypto-ethusdt-spot-15m\",\n          \"field\": \"val\",\n          \"value\": \"2447.75\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"LOW\"\n    },\n    {\n      \"evidence_id\": \"ev_fvg_fvg-okx-eth-usdt-15m-1788659100000\",\n      \"claim\": \"Latest BULLISH FVG fill=PARTIAL, validity=VALID.\",\n      \"rule\": \"FVG_WICK_3BAR_ATR_FROZEN_V1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"FVG\",\n          \"ref_id\": \"fvg-okx-eth-usdt-15m-1788659100000\",\n          \"field\": \"midpoint\",\n          \"value\": \"2499.02\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T02:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"MEDIUM\"\n    },\n    {\n      \"evidence_id\": \"ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788221700000\",\n      \"claim\": \"Confirmed HIDDEN_BEARISH divergence on MACD_HISTOGRAM.\",\n      \"rule\": \"divergence-pivot-3x3-v2\",\n      \"observations\": [\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-eth-usdt-15m-1788221700000\",\n          \"field\": \"price_anchor_1\",\n          \"value\": \"2483.24\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-08-31T21:45:00Z\"\n        },\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-eth-usdt-15m-1788221700000\",\n          \"field\": \"price_anchor_2\",\n          \"value\": \"2477.45\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-01T00:30:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788332400000\",\n      \"claim\": \"Confirmed REGULAR_BEARISH divergence on MACD_HISTOGRAM.\",\n      \"rule\": \"divergence-pivot-3x3-v2\",\n      \"observations\": [\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-eth-usdt-15m-1788332400000\",\n          \"field\": \"price_anchor_1\",\n          \"value\": \"2424.43\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-02T03:30:00Z\"\n        },\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-eth-usdt-15m-1788332400000\",\n          \"field\": \"price_anchor_2\",\n          \"value\": \"2429\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-02T07:15:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788601500000\",\n      \"claim\": \"Confirmed REGULAR_BEARISH divergence on MACD_HISTOGRAM.\",\n      \"rule\": \"divergence-pivot-3x3-v2\",\n      \"observations\": [\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-eth-usdt-15m-1788601500000\",\n          \"field\": \"price_anchor_1\",\n          \"value\": \"2459.9\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T07:45:00Z\"\n        },\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-eth-usdt-15m-1788601500000\",\n          \"field\": \"price_anchor_2\",\n          \"value\": \"2460.32\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T10:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-ethusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    }\n  ],\n  \"limitations\": [\n    \"Compact view omits historical indicator series; full bundle is available separately.\",\n    \"VPVR is K-line uniform range allocation, not trade-level volume profile.\",\n    \"No derivatives/fundamentals are included; historical coverage must be checked in quality.\",\n    \"Historical pattern evidence need not be active at cutoff; no calibrated prediction accuracy.\"\n  ]\n}"
+          }
+        ],
+        "structured_content": {
+          "subject_id": "crypto-eth",
+          "instrument": {
+            "instrument_id": "CRYPTO:ETHUSDT:SPOT",
+            "asset_class": "CRYPTO_SPOT",
+            "symbol": "ETHUSDT",
+            "venue": "ROUTED_PUBLIC",
+            "quote_currency": "USDT",
+            "timezone": "UTC",
+            "contract_type": "SPOT",
+            "active": true,
+            "market_data_only": true
+          },
+          "interval": "15m",
+          "cutoff_at": "2026-09-06T03:00:00Z",
+          "latest_bar": {
+            "bar_id": "okx-eth-usdt-15m-1788662700000",
+            "instrument_id": "CRYPTO:ETHUSDT:SPOT",
+            "interval": "15m",
+            "open_at": "2026-09-06T02:45:00Z",
+            "close_at": "2026-09-06T03:00:00Z",
+            "open": "2502.12",
+            "high": "2503.85",
+            "low": "2501.09",
+            "close": "2503.16",
+            "volume": "154.865205",
+            "trade_count": null,
+            "session": "CRYPTO_24X7",
+            "price_basis": "RAW",
+            "raw_ohlcv": null,
+            "confirmed": true,
+            "partial_interval": false,
+            "source_ref": "src-okx-crypto-ethusdt-spot-15m",
+            "quality_flags": []
+          },
+          "quality": {
+            "request_status": "SUCCESS",
+            "expected_interval_seconds": 900,
+            "observed_bar_count": 4999,
+            "missing_bar_count": 0,
+            "gaps": [],
+            "requested_start_at": "2024-09-06T03:10:07.032545Z",
+            "actual_start_at": "2026-07-16T01:15:00Z",
+            "latest_bar_at": "2026-09-06T03:00:00Z",
+            "history_complete": false,
+            "stale_reason": null
+          },
+          "sources": [
+            {
+              "source_id": "src-okx-crypto-ethusdt-spot-15m",
+              "provider": "OKX",
+              "dataset": "okx_crypto_spot_15m_bars",
+              "endpoint_id": "GET /api/v5/market/history-candles",
+              "source_at": "2026-09-06T03:00:00Z",
+              "received_at": "2026-09-06T03:09:39.186309Z",
+              "delay_class": "REALTIME_PUBLIC",
+              "market_scope": "VENUE_SPECIFIC_CRYPTO",
+              "completeness": "COMPLETE_FOR_SCOPE",
+              "is_full_market": false,
+              "price_basis": "RAW",
+              "timezone": "UTC",
+              "terms_version": "verify-at-enable-time",
+              "raw_sha256": "997971d5d3606a73b4e5f0b93261a9ba016211dbafa5ba994d6aa66fbf7c6914",
+              "limitations": [
+                "OKX venue-specific public data; not a consolidated global crypto market.",
+                "Volume normalization v2: base currency; SPOT=vol (row 5), perpetual=volCcy (row 6). Not all-exchange volume.",
+                "Retrieved 5000 bars from the requested window; history completeness is reported separately.",
+                "Provider paging stopped at the phase-one 5,000-bar safety cap or requested start."
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "evidence_id": "ev_sma-okx-eth-usdt-15m-1788662700000",
+              "claim": "SMA latest confirmed value is 2490.511.",
+              "rule": "SMA computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-sma-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "2490.511",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_ema-okx-eth-usdt-15m-1788662700000",
+              "claim": "EMA latest confirmed value is 2493.0862793412.",
+              "rule": "EMA computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-ema-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "2493.0862793412",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_rsi-okx-eth-usdt-15m-1788662700000",
+              "claim": "RSI latest confirmed value is 67.7110819114.",
+              "rule": "RSI computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-rsi-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "67.7110819114",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_macd-okx-eth-usdt-15m-1788662700000",
+              "claim": "MACD latest confirmed value is 7.0375563868.",
+              "rule": "MACD computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-macd-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "7.0375563868",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_atr-okx-eth-usdt-15m-1788662700000",
+              "claim": "ATR latest confirmed value is 6.0682854056.",
+              "rule": "ATR computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-atr-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "6.0682854056",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_bollinger_bands-okx-eth-usdt-15m-1788662700000",
+              "claim": "BOLLINGER_BANDS latest confirmed value is 2490.511.",
+              "rule": "BOLLINGER_BANDS computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-bollinger_bands-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "2490.511",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_adx-okx-eth-usdt-15m-1788662700000",
+              "claim": "ADX latest confirmed value is 49.0957663776.",
+              "rule": "ADX computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-adx-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "49.0957663776",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_obv-okx-eth-usdt-15m-1788662700000",
+              "claim": "OBV latest confirmed value is 216041.1920319997.",
+              "rule": "OBV computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-obv-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "216041.1920319997",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_vwap-okx-eth-usdt-15m-1788662700000",
+              "claim": "VWAP latest confirmed value is 2497.9661116062.",
+              "rule": "VWAP computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-vwap-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "2497.9661116062",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_volume_price_relation-okx-eth-usdt-15m-1788662700000",
+              "claim": "VOLUME_PRICE_RELATION latest confirmed value is 0.2285562931.",
+              "rule": "VOLUME_PRICE_RELATION computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-volume_price_relation-crypto-ethusdt-spot-15m",
+                  "field": "primary",
+                  "value": "0.2285562931",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_support_okx-eth-usdt-15m-1788615900000",
+              "claim": "Confirmed support pivot cluster at 2450.204 with 5 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788615900000",
+                  "field": "low",
+                  "value": "2450.204",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T14:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_support_okx-eth-usdt-15m-1788611400000",
+              "claim": "Confirmed support pivot cluster at 2452.9933333333 with 3 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788611400000",
+                  "field": "low",
+                  "value": "2452.9933333333",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T12:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_support_okx-eth-usdt-15m-1788651000000",
+              "claim": "Confirmed support pivot cluster at 2476.89 with 1 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788651000000",
+                  "field": "low",
+                  "value": "2476.89",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T23:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_resistance_okx-eth-usdt-15m-1788601500000",
+              "claim": "Confirmed resistance pivot cluster at 2460.11 with 2 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788601500000",
+                  "field": "high",
+                  "value": "2460.11",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T10:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_resistance_okx-eth-usdt-15m-1788579000000",
+              "claim": "Confirmed resistance pivot cluster at 2456.33 with 2 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788579000000",
+                  "field": "high",
+                  "value": "2456.33",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T03:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_resistance_okx-eth-usdt-15m-1788660000000",
+              "claim": "Confirmed resistance pivot cluster at 2511 with 1 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788660000000",
+                  "field": "high",
+                  "value": "2511",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T02:15:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_trend_crypto-ethusdt-spot_15m",
+              "claim": "Confirmed swing structure state is UPTREND.",
+              "rule": "confirmed-pivot-hh-hl-3x3-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788643800000",
+                  "field": "high",
+                  "value": "2493.3",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T21:45:00Z"
+                },
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788660000000",
+                  "field": "high",
+                  "value": "2511",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T02:15:00Z"
+                },
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788636600000",
+                  "field": "low",
+                  "value": "2472.73",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T19:45:00Z"
+                },
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-eth-usdt-15m-1788651000000",
+                  "field": "low",
+                  "value": "2476.89",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T23:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_vpvr_vpvr-crypto-ethusdt-spot-15m",
+              "claim": "Estimated VPVR POC is 2458.0625.",
+              "rule": "vpvr-bar-range-uniform-v1",
+              "observations": [
+                {
+                  "ref_type": "VPVR",
+                  "ref_id": "vpvr-crypto-ethusdt-spot-15m",
+                  "field": "poc",
+                  "value": "2458.0625",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                },
+                {
+                  "ref_type": "VPVR",
+                  "ref_id": "vpvr-crypto-ethusdt-spot-15m",
+                  "field": "vah",
+                  "value": "2479.375",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                },
+                {
+                  "ref_type": "VPVR",
+                  "ref_id": "vpvr-crypto-ethusdt-spot-15m",
+                  "field": "val",
+                  "value": "2447.75",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "LOW"
+            },
+            {
+              "evidence_id": "ev_fvg_fvg-okx-eth-usdt-15m-1788659100000",
+              "claim": "Latest BULLISH FVG fill=PARTIAL, validity=VALID.",
+              "rule": "FVG_WICK_3BAR_ATR_FROZEN_V1",
+              "observations": [
+                {
+                  "ref_type": "FVG",
+                  "ref_id": "fvg-okx-eth-usdt-15m-1788659100000",
+                  "field": "midpoint",
+                  "value": "2499.02",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T02:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "MEDIUM"
+            },
+            {
+              "evidence_id": "ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788221700000",
+              "claim": "Confirmed HIDDEN_BEARISH divergence on MACD_HISTOGRAM.",
+              "rule": "divergence-pivot-3x3-v2",
+              "observations": [
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-eth-usdt-15m-1788221700000",
+                  "field": "price_anchor_1",
+                  "value": "2483.24",
+                  "unit": "price",
+                  "observed_at": "2026-08-31T21:45:00Z"
+                },
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-eth-usdt-15m-1788221700000",
+                  "field": "price_anchor_2",
+                  "value": "2477.45",
+                  "unit": "price",
+                  "observed_at": "2026-09-01T00:30:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788332400000",
+              "claim": "Confirmed REGULAR_BEARISH divergence on MACD_HISTOGRAM.",
+              "rule": "divergence-pivot-3x3-v2",
+              "observations": [
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-eth-usdt-15m-1788332400000",
+                  "field": "price_anchor_1",
+                  "value": "2424.43",
+                  "unit": "price",
+                  "observed_at": "2026-09-02T03:30:00Z"
+                },
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-eth-usdt-15m-1788332400000",
+                  "field": "price_anchor_2",
+                  "value": "2429",
+                  "unit": "price",
+                  "observed_at": "2026-09-02T07:15:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_divergence_div-macd_histogram-okx-eth-usdt-15m-1788601500000",
+              "claim": "Confirmed REGULAR_BEARISH divergence on MACD_HISTOGRAM.",
+              "rule": "divergence-pivot-3x3-v2",
+              "observations": [
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-eth-usdt-15m-1788601500000",
+                  "field": "price_anchor_1",
+                  "value": "2459.9",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T07:45:00Z"
+                },
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-eth-usdt-15m-1788601500000",
+                  "field": "price_anchor_2",
+                  "value": "2460.32",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T10:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-ethusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            }
+          ],
+          "limitations": [
+            "Compact view omits historical indicator series; full bundle is available separately.",
+            "VPVR is K-line uniform range allocation, not trade-level volume profile.",
+            "No derivatives/fundamentals are included; historical coverage must be checked in quality.",
+            "Historical pattern evidence need not be active at cutoff; no calibrated prediction accuracy."
+          ]
+        }
+      },
+      "error": null,
+      "status": "completed"
+    },
+    {
+      "id": "item_4",
+      "type": "mcp_tool_call",
+      "server": "amw",
+      "tool": "market_get_indicator_evidence",
+      "arguments": {
+        "subject_id": "crypto-btc",
+        "instrument_id": "CRYPTO:BTCUSDT:SPOT",
+        "interval": "15m"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"subject_id\": \"crypto-btc\",\n  \"instrument\": {\n    \"instrument_id\": \"CRYPTO:BTCUSDT:SPOT\",\n    \"asset_class\": \"CRYPTO_SPOT\",\n    \"symbol\": \"BTCUSDT\",\n    \"venue\": \"ROUTED_PUBLIC\",\n    \"quote_currency\": \"USDT\",\n    \"timezone\": \"UTC\",\n    \"contract_type\": \"SPOT\",\n    \"active\": true,\n    \"market_data_only\": true\n  },\n  \"interval\": \"15m\",\n  \"cutoff_at\": \"2026-09-06T03:00:00Z\",\n  \"latest_bar\": {\n    \"bar_id\": \"okx-btc-usdt-15m-1788662700000\",\n    \"instrument_id\": \"CRYPTO:BTCUSDT:SPOT\",\n    \"interval\": \"15m\",\n    \"open_at\": \"2026-09-06T02:45:00Z\",\n    \"close_at\": \"2026-09-06T03:00:00Z\",\n    \"open\": \"79882.8\",\n    \"high\": \"79918.6\",\n    \"low\": \"79870\",\n    \"close\": \"79910.2\",\n    \"volume\": \"9.81221208\",\n    \"trade_count\": null,\n    \"session\": \"CRYPTO_24X7\",\n    \"price_basis\": \"RAW\",\n    \"raw_ohlcv\": null,\n    \"confirmed\": true,\n    \"partial_interval\": false,\n    \"source_ref\": \"src-okx-crypto-btcusdt-spot-15m\",\n    \"quality_flags\": []\n  },\n  \"quality\": {\n    \"request_status\": \"SUCCESS\",\n    \"expected_interval_seconds\": 900,\n    \"observed_bar_count\": 4999,\n    \"missing_bar_count\": 0,\n    \"gaps\": [],\n    \"requested_start_at\": \"2024-09-06T03:10:07.033292Z\",\n    \"actual_start_at\": \"2026-07-16T01:15:00Z\",\n    \"latest_bar_at\": \"2026-09-06T03:00:00Z\",\n    \"history_complete\": false,\n    \"stale_reason\": null\n  },\n  \"sources\": [\n    {\n      \"source_id\": \"src-okx-crypto-btcusdt-spot-15m\",\n      \"provider\": \"OKX\",\n      \"dataset\": \"okx_crypto_spot_15m_bars\",\n      \"endpoint_id\": \"GET /api/v5/market/history-candles\",\n      \"source_at\": \"2026-09-06T03:00:00Z\",\n      \"received_at\": \"2026-09-06T03:09:10.722570Z\",\n      \"delay_class\": \"REALTIME_PUBLIC\",\n      \"market_scope\": \"VENUE_SPECIFIC_CRYPTO\",\n      \"completeness\": \"COMPLETE_FOR_SCOPE\",\n      \"is_full_market\": false,\n      \"price_basis\": \"RAW\",\n      \"timezone\": \"UTC\",\n      \"terms_version\": \"verify-at-enable-time\",\n      \"raw_sha256\": \"e5e633e5567f6493e529b47e07fa609fa8cf129673b83bd51c5e058fa84f1846\",\n      \"limitations\": [\n        \"OKX venue-specific public data; not a consolidated global crypto market.\",\n        \"Volume normalization v2: base currency; SPOT=vol (row 5), perpetual=volCcy (row 6). Not all-exchange volume.\",\n        \"Retrieved 5000 bars from the requested window; history completeness is reported separately.\",\n        \"Provider paging stopped at the phase-one 5,000-bar safety cap or requested start.\"\n      ]\n    }\n  ],\n  \"evidence\": [\n    {\n      \"evidence_id\": \"ev_sma-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"SMA latest confirmed value is 79880.85.\",\n      \"rule\": \"SMA computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-sma-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"79880.85\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_ema-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"EMA latest confirmed value is 79897.69874807.\",\n      \"rule\": \"EMA computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-ema-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"79897.69874807\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_rsi-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"RSI latest confirmed value is 52.0937154842.\",\n      \"rule\": \"RSI computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-rsi-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"52.0937154842\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_macd-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"MACD latest confirmed value is 23.2323636429.\",\n      \"rule\": \"MACD computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-macd-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"23.2323636429\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_atr-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"ATR latest confirmed value is 99.4273335133.\",\n      \"rule\": \"ATR computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-atr-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"99.4273335133\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_bollinger_bands-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"BOLLINGER_BANDS latest confirmed value is 79880.85.\",\n      \"rule\": \"BOLLINGER_BANDS computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-bollinger_bands-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"79880.85\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_adx-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"ADX latest confirmed value is 15.8117855738.\",\n      \"rule\": \"ADX computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-adx-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"15.8117855738\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_obv-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"OBV latest confirmed value is 8646.61112762.\",\n      \"rule\": \"OBV computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-obv-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"8646.61112762\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_vwap-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"VWAP latest confirmed value is 79938.2863508287.\",\n      \"rule\": \"VWAP computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-vwap-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"79938.2863508287\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_volume_price_relation-okx-btc-usdt-15m-1788662700000\",\n      \"claim\": \"VOLUME_PRICE_RELATION latest confirmed value is 0.663206687.\",\n      \"rule\": \"VOLUME_PRICE_RELATION computed locally with deterministic-v1.\",\n      \"observations\": [\n        {\n          \"ref_type\": \"INDICATOR\",\n          \"ref_id\": \"ind-volume_price_relation-crypto-btcusdt-spot-15m\",\n          \"field\": \"primary\",\n          \"value\": \"0.663206687\",\n          \"unit\": \"indicator\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_support_okx-btc-usdt-15m-1788651000000\",\n      \"claim\": \"Confirmed support pivot cluster at 79691.4666666667 with 3 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788651000000\",\n          \"field\": \"low\",\n          \"value\": \"79691.4666666667\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T23:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_support_okx-btc-usdt-15m-1788605100000\",\n      \"claim\": \"Confirmed support pivot cluster at 79577.2666666667 with 3 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788605100000\",\n          \"field\": \"low\",\n          \"value\": \"79577.2666666667\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T11:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_support_okx-btc-usdt-15m-1788615900000\",\n      \"claim\": \"Confirmed support pivot cluster at 79546.8 with 1 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788615900000\",\n          \"field\": \"low\",\n          \"value\": \"79546.8\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T14:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_resistance_okx-btc-usdt-15m-1788611400000\",\n      \"claim\": \"Confirmed resistance pivot cluster at 79768.6666666667 with 3 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788611400000\",\n          \"field\": \"high\",\n          \"value\": \"79768.6666666667\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T12:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_resistance_okx-btc-usdt-15m-1788598800000\",\n      \"claim\": \"Confirmed resistance pivot cluster at 79724.1 with 3 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788598800000\",\n          \"field\": \"high\",\n          \"value\": \"79724.1\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T09:15:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000\",\n      \"claim\": \"Confirmed resistance pivot cluster at 80064.5 with 1 touch(es).\",\n      \"rule\": \"pivot-cluster-3x3-atr025-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788658200000\",\n          \"field\": \"high\",\n          \"value\": \"80064.5\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T01:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_trend_crypto-btcusdt-spot_15m\",\n      \"claim\": \"Confirmed swing structure state is UPTREND.\",\n      \"rule\": \"confirmed-pivot-hh-hl-3x3-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788646500000\",\n          \"field\": \"high\",\n          \"value\": \"79938.7\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T22:30:00Z\"\n        },\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788658200000\",\n          \"field\": \"high\",\n          \"value\": \"80064.5\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T01:45:00Z\"\n        },\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788640200000\",\n          \"field\": \"low\",\n          \"value\": \"79688.6\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T20:45:00Z\"\n        },\n        {\n          \"ref_type\": \"BAR\",\n          \"ref_id\": \"okx-btc-usdt-15m-1788651000000\",\n          \"field\": \"low\",\n          \"value\": \"79705.8\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T23:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_vpvr_vpvr-crypto-btcusdt-spot-15m\",\n      \"claim\": \"Estimated VPVR POC is 79706.659375.\",\n      \"rule\": \"vpvr-bar-range-uniform-v1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"VPVR\",\n          \"ref_id\": \"vpvr-crypto-btcusdt-spot-15m\",\n          \"field\": \"poc\",\n          \"value\": \"79706.659375\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        },\n        {\n          \"ref_type\": \"VPVR\",\n          \"ref_id\": \"vpvr-crypto-btcusdt-spot-15m\",\n          \"field\": \"vah\",\n          \"value\": \"79839.1354166667\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        },\n        {\n          \"ref_type\": \"VPVR\",\n          \"ref_id\": \"vpvr-crypto-btcusdt-spot-15m\",\n          \"field\": \"val\",\n          \"value\": \"79527.4270833333\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-06T03:00:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"LOW\"\n    },\n    {\n      \"evidence_id\": \"ev_fvg_fvg-okx-btc-usdt-15m-1788643800000\",\n      \"claim\": \"Latest BULLISH FVG fill=FULLY_FILLED, validity=INVALIDATED.\",\n      \"rule\": \"FVG_WICK_3BAR_ATR_FROZEN_V1\",\n      \"observations\": [\n        {\n          \"ref_type\": \"FVG\",\n          \"ref_id\": \"fvg-okx-btc-usdt-15m-1788643800000\",\n          \"field\": \"midpoint\",\n          \"value\": \"79817.85\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-05T21:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"MEDIUM\"\n    },\n    {\n      \"evidence_id\": \"ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788221700000\",\n      \"claim\": \"Confirmed HIDDEN_BEARISH divergence on MACD_HISTOGRAM.\",\n      \"rule\": \"divergence-pivot-3x3-v2\",\n      \"observations\": [\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-btc-usdt-15m-1788221700000\",\n          \"field\": \"price_anchor_1\",\n          \"value\": \"79069.7\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-08-31T22:00:00Z\"\n        },\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-btc-usdt-15m-1788221700000\",\n          \"field\": \"price_anchor_2\",\n          \"value\": \"78895.1\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-01T00:30:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788365700000\",\n      \"claim\": \"Confirmed REGULAR_BEARISH divergence on MACD_HISTOGRAM.\",\n      \"rule\": \"divergence-pivot-3x3-v2\",\n      \"observations\": [\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-btc-usdt-15m-1788365700000\",\n          \"field\": \"price_anchor_1\",\n          \"value\": \"77498.6\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-02T14:30:00Z\"\n        },\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-btc-usdt-15m-1788365700000\",\n          \"field\": \"price_anchor_2\",\n          \"value\": \"77579.3\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-02T16:30:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    },\n    {\n      \"evidence_id\": \"ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788471000000\",\n      \"claim\": \"Confirmed REGULAR_BEARISH divergence on MACD_HISTOGRAM.\",\n      \"rule\": \"divergence-pivot-3x3-v2\",\n      \"observations\": [\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-btc-usdt-15m-1788471000000\",\n          \"field\": \"price_anchor_1\",\n          \"value\": \"81796.1\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-03T20:00:00Z\"\n        },\n        {\n          \"ref_type\": \"DIVERGENCE\",\n          \"ref_id\": \"div-macd_histogram-okx-btc-usdt-15m-1788471000000\",\n          \"field\": \"price_anchor_2\",\n          \"value\": \"82285\",\n          \"unit\": \"price\",\n          \"observed_at\": \"2026-09-03T21:45:00Z\"\n        }\n      ],\n      \"source_refs\": [\n        \"src-okx-crypto-btcusdt-spot-15m\"\n      ],\n      \"quality\": \"HIGH\"\n    }\n  ],\n  \"limitations\": [\n    \"Compact view omits historical indicator series; full bundle is available separately.\",\n    \"VPVR is K-line uniform range allocation, not trade-level volume profile.\",\n    \"No derivatives/fundamentals are included; historical coverage must be checked in quality.\",\n    \"Historical pattern evidence need not be active at cutoff; no calibrated prediction accuracy.\"\n  ]\n}"
+          }
+        ],
+        "structured_content": {
+          "subject_id": "crypto-btc",
+          "instrument": {
+            "instrument_id": "CRYPTO:BTCUSDT:SPOT",
+            "asset_class": "CRYPTO_SPOT",
+            "symbol": "BTCUSDT",
+            "venue": "ROUTED_PUBLIC",
+            "quote_currency": "USDT",
+            "timezone": "UTC",
+            "contract_type": "SPOT",
+            "active": true,
+            "market_data_only": true
+          },
+          "interval": "15m",
+          "cutoff_at": "2026-09-06T03:00:00Z",
+          "latest_bar": {
+            "bar_id": "okx-btc-usdt-15m-1788662700000",
+            "instrument_id": "CRYPTO:BTCUSDT:SPOT",
+            "interval": "15m",
+            "open_at": "2026-09-06T02:45:00Z",
+            "close_at": "2026-09-06T03:00:00Z",
+            "open": "79882.8",
+            "high": "79918.6",
+            "low": "79870",
+            "close": "79910.2",
+            "volume": "9.81221208",
+            "trade_count": null,
+            "session": "CRYPTO_24X7",
+            "price_basis": "RAW",
+            "raw_ohlcv": null,
+            "confirmed": true,
+            "partial_interval": false,
+            "source_ref": "src-okx-crypto-btcusdt-spot-15m",
+            "quality_flags": []
+          },
+          "quality": {
+            "request_status": "SUCCESS",
+            "expected_interval_seconds": 900,
+            "observed_bar_count": 4999,
+            "missing_bar_count": 0,
+            "gaps": [],
+            "requested_start_at": "2024-09-06T03:10:07.033292Z",
+            "actual_start_at": "2026-07-16T01:15:00Z",
+            "latest_bar_at": "2026-09-06T03:00:00Z",
+            "history_complete": false,
+            "stale_reason": null
+          },
+          "sources": [
+            {
+              "source_id": "src-okx-crypto-btcusdt-spot-15m",
+              "provider": "OKX",
+              "dataset": "okx_crypto_spot_15m_bars",
+              "endpoint_id": "GET /api/v5/market/history-candles",
+              "source_at": "2026-09-06T03:00:00Z",
+              "received_at": "2026-09-06T03:09:10.722570Z",
+              "delay_class": "REALTIME_PUBLIC",
+              "market_scope": "VENUE_SPECIFIC_CRYPTO",
+              "completeness": "COMPLETE_FOR_SCOPE",
+              "is_full_market": false,
+              "price_basis": "RAW",
+              "timezone": "UTC",
+              "terms_version": "verify-at-enable-time",
+              "raw_sha256": "e5e633e5567f6493e529b47e07fa609fa8cf129673b83bd51c5e058fa84f1846",
+              "limitations": [
+                "OKX venue-specific public data; not a consolidated global crypto market.",
+                "Volume normalization v2: base currency; SPOT=vol (row 5), perpetual=volCcy (row 6). Not all-exchange volume.",
+                "Retrieved 5000 bars from the requested window; history completeness is reported separately.",
+                "Provider paging stopped at the phase-one 5,000-bar safety cap or requested start."
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "evidence_id": "ev_sma-okx-btc-usdt-15m-1788662700000",
+              "claim": "SMA latest confirmed value is 79880.85.",
+              "rule": "SMA computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-sma-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "79880.85",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_ema-okx-btc-usdt-15m-1788662700000",
+              "claim": "EMA latest confirmed value is 79897.69874807.",
+              "rule": "EMA computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-ema-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "79897.69874807",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_rsi-okx-btc-usdt-15m-1788662700000",
+              "claim": "RSI latest confirmed value is 52.0937154842.",
+              "rule": "RSI computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-rsi-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "52.0937154842",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_macd-okx-btc-usdt-15m-1788662700000",
+              "claim": "MACD latest confirmed value is 23.2323636429.",
+              "rule": "MACD computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-macd-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "23.2323636429",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_atr-okx-btc-usdt-15m-1788662700000",
+              "claim": "ATR latest confirmed value is 99.4273335133.",
+              "rule": "ATR computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-atr-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "99.4273335133",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_bollinger_bands-okx-btc-usdt-15m-1788662700000",
+              "claim": "BOLLINGER_BANDS latest confirmed value is 79880.85.",
+              "rule": "BOLLINGER_BANDS computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-bollinger_bands-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "79880.85",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_adx-okx-btc-usdt-15m-1788662700000",
+              "claim": "ADX latest confirmed value is 15.8117855738.",
+              "rule": "ADX computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-adx-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "15.8117855738",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_obv-okx-btc-usdt-15m-1788662700000",
+              "claim": "OBV latest confirmed value is 8646.61112762.",
+              "rule": "OBV computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-obv-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "8646.61112762",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_vwap-okx-btc-usdt-15m-1788662700000",
+              "claim": "VWAP latest confirmed value is 79938.2863508287.",
+              "rule": "VWAP computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-vwap-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "79938.2863508287",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_volume_price_relation-okx-btc-usdt-15m-1788662700000",
+              "claim": "VOLUME_PRICE_RELATION latest confirmed value is 0.663206687.",
+              "rule": "VOLUME_PRICE_RELATION computed locally with deterministic-v1.",
+              "observations": [
+                {
+                  "ref_type": "INDICATOR",
+                  "ref_id": "ind-volume_price_relation-crypto-btcusdt-spot-15m",
+                  "field": "primary",
+                  "value": "0.663206687",
+                  "unit": "indicator",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_support_okx-btc-usdt-15m-1788651000000",
+              "claim": "Confirmed support pivot cluster at 79691.4666666667 with 3 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788651000000",
+                  "field": "low",
+                  "value": "79691.4666666667",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T23:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_support_okx-btc-usdt-15m-1788605100000",
+              "claim": "Confirmed support pivot cluster at 79577.2666666667 with 3 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788605100000",
+                  "field": "low",
+                  "value": "79577.2666666667",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T11:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_support_okx-btc-usdt-15m-1788615900000",
+              "claim": "Confirmed support pivot cluster at 79546.8 with 1 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788615900000",
+                  "field": "low",
+                  "value": "79546.8",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T14:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_resistance_okx-btc-usdt-15m-1788611400000",
+              "claim": "Confirmed resistance pivot cluster at 79768.6666666667 with 3 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788611400000",
+                  "field": "high",
+                  "value": "79768.6666666667",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T12:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_resistance_okx-btc-usdt-15m-1788598800000",
+              "claim": "Confirmed resistance pivot cluster at 79724.1 with 3 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788598800000",
+                  "field": "high",
+                  "value": "79724.1",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T09:15:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000",
+              "claim": "Confirmed resistance pivot cluster at 80064.5 with 1 touch(es).",
+              "rule": "pivot-cluster-3x3-atr025-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788658200000",
+                  "field": "high",
+                  "value": "80064.5",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T01:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_trend_crypto-btcusdt-spot_15m",
+              "claim": "Confirmed swing structure state is UPTREND.",
+              "rule": "confirmed-pivot-hh-hl-3x3-v1",
+              "observations": [
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788646500000",
+                  "field": "high",
+                  "value": "79938.7",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T22:30:00Z"
+                },
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788658200000",
+                  "field": "high",
+                  "value": "80064.5",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T01:45:00Z"
+                },
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788640200000",
+                  "field": "low",
+                  "value": "79688.6",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T20:45:00Z"
+                },
+                {
+                  "ref_type": "BAR",
+                  "ref_id": "okx-btc-usdt-15m-1788651000000",
+                  "field": "low",
+                  "value": "79705.8",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T23:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_vpvr_vpvr-crypto-btcusdt-spot-15m",
+              "claim": "Estimated VPVR POC is 79706.659375.",
+              "rule": "vpvr-bar-range-uniform-v1",
+              "observations": [
+                {
+                  "ref_type": "VPVR",
+                  "ref_id": "vpvr-crypto-btcusdt-spot-15m",
+                  "field": "poc",
+                  "value": "79706.659375",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                },
+                {
+                  "ref_type": "VPVR",
+                  "ref_id": "vpvr-crypto-btcusdt-spot-15m",
+                  "field": "vah",
+                  "value": "79839.1354166667",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                },
+                {
+                  "ref_type": "VPVR",
+                  "ref_id": "vpvr-crypto-btcusdt-spot-15m",
+                  "field": "val",
+                  "value": "79527.4270833333",
+                  "unit": "price",
+                  "observed_at": "2026-09-06T03:00:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "LOW"
+            },
+            {
+              "evidence_id": "ev_fvg_fvg-okx-btc-usdt-15m-1788643800000",
+              "claim": "Latest BULLISH FVG fill=FULLY_FILLED, validity=INVALIDATED.",
+              "rule": "FVG_WICK_3BAR_ATR_FROZEN_V1",
+              "observations": [
+                {
+                  "ref_type": "FVG",
+                  "ref_id": "fvg-okx-btc-usdt-15m-1788643800000",
+                  "field": "midpoint",
+                  "value": "79817.85",
+                  "unit": "price",
+                  "observed_at": "2026-09-05T21:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "MEDIUM"
+            },
+            {
+              "evidence_id": "ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788221700000",
+              "claim": "Confirmed HIDDEN_BEARISH divergence on MACD_HISTOGRAM.",
+              "rule": "divergence-pivot-3x3-v2",
+              "observations": [
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-btc-usdt-15m-1788221700000",
+                  "field": "price_anchor_1",
+                  "value": "79069.7",
+                  "unit": "price",
+                  "observed_at": "2026-08-31T22:00:00Z"
+                },
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-btc-usdt-15m-1788221700000",
+                  "field": "price_anchor_2",
+                  "value": "78895.1",
+                  "unit": "price",
+                  "observed_at": "2026-09-01T00:30:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788365700000",
+              "claim": "Confirmed REGULAR_BEARISH divergence on MACD_HISTOGRAM.",
+              "rule": "divergence-pivot-3x3-v2",
+              "observations": [
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-btc-usdt-15m-1788365700000",
+                  "field": "price_anchor_1",
+                  "value": "77498.6",
+                  "unit": "price",
+                  "observed_at": "2026-09-02T14:30:00Z"
+                },
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-btc-usdt-15m-1788365700000",
+                  "field": "price_anchor_2",
+                  "value": "77579.3",
+                  "unit": "price",
+                  "observed_at": "2026-09-02T16:30:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            },
+            {
+              "evidence_id": "ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788471000000",
+              "claim": "Confirmed REGULAR_BEARISH divergence on MACD_HISTOGRAM.",
+              "rule": "divergence-pivot-3x3-v2",
+              "observations": [
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-btc-usdt-15m-1788471000000",
+                  "field": "price_anchor_1",
+                  "value": "81796.1",
+                  "unit": "price",
+                  "observed_at": "2026-09-03T20:00:00Z"
+                },
+                {
+                  "ref_type": "DIVERGENCE",
+                  "ref_id": "div-macd_histogram-okx-btc-usdt-15m-1788471000000",
+                  "field": "price_anchor_2",
+                  "value": "82285",
+                  "unit": "price",
+                  "observed_at": "2026-09-03T21:45:00Z"
+                }
+              ],
+              "source_refs": [
+                "src-okx-crypto-btcusdt-spot-15m"
+              ],
+              "quality": "HIGH"
+            }
+          ],
+          "limitations": [
+            "Compact view omits historical indicator series; full bundle is available separately.",
+            "VPVR is K-line uniform range allocation, not trade-level volume profile.",
+            "No derivatives/fundamentals are included; historical coverage must be checked in quality.",
+            "Historical pattern evidence need not be active at cutoff; no calibrated prediction accuracy."
+          ]
+        }
+      },
+      "error": null,
+      "status": "completed"
+    }
+  ],
+  "passed": true,
+  "semantic_answer_validation": "manual review required",
+  "data_subscription_usd": 0,
+  "model_cost_usd": null
+}

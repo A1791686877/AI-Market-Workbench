@@ -1,0 +1,49 @@
+{
+  "probed_at": "2026-09-05T11:33:54.372966+00:00",
+  "network_enabled": true,
+  "account_or_api_key_used": false,
+  "results": [
+    {
+      "subject_id": "crypto-btc",
+      "instrument_id": "BINANCE:BTCUSDT:SPOT",
+      "status": "FAILED",
+      "error_type": "HTTPStatusError",
+      "detail": "Client error '451 ' for url 'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=15m&startTime=1788586434372&endTime=1788608034372&limit=1000'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
+    },
+    {
+      "subject_id": "crypto-btc",
+      "instrument_id": "BINANCE:BTCUSDT:PERP",
+      "status": "FAILED",
+      "error_type": "HTTPStatusError",
+      "detail": "Client error '451 ' for url 'https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=15m&startTime=1788586434372&endTime=1788608034372&limit=1000'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
+    },
+    {
+      "subject_id": "crypto-btc",
+      "instrument_id": "BINANCE:BTCUSDT:DERIVATIVES_CONTEXT",
+      "status": "FAILED",
+      "error_type": "HTTPStatusError",
+      "detail": "Client error '451 ' for url 'https://fapi.binance.com/fapi/v1/premiumIndex?symbol=BTCUSDT'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
+    },
+    {
+      "subject_id": "crypto-eth",
+      "instrument_id": "BINANCE:ETHUSDT:SPOT",
+      "status": "FAILED",
+      "error_type": "HTTPStatusError",
+      "detail": "Client error '451 ' for url 'https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=15m&startTime=1788586434372&endTime=1788608034372&limit=1000'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
+    },
+    {
+      "subject_id": "crypto-eth",
+      "instrument_id": "BINANCE:ETHUSDT:PERP",
+      "status": "FAILED",
+      "error_type": "HTTPStatusError",
+      "detail": "Client error '451 ' for url 'https://fapi.binance.com/fapi/v1/klines?symbol=ETHUSDT&interval=15m&startTime=1788586434372&endTime=1788608034372&limit=1000'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
+    },
+    {
+      "subject_id": "crypto-eth",
+      "instrument_id": "BINANCE:ETHUSDT:DERIVATIVES_CONTEXT",
+      "status": "FAILED",
+      "error_type": "HTTPStatusError",
+      "detail": "Client error '451 ' for url 'https://fapi.binance.com/fapi/v1/premiumIndex?symbol=ETHUSDT'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-09-06T09:20:15.126Z",
+  "passed": true,
+  "checks": [
+    {
+      "subject": "crypto-btc",
+      "instrument": "CRYPTO:BTCUSDT:SPOT",
+      "barCount": 240,
+      "candlesMatch": true,
+      "fvgCount": 20,
+      "fvgMatch": true,
+      "divergenceCount": 4,
+      "divergenceMatch": true,
+      "vpvrMatch": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5813,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T09:18:57.806206Z",
+        "actual_start_at": "2026-07-07T20:00:00Z",
+        "latest_bar_at": "2026-09-06T09:15:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "LOCAL_PAGE_BUDGET",
+        "history_cursor_end": "2026-07-07T20:00:00Z"
+      }
+    },
+    {
+      "subject": "crypto-btc",
+      "instrument": "CRYPTO:BTCUSDT:PERP",
+      "barCount": 240,
+      "candlesMatch": true,
+      "fvgCount": 21,
+      "fvgMatch": true,
+      "divergenceCount": 4,
+      "divergenceMatch": true,
+      "vpvrMatch": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5001,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T09:19:04.763167Z",
+        "actual_start_at": "2026-07-16T07:00:00Z",
+        "latest_bar_at": "2026-09-06T09:15:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "LOCAL_PAGE_BUDGET",
+        "history_cursor_end": "2026-07-16T07:00:00Z"
+      }
+    },
+    {
+      "subject": "crypto-eth",
+      "instrument": "CRYPTO:ETHUSDT:SPOT",
+      "barCount": 240,
+      "candlesMatch": true,
+      "fvgCount": 24,
+      "fvgMatch": true,
+      "divergenceCount": 4,
+      "divergenceMatch": true,
+      "vpvrMatch": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5023,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T09:19:14.913641Z",
+        "actual_start_at": "2026-07-16T01:30:00Z",
+        "latest_bar_at": "2026-09-06T09:15:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "LOCAL_PAGE_BUDGET",
+        "history_cursor_end": "2026-07-16T01:30:00Z"
+      }
+    },
+    {
+      "subject": "crypto-eth",
+      "instrument": "CRYPTO:ETHUSDT:PERP",
+      "barCount": 240,
+      "candlesMatch": true,
+      "fvgCount": 25,
+      "fvgMatch": true,
+      "divergenceCount": 7,
+      "divergenceMatch": true,
+      "vpvrMatch": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5001,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T09:19:22.748208Z",
+        "actual_start_at": "2026-07-16T07:00:00Z",
+        "latest_bar_at": "2026-09-06T09:15:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "LOCAL_PAGE_BUDGET",
+        "history_cursor_end": "2026-07-16T07:00:00Z"
+      }
+    }
+  ],
+  "errors": [],
+  "taskPosts": [],
+  "previewText": "仅冻结数据，模型调用 0；截止 2026-09-06T09:19:32.699473Z；snapshot-268f530e697d46aeb580b580a558891f\n\nCannot read properties of undefined (reading 'forEach')"
+}

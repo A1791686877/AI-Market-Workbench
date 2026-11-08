@@ -1,0 +1,582 @@
+{
+  "symbol": "MCD",
+  "subject_id": "us-mcd",
+  "generated_at": "2026-09-16T07:54:34.181161+00:00",
+  "rules_version": "btc-outlook-rules-v1",
+  "bars": {
+    "1d": {
+      "count": 1200,
+      "first": "2021-12-02T14:30:00+00:00",
+      "last": "2026-09-15T20:00:00+00:00",
+      "last_close": "252.78",
+      "basis": [
+        "TOTAL_RETURN_ADJUSTED"
+      ],
+      "history_complete": false,
+      "actual_start": "2016-01-04T14:30:00+00:00"
+    },
+    "15m": {
+      "count": 400,
+      "first": "2026-08-24T17:30:00+00:00",
+      "last": "2026-09-15T20:00:00+00:00",
+      "last_close": "252.84",
+      "basis": [
+        "SPLIT_ADJUSTED"
+      ],
+      "history_complete": false
+    }
+  },
+  "sources": [
+    {
+      "source_id": "src-alpaca-sip-mcd-daily",
+      "provider": "ALPACA",
+      "dataset": "us_equity_sip_daily_all",
+      "delay": "DELAYED_15M",
+      "is_full_market": true,
+      "basis": "TOTAL_RETURN_ADJUSTED"
+    }
+  ],
+  "indicators": {
+    "1d": {
+      "trend": "DOWNTREND",
+      "indicators": {
+        "SMA": {
+          "status": "READY",
+          "primary": "260.7185",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "EMA": {
+          "status": "READY",
+          "primary": "259.5624803336",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "RSI": {
+          "status": "READY",
+          "primary": "36.9339917314",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "MACD": {
+          "status": "READY",
+          "primary": "-3.8862832253",
+          "signal": "-3.2692945336",
+          "histogram": "-0.6169886918",
+          "plus_di": null,
+          "minus_di": null
+        },
+        "ATR": {
+          "status": "READY",
+          "primary": "4.4438917732",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "BOLLINGER_BANDS": {
+          "status": "READY",
+          "primary": "260.7185",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "ADX": {
+          "status": "READY",
+          "primary": "25.8017130229",
+          "signal": null,
+          "histogram": null,
+          "plus_di": "14.0674165629",
+          "minus_di": "26.1637463417"
+        },
+        "OBV": {
+          "status": "READY",
+          "primary": "418546617",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "VWAP": {
+          "status": "READY",
+          "primary": "254.42",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "VOLUME_PRICE_RELATION": {
+          "status": "READY",
+          "primary": "1.1121631096",
+          "signal": "-0.0182919725",
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        }
+      },
+      "support_resistance": [
+        {
+          "kind": "SUPPORT",
+          "price": "262.65",
+          "role": "BROKEN_HISTORICAL",
+          "touches": 4
+        },
+        {
+          "kind": "SUPPORT",
+          "price": "258.57",
+          "role": "BROKEN_HISTORICAL",
+          "touches": 2
+        },
+        {
+          "kind": "SUPPORT",
+          "price": "269.64",
+          "role": "BROKEN_HISTORICAL",
+          "touches": 1
+        },
+        {
+          "kind": "RESISTANCE",
+          "price": "276.57",
+          "role": "CORRECT_SIDE_ONLY",
+          "touches": 2
+        },
+        {
+          "kind": "RESISTANCE",
+          "price": "274.665",
+          "role": "CORRECT_SIDE_ONLY",
+          "touches": 2
+        },
+        {
+          "kind": "RESISTANCE",
+          "price": "287.32",
+          "role": "CORRECT_SIDE_ONLY",
+          "touches": 2
+        }
+      ],
+      "vpvr": {
+        "poc": "271.5684375",
+        "vah": "283.925625",
+        "val": "261.565",
+        "is_estimate": true
+      }
+    },
+    "15m": {
+      "trend": "DOWNTREND",
+      "indicators": {
+        "SMA": {
+          "status": "READY",
+          "primary": "254.3775",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "EMA": {
+          "status": "READY",
+          "primary": "254.3262691772",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "RSI": {
+          "status": "READY",
+          "primary": "27.464284503",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "MACD": {
+          "status": "READY",
+          "primary": "-0.7347943839",
+          "signal": "-0.6675955383",
+          "histogram": "-0.0671988457",
+          "plus_di": null,
+          "minus_di": null
+        },
+        "ATR": {
+          "status": "READY",
+          "primary": "0.5466317533",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "BOLLINGER_BANDS": {
+          "status": "READY",
+          "primary": "254.3775",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "ADX": {
+          "status": "READY",
+          "primary": "40.8147840352",
+          "signal": null,
+          "histogram": null,
+          "plus_di": "11.7181009668",
+          "minus_di": "37.7976339995"
+        },
+        "OBV": {
+          "status": "READY",
+          "primary": "-6125953",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "VWAP": {
+          "status": "READY",
+          "primary": "254.658853275",
+          "signal": null,
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        },
+        "VOLUME_PRICE_RELATION": {
+          "status": "READY",
+          "primary": "4.8635672733",
+          "signal": "-0.0031147735",
+          "histogram": null,
+          "plus_di": null,
+          "minus_di": null
+        }
+      },
+      "support_resistance": [
+        {
+          "kind": "SUPPORT",
+          "price": "253.345",
+          "role": "BROKEN_HISTORICAL",
+          "touches": 2
+        },
+        {
+          "kind": "SUPPORT",
+          "price": "252.2",
+          "role": "CORRECT_SIDE_ONLY",
+          "touches": 2
+        },
+        {
+          "kind": "SUPPORT",
+          "price": "255.18",
+          "role": "BROKEN_HISTORICAL",
+          "touches": 1
+        },
+        {
+          "kind": "RESISTANCE",
+          "price": "253.83",
+          "role": "CORRECT_SIDE_ONLY",
+          "touches": 2
+        },
+        {
+          "kind": "RESISTANCE",
+          "price": "255.59",
+          "role": "CORRECT_SIDE_ONLY",
+          "touches": 2
+        },
+        {
+          "kind": "RESISTANCE",
+          "price": "254.02",
+          "role": "CORRECT_SIDE_ONLY",
+          "touches": 1
+        }
+      ],
+      "vpvr": {
+        "poc": "253.003125",
+        "vah": "255.5625",
+        "val": "252.4125",
+        "is_estimate": true
+      }
+    }
+  },
+  "divergence_1d": {
+    "counts": {
+      "HIDDEN_BEARISH": 6,
+      "REGULAR_BEARISH": 11,
+      "HIDDEN_BULLISH": 8,
+      "REGULAR_BULLISH": 3
+    },
+    "retired_top": 17,
+    "live_top_sentence": null,
+    "live_top": [],
+    "most_recent_top": [
+      {
+        "kind": "HIDDEN_BEARISH",
+        "pressure": "TOP",
+        "oscillator": "RSI_LINE",
+        "first_anchor_at": "2026-07-28T20:00:00+00:00",
+        "second_anchor_at": "2026-08-07T20:00:00+00:00",
+        "first_price": "276.73",
+        "second_price": "274.92",
+        "first_oscillator": "51.6857114597",
+        "second_oscillator": "55.780072853",
+        "bars_since_second_anchor": 26,
+        "signal_at": "2026-08-12T20:00:00+00:00",
+        "retired": true,
+        "recent": false,
+        "mattered": false,
+        "flag": "RECENT_TOP"
+      },
+      {
+        "kind": "REGULAR_BEARISH",
+        "pressure": "TOP",
+        "oscillator": "MACD_HISTOGRAM",
+        "first_anchor_at": "2025-08-22T20:00:00+00:00",
+        "second_anchor_at": "2025-09-04T20:00:00+00:00",
+        "first_price": "307.11",
+        "second_price": "311.42",
+        "first_oscillator": "0.829297647",
+        "second_oscillator": "0.4700770204",
+        "bars_since_second_anchor": 258,
+        "signal_at": "2025-09-09T20:00:00+00:00",
+        "retired": true,
+        "recent": false,
+        "mattered": false,
+        "flag": "RECENT_TOP"
+      }
+    ],
+    "most_recent_bottom": [
+      {
+        "kind": "HIDDEN_BULLISH",
+        "pressure": "BOTTOM",
+        "oscillator": "MACD_HISTOGRAM",
+        "first_anchor_at": "2026-08-04T20:00:00+00:00",
+        "second_anchor_at": "2026-08-17T20:00:00+00:00",
+        "first_price": "262.44",
+        "second_price": "263.27",
+        "first_oscillator": "0.3345511657",
+        "second_oscillator": "-0.363244298",
+        "bars_since_second_anchor": 20,
+        "signal_at": "2026-08-24T20:00:00+00:00",
+        "retired": true,
+        "recent": true,
+        "mattered": false,
+        "flag": "RECENT_BOTTOM"
+      },
+      {
+        "kind": "REGULAR_BULLISH",
+        "pressure": "BOTTOM",
+        "oscillator": "RSI_LINE",
+        "first_anchor_at": "2026-03-24T20:00:00+00:00",
+        "second_anchor_at": "2026-04-02T20:00:00+00:00",
+        "first_price": "300.59",
+        "second_price": "298.86",
+        "first_oscillator": "29.8772658004",
+        "second_oscillator": "35.8480125655",
+        "bars_since_second_anchor": 113,
+        "signal_at": "2026-04-10T20:00:00+00:00",
+        "retired": true,
+        "recent": false,
+        "mattered": false,
+        "flag": "RECENT_BOTTOM"
+      }
+    ],
+    "caveats": [
+      "引擎只报已确认的 3×3 枢轴背离：最新 3 根内“正在形成”的背离永远不会出现在这里（不重绘的代价）。",
+      "顶背离只在“距今 ≤ 20 根 且 第二锚未被价格突破”时才算还有压制力；被突破的算已失效。",
+      "背离是历史已确认形态，不是实时信号；不构成买卖建议。"
+    ]
+  },
+  "fundamentals": {
+    "accepted_before": "2026-09-16T07:51:37.586132+00:00",
+    "filings": [
+      {
+        "form": "10-Q",
+        "filed_at": "2026-08-07",
+        "report_period": "2026-06-30"
+      },
+      {
+        "form": "10-K",
+        "filed_at": "2026-02-24",
+        "report_period": "2025-12-31"
+      },
+      {
+        "form": "10-Q",
+        "filed_at": "2025-11-05",
+        "report_period": "2025-09-30"
+      }
+    ],
+    "facts": {
+      "REVENUE": {
+        "value": "26885000000",
+        "unit": "USD",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": null
+      },
+      "NET_INCOME": {
+        "value": "8563000000",
+        "unit": "USD",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": null
+      },
+      "OPERATING_CASH_FLOW": {
+        "value": "10551000000",
+        "unit": "USD",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": null
+      },
+      "CAPITAL_EXPENDITURE": {
+        "value": "3365000000",
+        "unit": "USD",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": null
+      },
+      "DILUTED_SHARES": {
+        "value": "716.4",
+        "unit": "shares",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": null
+      },
+      "CASH_AND_EQUIVALENTS": {
+        "value": "822000000",
+        "unit": "USD",
+        "period_end": "2026-06-30",
+        "status": "AVAILABLE",
+        "derivation": null
+      },
+      "FREE_CASH_FLOW": {
+        "value": "7186000000",
+        "unit": "USD",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": "FREE_CASH_FLOW = OPERATING_CASH_FLOW - CAPITAL_EXPENDITURE"
+      },
+      "TOTAL_DEBT": {
+        "value": null,
+        "unit": "USD",
+        "period_end": null,
+        "status": "MISSING",
+        "derivation": null
+      },
+      "REVENUE_GROWTH": {
+        "value": "0.03723",
+        "unit": "fraction",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": "REVENUE_GROWTH = Revenues FY2025 / FY2024 - 1"
+      },
+      "NET_INCOME_GROWTH": {
+        "value": "0.041347",
+        "unit": "fraction",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": "NET_INCOME_GROWTH = NetIncomeLoss FY2025 / FY2024 - 1"
+      },
+      "MARKET_CAP": {
+        "value": "181091592000",
+        "unit": "USD",
+        "period_end": "2025-12-31",
+        "status": "AVAILABLE",
+        "derivation": "MARKET_CAP = last confirmed close * weighted-average diluted shares（原始 XBRL 值 716.4 判定为「百万股」，已 ×1e6）"
+      },
+      "TTM_EPS": {
+        "value": "12.31",
+        "unit": "USD/shares",
+        "period_end": "2026-06-30",
+        "status": "AVAILABLE",
+        "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-01..2026-06-30"
+      },
+      "PE_TTM": {
+        "value": "20.5345",
+        "unit": "fraction",
+        "period_end": "2026-06-30",
+        "status": "AVAILABLE",
+        "derivation": "PE_TTM = last confirmed close / TTM_EPS (4 个单季摊薄 EPS 之和)"
+      }
+    },
+    "missing_items": [
+      "TOTAL_DEBT: debt composition not available as a single-instant GAAP set"
+    ]
+  },
+  "outlook": {
+    "primary": "C",
+    "paths": [
+      {
+        "key": "A",
+        "label": "A 先下后上（回踩后再上）",
+        "score": 30.8,
+        "weight_pct": 23
+      },
+      {
+        "key": "B",
+        "label": "B 直接上（不回踩）",
+        "score": 14.8,
+        "weight_pct": 11
+      },
+      {
+        "key": "C",
+        "label": "C 破位（结构失效）",
+        "score": 90.0,
+        "weight_pct": 66
+      }
+    ],
+    "structure_score": 2.0,
+    "momentum_score": 34.0,
+    "levels": {
+      "price": "252.78",
+      "confirm_reclaim": "260.7185",
+      "confirm_breakout": "258.45",
+      "dip_zone_low": "240.63",
+      "dip_zone_high": "246.56",
+      "structural_support": "290.51865",
+      "swing_low_20d": "252.15",
+      "target_1": "276.41",
+      "target_2": "293.336",
+      "cycle_floor": null
+    },
+    "triggers": {
+      "confirm_reclaim": "日线收盘 > 260.7185（SMA20）视为动量修复",
+      "confirm_breakout": "日线收盘 > 258.45（近 3 日高点）→ 回踩步骤作废，转 B",
+      "dip_zone": "回踩区 240.63–246.56（daily_BULLISH_FVG fvg-alpaca-sip-mcd-2024-07-30）",
+      "invalidate_A": "日线收盘 < 290.51865（SMA200）→ A 作废",
+      "warning_weekly": "周线收盘 < 252.15 且两周收不回 → 转 C",
+      "cycle_turn": "不适用（股票口径：四年减半周期规则已禁用）"
+    },
+    "narrative": "主判断：C 破位（结构失效）（规则权重 66%）\n一句话：结构已弱：反弹到 260.7185 附近站不上则看 252.15（20 日低）；收回 258.45 才谈修复。\n结构分 2/100，动量分 34/100（50 为中性）\n确认：日线收盘 > 260.7185（SMA20）→ 再看 258.45；收上后者，回踩步骤作废。\n回踩区：240.63–246.56（daily_BULLISH_FVG fvg-alpaca-sip-mcd-2024-07-30）\n目标：276.41 → 293.336\n作废：日线收盘 < 290.51865（SMA200）；周线 < 252.15 两周收不回转 C。\n回撤：距前高 199 天，自前高回撤 -24.4%，顶后最低 252.15。四年减半周期不适用于股票：相关规则已禁用（见 limitations）。\n边界：权重为规则排序（非概率）；非投资建议；详见报告 limitations。",
+    "limitations": [
+      "权重是规则排序，不是校准概率；无样本外验证，不构成胜率。",
+      "四年减半周期不适用于股票：cycle_bottom_window / cycle_floor 规则已禁用（0 分并记录原因）。",
+      "股票口径为单一交易日收盘价（复权口径见数据来源）；财报、指引与宏观事件未纳入规则。",
+      "不是投资建议，不保证盈利。",
+      "缺少 4h 输入：4h 相关规则已跳过（按中性处理）。",
+      "缺少 1h/15m 输入：对应规则已跳过（按中性处理）。"
+    ],
+    "cycle_rule": [
+      {
+        "rule": "cycle_bottom_window",
+        "points": 0.0,
+        "detail": "equity: four-year cycle rule disabled; days_since_ath=199"
+      }
+    ]
+  },
+  "reference": {
+    "name": "McDonald's Corporation",
+    "sector": "Consumer Discretionary",
+    "industry_group": "Consumer Services",
+    "industry": "Hotels, Restaurants & Leisure",
+    "mic": "XNYS",
+    "market_cap_bucket": "Mega Cap",
+    "commit": "a174c97d3bba"
+  },
+  "valuation": {
+    "last_close": 252.78,
+    "ttm_eps": 12.31,
+    "pe_ttm": 20.5345,
+    "market_cap_usd": "181091592000",
+    "free_cash_flow_usd": "7186000000",
+    "revenue_growth": "0.03723",
+    "net_income_growth": "0.041347"
+  }
+}

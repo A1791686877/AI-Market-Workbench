@@ -1,0 +1,790 @@
+{
+  "$defs": {
+    "AnalysisAudit": {
+      "additionalProperties": false,
+      "properties": {
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "model_revision": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Model Revision"
+        },
+        "started_at": {
+          "format": "date-time",
+          "title": "Started At",
+          "type": "string"
+        },
+        "finished_at": {
+          "format": "date-time",
+          "title": "Finished At",
+          "type": "string"
+        },
+        "input_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Input Tokens"
+        },
+        "output_tokens": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output Tokens"
+        },
+        "cost": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Cost"
+        },
+        "cost_currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Cost Currency"
+        },
+        "raw_response_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Raw Response Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "prompt_version",
+        "provider",
+        "model",
+        "model_revision",
+        "started_at",
+        "finished_at",
+        "cost",
+        "cost_currency",
+        "raw_response_sha256"
+      ],
+      "title": "AnalysisAudit",
+      "type": "object"
+    },
+    "AnalysisSubject": {
+      "additionalProperties": false,
+      "properties": {
+        "subject_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@-]*$",
+          "title": "Subject Id",
+          "type": "string"
+        },
+        "subject_type": {
+          "$ref": "#/$defs/SubjectType"
+        },
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "primary_instrument_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@-]*$",
+          "title": "Primary Instrument Id",
+          "type": "string"
+        },
+        "instruments": {
+          "items": {
+            "$ref": "#/$defs/InstrumentRef"
+          },
+          "maxItems": 2,
+          "minItems": 1,
+          "title": "Instruments",
+          "type": "array"
+        },
+        "analysis_scope": {
+          "const": "SINGLE_UNDERLYING",
+          "default": "SINGLE_UNDERLYING",
+          "title": "Analysis Scope",
+          "type": "string"
+        },
+        "portfolio_analysis": {
+          "const": false,
+          "default": false,
+          "title": "Portfolio Analysis",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "subject_id",
+        "subject_type",
+        "symbol",
+        "primary_instrument_id",
+        "instruments"
+      ],
+      "title": "AnalysisSubject",
+      "type": "object"
+    },
+    "AssetClass": {
+      "enum": [
+        "US_EQUITY",
+        "CRYPTO_SPOT",
+        "CRYPTO_PERPETUAL"
+      ],
+      "title": "AssetClass",
+      "type": "string"
+    },
+    "Completeness": {
+      "enum": [
+        "COMPLETE_FOR_SCOPE",
+        "PARTIAL",
+        "SAMPLED",
+        "GAPPED",
+        "STALE",
+        "MISSING",
+        "QUARANTINED"
+      ],
+      "title": "Completeness",
+      "type": "string"
+    },
+    "Condition": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^ev_[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "description",
+        "evidence_ids"
+      ],
+      "title": "Condition",
+      "type": "object"
+    },
+    "Confidence": {
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Score",
+          "type": "number"
+        },
+        "is_calibrated_probability": {
+          "const": false,
+          "default": false,
+          "title": "Is Calibrated Probability",
+          "type": "boolean"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "score",
+        "basis",
+        "limitations"
+      ],
+      "title": "Confidence",
+      "type": "object"
+    },
+    "Conflict": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^ev_[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "minItems": 2,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "impact": {
+          "$ref": "#/$defs/Impact"
+        }
+      },
+      "required": [
+        "description",
+        "evidence_ids",
+        "impact"
+      ],
+      "title": "Conflict",
+      "type": "object"
+    },
+    "Disclaimer": {
+      "additionalProperties": false,
+      "properties": {
+        "not_investment_advice": {
+          "const": true,
+          "default": true,
+          "title": "Not Investment Advice",
+          "type": "boolean"
+        },
+        "no_profit_guarantee": {
+          "const": true,
+          "default": true,
+          "title": "No Profit Guarantee",
+          "type": "boolean"
+        },
+        "data_limitations": {
+          "title": "Data Limitations",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data_limitations"
+      ],
+      "title": "Disclaimer",
+      "type": "object"
+    },
+    "Impact": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "title": "Impact",
+      "type": "string"
+    },
+    "InstrumentRef": {
+      "additionalProperties": false,
+      "properties": {
+        "instrument_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@-]*$",
+          "title": "Instrument Id",
+          "type": "string"
+        },
+        "asset_class": {
+          "$ref": "#/$defs/AssetClass"
+        },
+        "symbol": {
+          "title": "Symbol",
+          "type": "string"
+        },
+        "venue": {
+          "title": "Venue",
+          "type": "string"
+        },
+        "quote_currency": {
+          "title": "Quote Currency",
+          "type": "string"
+        },
+        "timezone": {
+          "enum": [
+            "America/New_York",
+            "UTC"
+          ],
+          "title": "Timezone",
+          "type": "string"
+        },
+        "contract_type": {
+          "enum": [
+            "COMMON_STOCK",
+            "SPOT",
+            "USDT_PERPETUAL"
+          ],
+          "title": "Contract Type",
+          "type": "string"
+        },
+        "active": {
+          "default": true,
+          "title": "Active",
+          "type": "boolean"
+        },
+        "market_data_only": {
+          "const": true,
+          "default": true,
+          "title": "Market Data Only",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "instrument_id",
+        "asset_class",
+        "symbol",
+        "venue",
+        "quote_currency",
+        "timezone",
+        "contract_type"
+      ],
+      "title": "InstrumentRef",
+      "type": "object"
+    },
+    "Interval": {
+      "enum": [
+        "15m",
+        "1h",
+        "2h",
+        "195m",
+        "4h",
+        "1d",
+        "1w",
+        "1mo"
+      ],
+      "title": "Interval",
+      "type": "string"
+    },
+    "KeyLevel": {
+      "additionalProperties": false,
+      "properties": {
+        "level_id": {
+          "pattern": "^level_[A-Za-z0-9_-]+$",
+          "title": "Level Id",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/KeyLevelKind"
+        },
+        "price": {
+          "minLength": 1,
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+          "title": "Price",
+          "type": "string"
+        },
+        "raw_price_equivalent": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Price Equivalent"
+        },
+        "price_basis": {
+          "$ref": "#/$defs/PriceBasis"
+        },
+        "currency": {
+          "title": "Currency",
+          "type": "string"
+        },
+        "timeframe": {
+          "$ref": "#/$defs/Interval"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^ev_[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "confirmed": {
+          "title": "Confirmed",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "level_id",
+        "kind",
+        "price",
+        "raw_price_equivalent",
+        "price_basis",
+        "currency",
+        "timeframe",
+        "evidence_ids",
+        "confirmed"
+      ],
+      "title": "KeyLevel",
+      "type": "object"
+    },
+    "KeyLevelKind": {
+      "enum": [
+        "SUPPORT",
+        "RESISTANCE",
+        "POC",
+        "VAH",
+        "VAL",
+        "FVG_BOUNDARY",
+        "FVG_MIDPOINT",
+        "OTHER"
+      ],
+      "title": "KeyLevelKind",
+      "type": "string"
+    },
+    "MissingInformation": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "reason_code": {
+          "$ref": "#/$defs/MissingReason"
+        },
+        "impact": {
+          "$ref": "#/$defs/Impact"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        }
+      },
+      "required": [
+        "field",
+        "reason_code",
+        "impact",
+        "detail"
+      ],
+      "title": "MissingInformation",
+      "type": "object"
+    },
+    "MissingReason": {
+      "enum": [
+        "SOURCE_UNAVAILABLE",
+        "NOT_LICENSED",
+        "NOT_CONFIGURED",
+        "NOT_APPLICABLE",
+        "OUTSIDE_HISTORY",
+        "QUALITY_QUARANTINE",
+        "UNRECONCILED",
+        "UNKNOWN"
+      ],
+      "title": "MissingReason",
+      "type": "string"
+    },
+    "PriceBasis": {
+      "enum": [
+        "RAW",
+        "SPLIT_ADJUSTED",
+        "TOTAL_RETURN_ADJUSTED"
+      ],
+      "title": "PriceBasis",
+      "type": "string"
+    },
+    "Scenario": {
+      "additionalProperties": false,
+      "properties": {
+        "evaluation_rule_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evaluation Rule Id"
+        },
+        "type": {
+          "$ref": "#/$defs/ScenarioType"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "preconditions": {
+          "items": {
+            "$ref": "#/$defs/Condition"
+          },
+          "title": "Preconditions",
+          "type": "array"
+        },
+        "evidence_ids": {
+          "items": {
+            "pattern": "^ev_[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "key_level_ids": {
+          "items": {
+            "pattern": "^level_[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "title": "Key Level Ids",
+          "type": "array"
+        },
+        "invalidation_conditions": {
+          "items": {
+            "$ref": "#/$defs/Condition"
+          },
+          "minItems": 1,
+          "title": "Invalidation Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "type",
+        "summary",
+        "preconditions",
+        "evidence_ids",
+        "key_level_ids",
+        "invalidation_conditions"
+      ],
+      "title": "Scenario",
+      "type": "object"
+    },
+    "ScenarioType": {
+      "enum": [
+        "BULLISH",
+        "NEUTRAL",
+        "BEARISH"
+      ],
+      "title": "ScenarioType",
+      "type": "string"
+    },
+    "SnapshotRef": {
+      "additionalProperties": false,
+      "properties": {
+        "snapshot_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@-]*$",
+          "title": "Snapshot Id",
+          "type": "string"
+        },
+        "snapshot_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Snapshot Sha256",
+          "type": "string"
+        },
+        "subject_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@-]*$",
+          "title": "Subject Id",
+          "type": "string"
+        },
+        "cutoff_at": {
+          "format": "date-time",
+          "title": "Cutoff At",
+          "type": "string"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "completeness": {
+          "$ref": "#/$defs/Completeness"
+        },
+        "missing_items": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "snapshot_id",
+        "snapshot_sha256",
+        "subject_id",
+        "cutoff_at",
+        "created_at",
+        "completeness",
+        "missing_items"
+      ],
+      "title": "SnapshotRef",
+      "type": "object"
+    },
+    "SubjectType": {
+      "enum": [
+        "EQUITY",
+        "CRYPTO_ASSET"
+      ],
+      "title": "SubjectType",
+      "type": "string"
+    },
+    "TimeframeSynthesis": {
+      "additionalProperties": false,
+      "properties": {
+        "instrument_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@-]*$",
+          "title": "Instrument Id",
+          "type": "string"
+        },
+        "interval": {
+          "$ref": "#/$defs/Interval"
+        },
+        "role": {
+          "enum": [
+            "BACKGROUND",
+            "STRUCTURE",
+            "SIGNAL"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "AVAILABLE",
+            "MISSING"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "assessment": {
+          "title": "Assessment",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "instrument_id",
+        "interval",
+        "role",
+        "status",
+        "assessment",
+        "evidence_ids"
+      ],
+      "title": "TimeframeSynthesis",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "timeframe_synthesis": {
+      "items": {
+        "$ref": "#/$defs/TimeframeSynthesis"
+      },
+      "title": "Timeframe Synthesis",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.1.0",
+      "default": "1.1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "analysis_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@-]*$",
+      "title": "Analysis Id",
+      "type": "string"
+    },
+    "snapshot": {
+      "$ref": "#/$defs/SnapshotRef"
+    },
+    "subject": {
+      "$ref": "#/$defs/AnalysisSubject"
+    },
+    "scenarios": {
+      "items": {
+        "$ref": "#/$defs/Scenario"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Scenarios",
+      "type": "array"
+    },
+    "key_levels": {
+      "items": {
+        "$ref": "#/$defs/KeyLevel"
+      },
+      "title": "Key Levels",
+      "type": "array"
+    },
+    "conflicts": {
+      "items": {
+        "$ref": "#/$defs/Conflict"
+      },
+      "title": "Conflicts",
+      "type": "array"
+    },
+    "missing_information": {
+      "items": {
+        "$ref": "#/$defs/MissingInformation"
+      },
+      "title": "Missing Information",
+      "type": "array"
+    },
+    "confidence": {
+      "$ref": "#/$defs/Confidence"
+    },
+    "disclaimer": {
+      "$ref": "#/$defs/Disclaimer"
+    },
+    "audit": {
+      "$ref": "#/$defs/AnalysisAudit"
+    }
+  },
+  "required": [
+    "analysis_id",
+    "snapshot",
+    "subject",
+    "scenarios",
+    "key_levels",
+    "conflicts",
+    "missing_information",
+    "confidence",
+    "disclaimer",
+    "audit"
+  ],
+  "title": "AI Market Workbench Single-Underlying Analysis",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-market-workbench.local/schemas/ai-analysis/1.1.0",
+  "x-generated-by": "app.models.AiAnalysisResult"
+}

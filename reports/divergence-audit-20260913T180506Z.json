@@ -1,0 +1,161 @@
+{
+  "generated_at": "2026-09-13T18:05:06.182745+00:00",
+  "results": [
+    {
+      "symbol": "META",
+      "interval": "1d",
+      "error": "DataUnavailableError: US:META has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "META",
+      "interval": "15m",
+      "error": "DataUnavailableError: US:META has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "interval": "1d",
+      "bars": 5,
+      "last_bar": "2026-09-04T20:00:00+00:00",
+      "last_close": 249.772,
+      "divergence_counts": {},
+      "most_recent_bearish": [],
+      "most_recent_bullish": [],
+      "recent_bearish_note": "no confirmed bearish divergence in the whole window",
+      "symbol": "AAPL"
+    },
+    {
+      "interval": "15m",
+      "bars": 130,
+      "last_bar": "2026-09-04T20:00:00+00:00",
+      "last_close": 249.772,
+      "divergence_counts": {
+        "HIDDEN_BULLISH": 2,
+        "REGULAR_BEARISH": 1
+      },
+      "most_recent_bearish": [
+        {
+          "kind": "REGULAR_BEARISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-09-03T18:30:00+00:00",
+            "field": "high",
+            "value": "251.0542"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-04T18:15:00+00:00",
+            "field": "high",
+            "value": "251.8007"
+          },
+          "oscillator_anchor_1": "92.7596006944",
+          "oscillator_anchor_2": "80.1253904114",
+          "signal_at": "2026-09-04T19:00:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 7,
+          "bars_since_signal": 4,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": true
+        }
+      ],
+      "most_recent_bullish": [
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "MACD_HISTOGRAM",
+          "price_anchor_1": {
+            "at": "2026-09-03T14:00:00+00:00",
+            "field": "low",
+            "value": "240.76"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-04T14:30:00+00:00",
+            "field": "low",
+            "value": "247.4984"
+          },
+          "oscillator_anchor_1": "-0.2469394473",
+          "oscillator_anchor_2": "-0.5544464147",
+          "signal_at": "2026-09-04T15:30:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 22,
+          "bars_since_signal": 18,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": true
+        },
+        {
+          "kind": "HIDDEN_BULLISH",
+          "oscillator": "RSI_LINE",
+          "price_anchor_1": {
+            "at": "2026-08-31T19:30:00+00:00",
+            "field": "low",
+            "value": "232.5382"
+          },
+          "price_anchor_2": {
+            "at": "2026-09-02T14:30:00+00:00",
+            "field": "low",
+            "value": "238.3051"
+          },
+          "oscillator_anchor_1": "74.1665574566",
+          "oscillator_anchor_2": "48.5192223021",
+          "signal_at": "2026-09-02T15:15:00+00:00",
+          "confirmed": true,
+          "can_repaint": false,
+          "bars_since_second_anchor": 74,
+          "bars_since_signal": 71,
+          "second_anchor_level_exceeded_after_signal": false,
+          "recent": false
+        }
+      ],
+      "recent_bearish_note": "last bearish anchor is 7 bars old (relevance threshold 60)",
+      "symbol": "AAPL"
+    },
+    {
+      "symbol": "NVDA",
+      "interval": "1d",
+      "error": "DataUnavailableError: US:NVDA has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "NVDA",
+      "interval": "15m",
+      "error": "DataUnavailableError: US:NVDA has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "MSFT",
+      "interval": "1d",
+      "error": "DataUnavailableError: US:MSFT has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "MSFT",
+      "interval": "15m",
+      "error": "DataUnavailableError: US:MSFT has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "GOOG",
+      "interval": "1d",
+      "error": "DataUnavailableError: US:GOOG has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "GOOG",
+      "interval": "15m",
+      "error": "DataUnavailableError: US:GOOG has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "AMZN",
+      "interval": "1d",
+      "error": "DataUnavailableError: US:AMZN has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "AMZN",
+      "interval": "15m",
+      "error": "DataUnavailableError: US:AMZN has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "TSLA",
+      "interval": "1d",
+      "error": "DataUnavailableError: US:TSLA has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    },
+    {
+      "symbol": "TSLA",
+      "interval": "15m",
+      "error": "DataUnavailableError: US:TSLA has no synthetic fixture series; start in live mode for real bars (fail closed, no fixture fallback)"
+    }
+  ]
+}

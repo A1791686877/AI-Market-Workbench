@@ -1,0 +1,1484 @@
+{
+  "checked_at": "2026-09-16T07:55:20.823709+00:00",
+  "subject_id": "us-mcd",
+  "symbol": "MCD",
+  "data_mode": "live",
+  "network_enabled": true,
+  "routing": {
+    "equity_provider": "alpaca",
+    "equity_eod_provider": "alpaca",
+    "alpaca_feed": "sip"
+  },
+  "model_call": "ATTEMPTED",
+  "bars": {
+    "1d": {
+      "instrument_id": "US:MCD",
+      "interval": "1d",
+      "bar_count": 400,
+      "first": "2025-02-11T14:30:00+00:00",
+      "last": "2026-09-15T20:00:00+00:00",
+      "last_close": "252.78",
+      "price_basis": [
+        "TOTAL_RETURN_ADJUSTED"
+      ],
+      "all_confirmed": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 86400,
+        "observed_bar_count": 2690,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2006-09-21T07:55:20.823709Z",
+        "actual_start_at": "2016-01-04T14:30:00Z",
+        "latest_bar_at": "2026-09-15T20:00:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "UNASSESSED",
+        "history_cursor_end": null
+      },
+      "bar_quality_flags": [],
+      "sources": [
+        {
+          "source_id": "src-alpaca-sip-mcd-daily",
+          "provider": "ALPACA",
+          "dataset": "us_equity_sip_daily_all",
+          "delay": "DELAYED_15M",
+          "basis": "TOTAL_RETURN_ADJUSTED",
+          "is_full_market": true,
+          "limitations": [
+            "Alpaca SIP is the consolidated tape; the free tier is delayed at least 15 minutes.",
+            "Daily bars use adjustment=all (TOTAL_RETURN_ADJUSTED); weekly/monthly are generated locally from these bars.",
+            "Sessions are taken from exchange_calendars XNYS (holidays, half-days and DST included).",
+            "Incremental merge; raw_sha256 is the ordered prior/page hash chain, not a single response hash."
+          ]
+        }
+      ]
+    },
+    "15m": {
+      "instrument_id": "US:MCD",
+      "interval": "15m",
+      "bar_count": 400,
+      "first": "2026-08-24T17:30:00+00:00",
+      "last": "2026-09-15T20:00:00+00:00",
+      "last_close": "252.84",
+      "price_basis": [
+        "SPLIT_ADJUSTED"
+      ],
+      "all_confirmed": true,
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 5630,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-16T07:55:22.407786Z",
+        "actual_start_at": "2025-10-31T17:00:00Z",
+        "latest_bar_at": "2026-09-15T20:00:00Z",
+        "history_complete": false,
+        "stale_reason": null,
+        "history_download_status": "UNASSESSED",
+        "history_cursor_end": null
+      },
+      "bar_quality_flags": [],
+      "sources": [
+        {
+          "source_id": "src-alpaca-sip-mcd",
+          "provider": "ALPACA",
+          "dataset": "us_equity_sip_15m",
+          "delay": "DELAYED_15M",
+          "basis": "SPLIT_ADJUSTED",
+          "is_full_market": true,
+          "limitations": [
+            "Alpaca SIP is the consolidated tape; the free tier is delayed at least 15 minutes.",
+            "US RTH bars are filtered against exchange_calendars XNYS sessions, including holidays, half-days and DST.",
+            "Primary OHLCV is split-adjusted; matching raw OHLCV is stored on each bar when returned by both queries.",
+            "Requested 15m window reached back to 2026-09-15T19:30:00+00:00.",
+            "Incremental merge; raw_sha256 is the ordered prior/page hash chain, not a single response hash."
+          ]
+        }
+      ]
+    }
+  },
+  "indicators": {
+    "1d": {
+      "interval": "1d",
+      "instrument_id": "US:MCD",
+      "bars_as_of": "2026-09-15T20:00:00+00:00",
+      "indicator_count": 10,
+      "indicators": [
+        {
+          "name": "SMA",
+          "status": "READY",
+          "current": {
+            "primary": "260.7185",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "EMA",
+          "status": "READY",
+          "current": {
+            "primary": "259.5624803336",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "RSI",
+          "status": "READY",
+          "current": {
+            "primary": "36.9339917314",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 15,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "MACD",
+          "status": "READY",
+          "current": {
+            "primary": "-3.8862832253",
+            "signal": "-3.2692945336",
+            "histogram": "-0.6169886918",
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 34,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "ATR",
+          "status": "READY",
+          "current": {
+            "primary": "4.4438917732",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 14,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "BOLLINGER_BANDS",
+          "status": "READY",
+          "current": {
+            "primary": "260.7185",
+            "signal": null,
+            "histogram": null,
+            "upper": "271.8250751247",
+            "middle": "260.7185",
+            "lower": "249.6119248753",
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "ADX",
+          "status": "READY",
+          "current": {
+            "primary": "25.8017130229",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": "14.0674165629",
+            "minus_di": "26.1637463417"
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 28,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "OBV",
+          "status": "READY",
+          "current": {
+            "primary": "418546617",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 1,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "VWAP",
+          "status": "READY",
+          "current": {
+            "primary": "254.42",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 1,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "VOLUME_PRICE_RELATION",
+          "status": "READY",
+          "current": {
+            "primary": "1.1121631096",
+            "signal": "-0.0182919725",
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "TOTAL_RETURN_ADJUSTED",
+          "missing_reason": null
+        }
+      ],
+      "fvg_count": 496,
+      "divergence_count": 82,
+      "support_resistance": {
+        "result_id": "sr-us-mcd-1d",
+        "algorithm_version": "pivot-cluster-3x3-atr025-v1",
+        "input_granularity": "1d",
+        "lookback_bars": 120,
+        "pivot_left": 3,
+        "pivot_right": 3,
+        "cluster_tolerance_atr_multiple": "0.25",
+        "levels": [
+          {
+            "level_id": "tech_level_support_alpaca-sip-mcd-2026-08-17",
+            "kind": "SUPPORT",
+            "price": "262.65",
+            "touch_count": 4,
+            "first_touch_at": "2026-06-25T20:00:00Z",
+            "latest_touch_at": "2026-08-17T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-mcd-2026-06-25",
+              "alpaca-sip-mcd-2026-07-15",
+              "alpaca-sip-mcd-2026-08-04",
+              "alpaca-sip-mcd-2026-08-17"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.78"
+          },
+          {
+            "level_id": "tech_level_support_alpaca-sip-mcd-2026-08-27",
+            "kind": "SUPPORT",
+            "price": "258.57",
+            "touch_count": 2,
+            "first_touch_at": "2026-07-23T20:00:00Z",
+            "latest_touch_at": "2026-08-27T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-mcd-2026-07-23",
+              "alpaca-sip-mcd-2026-08-27"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.78"
+          },
+          {
+            "level_id": "tech_level_support_alpaca-sip-mcd-2026-06-01",
+            "kind": "SUPPORT",
+            "price": "269.64",
+            "touch_count": 1,
+            "first_touch_at": "2026-06-01T20:00:00Z",
+            "latest_touch_at": "2026-06-01T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-mcd-2026-06-01"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.78"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-sip-mcd-2026-08-13",
+            "kind": "RESISTANCE",
+            "price": "276.57",
+            "touch_count": 2,
+            "first_touch_at": "2026-07-28T20:00:00Z",
+            "latest_touch_at": "2026-08-13T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-mcd-2026-07-28",
+              "alpaca-sip-mcd-2026-08-13"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.78"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-sip-mcd-2026-08-07",
+            "kind": "RESISTANCE",
+            "price": "274.665",
+            "touch_count": 2,
+            "first_touch_at": "2026-07-17T20:00:00Z",
+            "latest_touch_at": "2026-08-07T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-mcd-2026-07-17",
+              "alpaca-sip-mcd-2026-08-07"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.78"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-sip-mcd-2026-06-16",
+            "kind": "RESISTANCE",
+            "price": "287.32",
+            "touch_count": 2,
+            "first_touch_at": "2026-05-07T20:00:00Z",
+            "latest_touch_at": "2026-06-16T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-sip-mcd-2026-05-07",
+              "alpaca-sip-mcd-2026-06-16"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.78"
+          }
+        ],
+        "source_refs": [
+          "src-alpaca-sip-mcd-daily"
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-sip-mcd-2026-08-17",
+            "claim": "Historical confirmed support pivot cluster at 262.65 with 4 touch(es); role_status=BROKEN_HISTORICAL versus last close 252.78. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-08-17",
+                "field": "low",
+                "value": "262.65",
+                "unit": "price",
+                "observed_at": "2026-08-17T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-mcd-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-sip-mcd-2026-08-27",
+            "claim": "Historical confirmed support pivot cluster at 258.57 with 2 touch(es); role_status=BROKEN_HISTORICAL versus last close 252.78. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-08-27",
+                "field": "low",
+                "value": "258.57",
+                "unit": "price",
+                "observed_at": "2026-08-27T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-mcd-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-sip-mcd-2026-06-01",
+            "claim": "Historical confirmed support pivot cluster at 269.64 with 1 touch(es); role_status=BROKEN_HISTORICAL versus last close 252.78. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-06-01",
+                "field": "low",
+                "value": "269.64",
+                "unit": "price",
+                "observed_at": "2026-06-01T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-mcd-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-sip-mcd-2026-08-13",
+            "claim": "Historical confirmed resistance pivot cluster at 276.57 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 252.78. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-08-13",
+                "field": "high",
+                "value": "276.57",
+                "unit": "price",
+                "observed_at": "2026-08-13T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-mcd-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-sip-mcd-2026-08-07",
+            "claim": "Historical confirmed resistance pivot cluster at 274.665 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 252.78. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-08-07",
+                "field": "high",
+                "value": "274.665",
+                "unit": "price",
+                "observed_at": "2026-08-07T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-mcd-daily"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-sip-mcd-2026-06-16",
+            "claim": "Historical confirmed resistance pivot cluster at 287.32 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 252.78. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-06-16",
+                "field": "high",
+                "value": "287.32",
+                "unit": "price",
+                "observed_at": "2026-06-16T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-mcd-daily"
+            ],
+            "quality": "HIGH"
+          }
+        ],
+        "limitations": [
+          "Levels are confirmed pivot clusters, not order-book liquidity guarantees.",
+          "The latest three bars cannot form confirmed pivots because pivot_right=3."
+        ]
+      },
+      "trend_structure": {
+        "result_id": "trend-us-mcd-1d",
+        "algorithm_version": "confirmed-pivot-hh-hl-3x3-v1",
+        "input_granularity": "1d",
+        "state": "DOWNTREND",
+        "pivot_left": 3,
+        "pivot_right": 3,
+        "high_anchors": [
+          {
+            "bar_id": "alpaca-sip-mcd-2026-08-24",
+            "at": "2026-08-24T20:00:00Z",
+            "field": "high",
+            "value": "271.49"
+          },
+          {
+            "bar_id": "alpaca-sip-mcd-2026-09-01",
+            "at": "2026-09-01T20:00:00Z",
+            "field": "high",
+            "value": "264.5"
+          }
+        ],
+        "low_anchors": [
+          {
+            "bar_id": "alpaca-sip-mcd-2026-08-17",
+            "at": "2026-08-17T20:00:00Z",
+            "field": "low",
+            "value": "263.27"
+          },
+          {
+            "bar_id": "alpaca-sip-mcd-2026-08-27",
+            "at": "2026-08-27T20:00:00Z",
+            "field": "low",
+            "value": "258.02"
+          }
+        ],
+        "signal_at": "2026-09-04T20:00:00Z",
+        "confirmation": {
+          "status": "CONFIRMED",
+          "confirmed_at": "2026-09-04T20:00:00Z",
+          "left_window": 3,
+          "right_window": 3,
+          "can_repaint": false
+        },
+        "source_refs": [
+          "src-alpaca-sip-mcd-daily"
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ev_trend_us-mcd_1d",
+            "claim": "Confirmed swing structure state is DOWNTREND.",
+            "rule": "confirmed-pivot-hh-hl-3x3-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-08-24",
+                "field": "high",
+                "value": "271.49",
+                "unit": "price",
+                "observed_at": "2026-08-24T20:00:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-09-01",
+                "field": "high",
+                "value": "264.5",
+                "unit": "price",
+                "observed_at": "2026-09-01T20:00:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-08-17",
+                "field": "low",
+                "value": "263.27",
+                "unit": "price",
+                "observed_at": "2026-08-17T20:00:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-sip-mcd-2026-08-27",
+                "field": "low",
+                "value": "258.02",
+                "unit": "price",
+                "observed_at": "2026-08-27T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-sip-mcd-daily"
+            ],
+            "quality": "HIGH"
+          }
+        ],
+        "limitations": [
+          "Trend state compares only the two latest confirmed swing highs and lows.",
+          "A mixed higher/lower swing sequence is classified as RANGE_OR_MIXED."
+        ]
+      },
+      "vpvr": {
+        "poc": "271.5684375",
+        "vah": "283.925625",
+        "val": "261.565",
+        "is_estimate": true,
+        "window_start": "2026-03-25 13:30:00+00:00",
+        "window_end": "2026-09-15 20:00:00+00:00"
+      },
+      "missing_items": []
+    },
+    "15m": {
+      "interval": "15m",
+      "instrument_id": "US:MCD",
+      "bars_as_of": "2026-09-15T20:00:00+00:00",
+      "indicator_count": 10,
+      "indicators": [
+        {
+          "name": "SMA",
+          "status": "READY",
+          "current": {
+            "primary": "254.3775",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "EMA",
+          "status": "READY",
+          "current": {
+            "primary": "254.3262691772",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "RSI",
+          "status": "READY",
+          "current": {
+            "primary": "27.464284503",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 15,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "MACD",
+          "status": "READY",
+          "current": {
+            "primary": "-0.7347943839",
+            "signal": "-0.6675955383",
+            "histogram": "-0.0671988457",
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 34,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "ATR",
+          "status": "READY",
+          "current": {
+            "primary": "0.5466317533",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 14,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "BOLLINGER_BANDS",
+          "status": "READY",
+          "current": {
+            "primary": "254.3775",
+            "signal": null,
+            "histogram": null,
+            "upper": "256.165114332",
+            "middle": "254.3775",
+            "lower": "252.589885668",
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "ADX",
+          "status": "READY",
+          "current": {
+            "primary": "40.8147840352",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": "11.7181009668",
+            "minus_di": "37.7976339995"
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 28,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "OBV",
+          "status": "READY",
+          "current": {
+            "primary": "-6125953",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 1,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "VWAP",
+          "status": "READY",
+          "current": {
+            "primary": "254.658853275",
+            "signal": null,
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 1,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        },
+        {
+          "name": "VOLUME_PRICE_RELATION",
+          "status": "READY",
+          "current": {
+            "primary": "4.8635672733",
+            "signal": "-0.0031147735",
+            "histogram": null,
+            "upper": null,
+            "middle": null,
+            "lower": null,
+            "plus_di": null,
+            "minus_di": null
+          },
+          "algorithm_version": "deterministic-v1",
+          "warmup_bars": 20,
+          "input_price_basis": "SPLIT_ADJUSTED",
+          "missing_reason": null
+        }
+      ],
+      "fvg_count": 693,
+      "divergence_count": 130,
+      "support_resistance": {
+        "result_id": "sr-us-mcd-15m",
+        "algorithm_version": "pivot-cluster-3x3-atr025-v1",
+        "input_granularity": "15m",
+        "lookback_bars": 120,
+        "pivot_left": 3,
+        "pivot_right": 3,
+        "cluster_tolerance_atr_multiple": "0.25",
+        "levels": [
+          {
+            "level_id": "tech_level_support_alpaca-mcd-1789496100",
+            "kind": "SUPPORT",
+            "price": "253.345",
+            "touch_count": 2,
+            "first_touch_at": "2026-09-09T16:30:00Z",
+            "latest_touch_at": "2026-09-15T18:30:00Z",
+            "anchor_bar_ids": [
+              "alpaca-mcd-1788970500",
+              "alpaca-mcd-1789496100"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.84"
+          },
+          {
+            "level_id": "tech_level_support_alpaca-mcd-1789155900",
+            "kind": "SUPPORT",
+            "price": "252.2",
+            "touch_count": 2,
+            "first_touch_at": "2026-09-11T14:15:00Z",
+            "latest_touch_at": "2026-09-11T20:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-mcd-1789135200",
+              "alpaca-mcd-1789155900"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.84"
+          },
+          {
+            "level_id": "tech_level_support_alpaca-mcd-1789479900",
+            "kind": "SUPPORT",
+            "price": "255.18",
+            "touch_count": 1,
+            "first_touch_at": "2026-09-15T14:00:00Z",
+            "latest_touch_at": "2026-09-15T14:00:00Z",
+            "anchor_bar_ids": [
+              "alpaca-mcd-1789479900"
+            ],
+            "confirmed": true,
+            "role_status": "BROKEN_HISTORICAL",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.84"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-mcd-1789146900",
+            "kind": "RESISTANCE",
+            "price": "253.83",
+            "touch_count": 2,
+            "first_touch_at": "2026-09-10T15:30:00Z",
+            "latest_touch_at": "2026-09-11T17:30:00Z",
+            "anchor_bar_ids": [
+              "alpaca-mcd-1789053300",
+              "alpaca-mcd-1789146900"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.84"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-mcd-1789047000",
+            "kind": "RESISTANCE",
+            "price": "255.59",
+            "touch_count": 2,
+            "first_touch_at": "2026-09-09T17:30:00Z",
+            "latest_touch_at": "2026-09-10T13:45:00Z",
+            "anchor_bar_ids": [
+              "alpaca-mcd-1788974100",
+              "alpaca-mcd-1789047000"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.84"
+          },
+          {
+            "level_id": "tech_level_resistance_alpaca-mcd-1789498800",
+            "kind": "RESISTANCE",
+            "price": "254.02",
+            "touch_count": 1,
+            "first_touch_at": "2026-09-15T19:15:00Z",
+            "latest_touch_at": "2026-09-15T19:15:00Z",
+            "anchor_bar_ids": [
+              "alpaca-mcd-1789498800"
+            ],
+            "confirmed": true,
+            "role_status": "CORRECT_SIDE_ONLY",
+            "role_rule_version": "pivot-role-v1",
+            "role_as_of": "2026-09-15T20:00:00Z",
+            "reference_close": "252.84"
+          }
+        ],
+        "source_refs": [
+          "src-alpaca-mcd"
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-mcd-1789496100",
+            "claim": "Historical confirmed support pivot cluster at 253.345 with 2 touch(es); role_status=BROKEN_HISTORICAL versus last close 252.84. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789496100",
+                "field": "low",
+                "value": "253.345",
+                "unit": "price",
+                "observed_at": "2026-09-15T18:30:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-mcd"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-mcd-1789155900",
+            "claim": "Historical confirmed support pivot cluster at 252.2 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 252.84. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789155900",
+                "field": "low",
+                "value": "252.2",
+                "unit": "price",
+                "observed_at": "2026-09-11T20:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-mcd"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_support_alpaca-mcd-1789479900",
+            "claim": "Historical confirmed support pivot cluster at 255.18 with 1 touch(es); role_status=BROKEN_HISTORICAL versus last close 252.84. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789479900",
+                "field": "low",
+                "value": "255.18",
+                "unit": "price",
+                "observed_at": "2026-09-15T14:00:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-mcd"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-mcd-1789146900",
+            "claim": "Historical confirmed resistance pivot cluster at 253.83 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 252.84. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789146900",
+                "field": "high",
+                "value": "253.83",
+                "unit": "price",
+                "observed_at": "2026-09-11T17:30:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-mcd"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-mcd-1789047000",
+            "claim": "Historical confirmed resistance pivot cluster at 255.59 with 2 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 252.84. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789047000",
+                "field": "high",
+                "value": "255.59",
+                "unit": "price",
+                "observed_at": "2026-09-10T13:45:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-mcd"
+            ],
+            "quality": "HIGH"
+          },
+          {
+            "evidence_id": "ev_tech_level_resistance_alpaca-mcd-1789498800",
+            "claim": "Historical confirmed resistance pivot cluster at 254.02 with 1 touch(es); role_status=CORRECT_SIDE_ONLY versus last close 252.84. Correct price side alone does not confirm a successful retest.",
+            "rule": "pivot-cluster-3x3-atr025-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789498800",
+                "field": "high",
+                "value": "254.02",
+                "unit": "price",
+                "observed_at": "2026-09-15T19:15:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-mcd"
+            ],
+            "quality": "HIGH"
+          }
+        ],
+        "limitations": [
+          "Levels are confirmed pivot clusters, not order-book liquidity guarantees.",
+          "The latest three bars cannot form confirmed pivots because pivot_right=3."
+        ]
+      },
+      "trend_structure": {
+        "result_id": "trend-us-mcd-15m",
+        "algorithm_version": "confirmed-pivot-hh-hl-3x3-v1",
+        "input_granularity": "15m",
+        "state": "DOWNTREND",
+        "pivot_left": 3,
+        "pivot_right": 3,
+        "high_anchors": [
+          {
+            "bar_id": "alpaca-mcd-1789487100",
+            "at": "2026-09-15T16:00:00Z",
+            "field": "high",
+            "value": "256.35"
+          },
+          {
+            "bar_id": "alpaca-mcd-1789498800",
+            "at": "2026-09-15T19:15:00Z",
+            "field": "high",
+            "value": "254.02"
+          }
+        ],
+        "low_anchors": [
+          {
+            "bar_id": "alpaca-mcd-1789479900",
+            "at": "2026-09-15T14:00:00Z",
+            "field": "low",
+            "value": "255.18"
+          },
+          {
+            "bar_id": "alpaca-mcd-1789496100",
+            "at": "2026-09-15T18:30:00Z",
+            "field": "low",
+            "value": "253.29"
+          }
+        ],
+        "signal_at": "2026-09-15T20:00:00Z",
+        "confirmation": {
+          "status": "CONFIRMED",
+          "confirmed_at": "2026-09-15T20:00:00Z",
+          "left_window": 3,
+          "right_window": 3,
+          "can_repaint": false
+        },
+        "source_refs": [
+          "src-alpaca-mcd"
+        ],
+        "evidence": [
+          {
+            "evidence_id": "ev_trend_us-mcd_15m",
+            "claim": "Confirmed swing structure state is DOWNTREND.",
+            "rule": "confirmed-pivot-hh-hl-3x3-v1",
+            "observations": [
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789487100",
+                "field": "high",
+                "value": "256.35",
+                "unit": "price",
+                "observed_at": "2026-09-15T16:00:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789498800",
+                "field": "high",
+                "value": "254.02",
+                "unit": "price",
+                "observed_at": "2026-09-15T19:15:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789479900",
+                "field": "low",
+                "value": "255.18",
+                "unit": "price",
+                "observed_at": "2026-09-15T14:00:00Z"
+              },
+              {
+                "ref_type": "BAR",
+                "ref_id": "alpaca-mcd-1789496100",
+                "field": "low",
+                "value": "253.29",
+                "unit": "price",
+                "observed_at": "2026-09-15T18:30:00Z"
+              }
+            ],
+            "source_refs": [
+              "src-alpaca-mcd"
+            ],
+            "quality": "HIGH"
+          }
+        ],
+        "limitations": [
+          "Trend state compares only the two latest confirmed swing highs and lows.",
+          "A mixed higher/lower swing sequence is classified as RANGE_OR_MIXED."
+        ]
+      },
+      "vpvr": {
+        "poc": "253.003125",
+        "vah": "255.5625",
+        "val": "252.4125",
+        "is_estimate": true,
+        "window_start": "2026-09-09 16:00:00+00:00",
+        "window_end": "2026-09-15 20:00:00+00:00"
+      },
+      "missing_items": []
+    }
+  },
+  "fundamentals": {
+    "subject_id": "us-mcd",
+    "accepted_before": "2026-09-16T07:51:37.586132+00:00",
+    "fact_count": 13,
+    "filings": [
+      {
+        "form": "10-Q",
+        "filed_at": "2026-08-07",
+        "report_period": "2026-06-30"
+      },
+      {
+        "form": "10-K",
+        "filed_at": "2026-02-24",
+        "report_period": "2025-12-31"
+      },
+      {
+        "form": "10-Q",
+        "filed_at": "2025-11-05",
+        "report_period": "2025-09-30"
+      }
+    ],
+    "facts": [
+      {
+        "name": "REVENUE",
+        "value": "26885000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "NET_INCOME",
+        "value": "8563000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "OPERATING_CASH_FLOW",
+        "value": "10551000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "CAPITAL_EXPENDITURE",
+        "value": "3365000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "DILUTED_SHARES",
+        "value": "716.4",
+        "unit": "shares",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "CASH_AND_EQUIVALENTS",
+        "value": "822000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2026-06-30",
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": null
+      },
+      {
+        "name": "FREE_CASH_FLOW",
+        "value": "7186000000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": "FREE_CASH_FLOW = OPERATING_CASH_FLOW - CAPITAL_EXPENDITURE",
+        "missing_reason": null
+      },
+      {
+        "name": "TOTAL_DEBT",
+        "value": null,
+        "unit": "USD",
+        "status": "MISSING",
+        "period_end": null,
+        "basis": "GAAP",
+        "derivation": null,
+        "missing_reason": "no single-instant composition of debt tags at or before the cutoff; not guessed"
+      },
+      {
+        "name": "REVENUE_GROWTH",
+        "value": "0.03723",
+        "unit": "fraction",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": "REVENUE_GROWTH = Revenues FY2025 / FY2024 - 1",
+        "missing_reason": null
+      },
+      {
+        "name": "NET_INCOME_GROWTH",
+        "value": "0.041347",
+        "unit": "fraction",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": "NET_INCOME_GROWTH = NetIncomeLoss FY2025 / FY2024 - 1",
+        "missing_reason": null
+      },
+      {
+        "name": "MARKET_CAP",
+        "value": "181091592000",
+        "unit": "USD",
+        "status": "AVAILABLE",
+        "period_end": "2025-12-31",
+        "basis": "GAAP",
+        "derivation": "MARKET_CAP = last confirmed close * weighted-average diluted shares（原始 XBRL 值 716.4 判定为「百万股」，已 ×1e6）",
+        "missing_reason": null
+      },
+      {
+        "name": "TTM_EPS",
+        "value": "12.31",
+        "unit": "USD/shares",
+        "status": "AVAILABLE",
+        "period_end": "2026-06-30",
+        "basis": "GAAP",
+        "derivation": "TTM_EPS = SUM(4 个单季 EarningsPerShareDiluted)，其中 Q4 = FY − 9M YTD（校验：net_income±1%）；期间 2025-07-01..2026-06-30",
+        "missing_reason": null
+      },
+      {
+        "name": "PE_TTM",
+        "value": "20.5345",
+        "unit": "fraction",
+        "status": "AVAILABLE",
+        "period_end": "2026-06-30",
+        "basis": "GAAP",
+        "derivation": "PE_TTM = last confirmed close / TTM_EPS (4 个单季摊薄 EPS 之和)",
+        "missing_reason": null
+      }
+    ],
+    "missing_items": [
+      "TOTAL_DEBT: debt composition not available as a single-instant GAAP set"
+    ],
+    "sources": [
+      "src-sec-mcd-companyfacts"
+    ]
+  },
+  "snapshot": {
+    "snapshot_id": "snapshot-50084792ce404045be1e98a49c04baf4",
+    "snapshot_sha256": "92e1022f6e9cac8976678b7ed8ab89e7f47beacf505ae89da42fe42f9e635bc2",
+    "cutoff_at": "2026-09-16T07:55:34.009200+00:00",
+    "evidence_count": 44,
+    "timeframe_coverage": [
+      {
+        "instrument_id": "US:MCD",
+        "interval": "1d",
+        "role": "STRUCTURE",
+        "bars_as_of": "2026-09-15T20:00:00Z",
+        "status": "AVAILABLE",
+        "history_complete": false,
+        "evidence_ids": [
+          "ev_sma-alpaca-sip-mcd-2026-09-15",
+          "ev_ema-alpaca-sip-mcd-2026-09-15",
+          "ev_rsi-alpaca-sip-mcd-2026-09-15",
+          "ev_macd-alpaca-sip-mcd-2026-09-15",
+          "ev_atr-alpaca-sip-mcd-2026-09-15",
+          "ev_bollinger_bands-alpaca-sip-mcd-2026-09-15",
+          "ev_adx-alpaca-sip-mcd-2026-09-15",
+          "ev_obv-alpaca-sip-mcd-2026-09-15",
+          "ev_vwap-alpaca-sip-mcd-2026-09-15",
+          "ev_volume_price_relation-alpaca-sip-mcd-2026-09-15",
+          "ev_tech_level_support_alpaca-sip-mcd-2026-08-17",
+          "ev_tech_level_support_alpaca-sip-mcd-2026-08-27",
+          "ev_tech_level_support_alpaca-sip-mcd-2026-06-01",
+          "ev_tech_level_resistance_alpaca-sip-mcd-2026-08-13",
+          "ev_tech_level_resistance_alpaca-sip-mcd-2026-08-07",
+          "ev_tech_level_resistance_alpaca-sip-mcd-2026-06-16",
+          "ev_trend_us-mcd_1d",
+          "ev_vpvr_vpvr-us-mcd-1d",
+          "ev_fvg_fvg-alpaca-sip-mcd-2026-09-04",
+          "ev_divergence_div-macd_histogram-alpaca-sip-mcd-2025-08-06",
+          "ev_divergence_div-macd_histogram-alpaca-sip-mcd-2025-08-22",
+          "ev_divergence_div-macd_histogram-alpaca-sip-mcd-2025-09-04"
+        ],
+        "missing_reason": null
+      },
+      {
+        "instrument_id": "US:MCD",
+        "interval": "15m",
+        "role": "SIGNAL",
+        "bars_as_of": "2026-09-15T20:00:00Z",
+        "status": "AVAILABLE",
+        "history_complete": false,
+        "evidence_ids": [
+          "ev_sma-alpaca-mcd-1789501500",
+          "ev_ema-alpaca-mcd-1789501500",
+          "ev_rsi-alpaca-mcd-1789501500",
+          "ev_macd-alpaca-mcd-1789501500",
+          "ev_atr-alpaca-mcd-1789501500",
+          "ev_bollinger_bands-alpaca-mcd-1789501500",
+          "ev_adx-alpaca-mcd-1789501500",
+          "ev_obv-alpaca-mcd-1789501500",
+          "ev_vwap-alpaca-mcd-1789501500",
+          "ev_volume_price_relation-alpaca-mcd-1789501500",
+          "ev_tech_level_support_alpaca-mcd-1789496100",
+          "ev_tech_level_support_alpaca-mcd-1789155900",
+          "ev_tech_level_support_alpaca-mcd-1789479900",
+          "ev_tech_level_resistance_alpaca-mcd-1789146900",
+          "ev_tech_level_resistance_alpaca-mcd-1789047000",
+          "ev_tech_level_resistance_alpaca-mcd-1789498800",
+          "ev_trend_us-mcd_15m",
+          "ev_vpvr_vpvr-us-mcd-15m",
+          "ev_fvg_fvg-alpaca-mcd-1789496100",
+          "ev_divergence_div-macd_histogram-alpaca-mcd-1788884100",
+          "ev_divergence_div-macd_histogram-alpaca-mcd-1789133400",
+          "ev_divergence_div-macd_histogram-alpaca-mcd-1789146900"
+        ],
+        "missing_reason": null
+      }
+    ],
+    "missing_items": [
+      "15m: requested history incomplete; actual start 2025-10-31 17:00:00+00:00",
+      "1d: requested history incomplete; actual start 2016-01-04 14:30:00+00:00",
+      "Market context missing at cutoff; no historical reconstruction inferred",
+      "TOTAL_DEBT: debt composition not available as a single-instant GAAP set"
+    ],
+    "scenario_rules": [
+      {
+        "rule_id": "rule-bullish-1789545334009200",
+        "version": "VPVR_15M_CLOSE_ENVELOPE_V1",
+        "scenario": "BULLISH",
+        "instrument_id": "US:MCD",
+        "lower": "252.4125",
+        "upper": "255.5625",
+        "frozen_at": "2026-09-16T07:55:34.009200Z",
+        "expires_at": "2026-09-23T07:55:34.009200Z",
+        "confirmation_interval": "15m",
+        "trigger": "CLOSE_ABOVE_UPPER",
+        "invalidation": "CLOSE_BELOW_LOWER",
+        "evidence_ids": [
+          "ev_vpvr_vpvr-us-mcd-15m"
+        ],
+        "limitation": "Platform-defined close-only scenario protocol using estimated VPVR bounds; not a trade, price target or model accuracy measurement."
+      },
+      {
+        "rule_id": "rule-neutral-1789545334009200",
+        "version": "VPVR_15M_CLOSE_ENVELOPE_V1",
+        "scenario": "NEUTRAL",
+        "instrument_id": "US:MCD",
+        "lower": "252.4125",
+        "upper": "255.5625",
+        "frozen_at": "2026-09-16T07:55:34.009200Z",
+        "expires_at": "2026-09-23T07:55:34.009200Z",
+        "confirmation_interval": "15m",
+        "trigger": "CLOSE_INSIDE_INCLUSIVE",
+        "invalidation": "CLOSE_OUTSIDE",
+        "evidence_ids": [
+          "ev_vpvr_vpvr-us-mcd-15m"
+        ],
+        "limitation": "Platform-defined close-only scenario protocol using estimated VPVR bounds; not a trade, price target or model accuracy measurement."
+      },
+      {
+        "rule_id": "rule-bearish-1789545334009200",
+        "version": "VPVR_15M_CLOSE_ENVELOPE_V1",
+        "scenario": "BEARISH",
+        "instrument_id": "US:MCD",
+        "lower": "252.4125",
+        "upper": "255.5625",
+        "frozen_at": "2026-09-16T07:55:34.009200Z",
+        "expires_at": "2026-09-23T07:55:34.009200Z",
+        "confirmation_interval": "15m",
+        "trigger": "CLOSE_BELOW_LOWER",
+        "invalidation": "CLOSE_ABOVE_UPPER",
+        "evidence_ids": [
+          "ev_vpvr_vpvr-us-mcd-15m"
+        ],
+        "limitation": "Platform-defined close-only scenario protocol using estimated VPVR bounds; not a trade, price target or model accuracy measurement."
+      }
+    ],
+    "fundamentals_included": true,
+    "sources": [
+      "src-alpaca-sip-mcd-daily",
+      "src-alpaca-sip-mcd",
+      "src-sec-mcd-companyfacts"
+    ]
+  },
+  "task": {
+    "task_id": "task-5798fc9b49744e8a8fe0e95f3db11339",
+    "status": "FAILED_PROVIDER",
+    "snapshot_id": "snapshot-50084792ce404045be1e98a49c04baf4",
+    "created_at": "2026-09-16T07:55:54.172952Z",
+    "started_at": "2026-09-16T07:55:54.202658Z",
+    "completed_at": "2026-09-16T07:55:55.606485Z",
+    "analysis_id": null,
+    "error": {
+      "type": "urn:amw:error:provider_error",
+      "title": "AI analysis failed",
+      "status": 500,
+      "code": "PROVIDER_ERROR",
+      "detail": "Codex CLI not found; configure AMW_CODEX_COMMAND locally.",
+      "trace_id": "trace-80719d4ab6d94246b834c2d3d2f7fa73"
+    }
+  },
+  "analysis": {
+    "error": "type='urn:amw:error:provider_error' title='AI analysis failed' status=500 code=<ErrorCode.PROVIDER_ERROR: 'PROVIDER_ERROR'> detail='Codex CLI not found; configure AMW_CODEX_COMMAND locally.' trace_id='trace-80719d4ab6d94246b834c2d3d2f7fa73'"
+  }
+}

@@ -1,0 +1,1967 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Market Workbench — 多周期筹码峰 (VPVR) × 背离雷达 × 策略工作台（只读版）</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080c14;
+      --bg-elev: #0f1623;
+      --panel: #121b2b;
+      --panel-alt: #162236;
+      --border: #23324d;
+      --border-subtle: #1b273d;
+      --text: #e6edf7;
+      --muted: #8ea0be;
+      --green: #22c55e;
+      --green-bg: rgba(34, 197, 94, 0.14);
+      --red: #ef4444;
+      --red-bg: rgba(239, 68, 68, 0.14);
+      --amber: #f59e0b;
+      --amber-bg: rgba(245, 158, 11, 0.14);
+      --blue: #38bdf8;
+      --blue-bg: rgba(56, 189, 248, 0.14);
+      --purple: #a855f7;
+      --purple-bg: rgba(168, 85, 247, 0.15);
+      --cyan: #06b6d4;
+      font-family: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 15% 0%, #111c33 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 13px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 17, 29, 0.92);
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .brand-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      background: linear-gradient(90deg, #f8fafc, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--muted);
+      font-size: 11.5px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pill.ok { color: #4ade80; border-color: rgba(34,197,94,0.4); background: var(--green-bg); }
+    .pill.warn { color: #fbbf24; border-color: rgba(245,158,11,0.4); background: var(--amber-bg); }
+    .pill.bad { color: #f87171; border-color: rgba(239,68,68,0.4); background: var(--red-bg); }
+    .pill.info { color: #38bdf8; border-color: rgba(56,189,248,0.4); background: var(--blue-bg); }
+    .pill.purple { color: #c084fc; border-color: rgba(168,85,247,0.4); background: var(--purple-bg); }
+
+    /* Quick Subject Bar */
+    .quick-bar {
+      padding: 8px 20px;
+      background: var(--bg-elev);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .quick-chip {
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quick-chip:hover {
+      border-color: var(--blue);
+      background: var(--panel-alt);
+    }
+    .quick-chip.active {
+      border-color: var(--blue);
+      background: rgba(56, 189, 248, 0.18);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      padding: 10px 20px;
+      background: rgba(18, 27, 43, 0.75);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .control-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    select, button, input {
+      background: var(--bg-elev);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 12.5px;
+      font-family: inherit;
+    }
+    select:focus, button:focus { outline: 1px solid var(--blue); }
+    button {
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+    button:hover { border-color: var(--blue); background: var(--panel-alt); }
+    button.primary {
+      background: linear-gradient(180deg, #1d4ed8, #1e40af);
+      border-color: #3b82f6;
+      color: #fff;
+    }
+    button.primary:hover { background: linear-gradient(180deg, #2563eb, #1d4ed8); }
+    button.accent {
+      background: linear-gradient(180deg, #0f766e, #115e59);
+      border-color: #14b8a6;
+      color: #fff;
+    }
+    button.warn-btn {
+      background: rgba(124, 45, 18, 0.7);
+      border-color: #f59e0b;
+      color: #fef3c7;
+    }
+
+    /* Main Grid Layout */
+    main {
+      max-width: 1780px;
+      margin: 0 auto;
+      padding: 16px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 16px;
+    }
+    .grid-equal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .grid-3col {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 1240px) {
+      .grid-2col, .grid-equal, .grid-3col { grid-template-columns: 1fr; }
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+    }
+    .panel-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .muted { color: var(--muted); font-size: 12px; }
+    .mono { font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace; }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th, td {
+      padding: 7px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: middle;
+    }
+    th {
+      background: rgba(15, 22, 35, 0.9);
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+      font-size: 11.5px;
+    }
+    tr.clickable-row { cursor: pointer; transition: background 0.12s; }
+    tr.clickable-row:hover { background: rgba(56, 189, 248, 0.08); }
+    tr.clickable-row.selected-row {
+      background: rgba(56, 189, 248, 0.15);
+      border-left: 3px solid var(--blue);
+    }
+
+    /* Chart Container */
+    #chartWrap {
+      position: relative;
+      background: #0a101d;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    #chartHud {
+      padding: 7px 12px;
+      background: rgba(15, 22, 35, 0.92);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 11.5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      min-height: 32px;
+    }
+    #chart svg {
+      width: 100%;
+      height: 540px;
+      display: block;
+      user-select: none;
+    }
+    .chart-legend {
+      padding: 6px 12px;
+      background: rgba(15, 22, 35, 0.85);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* Strategy War Room Cards */
+    .verdict-banner {
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.75));
+      margin-bottom: 12px;
+    }
+    .verdict-banner.buy { border-color: rgba(34, 197, 94, 0.55); background: linear-gradient(135deg, rgba(6, 78, 59, 0.35), rgba(15, 23, 42, 0.95)); }
+    .verdict-banner.sell { border-color: rgba(245, 158, 11, 0.55); background: linear-gradient(135deg, rgba(120, 53, 15, 0.35), rgba(15, 23, 42, 0.95)); }
+    .verdict-banner.wait { border-color: rgba(56, 189, 248, 0.45); }
+
+    .kv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .kv-box {
+      padding: 8px 10px;
+      border-radius: 7px;
+      background: var(--bg-elev);
+      border: 1px solid var(--border-subtle);
+    }
+    .kv-box .k { color: var(--muted); font-size: 11px; margin-bottom: 2px; }
+    .kv-box .v { font-size: 13.5px; font-weight: 700; color: #f8fafc; }
+
+    .check-item {
+      padding: 7px 10px;
+      border-radius: 6px;
+      background: var(--bg-elev);
+      border-left: 3px solid var(--border);
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+    .check-item.PASS { border-left-color: var(--green); }
+    .check-item.WARN { border-left-color: var(--amber); }
+    .check-item.FAIL { border-left-color: var(--red); }
+
+    .scenario {
+      border-left: 3px solid var(--blue);
+      padding: 9px 12px;
+      margin: 8px 0;
+      background: var(--bg-elev);
+      border-radius: 0 7px 7px 0;
+    }
+    .scenario.BULLISH { border-left-color: var(--green); }
+    .scenario.NEUTRAL { border-left-color: var(--amber); }
+    .scenario.BEARISH { border-left-color: var(--red); }
+
+    .error {
+      border-color: var(--red);
+      color: #fecaca;
+      background: rgba(127, 29, 29, 0.35);
+      white-space: pre-wrap;
+    }
+    .bar-meter {
+      display: flex;
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #1e293b;
+      margin-top: 4px;
+    }
+    .scrollable-list {
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    /* Language Selection Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 12, 20, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      transition: opacity 0.2s ease;
+    }
+    .modal-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 24px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+    }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .lang-btn {
+      padding: 16px 12px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+      text-align: center;
+    }
+    .lang-btn:hover {
+      border-color: var(--blue);
+      background: rgba(56, 189, 248, 0.12);
+      transform: translateY(-2px);
+    }
+    .lang-btn.active {
+      border-color: var(--blue);
+      background: rgba(56, 189, 248, 0.2);
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.35);
+    }
+    .lang-btn .flag { font-size: 26px; }
+    .lang-btn .l-name { font-size: 14.5px; font-weight: 700; color: #fff; }
+    .lang-btn .l-desc { font-size: 11px; color: var(--muted); line-height: 1.35; }
+  </style>
+</head>
+<body>
+  <!-- Language Selection Modal (First step on entry or via header button) -->
+  <div id="langModal" class="modal-backdrop" style="display:none;">
+    <div class="modal-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <h3 style="margin:0;font-size:16px;color:#f8fafc;" id="modalTitle">🌐 选择界面语言 / Select Language</h3>
+        <button type="button" id="closeModalCross" style="border:none;background:none;color:var(--muted);font-size:18px;cursor:pointer;padding:2px 6px;">✕</button>
+      </div>
+      <p class="muted" style="margin:0 0 12px;font-size:12px;" id="modalSubtitle">请选择你的工作台首选语言 · Please select your preferred workbench language:</p>
+      <div class="lang-grid">
+        <button type="button" class="lang-btn" id="btnChooseZh">
+          <span class="flag">🇨🇳</span>
+          <span class="l-name">中文 (简体)</span>
+          <span class="l-desc">多周期筹码分布 (VPVR) · 双轨背离雷达 · 策略作战室</span>
+        </button>
+        <button type="button" class="lang-btn" id="btnChooseEn">
+          <span class="flag">🇺🇸</span>
+          <span class="l-name">English</span>
+          <span class="l-desc">Volume Profile (VPVR) · Dual Divergences · Strategy War Room</span>
+        </button>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:10px;border-top:1px solid var(--border-subtle);">
+        <label style="font-size:12px;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+          <input type="checkbox" id="rememberLang" checked />
+          <span id="rememberLangText">记住我的选择 / Remember preference</span>
+        </label>
+        <button type="button" class="primary" id="confirmLangBtn" style="padding:5px 14px;font-size:12px;">进入工作台 / Enter</button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="brand-row">
+      <span class="brand-title" id="brandTitle">AI Market Workbench · 多周期筹码峰 (VPVR) × 背离雷达 × 策略工作台</span>
+      <span class="pill ok" id="readonlyPill">🔒 严格只读隔离 · 0 交易/账户/下单接口</span>
+      <span class="pill info" id="modePill">加载中…</span>
+      <span class="pill ok" id="status">正在加载…</span>
+      <span class="pill purple" id="sharePill">全标的 11 资产实时/缓存分析</span>
+      <button type="button" class="pill info" id="langToggleBtn" style="cursor:pointer;border-color:var(--blue);background:rgba(56,189,248,0.14);margin-left:auto;">
+        🌐 <span id="currentLangLabel">中文</span> / English
+      </button>
+    </div>
+    <div class="brand-row">
+      <span class="muted" id="headerSubtitle">大周期定方向 (周K底背离 / 周月MACD上行) · 日K+VPVR主峰分批建仓 · 3×3确认 + 3×1右侧成形双轨背离</span>
+    </div>
+  </header>
+
+  <!-- Quick 11-Subject Switcher -->
+  <div class="quick-bar" id="quickSubjectBar">
+    <span class="muted" id="quickSwitchPrompt" style="margin-right:4px;">快速切换标的：</span>
+  </div>
+
+  <!-- Core Controls (Preserves all DOM IDs required by Playwright acceptance scripts) -->
+  <div class="controls-bar">
+    <div class="control-group">
+      <label class="muted" for="subject" id="lblSubject">分析标的</label>
+      <select id="subject" aria-label="分析标的">
+        <option value="crypto-btc">BTC — Bitcoin (OKX Spot + Perp)</option>
+        <option value="crypto-eth">ETH — Ethereum (OKX Spot + Perp)</option>
+        <option value="us-nvda">NVDA — NVIDIA Corp.</option>
+        <option value="us-aapl">AAPL — Apple Inc.</option>
+        <option value="us-msft">MSFT — Microsoft Corp.</option>
+        <option value="us-amzn">AMZN — Amazon.com Inc.</option>
+        <option value="us-meta">META — Meta Platforms Inc.</option>
+        <option value="us-googl">GOOGL — Alphabet Inc. (Class A)</option>
+        <option value="us-goog">GOOG — Alphabet Inc. (Class C)</option>
+        <option value="us-tsla">TSLA — Tesla Inc.</option>
+        <option value="us-mcd">MCD — McDonald's Corp.</option>
+      </select>
+
+      <label class="muted" for="leg" id="lblLeg">交易腿</label>
+      <select id="leg" aria-label="交易腿">
+        <option value="SPOT" selected id="optLegSpot">SPOT (现货/正股)</option>
+        <option value="PERP" id="optLegPerp">PERP (USDT永续)</option>
+      </select>
+
+      <label class="muted" for="instrumentSelect" id="lblInstrument">交易品种</label>
+      <select id="instrumentSelect" aria-label="交易品种">
+        <option value="" id="optInstDefault">主品种 (默认)</option>
+      </select>
+
+      <label class="muted" for="interval" id="lblInterval">K线周期</label>
+      <select id="interval" aria-label="时间周期">
+        <option value="15m">15m (信号)</option>
+        <option value="1h">1h (信号)</option>
+        <option value="2h">2h (信号)</option>
+        <option value="195m">195m (半日美股)</option>
+        <option value="4h">4h (波段信号)</option>
+        <option value="1d" selected>1d (日K结构)</option>
+        <option value="1w">1w (周K大方向)</option>
+        <option value="1mo">1mo (月K大方向)</option>
+      </select>
+
+      <label class="muted" for="barWindow" id="lblBarWindow">显示K线数</label>
+      <select id="barWindow" aria-label="显示K线数">
+        <option value="120">最近 120 根</option>
+        <option value="180" selected>最近 180 根</option>
+        <option value="300">最近 300 根</option>
+        <option value="5000">全部窗口</option>
+      </select>
+
+      <button id="load">加载标的</button>
+      <button id="refresh">刷新行情与证据</button>
+    </div>
+
+    <div class="control-group">
+      <button class="accent" id="snapshotCheck">仅核对七周期快照（不调用模型）</button>
+      <button class="primary" id="analyze">运行免费规则演示分析（不调用模型）</button>
+      <button class="warn-btn" id="realAiAnalyze">调用真实 AI（消耗 Codex/ChatGPT 额度）</button>
+    </div>
+  </div>
+
+  <main>
+    <div id="errorBox" class="panel error" hidden></div>
+
+    <!-- Section 1: 11-Subject Multi-Timeframe Radar & Strategy Leaderboard -->
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title" id="radarSectionTitle">📡 全市场 11 标的多周期背离雷达 × VPVR 筹码主峰 × 策略操作总览（点击任意行切换标的）</h2>
+          <div class="muted" id="radarSectionDesc">涵盖 BTC、ETH 与美股九大核心标的（Mag 7 双股权 GOOGL/GOOG + TSLA + 防御消费锚 MCD），实时计算结构分/动量分、确认与成形背离、VPVR 筹码主峰位置及双锚估值（PE_TTM vs PE_FY）。</div>
+        </div>
+        <div class="brand-row">
+          <span class="pill info" id="radarCountPill">加载雷达中…</span>
+          <button id="reloadRadarBtn" style="padding:4px 10px;font-size:11.5px;">刷新全市场雷达</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="radarTable">
+          <thead>
+            <tr id="radarTheadRow">
+              <th id="thRadSubj">标的 / 行业</th>
+              <th id="thRadClose">最新收盘</th>
+              <th id="thRadMacro">大周期方向 (周/月K)</th>
+              <th id="thRadAction">唯一策略结论 (Action Verdict)</th>
+              <th id="thRadPeak">当前处于 VPVR 主峰</th>
+              <th id="thRadDiv">日K / 周K 背离雷达 (3×3确认 + 3×1成形)</th>
+              <th id="thRadTranche">头仓(1/3)区间 / 加仓位 / 止盈位</th>
+              <th id="thRadScore">结构 / 动量分</th>
+              <th id="thRadWeights">A(上) / B(震) / C(下)</th>
+              <th id="thRadVal">估值双锚 (PE_TTM / PE_FY)</th>
+            </tr>
+          </thead>
+          <tbody id="radarTbody">
+            <tr><td colspan="10" class="muted">正在加载全市场 11 标的雷达数据…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Chart + Strategy War Room -->
+    <div class="grid-2col">
+      <!-- Left: Multi-Panel Interactive SVG Chart (Candles + 48-Bin VPVR Histogram + MA + FVG + Divergences + MACD + RSI) -->
+      <section class="panel" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="panel-header">
+            <div>
+              <h2 class="panel-title" id="chartTitle">📈 K 线结构 × 48 桶 VPVR 水平筹码峰 × FVG 失衡区 × 双轨背离画线</h2>
+              <div class="muted" id="summary">正在加载行情数据…</div>
+            </div>
+            <div class="brand-row" id="chartBadges"></div>
+          </div>
+
+          <div id="chartWrap">
+            <div id="chartHud">
+              <span class="muted" id="chartHudDefault">鼠标悬停 K 线查看逐根 OHLCV、均线斜率、VPVR 筹码峰区间与 MACD/RSI 读数</span>
+            </div>
+            <div id="chart" role="img" aria-label="价格与关键位图表"></div>
+            <div class="chart-legend" id="chartLegend">
+              <span><b style="color:#38bdf8;">━ POC</b> 筹码控制点 (最大成交量价格)</span>
+              <span><b style="color:#94a3b8;">┄ VAH / VAL</b> 70% 价值区上下沿</span>
+              <span><b style="color:#f59e0b;">━ SMA20</b> · <b style="color:#a855f7;">━ SMA50</b> · <b style="color:#06b6d4;">━ SMA200</b></span>
+              <span><b style="color:#22c55e;">■ 多头 FVG</b> · <b style="color:#ef4444;">■ 空头 FVG</b></span>
+              <span><b style="color:#38bdf8;">━ 3×3 已确认底背离</b> · <b style="color:#f59e0b;">━ 3×3 已确认顶背离</b> · <b style="color:#e879f9;">┄ 3×1 右侧成形候选背离</b></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VPVR 48-Bin HVN Peaks & LVN Troughs + 20-Bar Trajectory -->
+        <div style="margin-top:12px;">
+          <div class="panel-header" style="margin-bottom:8px;">
+            <h3 class="panel-title" id="vpvrClusterTitle" style="font-size:13px;">🏔️ 当前周期 VPVR 筹码峰聚类 (HVN 主峰区 vs LVN 真空区) & 近 20 根 K 线轨迹</h3>
+            <span class="muted" id="trajectoryBadge"></span>
+          </div>
+          <div id="vpvrZonesBox" class="muted">加载中…</div>
+        </div>
+      </section>
+
+      <!-- Right: User's Strategy War Room -->
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title" id="warRoomTitle">🎯 专属策略作战室（大周期定方向 + 日K底背离 + VPVR 主峰分批建仓）</h2>
+            <div class="muted" id="warRoomSub">严格执行原版规则：周K底背离(A)或周/月MACD上行且RSI未超买(B) → 日K底背离+VPVR主峰头仓1/3 → 突破前峰加仓1/3 → 下一峰值受阻或小级别顶背离止盈</div>
+          </div>
+        </div>
+        <div id="strategyWarRoom">
+          <p class="muted">正在计算多周期策略方案…</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Section 3: Multi-Timeframe Resonance Matrix (1mo / 1w / 1d / 4h / 1h / 15m) + Outlook Decomposition -->
+    <div class="grid-2col">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title" id="mtfMatrixTitle">🧭 六周期全景共振矩阵（1mo / 1w / 1d / 4h / 1h / 15m · 点击周期行直接切换图表）</h2>
+            <div class="muted" id="mtfMatrixSub">将单棒静态数值升级为多棒斜率、金叉/死叉状态、零轴位置、VPVR 主峰落位与「3×3 已确认 + 3×1 右侧成形」双轨背离全景表。</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr id="mtfTheadRow">
+                <th id="thMtfTf">周期</th>
+                <th id="thMtfClose">最新收盘</th>
+                <th id="thMtfTrend">趋势结构 / 均线排列</th>
+                <th id="thMtfMacd">MACD (12,26,9) 状态与斜率</th>
+                <th id="thMtfRsi">RSI(14) & 5棒变化</th>
+                <th id="thMtfVpvr">VPVR 价值区 (VAL / POC / VAH)</th>
+                <th id="thMtfPeak">主峰落位</th>
+                <th id="thMtfDivLive">3×3 已确认背离 (有效)</th>
+                <th id="thMtfDivForming">3×1 右侧成形背离 (盲区预警)</th>
+              </tr>
+            </thead>
+            <tbody id="mtfMatrixTbody">
+              <tr><td colspan="9" class="muted">正在加载多周期共振矩阵…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title" id="outlookTitle">⚖️ 多周期结构分 × 动量分拆解与三情景概率权重（A 上破 / B 震荡 / C 下破）</h2>
+            <div class="muted" id="outlookSub">基于 1mo/1w/1d 结构分与 1d/4h/1h 动量分映射情景权重，明确区分「长期趋势完好但短期超买回调（BULL_PULLBACK）」与「高位派发」。</div>
+          </div>
+        </div>
+        <div id="outlookPanel">
+          <p class="muted">正在加载多周期展望拆解…</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Section 4: AI Analysis & Historical Real AI Reports + Evidence & Context + Fundamentals/Macro -->
+    <div class="grid-3col">
+      <!-- Column 1: AI Analysis Output & Stored Real AI Reports -->
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title" id="aiPanelTitle">🤖 AI 三情景推演 & 历史真实大模型报告库</h2>
+            <div class="muted" id="aiPanelSub">支持免费规则演示、七周期快照核对、真实 Codex AI 调用，以及一键检阅本机已生成的真实大模型多周期报告（含语义审计）。</div>
+          </div>
+        </div>
+        <div id="storedRealAiBar" style="margin-bottom:10px;"></div>
+        <div id="analysis" class="scrollable-list">
+          <p class="muted">尚未运行分析。可点击上方「运行免费规则演示分析」、「仅核对七周期快照」或直接点选下方已存档的真实 AI 报告查看。</p>
+        </div>
+      </section>
+
+      <!-- Column 2: Market Context / SEC EDGAR Fundamentals + Indicator Evidence -->
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title" id="contextTitle">🏛️ 基本面双锚探针 (SEC EDGAR) / 衍生品上下文 & 证据链</h2>
+            <div class="muted" id="contextSub">美股展示点时 XBRL 财报与 PE_TTM vs PE_FY 盈利质量探针；加密展示 OKX 现货/永续基差、资金费率与持仓量。</div>
+          </div>
+        </div>
+        <div id="context" style="margin-bottom:12px;"><p class="muted">加载中…</p></div>
+        <div class="panel-header" style="margin-top:10px;margin-bottom:6px;">
+          <h3 class="panel-title" id="evidenceTitle" style="font-size:13px;">🔗 当前周期结构化指标证据链 (Evidence IDs)</h3>
+        </div>
+        <div id="evidence" class="scrollable-list" style="max-height:220px;"><p class="muted">加载中…</p></div>
+      </section>
+
+      <!-- Column 3: FRED Point-in-Time Macro Dashboard & Pre-Registered Outlook Scoreboard -->
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title" id="macroTitle">🌐 FRED 点时宏观仪表盘 & 事前登记准确率记分牌</h2>
+            <div class="muted" id="macroSub">ALFRED 点时宏观序列（美债利差/联邦基金利率/CPI同比/美元/VIX）+ 事前登记 (FORWARD) vs 历史回放 (REPLAY) 隔离记分牌。</div>
+          </div>
+        </div>
+        <div id="macroPanel" style="margin-bottom:14px;"><p class="muted">加载宏观数据中…</p></div>
+        <div class="panel-header" style="margin-top:10px;margin-bottom:6px;">
+          <h3 class="panel-title" id="registryTitle" style="font-size:13px;">📋 展望登记簿 (Outlook Registry · FORWARD vs REPLAY)</h3>
+        </div>
+        <div id="registryPanel" class="scrollable-list" style="max-height:220px;"><p class="muted">加载登记簿中…</p></div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const el = (id) => document.getElementById(id);
+    let current = { subject: "crypto-btc", interval: "1d", bars: [], bundle: null, instrument_id: null };
+    window.current = current;
+    let overviewCache = null;
+    let detailCache = null;
+
+    let currentLang = localStorage.getItem('amw_lang') || 'zh';
+    const isEn = () => currentLang === 'en';
+
+    const I18N = {
+      zh: {
+        brandTitle: "AI Market Workbench · 多周期筹码峰 (VPVR) × 背离雷达 × 策略工作台",
+        readonlyPill: "🔒 严格只读隔离 · 0 交易/账户/下单接口",
+        sharePill: "全标的 11 资产实时/缓存分析",
+        currentLangLabel: "中文",
+        headerSubtitle: "大周期定方向 (周K底背离 / 周月MACD上行) · 日K+VPVR主峰分批建仓 · 3×3确认 + 3×1右侧成形双轨背离",
+        quickSwitchPrompt: "快速切换标的：",
+        lblSubject: "分析标的",
+        lblLeg: "交易腿",
+        lblInstrument: "交易品种",
+        lblInterval: "K线周期",
+        lblBarWindow: "显示K线数",
+        optLegSpot: "SPOT (现货/正股)",
+        optLegPerp: "PERP (USDT永续)",
+        optInstDefault: "主品种 (默认)",
+        load: "加载标的",
+        refresh: "刷新行情与证据",
+        snapshotCheck: "仅核对七周期快照（不调用模型）",
+        analyze: "运行免费规则演示分析（不调用模型）",
+        realAiAnalyze: "调用真实 AI（消耗 Codex/ChatGPT 额度）",
+        radarSectionTitle: "📡 全市场 11 标的多周期背离雷达 × VPVR 筹码主峰 × 策略操作总览（点击任意行切换标的）",
+        radarSectionDesc: "涵盖 BTC、ETH 与美股九大核心标的（Mag 7 双股权 GOOGL/GOOG + TSLA + 防御消费锚 MCD），实时计算结构分/动量分、确认与成形背离、VPVR 筹码主峰位置及双锚估值（PE_TTM vs PE_FY）。",
+        reloadRadarBtn: "刷新全市场雷达",
+        thRadSubj: "标的 / 行业",
+        thRadClose: "最新收盘",
+        thRadMacro: "大周期方向 (周/月K)",
+        thRadAction: "唯一策略结论 (Action Verdict)",
+        thRadPeak: "当前处于 VPVR 主峰",
+        thRadDiv: "日K / 周K 背离雷达 (3×3确认 + 3×1成形)",
+        thRadTranche: "头仓(1/3)区间 / 加仓位 / 止盈位",
+        thRadScore: "结构 / 动量分",
+        thRadWeights: "A(上) / B(震) / C(下)",
+        thRadVal: "估值双锚 (PE_TTM / PE_FY)",
+        chartHudDefault: "鼠标悬停 K 线查看逐根 OHLCV、均线斜率、VPVR 筹码峰区间与 MACD/RSI 读数",
+        chartLegend: `<span><b style="color:#38bdf8;">━ POC</b> 筹码控制点 (最大成交量价格)</span>
+                      <span><b style="color:#94a3b8;">┄ VAH / VAL</b> 70% 价值区上下沿</span>
+                      <span><b style="color:#f59e0b;">━ SMA20</b> · <b style="color:#a855f7;">━ SMA50</b> · <b style="color:#06b6d4;">━ SMA200</b></span>
+                      <span><b style="color:#22c55e;">■ 多头 FVG</b> · <b style="color:#ef4444;">■ 空头 FVG</b></span>
+                      <span><b style="color:#38bdf8;">━ 3×3 已确认底背离</b> · <b style="color:#f59e0b;">━ 3×3 已确认顶背离</b> · <b style="color:#e879f9;">┄ 3×1 右侧成形候选背离</b></span>`,
+        vpvrClusterTitle: "🏔️ 当前周期 VPVR 筹码峰聚类 (HVN 主峰区 vs LVN 真空区) & 近 20 根 K 线轨迹",
+        warRoomTitle: "🎯 专属策略作战室（大周期定方向 + 日K底背离 + VPVR 主峰分批建仓）",
+        warRoomSub: "严格执行原版规则：周K底背离(A)或周/月MACD上行且RSI未超买(B) → 日K底背离+VPVR主峰头仓1/3 → 突破前峰加仓1/3 → 下一峰值受阻或小级别顶背离止盈",
+        mtfMatrixTitle: "🧭 六周期全景共振矩阵（1mo / 1w / 1d / 4h / 1h / 15m · 点击周期行直接切换图表）",
+        mtfMatrixSub: "将单棒静态数值升级为多棒斜率、金叉/死叉状态、零轴位置、VPVR 主峰落位与「3×3 已确认 + 3×1 右侧成形」双轨背离全景表。",
+        thMtfTf: "周期",
+        thMtfClose: "最新收盘",
+        thMtfTrend: "趋势结构 / 均线排列",
+        thMtfMacd: "MACD (12,26,9) 状态与斜率",
+        thMtfRsi: "RSI(14) & 5棒变化",
+        thMtfVpvr: "VPVR 价值区 (VAL / POC / VAH)",
+        thMtfPeak: "主峰落位",
+        thMtfDivLive: "3×3 已确认背离 (有效)",
+        thMtfDivForming: "3×1 右侧成形背离 (盲区预警)",
+        outlookTitle: "⚖️ 多周期结构分 × 动量分拆解与三情景概率权重（A 上破 / B 震荡 / C 下破）",
+        outlookSub: "基于 1mo/1w/1d 结构分与 1d/4h/1h 动量分映射情景权重，明确区分「长期趋势完好但短期超买回调（BULL_PULLBACK）」与「高位派发」。",
+        aiPanelTitle: "🤖 AI 三情景推演 & 历史真实大模型报告库",
+        aiPanelSub: "支持免费规则演示、七周期快照核对、真实 Codex AI 调用，以及一键检阅本机已生成的真实大模型多周期报告（含语义审计）。",
+        contextTitle: "🏛️ 基本面双锚探针 (SEC EDGAR) / 衍生品上下文 & 证据链",
+        contextSub: "美股展示点时 XBRL 财报与 PE_TTM vs PE_FY 盈利质量探针；加密展示 OKX 现货/永续基差、资金费率与持仓量。",
+        evidenceTitle: "🔗 当前周期结构化指标证据链 (Evidence IDs)",
+        macroTitle: "🌐 FRED 点时宏观仪表盘 & 事前登记准确率记分牌",
+        macroSub: "ALFRED 点时宏观序列（美债利差/联邦基金利率/CPI同比/美元/VIX）+ 事前登记 (FORWARD) vs 历史回放 (REPLAY) 隔离记分牌。",
+        registryTitle: "📋 展望登记簿 (Outlook Registry · FORWARD vs REPLAY)",
+        modalTitle: "🌐 选择界面语言 / Select Language",
+        modalSubtitle: "请选择你的工作台首选语言 · Please select your preferred workbench language:",
+        rememberLangText: "记住我的选择 / Remember preference",
+        confirmLangBtn: "进入工作台 / Enter",
+      },
+      en: {
+        brandTitle: "AI Market Workbench · Multi-Timeframe VPVR × Divergence Radar × Strategy Workbench",
+        readonlyPill: "🔒 Strict Read-Only · Zero Trade/Order/Account API",
+        sharePill: "All 11 Core Assets Realtime/Cached Analysis",
+        currentLangLabel: "English",
+        headerSubtitle: "Macro Direction (Weekly Bottom Div / Weekly-Monthly MACD Up) · Daily VPVR Main Peak Entry · 3×3 Confirmed + 3×1 Forming Dual-Track Div",
+        quickSwitchPrompt: "Quick Switch Subject:",
+        lblSubject: "Target Subject",
+        lblLeg: "Trading Leg",
+        lblInstrument: "Instrument",
+        lblInterval: "Timeframe",
+        lblBarWindow: "Bar Window",
+        optLegSpot: "SPOT (Equities / Crypto Spot)",
+        optLegPerp: "PERP (USDT Perpetual)",
+        optInstDefault: "Primary (Default)",
+        load: "Load Subject",
+        refresh: "Refresh Data & Evidence",
+        snapshotCheck: "仅核对七周期快照（不调用模型） / Verify 7-TF Snapshot (No Model)",
+        analyze: "Run Free Rule Demo (No Model)",
+        realAiAnalyze: "Run Real AI (Consumes Quota)",
+        radarSectionTitle: "📡 Market 11-Subject Multi-Timeframe Radar × VPVR Main Peaks × Strategy Overview (Click row to switch)",
+        radarSectionDesc: "Covers BTC, ETH, and 9 core US equities (Mag 7 dual-class GOOGL/GOOG + TSLA + defensive anchor MCD), computing structure/momentum scores, confirmed/forming divergences, VPVR peak status, and PE_TTM vs PE_FY dual anchors.",
+        reloadRadarBtn: "Refresh Market Radar",
+        thRadSubj: "Subject / Sector",
+        thRadClose: "Latest Close",
+        thRadMacro: "Macro Direction (1w/1mo)",
+        thRadAction: "Strategy Verdict (Action Verdict)",
+        thRadPeak: "In VPVR Main Peak",
+        thRadDiv: "1d / 1w Divergence Radar (3×3 Confirmed + 3×1 Forming)",
+        thRadTranche: "Entry (1/3) / Add-on / Take-Profit",
+        thRadScore: "Structure / Momentum Score",
+        thRadWeights: "A (Bull) / B (Range) / C (Bear)",
+        thRadVal: "Valuation Dual Anchors (PE_TTM / PE_FY)",
+        chartHudDefault: "Hover over candlesticks to view bar OHLCV, MA slopes, VPVR peak zones, and MACD/RSI readings",
+        chartLegend: `<span><b style="color:#38bdf8;">━ POC</b> Point of Control (Highest Volume)</span>
+                      <span><b style="color:#94a3b8;">┄ VAH / VAL</b> 70% Value Area High / Low</span>
+                      <span><b style="color:#f59e0b;">━ SMA20</b> · <b style="color:#a855f7;">━ SMA50</b> · <b style="color:#06b6d4;">━ SMA200</b></span>
+                      <span><b style="color:#22c55e;">■ Bullish FVG</b> · <b style="color:#ef4444;">■ Bearish FVG</b></span>
+                      <span><b style="color:#38bdf8;">━ 3×3 Confirmed Bull Div</b> · <b style="color:#f59e0b;">━ 3×3 Confirmed Bear Div</b> · <b style="color:#e879f9;">┄ 3×1 Forming Div</b></span>`,
+        vpvrClusterTitle: "🏔️ Current Timeframe VPVR Clusters (HVN Peaks vs LVN Vacuum Zones) & 20-Bar Trajectory",
+        warRoomTitle: "🎯 Strategy War Room (Macro Direction + Daily Bottom Div + VPVR Main Peak Staged Entry)",
+        warRoomSub: "Strict rule execution: Weekly bottom div (A) or Weekly/Monthly MACD up with RSI < 70 (B) → Daily bottom div + VPVR main peak head tranche 1/3 → Add 1/3 on peak breakout → Take profit at next peak or small-TF top div",
+        mtfMatrixTitle: "🧭 Six-Timeframe Resonance Matrix (1mo / 1w / 1d / 4h / 1h / 15m · Click row to switch)",
+        mtfMatrixSub: "Upgraded multi-bar slopes, golden/dead cross states, zero-line position, VPVR main peak status, and 3×3 confirmed + 3×1 forming dual-track divergence table.",
+        thMtfTf: "Timeframe",
+        thMtfClose: "Latest Close",
+        thMtfTrend: "Trend Structure / MA Alignment",
+        thMtfMacd: "MACD (12,26,9) State & Slope",
+        thMtfRsi: "RSI(14) & 5-Bar Delta",
+        thMtfVpvr: "VPVR Value Area (VAL / POC / VAH)",
+        thMtfPeak: "Main Peak Zone",
+        thMtfDivLive: "3×3 Confirmed Div (Valid)",
+        thMtfDivForming: "3×1 Forming Div (Early Warning)",
+        outlookTitle: "⚖️ Multi-Timeframe Structure × Momentum Score & Three Scenario Probabilities (A / B / C)",
+        outlookSub: "Maps scenario weights from 1mo/1w/1d structure and 1d/4h/1h momentum, distinguishing bullish pullback vs top distribution.",
+        aiPanelTitle: "🤖 AI Scenario Synthesis & Historical Real AI Reports",
+        aiPanelSub: "Supports free rule demo, 7-timeframe snapshot check, real Codex AI runs, and stored real AI reports review with semantic audit.",
+        contextTitle: "🏛️ Fundamental Dual-Anchor Probes (SEC EDGAR) / Derivatives Context & Evidence",
+        contextSub: "US equities display point-in-time XBRL financials and PE_TTM vs PE_FY earnings quality probe; Crypto displays OKX spot/perp basis, funding rate, and open interest.",
+        evidenceTitle: "🔗 Current Timeframe Indicator Evidence Chain (Evidence IDs)",
+        macroTitle: "🌐 FRED Point-in-Time Macro Dashboard & Pre-Registration Scoreboard",
+        macroSub: "ALFRED vintage macro series (Treasury spread / Fed funds / CPI YoY / Dollar / VIX) + Pre-registered FORWARD vs REPLAY scoreboard.",
+        registryTitle: "📋 Outlook Registry (FORWARD vs REPLAY)",
+        modalTitle: "🌐 Select Interface Language / 选择界面语言",
+        modalSubtitle: "Please select your preferred workbench language · 请选择工作台首选语言:",
+        rememberLangText: "Remember my preference / 记住我的选择",
+        confirmLangBtn: "Enter Workbench / 进入工作台",
+      }
+    };
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      const dict = I18N[lang] || I18N.zh;
+      for (const [key, val] of Object.entries(dict)) {
+        const node = el(key);
+        if (node) {
+          if (key === 'chartLegend') {
+            node.innerHTML = val;
+          } else {
+            node.textContent = val;
+          }
+        }
+      }
+      if (el('currentLangLabel')) el('currentLangLabel').textContent = dict.currentLangLabel || (lang === 'en' ? 'English' : '中文');
+      if (el('btnChooseZh')) el('btnChooseZh').classList.toggle('active', lang === 'zh');
+      if (el('btnChooseEn')) el('btnChooseEn').classList.toggle('active', lang === 'en');
+
+      if (overviewCache) {
+        renderRadarTbody(overviewCache);
+      }
+      if (detailCache) {
+        renderStrategyWarRoom(detailCache.strategy_plan);
+        renderMtfMatrix(detailCache.timeframe_matrix, current.interval);
+        renderOutlookPanel(detailCache.outlook);
+        renderVpvrAndTrajectory(detailCache.active_timeframe_detail);
+      }
+      if (current.bars && current.bundle) {
+        const barList = Array.isArray(current.bars) ? current.bars : (current.bars?.bars || []);
+        renderChart(barList, current.bundle, detailCache?.active_timeframe_detail);
+      }
+    }
+
+    function initLanguageModal() {
+      const savedLang = localStorage.getItem('amw_lang');
+      if (!savedLang) {
+        el('langModal').style.display = 'flex';
+      } else {
+        applyLanguage(savedLang);
+      }
+      el('btnChooseZh').onclick = () => { applyLanguage('zh'); closeLangModal(); };
+      el('btnChooseEn').onclick = () => { applyLanguage('en'); closeLangModal(); };
+      el('confirmLangBtn').onclick = () => closeLangModal();
+      el('closeModalCross').onclick = () => closeLangModal();
+      el('langToggleBtn').onclick = () => {
+        el('langModal').style.display = 'flex';
+      };
+    }
+
+    function closeLangModal() {
+      el('langModal').style.display = 'none';
+      if (el('rememberLang') && el('rememberLang').checked) {
+        localStorage.setItem('amw_lang', currentLang);
+      }
+    }
+
+    function showError(err) {
+      const box = el("errorBox");
+      box.hidden = false;
+      box.textContent = typeof err === "string" ? err : JSON.stringify(err, null, 2);
+    }
+    function clearError() {
+      const box = el("errorBox");
+      box.hidden = true;
+      box.textContent = "";
+    }
+    async function api(path, options = {}) {
+      const res = await fetch(path, options);
+      const data = await res.json().catch(() => ({ detail: res.statusText }));
+      if (!res.ok) throw data;
+      return data;
+    }
+
+    function fmtNum(v, digits = 2) {
+      if (v === null || v === undefined || v === "") return "—";
+      const n = Number(v);
+      if (!Number.isFinite(n)) return String(v);
+      if (Math.abs(n) >= 1000) return n.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+      if (Math.abs(n) > 0 && Math.abs(n) < 1) return n.toFixed(4);
+      return n.toFixed(digits);
+    }
+
+    function escapeHtml(s) {
+      return String(s ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function actionBadgeHtml(code, text) {
+      let cls = "info";
+      if (code && (code.includes("BUY") || code.includes("ADD"))) cls = "ok";
+      else if (code && (code.includes("SELL") || code.includes("PROFIT"))) cls = "warn";
+      return `<span class="pill ${cls}">${escapeHtml(code || "HOLD")}</span>`;
+    }
+
+    function modeBadgeHtml(mode, label) {
+      if (mode === "MODE_A_REVERSAL") return `<span class="pill ok">${isEn() ? "A · Weekly Bottom Div Reversal" : "A · 周K底背离反转"}</span>`;
+      if (mode === "MODE_B_REBOUND") return `<span class="pill warn">${isEn() ? "B · Macro Up Rebound" : "B · 周/月MACD上行反弹"}</span>`;
+      return `<span class="pill">${isEn() ? "Wait / Hold Mode" : "观望 / 持仓等待"}</span>`;
+    }
+
+    function primaryBadgeHtml(primary) {
+      if (!primary) return `<span class="pill">—</span>`;
+      if (primary === "BULL_CONTINUATION") return `<span class="pill ok">${isEn() ? "Bull Continuation (A)" : "多头延续 (A)"}</span>`;
+      if (primary === "BULL_PULLBACK") return `<span class="pill warn">${isEn() ? "Bull Pullback (B/C)" : "多头趋势·短线消化 (B/C)"}</span>`;
+      if (primary === "TOP_DISTRIBUTION") return `<span class="pill bad">${isEn() ? "Top Distribution Risk (C)" : "高位派发风险 (C)"}</span>`;
+      if (primary === "BEAR_CONTINUATION") return `<span class="pill bad">${isEn() ? "Bear Continuation (C)" : "空头延续 (C)"}</span>`;
+      if (primary === "BEAR_REBOUND") return `<span class="pill info">${isEn() ? "Bear Oversold Rebound (A/B)" : "空头超跌反弹 (A/B)"}</span>`;
+      if (primary === "BOTTOM_ACCUMULATION") return `<span class="pill ok">${isEn() ? "Bottom Accumulation (A/B)" : "底部蓄势 (A/B)"}</span>`;
+      return `<span class="pill">${escapeHtml(primary)}</span>`;
+    }
+
+    function renderRadarTbody(data) {
+      const tbody = el("radarTbody");
+      if (!data || !data.subjects) return;
+      tbody.innerHTML = data.subjects.map(s => {
+        const isSelected = s.subject_id === el("subject").value;
+        const st = s.strategy || {};
+        const ol = s.outlook || {};
+        const w = ol.weights || { A: 0.33, B: 0.34, C: 0.33 };
+        const d1 = s.divergence_1d || {};
+        const dw = s.divergence_1w || {};
+        const val = s.valuation;
+
+        const divBadges = [];
+        if (dw.live_bottom_count > 0) divBadges.push(`<span class="pill ok">${isEn() ? `1w Bull Div ×${dw.live_bottom_count}` : `1w 确认底背离×${dw.live_bottom_count}`}</span>`);
+        if (dw.forming_bottom_count > 0) divBadges.push(`<span class="pill purple">${isEn() ? `1w Forming Bull ×${dw.forming_bottom_count}` : `1w 成形底背离×${dw.forming_bottom_count}`}</span>`);
+        if (d1.live_bottom_count > 0) divBadges.push(`<span class="pill ok">${isEn() ? `1d Bull Div ×${d1.live_bottom_count}` : `1d 确认底背离×${d1.live_bottom_count}`}</span>`);
+        if (d1.forming_bottom_count > 0) divBadges.push(`<span class="pill purple">${isEn() ? `1d Forming Bull ×${d1.forming_bottom_count}` : `1d 成形底背离×${d1.forming_bottom_count}`}</span>`);
+        if (d1.live_top_count > 0) divBadges.push(`<span class="pill warn">${isEn() ? `1d Bear Div ×${d1.live_top_count}` : `1d 确认顶背离×${d1.live_top_count}`}</span>`);
+        if (dw.live_top_count > 0) divBadges.push(`<span class="pill bad">${isEn() ? `1w Bear Div ×${dw.live_top_count}` : `1w 确认顶背离×${dw.live_top_count}`}</span>`);
+        if (!divBadges.length) divBadges.push(`<span class="muted">${isEn() ? "No Active Div" : "无活跃背离"}</span>`);
+
+        let valHtml = `<span class="muted">${isEn() ? "Crypto Asset (Derivatives Panel)" : "加密资产 (见衍生品面板)"}</span>`;
+        if (val) {
+          const flagBadge = val.earnings_quality_flag && val.earnings_quality_flag !== "NORMAL"
+            ? `<span class="pill warn" title="${escapeHtml(val.earnings_quality_note)}">⚠️ ${(val.ttm_fy_ratio || 1).toFixed(2)}x</span>`
+            : `<span class="pill ok">${isEn() ? "Aligned" : "锚定一致"}</span>`;
+          valHtml = `<div class="mono">PE_TTM: <b>${val.pe_ttm ?? "—"}x</b> / PE_FY: <b>${val.pe_fy ?? "—"}x</b></div>
+                     <div style="margin-top:2px;">${flagBadge} <span class="muted">${isEn() ? "Rev YoY" : "营收YoY"} ${val.revenue_yoy_pct !== null ? val.revenue_yoy_pct + "%" : "—"}</span></div>`;
+        }
+
+        const trancheLabel = isEn() ? "Tranche 1" : "头仓";
+        const addLabel = isEn() ? "Add" : "加仓";
+        const tpLabel = isEn() ? "TP" : "止盈";
+        const structLabel = isEn() ? "Struct" : "结构";
+        const momLabel = isEn() ? "Mom" : "动量";
+        const inPeakHtml = st.in_vpvr_main_peak
+          ? `<span class="pill ok">${isEn() ? "✓ In VPVR Peak" : "✓ 在 VPVR 主峰区"}</span>`
+          : `<span class="pill">${isEn() ? "Outside Peak" : "偏离主峰区"}</span>`;
+
+        return `<tr class="clickable-row ${isSelected ? "selected-row" : ""}" data-subj="${escapeHtml(s.subject_id)}">
+          <td>
+            <div style="font-weight:700;color:#f8fafc;">${escapeHtml(s.symbol)} <span class="muted" style="font-weight:400;">${escapeHtml(s.display_name)}</span></div>
+            <div class="muted">${escapeHtml(s.gics_sector || "")} · ${escapeHtml(s.data_source)}</div>
+          </td>
+          <td class="mono" style="font-weight:700;font-size:13px;">${fmtNum(s.latest_close)}</td>
+          <td>${modeBadgeHtml(st.macro_mode, st.macro_mode_label)}</td>
+          <td>
+            <div>${actionBadgeHtml(st.action_code)}</div>
+            <div class="muted" style="max-width:250px;margin-top:3px;line-height:1.35;">${escapeHtml((st.action_verdict || "").slice(0, 72))}${(st.action_verdict || "").length > 72 ? "…" : ""}</div>
+          </td>
+          <td>${inPeakHtml}</td>
+          <td><div style="display:flex;flex-wrap:wrap;gap:4px;">${divBadges.join("")}</div></td>
+          <td class="mono" style="font-size:11.5px;">
+            <div>${trancheLabel}: ${escapeHtml(st.entry_tranche_1_zone || "—")}</div>
+            <div class="muted">${addLabel}: ${escapeHtml(st.add_trigger_price || "—")} | ${tpLabel}: ${escapeHtml(st.tp_target_1 || "—")}</div>
+          </td>
+          <td class="mono">
+            <div>${structLabel}: <b style="color:${(ol.structure_score||0)>=0?'#4ade80':'#f87171'}">${ol.structure_score !== undefined ? (ol.structure_score >= 0 ? "+" + ol.structure_score : ol.structure_score) : "—"}</b></div>
+            <div>${momLabel}: <b style="color:${(ol.momentum_score||0)>=0?'#4ade80':'#f87171'}">${ol.momentum_score !== undefined ? (ol.momentum_score >= 0 ? "+" + ol.momentum_score : ol.momentum_score) : "—"}</b></div>
+          </td>
+          <td style="min-width:130px;">
+            <div>${primaryBadgeHtml(ol.primary)}</div>
+            <div class="mono muted" style="font-size:11px;margin-top:2px;">A:${Math.round((w.A||0)*100)}% B:${Math.round((w.B||0)*100)}% C:${Math.round((w.C||0)*100)}%</div>
+            <div class="bar-meter">
+              <div style="width:${Math.round((w.A||0)*100)}%;background:#22c55e;"></div>
+              <div style="width:${Math.round((w.B||0)*100)}%;background:#f59e0b;"></div>
+              <div style="width:${Math.round((w.C||0)*100)}%;background:#ef4444;"></div>
+            </div>
+          </td>
+          <td>${valHtml}</td>
+        </tr>`;
+      }).join("");
+
+      tbody.querySelectorAll("tr.clickable-row").forEach(row => {
+        row.addEventListener("click", () => {
+          const sid = row.getAttribute("data-subj");
+          if (sid) {
+            el("subject").value = sid;
+            el("instrumentSelect").value = "";
+            loadSubject();
+          }
+        });
+      });
+    }
+
+    /* Render 11-subject radar table and quick chips */
+    async function loadOverviewRadar() {
+      try {
+        const data = await api("/v1/workbench/overview");
+        overviewCache = data;
+        el("radarCountPill").textContent = isEn()
+          ? `Loaded ${data.subject_count} Core Assets (${data.data_mode.toUpperCase()})`
+          : `已加载 ${data.subject_count} 个核心标的 (${data.data_mode.toUpperCase()})`;
+
+        // Quick subject chips
+        const qBar = el("quickSubjectBar");
+        const quickPromptText = isEn() ? "Quick Switch Subject:" : "快速切换标的：";
+        qBar.innerHTML = `<span class="muted" id="quickSwitchPrompt" style="margin-right:4px;">${quickPromptText}</span>` +
+          data.subjects.map(s => {
+            const active = s.subject_id === el("subject").value ? "active" : "";
+            const hasDiv = (s.divergence_1d?.live_bottom_count || 0) + (s.divergence_1w?.live_bottom_count || 0) + (s.divergence_1d?.forming_bottom_count || 0) > 0;
+            const dot = hasDiv ? `<span style="color:#4ade80;" title="Divergence Signal Active">●</span>` : "";
+            return `<button type="button" class="quick-chip ${active}" data-subj="${escapeHtml(s.subject_id)}">
+              ${dot}<span>${escapeHtml(s.symbol)}</span>
+              <span class="muted mono">${fmtNum(s.latest_close)}</span>
+            </button>`;
+          }).join("");
+
+        qBar.querySelectorAll(".quick-chip").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const sid = btn.getAttribute("data-subj");
+            if (sid && el("subject").value !== sid) {
+              el("subject").value = sid;
+              el("instrumentSelect").value = "";
+              loadSubject();
+            }
+          });
+        });
+
+        // Radar table rows
+        renderRadarTbody(data);
+
+        if (data.macro) renderMacroPanel(data.macro);
+        if (data.registry_scoreboard) loadRegistryPanel();
+      } catch (e) {
+        console.warn("Overview radar load error:", e);
+      }
+    }
+
+    async function loadRegistryPanel() {
+      try {
+        const reg = await api("/v1/workbench/registry");
+        const sb = reg.scoreboard || {};
+        const fw = sb.FORWARD || {};
+        const rp = sb.REPLAY || {};
+        const entries = reg.entries || [];
+        el("registryPanel").innerHTML = `
+          <div class="kv-grid" style="margin-bottom:8px;">
+            <div class="kv-box">
+              <div class="k">FORWARD (事前锁死预测)</div>
+              <div class="v mono">${fw.total || 0} 条 · 命中率 ${fw.hit_rate !== null && fw.hit_rate !== undefined ? Math.round(fw.hit_rate*100)+"%" : "待到期"}</div>
+              <div class="muted">已到期 ${fw.matured || 0} / 待验证 ${fw.pending || 0}</div>
+            </div>
+            <div class="kv-box">
+              <div class="k">REPLAY (历史回放校准)</div>
+              <div class="v mono">${rp.total || 0} 条 · 命中率 ${rp.hit_rate !== null && rp.hit_rate !== undefined ? Math.round(rp.hit_rate*100)+"%" : "—"}</div>
+              <div class="muted">已到期 ${rp.matured || 0} (不混入事前胜率)</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>模式</th><th>标的</th><th>基准日</th><th>主情景</th><th>5D/20D 收益</th><th>20D 判定</th></tr></thead>
+              <tbody>
+                ${entries.slice(0, 12).map(e => `
+                  <tr>
+                    <td><span class="pill ${e.SampleMode==='FORWARD'?'ok':'info'}">${escapeHtml(e.SampleMode)}</span></td>
+                    <td class="mono"><b>${escapeHtml(e.symbol)}</b></td>
+                    <td class="mono muted">${escapeHtml((e.as_of || "").slice(0, 10))}</td>
+                    <td>${escapeHtml(e.primary)}</td>
+                    <td class="mono">${e.realized_5d_return_pct !== null ? e.realized_5d_return_pct + "%" : "—"} / ${e.realized_20d_return_pct !== null ? e.realized_20d_return_pct + "%" : "—"}</td>
+                    <td><span class="pill ${e.verdict_20d==='HIT'?'ok':e.verdict_20d==='MISS'?'bad':''}">${escapeHtml(e.verdict_20d)}</span></td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        `;
+      } catch (e) {
+        el("registryPanel").innerHTML = `<p class="muted">暂无展望登记簿数据。</p>`;
+      }
+    }
+
+    function renderMacroPanel(macro) {
+      if (!macro || !macro.series) {
+        el("macroPanel").innerHTML = `<p class="muted">当前模式未启用或无缓存 FRED 点时宏观数据。</p>`;
+        return;
+      }
+      el("macroPanel").innerHTML = `
+        <div class="muted" style="margin-bottom:6px;">点时版本 (ALFRED Vintage): <span class="mono">${escapeHtml(macro.vintage_date)}</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>序列</th><th>指标名称</th><th>最新读数</th><th>观测日期</th><th>1期变动</th><th>20期变动</th></tr></thead>
+            <tbody>
+              ${macro.series.map(s => `
+                <tr>
+                  <td class="mono"><b>${escapeHtml(s.series_id)}</b></td>
+                  <td>${escapeHtml(s.label)}</td>
+                  <td class="mono" style="font-weight:700;">${escapeHtml(s.latest_value ?? "—")} ${s.series_id.includes("YOY") || s.series_id.startsWith("DGS") || s.series_id === "FEDFUNDS" || s.series_id === "T10Y2Y" ? "%" : ""}</td>
+                  <td class="mono muted">${escapeHtml(s.latest_date ?? "—")}</td>
+                  <td class="mono" style="color:${Number(s.change_1)>0?'#f59e0b':Number(s.change_1)<0?'#38bdf8':'var(--muted)'}">${escapeHtml(s.change_1 ?? "—")}</td>
+                  <td class="mono">${escapeHtml(s.change_20 ?? "—")}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    /* Main interactive SVG chart with Candles + 48-bin VPVR Horizontal Profile + MA + FVG + Divergences + MACD + RSI */
+    function renderChart(bars, bundle, activeDetail) {
+      const windowLimit = Number(el("barWindow")?.value || 180);
+      const view = bars.slice(-windowLimit);
+      if (!view.length) {
+        el("chart").innerHTML = `<div style="padding:30px;" class="muted">暂无可绘制的已确认 K 线数据。</div>`;
+        return;
+      }
+
+      const width = 1040, height = 540;
+      const padL = 16, padR = 155, padT = 18, padB = 22;
+      const plotW = width - padL - padR;
+
+      // Sub-panel vertical layout:
+      // Price + VPVR: y = 18 .. 335 (h = 317)
+      // MACD:         y = 352 .. 435 (h = 83)
+      // RSI:          y = 452 .. 520 (h = 68)
+      const priceTop = padT, priceBot = 335, priceH = priceBot - priceTop;
+      const macdTop = 352, macdBot = 435, macdH = macdBot - macdTop;
+      const rsiTop = 452, rsiBot = 520, rsiH = rsiBot - rsiTop;
+
+      const highs = view.map(b => Number(b.high));
+      const lows = view.map(b => Number(b.low));
+      const maxP = Math.max(...highs, Number(bundle.vpvr.vah));
+      const minP = Math.min(...lows, Number(bundle.vpvr.val));
+      const spanP = Math.max(maxP - minP, 1e-6);
+
+      const xForIndex = (i) => padL + (i + 0.5) * (plotW / view.length);
+      const yForPrice = (p) => priceTop + (1 - (Number(p) - minP) / spanP) * priceH;
+
+      // Map timestamps to view index for divergences / FVGs
+      const tsToIndex = (isoStr) => {
+        const target = Date.parse(isoStr);
+        let bestIdx = 0, bestDiff = Infinity;
+        for (let i = 0; i < view.length; i++) {
+          const d = Math.abs(Date.parse(view[i].close_at) - target);
+          if (d < bestDiff) { bestDiff = d; bestIdx = i; }
+        }
+        return bestIdx;
+      };
+
+      // Extract indicator series aligned to tail of bars
+      const indMap = {};
+      for (const ind of (bundle.indicators || [])) {
+        indMap[ind.name] = ind;
+      }
+
+      const getSeriesTail = (name, field = "value") => {
+        const ind = indMap[name];
+        if (!ind || !ind.series || !ind.series.length) return [];
+        const pts = ind.series.slice(-view.length);
+        const offset = view.length - pts.length;
+        return pts.map((pt, idx) => {
+          const val = pt.values ? pt.values[field] : null;
+          return val !== null && val !== undefined ? { i: idx + offset, v: Number(val) } : null;
+        }).filter(Boolean);
+      };
+
+      const polyPath = (pts, yFn) => {
+        if (pts.length < 2) return "";
+        return pts.map((p, k) => `${k === 0 ? "M" : "L"}${xForIndex(p.i).toFixed(1)},${yFn(p.v).toFixed(1)}`).join(" ");
+      };
+
+      // 1. Price Grid Lines
+      const priceGrid = [0, 0.25, 0.5, 0.75, 1].map(fr => {
+        const p = maxP - fr * spanP;
+        const y = yForPrice(p);
+        return `<line x1="${padL}" x2="${width - padR}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#162136" stroke-dasharray="2 3" />
+                <text x="${width - padR + 6}" y="${(y + 3).toFixed(1)}" fill="#64748b" font-size="10" class="mono">${fmtNum(p)}</text>`;
+      }).join("");
+
+      // 2. 48-Bin VPVR Horizontal Volume Profile Histogram on the right side
+      const bins = bundle.vpvr.bins || [];
+      const maxBinVol = Math.max(...bins.map(b => Number(b.estimated_volume || 0)), 1e-9);
+      const vpvrMaxBarW = padR - 14;
+      const valNum = Number(bundle.vpvr.val), vahNum = Number(bundle.vpvr.vah), pocNum = Number(bundle.vpvr.poc);
+
+      const vpvrBinsSvg = bins.map(bin => {
+        const low = Number(bin.lower), high = Number(bin.upper), mid = Number(bin.midpoint);
+        const vol = Number(bin.estimated_volume || 0);
+        if (high < minP || low > maxP) return "";
+        const y1 = Math.max(priceTop, yForPrice(high));
+        const y2 = Math.min(priceBot, yForPrice(low));
+        const bh = Math.max(1.5, y2 - y1 - 0.6);
+        const bw = (vol / maxBinVol) * vpvrMaxBarW;
+        const x = width - bw - 4;
+        const isPoc = Math.abs(mid - pocNum) <= (high - low) * 0.6;
+        const inVa = mid >= valNum && mid <= vahNum;
+        const fill = isPoc ? "rgba(56, 189, 248, 0.68)" : inVa ? "rgba(59, 130, 246, 0.34)" : "rgba(100, 116, 139, 0.20)";
+        return `<rect x="${x.toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" fill="${fill}">
+                  <title>VPVR Bin ${bin.lower}–${bin.upper} | Vol=${bin.estimated_volume}</title>
+                </rect>`;
+      }).join("");
+
+      // 3. FVG Shaded Boxes (Must preserve [data-fvg-id] and exact title format for Playwright acceptance test)
+      const fvgs = (bundle.fvg || []).slice(-6).map(f => {
+        const y1 = Math.max(priceTop, Math.min(priceBot, yForPrice(f.upper)));
+        const y2 = Math.max(priceTop, Math.min(priceBot, yForPrice(f.lower)));
+        const color = f.direction === "BULLISH" ? "rgba(34,197,94,0.16)" : "rgba(239,68,68,0.16)";
+        const stroke = f.direction === "BULLISH" ? "rgba(34,197,94,0.45)" : "rgba(239,68,68,0.45)";
+        return `<rect data-fvg-id="${f.fvg_id}" x="${padL}" width="${plotW}" y="${Math.min(y1, y2).toFixed(1)}" height="${Math.max(Math.abs(y2 - y1), 2).toFixed(1)}" fill="${color}" stroke="${stroke}" stroke-width="0.6">
+                  <title>${f.fvg_id} ${f.direction} ${f.lower}–${f.upper} (${f.fill_status}/${f.validity_status}, ATR=${f.atr_at_creation})</title>
+                </rect>`;
+      }).join("");
+
+      // 4. VPVR Key Level Lines (Must preserve [data-level="POC"|"VAH"|"VAL"] and title textContent)
+      const levels = [
+        ["POC", bundle.vpvr.poc, "#38bdf8", "2.2", "none"],
+        ["VAH", bundle.vpvr.vah, "#94a3b8", "1.3", "4 4"],
+        ["VAL", bundle.vpvr.val, "#94a3b8", "1.3", "4 4"],
+      ].map(([name, price, color, sw, dash]) => {
+        const y = Math.max(priceTop, Math.min(priceBot, yForPrice(price)));
+        return `<g data-level="${name}">
+          <title>${name} ${price} (${bundle.vpvr.algorithm_version})</title>
+          <line x1="${padL}" x2="${width - 6}" y1="${y.toFixed(1)}" y2="${y.toFixed(1)}" stroke="${color}" stroke-width="${sw}" ${dash !== "none" ? `stroke-dasharray="${dash}"` : ""} />
+          <rect x="${padL + 4}" y="${(y - 13).toFixed(1)}" width="115" height="13" rx="3" fill="rgba(10,16,29,0.82)" />
+          <text x="${padL + 8}" y="${(y - 3.5).toFixed(1)}" fill="${color}" font-size="10.5" font-weight="700" class="mono">${name} ${fmtNum(price)}</text>
+        </g>`;
+      }).join("");
+
+      // 5. Moving Averages (SMA20, SMA50, SMA200)
+      const sma20Pts = getSeriesTail("SMA_20");
+      const sma50Pts = getSeriesTail("SMA_50");
+      const sma200Pts = getSeriesTail("SMA_200");
+      const maPaths = `
+        <path d="${polyPath(sma200Pts, yForPrice)}" fill="none" stroke="#06b6d4" stroke-width="1.4" opacity="0.85" />
+        <path d="${polyPath(sma50Pts, yForPrice)}" fill="none" stroke="#a855f7" stroke-width="1.3" opacity="0.85" />
+        <path d="${polyPath(sma20Pts, yForPrice)}" fill="none" stroke="#f59e0b" stroke-width="1.3" opacity="0.9" />
+      `;
+
+      // 6. Candlesticks (Must preserve [data-bar-id])
+      const candleStep = plotW / view.length;
+      const bodyW = Math.max(2, Math.min(9, candleStep * 0.66));
+      const candles = view.map((b, i) => {
+        const x = xForIndex(i);
+        const o = yForPrice(b.open), c = yForPrice(b.close), h = yForPrice(b.high), l = yForPrice(b.low);
+        const up = Number(b.close) >= Number(b.open);
+        const color = up ? "#22c55e" : "#ef4444";
+        return `<g data-bar-id="${b.bar_id}" data-idx="${i}">
+          <title>${b.bar_id} O:${b.open} H:${b.high} L:${b.low} C:${b.close} V:${b.volume}</title>
+          <line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${h.toFixed(1)}" y2="${l.toFixed(1)}" stroke="${color}" stroke-width="1" />
+          <rect x="${(x - bodyW / 2).toFixed(1)}" y="${Math.min(o, c).toFixed(1)}" width="${bodyW.toFixed(1)}" height="${Math.max(Math.abs(c - o), 1.8).toFixed(1)}" fill="${color}" />
+        </g>`;
+      }).join("");
+
+      // 7. Confirmed 3x3 Divergences (Must preserve [data-divergence-id] and signal_at filter)
+      const latestCloseMs = Date.parse(bars.at(-1).close_at);
+      const divs = (bundle.divergences || [])
+        .filter(d => Date.parse(d.signal_at) <= latestCloseMs)
+        .slice(-5)
+        .map(d => {
+          const i1 = tsToIndex(d.price_anchors[0].at);
+          const i2 = tsToIndex(d.price_anchors[1].at);
+          const x1 = xForIndex(i1), x2 = xForIndex(i2);
+          const y1 = Math.max(priceTop, Math.min(priceBot, yForPrice(d.price_anchors[0].value)));
+          const y2 = Math.max(priceTop, Math.min(priceBot, yForPrice(d.price_anchors[1].value)));
+          const color = d.kind === "BULLISH" ? "#38bdf8" : "#f59e0b";
+          const label = d.kind === "BULLISH" ? "底背离(3×3)" : "顶背离(3×3)";
+          return `<g data-divergence-id="${d.divergence_id}">
+            <title>${d.divergence_id} ${d.kind} ${d.oscillator_component} confirmed at ${d.signal_at}</title>
+            <line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${color}" stroke-width="2.2" />
+            <circle cx="${x2.toFixed(1)}" cy="${y2.toFixed(1)}" r="3.5" fill="${color}" />
+            <text x="${Math.min(x2 + 4, width - padR - 65).toFixed(1)}" y="${(y2 - 5).toFixed(1)}" fill="${color}" font-size="10" font-weight="700">${label}</text>
+          </g>`;
+        }).join("");
+
+      // 8. Forming 3x1 Candidate Divergences (Uses data-forming-div-id so it does not affect [data-divergence-id] test)
+      const formingDivsList = [
+        ...(activeDetail?.divergence_audit?.forming_bottom || []),
+        ...(activeDetail?.divergence_audit?.forming_top || []),
+      ];
+      const formingDivsSvg = formingDivsList.map((fd, idx) => {
+        const i1 = tsToIndex(fd.first_anchor_at);
+        const i2 = tsToIndex(fd.second_anchor_at);
+        const x1 = xForIndex(i1), x2 = xForIndex(i2);
+        const y1 = Math.max(priceTop, Math.min(priceBot, yForPrice(fd.first_price)));
+        const y2 = Math.max(priceTop, Math.min(priceBot, yForPrice(fd.second_price)));
+        return `<g data-forming-div-id="forming-${idx}">
+          <title>3×1 右侧成形候选 ${fd.kind} (${fd.component}) 锚点 ${fd.first_price} -> ${fd.second_price}</title>
+          <line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#e879f9" stroke-width="2" stroke-dasharray="4 3" />
+          <circle cx="${x2.toFixed(1)}" cy="${y2.toFixed(1)}" r="4" fill="#e879f9" />
+          <text x="${Math.max(padL + 10, x2 - 78).toFixed(1)}" y="${(y2 - 7).toFixed(1)}" fill="#e879f9" font-size="10" font-weight="700">⚡3×1成形${fd.kind==='BULLISH'?'底背':'顶背'}</text>
+        </g>`;
+      }).join("");
+
+      // 9. MACD (12, 26, 9) Sub-panel
+      const macdLinePts = getSeriesTail("MACD_12_26_9", "macd");
+      const sigLinePts = getSeriesTail("MACD_12_26_9", "signal");
+      const histPts = getSeriesTail("MACD_12_26_9", "histogram");
+      const macdVals = [...macdLinePts.map(p => p.v), ...sigLinePts.map(p => p.v), ...histPts.map(p => p.v), 0];
+      const maxMacd = Math.max(...macdVals.map(Math.abs), 1e-6);
+      const yForMacd = (v) => macdTop + (0.5 - (v / (2 * maxMacd))) * macdH;
+      const macdZeroY = yForMacd(0);
+
+      const macdHistBars = histPts.map((p, idx) => {
+        const x = xForIndex(p.i);
+        const prevV = idx > 0 ? histPts[idx - 1].v : p.v;
+        const y = yForMacd(p.v);
+        const h = Math.max(1, Math.abs(y - macdZeroY));
+        const fill = p.v >= 0
+          ? (p.v >= prevV ? "#22c55e" : "rgba(34,197,94,0.45)")
+          : (p.v <= prevV ? "#ef4444" : "rgba(239,68,68,0.45)");
+        return `<rect x="${(x - bodyW / 2).toFixed(1)}" y="${Math.min(y, macdZeroY).toFixed(1)}" width="${bodyW.toFixed(1)}" height="${h.toFixed(1)}" fill="${fill}" />`;
+      }).join("");
+
+      const macdPanelSvg = `
+        <line x1="${padL}" x2="${width - padR}" y1="${macdTop}" y2="${macdTop}" stroke="#23324d" />
+        <line x1="${padL}" x2="${width - padR}" y1="${macdZeroY.toFixed(1)}" y2="${macdZeroY.toFixed(1)}" stroke="#334155" stroke-dasharray="2 2" />
+        <text x="${padL + 4}" y="${macdTop + 12}" fill="#94a3b8" font-size="10" font-weight="600" class="mono">MACD (12,26,9)</text>
+        ${macdHistBars}
+        <path d="${polyPath(macdLinePts, yForMacd)}" fill="none" stroke="#38bdf8" stroke-width="1.3" />
+        <path d="${polyPath(sigLinePts, yForMacd)}" fill="none" stroke="#f59e0b" stroke-width="1.2" />
+      `;
+
+      // 10. RSI (14) Sub-panel
+      const rsiPts = getSeriesTail("RSI_14", "value");
+      const yForRsi = (v) => rsiTop + (1 - Math.max(0, Math.min(100, v)) / 100) * rsiH;
+      const yRsi70 = yForRsi(70), yRsi50 = yForRsi(50), yRsi30 = yForRsi(30);
+      const rsiPanelSvg = `
+        <line x1="${padL}" x2="${width - padR}" y1="${rsiTop}" y2="${rsiTop}" stroke="#23324d" />
+        <rect x="${padL}" y="${yRsi70.toFixed(1)}" width="${plotW}" height="${(yRsi30 - yRsi70).toFixed(1)}" fill="rgba(56,189,248,0.04)" />
+        <line x1="${padL}" x2="${width - padR}" y1="${yRsi70.toFixed(1)}" y2="${yRsi70.toFixed(1)}" stroke="rgba(239,68,68,0.4)" stroke-dasharray="3 3" />
+        <line x1="${padL}" x2="${width - padR}" y1="${yRsi50.toFixed(1)}" y2="${yRsi50.toFixed(1)}" stroke="#1e293b" />
+        <line x1="${padL}" x2="${width - padR}" y1="${yRsi30.toFixed(1)}" y2="${yRsi30.toFixed(1)}" stroke="rgba(34,197,94,0.4)" stroke-dasharray="3 3" />
+        <text x="${padL + 4}" y="${rsiTop + 12}" fill="#94a3b8" font-size="10" font-weight="600" class="mono">RSI (14)</text>
+        <text x="${width - padR + 6}" y="${(yRsi70 + 3).toFixed(1)}" fill="#f87171" font-size="9.5" class="mono">70</text>
+        <text x="${width - padR + 6}" y="${(yRsi30 + 3).toFixed(1)}" fill="#4ade80" font-size="9.5" class="mono">30</text>
+        <path d="${polyPath(rsiPts, yForRsi)}" fill="none" stroke="#c084fc" stroke-width="1.4" />
+      `;
+
+      // Time axis labels
+      const timeTicks = [0, Math.floor(view.length * 0.25), Math.floor(view.length * 0.5), Math.floor(view.length * 0.75), view.length - 1]
+        .filter((v, idx, arr) => arr.indexOf(v) === idx && view[v])
+        .map(idx => {
+          const x = xForIndex(idx);
+          const lbl = view[idx].close_at.slice(0, 16).replace("T", " ");
+          return `<text x="${x.toFixed(1)}" y="${height - 4}" fill="#64748b" font-size="10" text-anchor="middle" class="mono">${lbl}</text>`;
+        }).join("");
+
+      el("chart").innerHTML = `<svg id="mainSvg" viewBox="0 0 ${width} ${height}">
+        ${priceGrid}
+        ${vpvrBinsSvg}
+        ${fvgs}
+        ${levels}
+        ${maPaths}
+        ${candles}
+        ${divs}
+        ${formingDivsSvg}
+        ${macdPanelSvg}
+        ${rsiPanelSvg}
+        ${timeTicks}
+        <line id="crosshairX" x1="0" x2="0" y1="${priceTop}" y2="${rsiBot}" stroke="rgba(226,232,240,0.35)" stroke-dasharray="3 3" visibility="hidden" pointer-events="none" />
+      </svg>`;
+
+      // Interactive hover HUD
+      const svgEl = document.getElementById("mainSvg");
+      const crossX = document.getElementById("crosshairX");
+      const hud = el("chartHud");
+      const updateHudForBar = (idx) => {
+        const b = view[idx];
+        if (!b) return;
+        const chg = ((Number(b.close) - Number(b.open)) / Number(b.open) * 100).toFixed(2);
+        const col = Number(b.close) >= Number(b.open) ? "#4ade80" : "#f87171";
+        hud.innerHTML = `
+          <span class="mono" style="color:#f8fafc;font-weight:700;">${escapeHtml(b.close_at.slice(0, 16).replace("T", " "))} UTC</span>
+          <span class="mono">O: <b>${fmtNum(b.open)}</b></span>
+          <span class="mono">H: <b>${fmtNum(b.high)}</b></span>
+          <span class="mono">L: <b>${fmtNum(b.low)}</b></span>
+          <span class="mono" style="color:${col}">C: <b>${fmtNum(b.close)}</b> (${chg >= 0 ? "+" + chg : chg}%)</span>
+          <span class="mono muted">Vol: ${fmtNum(b.volume, 2)}</span>
+          <span class="mono" style="color:#38bdf8;">POC: ${fmtNum(bundle.vpvr.poc)}</span>
+          <span class="mono muted">VA: ${fmtNum(bundle.vpvr.val)}–${fmtNum(bundle.vpvr.vah)}</span>
+        `;
+      };
+      updateHudForBar(view.length - 1);
+
+      svgEl.addEventListener("mousemove", (ev) => {
+        const rect = svgEl.getBoundingClientRect();
+        const relX = ((ev.clientX - rect.left) / rect.width) * width;
+        if (relX < padL || relX > width - padR) return;
+        const idx = Math.max(0, Math.min(view.length - 1, Math.floor(((relX - padL) / plotW) * view.length)));
+        const cx = xForIndex(idx);
+        crossX.setAttribute("x1", cx.toFixed(1));
+        crossX.setAttribute("x2", cx.toFixed(1));
+        crossX.setAttribute("visibility", "visible");
+        updateHudForBar(idx);
+      });
+      svgEl.addEventListener("mouseleave", () => {
+        crossX.setAttribute("visibility", "hidden");
+        updateHudForBar(view.length - 1);
+      });
+    }
+
+    function renderVpvrAndTrajectory(activeDetail) {
+      if (!activeDetail) {
+        el("vpvrZonesBox").innerHTML = `<span class="muted">暂无 VPVR 详细聚类数据。</span>`;
+        return;
+      }
+      const vz = activeDetail.vpvr_zones || {};
+      const dyn = activeDetail.indicator_dynamics || {};
+      el("trajectoryBadge").textContent = dyn.candle_trajectory_note || "";
+
+      const peaks = (vz.hvn_peaks || []).map(p => `
+        <span class="pill ${vz.active_peak_label === p.label ? 'ok' : 'info'}">
+          ${escapeHtml(p.label)}: ${fmtNum(p.lower)}–${fmtNum(p.upper)} (中心 ${fmtNum(p.center)}, 占比 ${(p.volume_share*100).toFixed(1)}%)
+        </span>
+      `).join(" ");
+
+      const lvns = (vz.lvn_zones || []).slice(0, 4).map(z => `
+        <span class="pill">${escapeHtml(z.label)}: ${fmtNum(z.lower)}–${fmtNum(z.upper)}</span>
+      `).join(" ");
+
+      el("vpvrZonesBox").innerHTML = `
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px;">
+          <span class="muted">高量主峰区 (HVN):</span> ${peaks || '<span class="muted">无</span>'}
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="muted">低量真空区 (LVN):</span> ${lvns || '<span class="muted">无显著真空区</span>'}
+          <span class="muted" style="margin-left:auto;">上方下一峰值: <b class="mono">${fmtNum(vz.next_upper_peak)}</b> | 下方下一峰值: <b class="mono">${fmtNum(vz.next_lower_peak)}</b></span>
+        </div>
+      `;
+    }
+
+    function renderStrategyWarRoom(plan) {
+      if (!plan) {
+        el("strategyWarRoom").innerHTML = `<p class="muted">暂无策略评估结果。</p>`;
+        return;
+      }
+      let bannerCls = "wait";
+      if (plan.action_code.includes("BUY") || plan.action_code.includes("ADD")) bannerCls = "buy";
+      else if (plan.action_code.includes("SELL") || plan.action_code.includes("PROFIT")) bannerCls = "sell";
+
+      const checklistHtml = (plan.risk_checklist || []).map(item => `
+        <div class="check-item ${escapeHtml(item.status)}">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <b>${escapeHtml(item.item)}</b>
+            <span class="pill ${item.status==='PASS'?'ok':item.status==='WARN'?'warn':'bad'}">${escapeHtml(item.status)}</span>
+          </div>
+          <div class="muted" style="margin-top:2px;">${escapeHtml(item.detail)}</div>
+        </div>
+      `).join("");
+
+      el("strategyWarRoom").innerHTML = `
+        <div class="verdict-banner ${bannerCls}">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:6px;">
+            <div>${modeBadgeHtml(plan.macro_mode, plan.macro_mode_label)} ${actionBadgeHtml(plan.action_code)}</div>
+            <span class="mono muted">当前价: <b style="color:#fff;">${fmtNum(plan.current_price)}</b></span>
+          </div>
+          <div style="font-size:13.5px;font-weight:700;color:#f8fafc;line-height:1.45;">
+            ${escapeHtml(plan.action_verdict)}
+          </div>
+          <div class="muted" style="margin-top:6px;">${escapeHtml(plan.macro_evidence)}</div>
+        </div>
+
+        <div class="kv-grid">
+          <div class="kv-box">
+            <div class="k">${isEn() ? "Tranche 1 (1/3) Entry (Daily VPVR Peak)" : "头仓 (1/3) 建仓区 (日K VPVR主峰)"}</div>
+            <div class="v mono" style="color:#4ade80;">${escapeHtml(plan.entry_tranche_1_zone || "—")}</div>
+            <div class="muted">${plan.in_vpvr_main_peak ? (isEn() ? "✓ Currently in Main Peak" : "✓ 当前正处主峰区") : (isEn() ? "Outside Main Peak" : "当前不在主峰区")}</div>
+          </div>
+          <div class="kv-box">
+            <div class="k">${isEn() ? "Breakout Add-On Trigger (+1/3)" : "突破加仓触发位 (再加 1/3)"}</div>
+            <div class="v mono" style="color:#38bdf8;">${escapeHtml(plan.add_trigger_price || "—")}</div>
+            <div class="muted">${isEn() ? "Add on confirmed volume breakout above peak" : "放量站稳上一 VPVR 峰值后加仓"}</div>
+          </div>
+          <div class="kv-box">
+            <div class="k">${isEn() ? "Target 1 Take-Profit (Next Peak / VAH)" : "第一止盈目标 (下一 VPVR 峰/VAH)"}</div>
+            <div class="v mono" style="color:#fbbf24;">${escapeHtml(plan.tp_target_1 || "—")}</div>
+            <div class="muted">${isEn() ? "Scale out on resistance or 4h/1h top div" : "受阻或 4h/1h 顶背离分批止盈"}</div>
+          </div>
+          <div class="kv-box">
+            <div class="k">${isEn() ? "Target 2 Take-Profit (Overhead Peak)" : "第二止盈目标 (远端压力峰)"}</div>
+            <div class="v mono" style="color:#f59e0b;">${escapeHtml(plan.tp_target_2 || "—")}</div>
+            <div class="muted">${escapeHtml(plan.small_tf_top_div_warning || (isEn() ? "No active small-TF top div" : "小周期暂无确认顶背离"))}</div>
+          </div>
+        </div>
+
+        <div class="kv-box" style="margin-bottom:10px;">
+          <div class="k">${isEn() ? "Daily & Intraday Status / Rebound Mode (B) Details" : "日K 与小周期状态 / 反弹模式 (B) 规则说明"}</div>
+          <div style="font-size:12px;color:#e2e8f0;margin-top:2px;">${escapeHtml(plan.daily_divergence_status)}</div>
+          <div class="muted" style="margin-top:3px;">${escapeHtml(plan.rebound_rule_note)}</div>
+        </div>
+
+        <div>
+          <div class="muted" style="font-weight:600;margin-bottom:6px;">${isEn() ? "🛡️ Risk Baseline & 4-Item Enhanced Checklist (Sizing Control + Catalysts + Leverage <= 10x + Right-Side Confirmation):" : "🛡️ 风控底线与三维改进核对单（仓位防爆 + 基本面/催化剂 + 杠杆≤10x + 右侧确认）："}</div>
+          ${checklistHtml}
+        </div>
+      `;
+    }
+
+    function renderMtfMatrix(rows, activeTf) {
+      const tbody = el("mtfMatrixTbody");
+      if (!rows || !rows.length) {
+        tbody.innerHTML = `<tr><td colspan="9" class="muted">${isEn() ? "No multi-timeframe data" : "暂无多周期数据"}</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = rows.map(r => {
+        const isCurrent = r.timeframe === activeTf;
+        const mainPeakLabel = isEn() ? `✓ Main Peak (${escapeHtml(r.active_peak_label)})` : `✓ 主峰 (${escapeHtml(r.active_peak_label)})`;
+        return `<tr class="clickable-row ${isCurrent ? 'selected-row' : ''}" data-tf="${escapeHtml(r.timeframe)}">
+          <td class="mono"><b>${escapeHtml(r.timeframe)}</b> <span class="muted">(${r.bar_count})</span></td>
+          <td class="mono"><b>${fmtNum(r.latest_close)}</b></td>
+          <td>
+            <span class="pill ${r.trend_state.includes('HIGHER')?'ok':r.trend_state.includes('LOWER')?'bad':''}">${escapeHtml(r.trend_state)}</span>
+            <div class="muted mono" style="font-size:11px;margin-top:2px;">${escapeHtml(r.ma_alignment)}</div>
+          </td>
+          <td class="mono" style="font-size:11.5px;">
+            <div>${escapeHtml(r.macd_state)}</div>
+            <div class="muted">Hist: ${fmtNum(r.macd_hist, 3)} | ${escapeHtml(r.macd_cross)}</div>
+          </td>
+          <td class="mono">
+            <b>${fmtNum(r.rsi14, 1)}</b>
+            <span class="muted">(${r.rsi_delta_5 >= 0 ? "+" + r.rsi_delta_5 : r.rsi_delta_5 ?? "—"})</span>
+            <div><span class="pill ${r.rsi_zone==='OVERBOUGHT'?'warn':r.rsi_zone==='OVERSOLD'?'ok':''}">${escapeHtml(r.rsi_zone)}</span></div>
+          </td>
+          <td class="mono" style="font-size:11.5px;">
+            VAL ${fmtNum(r.vpvr_val)} / <b>POC ${fmtNum(r.vpvr_poc)}</b> / VAH ${fmtNum(r.vpvr_vah)}
+          </td>
+          <td>
+            ${r.in_main_peak_zone ? `<span class="pill ok">${mainPeakLabel}</span>` : `<span class="pill">${escapeHtml(r.price_vs_value_area)}</span>`}
+          </td>
+          <td style="font-size:11.5px;">${escapeHtml(r.live_sentence)}</td>
+          <td style="font-size:11.5px;color:${(r.forming_bottom_count + r.forming_top_count) > 0 ? '#e879f9' : 'var(--muted)'};">
+            ${escapeHtml(r.forming_sentence)}
+          </td>
+        </tr>`;
+      }).join("");
+
+      tbody.querySelectorAll("tr.clickable-row").forEach(tr => {
+        tr.addEventListener("click", () => {
+          const tf = tr.getAttribute("data-tf");
+          if (tf && el("interval").value !== tf) {
+            el("interval").value = tf;
+            loadSubject();
+          }
+        });
+      });
+    }
+
+    function renderOutlookPanel(outlook) {
+      if (!outlook) {
+        el("outlookPanel").innerHTML = `<p class="muted">${isEn() ? "No multi-timeframe outlook data" : "暂无多周期展望数据。"}</p>`;
+        return;
+      }
+      const w = outlook.weights || { A: 0.33, B: 0.34, C: 0.33 };
+      el("outlookPanel").innerHTML = `
+        <div class="kv-grid">
+          <div class="kv-box">
+            <div class="k">${isEn() ? "Multi-TF Structure Score (1mo/1w/1d)" : "多周期结构分 (1mo/1w/1d)"}</div>
+            <div class="v mono" style="color:${outlook.structure_score>=0?'#4ade80':'#f87171'}">${outlook.structure_score >= 0 ? "+" + outlook.structure_score : outlook.structure_score} / 100</div>
+            <div class="muted">${isEn() ? "Measures Monthly/Weekly/Daily Trend & MA Structure" : "衡量月/周/日趋势与均线结构"}</div>
+          </div>
+          <div class="kv-box">
+            <div class="k">${isEn() ? "Short/Mid-TF Momentum Score (1d/4h/1h)" : "短中周期动量分 (1d/4h/1h)"}</div>
+            <div class="v mono" style="color:${outlook.momentum_score>=0?'#4ade80':'#f87171'}">${outlook.momentum_score >= 0 ? "+" + outlook.momentum_score : outlook.momentum_score} / 100</div>
+            <div class="muted">${isEn() ? "Measures MACD, RSI & Active Divergences Direction" : "衡量 MACD、RSI 与有效背离净方向"}</div>
+          </div>
+          <div class="kv-box">
+            <div class="k">${isEn() ? "Primary Scenario Classification" : "系统归类主情景"}</div>
+            <div class="v">${primaryBadgeHtml(outlook.primary)}</div>
+            <div class="muted">A:${Math.round(w.A*100)}% / B:${Math.round(w.B*100)}% / C:${Math.round(w.C*100)}%</div>
+          </div>
+        </div>
+        <div class="kv-box" style="margin-bottom:10px;">
+          <div class="k">${isEn() ? "One-Line Multi-TF Synthesis" : "一句话多周期综合研判"}</div>
+          <div style="font-weight:600;color:#f8fafc;">${escapeHtml(outlook.one_line)}</div>
+        </div>
+        <div>
+          ${(outlook.scenarios || []).map(sc => `
+            <div class="scenario ${sc.code==='A'?'BULLISH':sc.code==='B'?'NEUTRAL':'BEARISH'}">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <b>${isEn() ? 'Scenario' : '情景'} ${escapeHtml(sc.code)} · ${escapeHtml(sc.title)}</b>
+                <span class="pill mono">${Math.round((sc.weight||0)*100)}% ${isEn() ? 'Weight' : '权重'}</span>
+              </div>
+              <div class="muted" style="margin-top:3px;">${isEn() ? 'Triggers' : '触发条件'}：${escapeHtml((sc.triggers||[]).join("；"))}</div>
+              <div class="muted">${isEn() ? 'Targets' : '目标区间'}：<span class="mono">${escapeHtml((sc.targets||[]).join(" / "))}</span> | ${isEn() ? 'Invalidation' : '失效条件'}：<span class="mono">${escapeHtml(sc.invalidation)}</span></div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderFundamentalsAndContext(detail, liveContextData) {
+      const box = el("context");
+      if (detail && detail.fundamentals) {
+        const f = detail.fundamentals;
+        const flagBadge = f.earnings_quality_flag !== "NORMAL"
+          ? `<span class="pill warn">⚠️ ${escapeHtml(f.earnings_quality_flag)}</span>`
+          : `<span class="pill ok">✓ 盈利锚一致 (NORMAL)</span>`;
+        box.innerHTML = `
+          <div class="kv-grid">
+            <div class="kv-box">
+              <div class="k">PE_TTM (4单季摊薄EPS锚)</div>
+              <div class="v mono">${f.pe_ttm !== null ? f.pe_ttm + "x" : "—"}</div>
+              <div class="muted">TTM EPS: \$${f.ttm_eps ?? "—"}</div>
+            </div>
+            <div class="kv-box">
+              <div class="k">PE_FY (最近完整10-K年报锚)</div>
+              <div class="v mono">${f.pe_fy !== null ? f.pe_fy + "x" : "—"}</div>
+              <div class="muted">TTM/FY 比值: ${f.ttm_fy_ratio ?? "—"}</div>
+            </div>
+            <div class="kv-box">
+              <div class="k">总市值 / 营收 YoY</div>
+              <div class="v mono">\$${f.market_cap_b ?? "—"}B</div>
+              <div class="muted">营收增速: ${f.revenue_yoy_pct !== null ? f.revenue_yoy_pct + "%" : "—"}</div>
+            </div>
+            <div class="kv-box">
+              <div class="k">自由现金流 (FCF) / 净利</div>
+              <div class="v mono">\$${f.fcf_b ?? "—"}B</div>
+              <div class="muted">GAAP净利: \$${f.net_income_b ?? "—"}B</div>
+            </div>
+          </div>
+          <div class="check-item ${f.earnings_quality_flag === 'NORMAL' ? 'PASS' : 'WARN'}" style="margin-bottom:8px;">
+            <div><b>基本面双锚探针诊断：</b> ${flagBadge}</div>
+            <div class="muted" style="margin-top:2px;">${escapeHtml(f.earnings_quality_note)}</div>
+          </div>
+          <div class="muted" style="font-size:11.5px;">
+            现金与等价物: <b class="mono">\$${f.cash_b ?? "—"}B</b> · 总债务: <b class="mono">\$${f.debt_b ?? "—"}B</b> · 经营现金流: <b class="mono">\$${f.ocf_b ?? "—"}B</b> · 资本开支: <b class="mono">\$${f.capex_b ?? "—"}B</b>
+          </div>
+        `;
+        return;
+      }
+      if (liveContextData && liveContextData.spot_price) {
+        const obs = [
+          liveContextData.spot_price,
+          liveContextData.perpetual_mark_price,
+          liveContextData.index_price,
+          liveContextData.funding_rate,
+          liveContextData.open_interest,
+          liveContextData.basis_absolute,
+          liveContextData.basis_rate,
+          liveContextData.liquidation_notional_observed,
+          ...(liveContextData.supply || []),
+        ].filter(Boolean);
+        box.innerHTML = `<div class="table-wrap"><table>
+          <thead><tr><th>衍生品/市场指标</th><th>状态</th><th>最新读数</th></tr></thead>
+          <tbody>
+            ${obs.map(item => `<tr>
+              <td class="mono">${escapeHtml(item.name)}</td>
+              <td><span class="pill ${item.status === "AVAILABLE" ? "ok" : "warn"}">${escapeHtml(item.status)}</span></td>
+              <td class="mono">${escapeHtml(item.value ?? item.missing_reason ?? "N/A")} ${escapeHtml(item.unit || "")}</td>
+            </tr>`).join("")}
+          </tbody>
+        </table></div>`;
+        return;
+      }
+      box.innerHTML = `<p class="muted">当前标的暂无附加基本面或实时衍生品上下文。</p>`;
+    }
+
+    function renderAnalysisResult(analysis, semanticReview = null) {
+      const levels = Object.fromEntries((analysis.key_levels || []).map(l => [l.level_id, l]));
+      const semHtml = semanticReview ? `
+        <div class="check-item ${semanticReview.issues?.length ? 'WARN' : 'PASS'}" style="margin-bottom:8px;">
+          <b>语义防幻觉审计 (Semantic Review):</b>
+          ${semanticReview.issues?.length ? `${semanticReview.issues.length} 项提示` : `✓ 0 冲突通过（已校验证据ID、已失效背离拦截与VPVR估算声明）`}
+        </div>
+      ` : "";
+
+      const tfSynthHtml = (analysis.timeframe_synthesis || []).length ? `
+        <details style="margin:8px 0;background:var(--bg-elev);padding:8px 10px;border-radius:6px;">
+          <summary style="cursor:pointer;font-weight:600;color:#38bdf8;">查看多周期逐级合成 (${analysis.timeframe_synthesis.length} 个品种/周期)</summary>
+          <div style="margin-top:6px;">
+            ${analysis.timeframe_synthesis.map(t => `
+              <div style="padding:4px 0;border-bottom:1px solid var(--border-subtle);font-size:11.5px;">
+                <b class="mono">${escapeHtml(t.instrument_id)} · ${escapeHtml(t.interval)} (${escapeHtml(t.role)})</b>:
+                ${escapeHtml(t.summary || t.status)}
+              </div>
+            `).join("")}
+          </div>
+        </details>
+      ` : "";
+
+      el("analysis").innerHTML = `
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+          <span class="pill info">Provider: ${escapeHtml(analysis.audit.provider)}</span>
+          <span class="pill purple">Model: ${escapeHtml(analysis.audit.model)}</span>
+          <span class="pill ok">证据完整度评分: ${analysis.confidence.score}</span>
+          <span class="pill mono">Cost: ${escapeHtml(analysis.audit.cost)} ${escapeHtml(analysis.audit.cost_currency)}</span>
+        </div>
+        ${semHtml}
+        ${tfSynthHtml}
+        ${(analysis.scenarios || []).map(s => `
+          <div class="scenario ${s.type}">
+            <strong>${s.type === 'BULLISH' ? '🟢 BULLISH 看多情景' : s.type === 'NEUTRAL' ? '🟡 NEUTRAL 震荡情景' : '🔴 BEARISH 看空情景'}</strong>：${escapeHtml(s.summary)}
+            <div class="muted" style="margin-top:4px;">前提条件：${(s.preconditions || []).map(c => `${escapeHtml(c.description)} [${c.evidence_ids.join(", ")}]`).join("；")}</div>
+            <div class="muted">关键位：${(s.key_level_ids || []).map(id => levels[id] ? `${levels[id].kind}=${levels[id].price}` : id).join("，")}</div>
+            <div class="muted">失效条件：${(s.invalidation_conditions || []).map(c => `${escapeHtml(c.description)} [${c.evidence_ids.join(", ")}]`).join("；")}</div>
+          </div>
+        `).join("")}
+        <p class="muted" style="margin-top:8px;"><strong>缺失信息声明</strong>：${(analysis.missing_information || []).map(m => escapeHtml(m.field)).join("；") || "无"}</p>
+        <p class="muted">${escapeHtml(analysis.disclaimer?.text || "")} ${escapeHtml(analysis.disclaimer?.data_limitations || "")}</p>
+      `;
+    }
+    window.renderAnalysisResult = renderAnalysisResult;
+
+    function renderStoredRealAiButtons(detail) {
+      const bar = el("storedRealAiBar");
+      const list = [...(detail?.subject_analyses || []), ...(detail?.real_ai_highlights || [])];
+      const seen = new Set();
+      const unique = list.filter(item => {
+        if (seen.has(item.analysis_id)) return false;
+        seen.add(item.analysis_id);
+        return true;
+      });
+      if (!unique.length) {
+        bar.innerHTML = "";
+        return;
+      }
+      bar.innerHTML = `<div class="muted" style="margin-bottom:4px;">📂 点击直接检阅本机已存档的 AI 报告（含 <code class="mono">CODEX_CLI</code> 真实大模型多周期推演）：</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          ${unique.slice(0, 6).map(a => `
+            <button type="button" class="quick-chip" data-aid="${escapeHtml(a.analysis_id)}" style="font-size:11px;padding:3px 8px;">
+              <span style="color:${a.provider==='CODEX_CLI'?'#c084fc':'#38bdf8'}">●</span>
+              <b>${escapeHtml(a.symbol)}</b> · ${escapeHtml(a.model)} (${escapeHtml(a.cutoff_at.slice(0, 10))})
+            </button>
+          `).join("")}
+        </div>`;
+      bar.querySelectorAll("button[data-aid]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          const aid = btn.getAttribute("data-aid");
+          if (!aid) return;
+          try {
+            const [analysis, sem] = await Promise.all([
+              api(`/v1/ai-analyses/${aid}`),
+              api(`/v1/ai-analyses/${aid}/semantic-review`).catch(() => null),
+            ]);
+            renderAnalysisResult(analysis, sem);
+          } catch (err) {
+            showError(err);
+          }
+        });
+      });
+    }
+
+    async function loadSubject() {
+      clearError();
+      const subjectId = el("subject").value;
+      const interval = el("interval").value;
+      const legVal = el("leg") ? el("leg").value : "SPOT";
+
+      const health = await api("/v1/health");
+      el("modePill").textContent = `数据模式: ${health.data_mode.toUpperCase()} · 网络: ${health.network_enabled ? "ONLINE" : "OFFLINE"} · 模型: ${health.real_ai_model}`;
+
+      let desiredInst = el("instrumentSelect").value || "";
+      if (subjectId.startsWith("crypto-")) {
+        const coin = subjectId.replace("crypto-", "");
+        desiredInst = legVal === "PERP" ? `okx-${coin}-usdt-perp` : `okx-${coin}-usdt-spot`;
+      }
+
+      // Load workbench detail first so we know available instruments and multi-timeframe matrix
+      let wbDetail = null;
+      try {
+        wbDetail = await api(`/v1/workbench/subjects/${subjectId}?interval=${interval}&instrument_id=${encodeURIComponent(desiredInst)}`);
+        detailCache = wbDetail;
+      } catch (e) {
+        console.warn("Workbench subject detail fallback:", e);
+      }
+
+      // Populate instrument dropdown for current subject
+      if (wbDetail && wbDetail.subject && wbDetail.subject.instruments) {
+        const instSel = el("instrumentSelect");
+        const targetId = desiredInst || wbDetail.selected_instrument_id;
+        const insts = wbDetail.subject.instruments;
+        instSel.innerHTML = insts.map(inst => `
+          <option value="${escapeHtml(inst.instrument_id)}" ${inst.instrument_id === targetId ? "selected" : ""}>
+            ${escapeHtml(inst.symbol)} (${escapeHtml(inst.asset_class)} · ${escapeHtml(inst.venue)})
+          </option>
+        `).join("");
+      }
+
+      const activeInstId = el("instrumentSelect").value || desiredInst;
+      const instParam = activeInstId ? `&instrument_id=${encodeURIComponent(activeInstId)}` : "";
+      const bundle = await api(`/v1/subjects/${subjectId}/indicator-bundle?interval=${interval}${instParam}`);
+      const barsPage = await api(`/v1/instruments/${encodeURIComponent(bundle.instrument.instrument_id)}/bars?interval=${interval}&limit=5000`);
+      const evidenceView = await api(`/v1/subjects/${subjectId}/indicator-evidence?interval=${interval}${instParam}`);
+
+      current = { subject: subjectId, interval, bars: barsPage, bundle, instrument_id: bundle.instrument.instrument_id };
+      window.current = current;
+
+      const displayName = wbDetail?.subject?.display_name || bundle.subject.display_name || bundle.subject.symbol;
+      el("chartTitle").textContent = `📈 ${bundle.subject.symbol} (${bundle.instrument.instrument_id}) · ${interval} K 线 × 48 桶 VPVR 筹码分布 × 背离画线`;
+      el("summary").textContent = `${displayName} · ${bundle.instrument.instrument_id} · ${interval} · 已确认 K 线 ${barsPage.bars.length} 根 · 最新收盘 ${barsPage.bars.at(-1)?.close ?? "N/A"} · 趋势 ${bundle.trend_structure.state} · 数据状态 ${barsPage.quality.request_status}`;
+      if (el("status")) {
+        el("status").textContent = isEn()
+          ? `已加载 / Loaded: ${bundle.subject.symbol} (${bundle.instrument.instrument_id}) · ${barsPage.bars.length} bars`
+          : `已加载 ${bundle.subject.symbol} (${bundle.instrument.instrument_id}) · ${barsPage.bars.length} 根`;
+      }
+
+      renderChart(barsPage.bars, bundle, wbDetail?.active_timeframe_detail);
+      renderVpvrAndTrajectory(wbDetail?.active_timeframe_detail);
+
+      if (wbDetail) {
+        renderStrategyWarRoom(wbDetail.strategy_plan);
+        renderMtfMatrix(wbDetail.timeframe_matrix, interval);
+        renderOutlookPanel(wbDetail.outlook);
+        renderStoredRealAiButtons(wbDetail);
+      }
+
+      // Evidence list
+      el("evidence").innerHTML = `<table>
+        <thead><tr><th>证据 ID</th><th>质量</th><th>结构化结论</th></tr></thead>
+        <tbody>
+          ${evidenceView.evidence.map(e => `<tr>
+            <td class="mono">${escapeHtml(e.evidence_id)}</td>
+            <td><span class="pill ${e.quality === "HIGH" ? "ok" : "warn"}">${escapeHtml(e.quality)}</span></td>
+            <td>${escapeHtml(e.claim)}</td>
+          </tr>`).join("")}
+        </tbody>
+      </table>`;
+
+      // Context / Fundamentals
+      if (bundle.subject.subject_type === "CRYPTO_ASSET") {
+        try {
+          const ctx = await api(`/v1/subjects/${subjectId}/market-context`);
+          renderFundamentalsAndContext(wbDetail, ctx);
+        } catch (_) {
+          renderFundamentalsAndContext(wbDetail, null);
+        }
+      } else {
+        renderFundamentalsAndContext(wbDetail, null);
+      }
+
+      // Update radar selection highlight
+      document.querySelectorAll("#radarTbody tr.clickable-row").forEach(tr => {
+        tr.classList.toggle("selected-row", tr.getAttribute("data-subj") === subjectId);
+      });
+      document.querySelectorAll("#quickSubjectBar .quick-chip").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-subj") === subjectId);
+      });
+    }
+
+    async function runAnalysis() {
+      clearError();
+      el("analysis").innerHTML = `<p class="muted">正在创建冻结快照并生成零成本规则演示分析…</p>`;
+      const snap = await api("/v1/analysis-snapshots", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subject_id: current.subject, intervals: [current.interval] }),
+      });
+      const key = `ui-${snap.snapshot_id}-${current.interval}`;
+      const task = await api("/v1/ai-analysis-tasks", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Idempotency-Key": key.slice(0, 64).padEnd(16, "0") },
+        body: JSON.stringify({ snapshot_id: snap.snapshot_id, provider: "DETERMINISTIC_DEMO", model: "rule-demo", prompt_version: "phase1-v1" }),
+      });
+      const done = await api(`/v1/ai-analysis-tasks/${task.task_id}`);
+      if (done.status !== "SUCCEEDED") throw done.error || done;
+      const analysis = await api(`/v1/ai-analyses/${done.analysis_id}`);
+      renderAnalysisResult(analysis);
+    }
+
+    el("load").addEventListener("click", () => loadSubject().catch(showError));
+    el("refresh").addEventListener("click", () => loadSubject().catch(showError));
+    el("subject").addEventListener("change", () => {
+      el("instrumentSelect").value = "";
+      loadSubject().catch(showError);
+    });
+    el("leg").addEventListener("change", () => {
+      el("instrumentSelect").value = "";
+      loadSubject().catch(showError);
+    });
+    el("instrumentSelect").addEventListener("change", () => {
+      const v = el("instrumentSelect").value || "";
+      if (v.endsWith("-perp") && el("leg")) el("leg").value = "PERP";
+      else if (v.endsWith("-spot") && el("leg")) el("leg").value = "SPOT";
+      loadSubject().catch(showError);
+    });
+    el("interval").addEventListener("change", () => loadSubject().catch(showError));
+    el("barWindow").addEventListener("change", () => {
+      const barList = Array.isArray(current.bars) ? current.bars : (current.bars?.bars || []);
+      if (barList.length && current.bundle) {
+        renderChart(barList, current.bundle, detailCache?.active_timeframe_detail);
+      }
+    });
+    el("reloadRadarBtn").addEventListener("click", () => loadOverviewRadar());
+    el("analyze").addEventListener("click", () => runAnalysis().catch(showError));
+
+    // Initial boot
+    initLanguageModal();
+    Promise.all([
+      loadSubject().catch(showError),
+      loadOverviewRadar(),
+    ]);
+  </script>
+  <script src="/static/real-ai.js"></script>
+</body>
+</html>

@@ -1,0 +1,4809 @@
+openapi: 3.1.0
+info:
+  title: AI Market Workbench Read-Only API
+  description: Single-underlying, read-only market analysis. No account, order, transfer,
+    withdrawal, or trading-permission endpoints exist.
+  contact:
+    name: Local single-user deployment
+  license:
+    name: Project code license pending; provider data licenses apply separately
+  version: 0.1.0
+paths:
+  /v1/health:
+    get:
+      summary: Get Health
+      operationId: getHealth
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/subjects/{subject_id}/indicator-evidence:
+    get:
+      summary: Get Indicator Evidence
+      operationId: getIndicatorEvidence
+      parameters:
+      - name: subject_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Subject Id
+      - name: interval
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/Interval'
+      - name: instrument_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Instrument Id
+      - name: cutoff_at
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Cutoff At
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndicatorEvidenceView'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/instruments:
+    get:
+      summary: Search Instruments
+      operationId: searchInstruments
+      parameters:
+      - name: q
+        in: query
+        required: true
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 100
+          title: Q
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 100
+          minimum: 1
+          default: 20
+          title: Limit
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cursor
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstrumentSearchResponse'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/instruments/{instrument_id}/bars:
+    get:
+      summary: Get Bars
+      operationId: getBars
+      parameters:
+      - name: instrument_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Instrument Id
+      - name: interval
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/Interval'
+      - name: cutoff_at
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Cutoff At
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 5000
+          minimum: 1
+          default: 500
+          title: Limit
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cursor
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BarPage'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/subjects/{subject_id}/indicator-bundle:
+    get:
+      summary: Get Indicator Bundle
+      operationId: getIndicatorBundle
+      parameters:
+      - name: subject_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Subject Id
+      - name: interval
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/Interval'
+      - name: instrument_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Instrument Id
+      - name: cutoff_at
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Cutoff At
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndicatorBundle'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/subjects/{subject_id}/fundamentals:
+    get:
+      summary: Get Equity Fundamentals
+      operationId: getEquityFundamentals
+      parameters:
+      - name: subject_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Subject Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EquityFundamentals'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/subjects/{subject_id}/market-context:
+    get:
+      summary: Get Crypto Market Context
+      operationId: getCryptoMarketContext
+      parameters:
+      - name: subject_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Subject Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CryptoMarketContext'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/macro/context:
+    get:
+      summary: Get Macro Context
+      operationId: getMacroContext
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 200
+          minimum: 2
+          default: 30
+          title: Limit
+      - name: vintage
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          description: 按该日期可见的 ALFRED 版本取值（点时口径）
+          title: Vintage
+        description: 按该日期可见的 ALFRED 版本取值（点时口径）
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MacroSnapshot'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/analysis-snapshots:
+    post:
+      summary: Create Analysis Snapshot
+      operationId: createAnalysisSnapshot
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SnapshotRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SnapshotRef'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/analysis-snapshots/{snapshot_id}:
+    get:
+      summary: Get Analysis Snapshot
+      operationId: getAnalysisSnapshot
+      parameters:
+      - name: snapshot_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Snapshot Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisSnapshot'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/ai-analysis-tasks:
+    post:
+      summary: Create Ai Analysis Task
+      operationId: createAiAnalysisTask
+      parameters:
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          minLength: 16
+          maxLength: 128
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AiAnalysisTaskRequest'
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AiAnalysisTask'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/ai-analysis-tasks/{task_id}:
+    get:
+      summary: Get Ai Analysis Task
+      operationId: getAiAnalysisTask
+      parameters:
+      - name: task_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Task Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AiAnalysisTask'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/ai-analyses/{analysis_id}/semantic-review:
+    get:
+      summary: Get Semantic Review
+      operationId: getAnalysisSemanticReview
+      parameters:
+      - name: analysis_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Analysis Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SemanticReview'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/ai-analyses:
+    get:
+      summary: List Ai Analyses
+      operationId: listAiAnalyses
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 100
+          minimum: 1
+          default: 20
+          title: Limit
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cursor
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisPage'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/ai-analyses/{analysis_id}:
+    get:
+      summary: Get Ai Analysis
+      operationId: getAiAnalysis
+      parameters:
+      - name: analysis_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Analysis Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: ./ai-analysis.schema.json
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/ai-analyses/{analysis_id}/outcomes:
+    get:
+      summary: Get Analysis Outcomes
+      operationId: getAnalysisOutcomes
+      parameters:
+      - name: analysis_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Analysis Id
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 100
+          minimum: 1
+          default: 20
+          title: Limit
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cursor
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutcomePage'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+  /v1/ai-analyses/{analysis_id}/scenario-outcomes:
+    get:
+      summary: Get Scenario Outcomes
+      operationId: getScenarioOutcomes
+      parameters:
+      - name: analysis_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Analysis Id
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 100
+          minimum: 1
+          default: 20
+          title: Limit
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cursor
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScenarioOutcomePage'
+        '400':
+          description: Invalid request or pagination cursor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '404':
+          description: Resource not found or not applicable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '422':
+          description: Schema or analysis validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '429':
+          description: Upstream rate or local budget limit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '502':
+          description: Upstream provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '503':
+          description: Data unavailable or network disabled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+        '500':
+          description: Internal fail-closed error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+components:
+  schemas:
+    AccountingBasis:
+      type: string
+      enum:
+      - GAAP
+      - NON_GAAP
+      - NETWORK_NATIVE
+      - UNKNOWN
+      title: AccountingBasis
+    AiAnalysisResult:
+      properties:
+        timeframe_synthesis:
+          items:
+            $ref: '#/components/schemas/TimeframeSynthesis'
+          type: array
+          title: Timeframe Synthesis
+        schema_version:
+          type: string
+          const: 1.1.0
+          title: Schema Version
+          default: 1.1.0
+        analysis_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Analysis Id
+        snapshot:
+          $ref: '#/components/schemas/SnapshotRef'
+        subject:
+          $ref: '#/components/schemas/AnalysisSubject'
+        scenarios:
+          items:
+            $ref: '#/components/schemas/Scenario'
+          type: array
+          maxItems: 3
+          minItems: 3
+          title: Scenarios
+        key_levels:
+          items:
+            $ref: '#/components/schemas/KeyLevel'
+          type: array
+          title: Key Levels
+        conflicts:
+          items:
+            $ref: '#/components/schemas/Conflict'
+          type: array
+          title: Conflicts
+        missing_information:
+          items:
+            $ref: '#/components/schemas/MissingInformation'
+          type: array
+          title: Missing Information
+        confidence:
+          $ref: '#/components/schemas/Confidence'
+        disclaimer:
+          $ref: '#/components/schemas/Disclaimer'
+        audit:
+          $ref: '#/components/schemas/AnalysisAudit'
+      additionalProperties: false
+      type: object
+      required:
+      - analysis_id
+      - snapshot
+      - subject
+      - scenarios
+      - key_levels
+      - conflicts
+      - missing_information
+      - confidence
+      - disclaimer
+      - audit
+      title: AiAnalysisResult
+    AiAnalysisTask:
+      properties:
+        task_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Task Id
+        status:
+          $ref: '#/components/schemas/AiTaskStatus'
+        snapshot_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Snapshot Id
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+        started_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Started At
+        completed_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Completed At
+        analysis_id:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          - type: 'null'
+          title: Analysis Id
+        error:
+          anyOf:
+          - $ref: '#/components/schemas/ProblemDetail'
+          - type: 'null'
+      additionalProperties: false
+      type: object
+      required:
+      - task_id
+      - status
+      - snapshot_id
+      - created_at
+      - started_at
+      - completed_at
+      - analysis_id
+      - error
+      title: AiAnalysisTask
+    AiAnalysisTaskRequest:
+      properties:
+        snapshot_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Snapshot Id
+        provider:
+          type: string
+          enum:
+          - DETERMINISTIC_DEMO
+          - CODEX_CLI
+          title: Provider
+          default: DETERMINISTIC_DEMO
+        model:
+          type: string
+          maxLength: 100
+          minLength: 1
+          title: Model
+          default: evidence-rules-demo-v1
+        prompt_version:
+          type: string
+          const: scenario-v2
+          title: Prompt Version
+          default: scenario-v2
+      additionalProperties: false
+      type: object
+      required:
+      - snapshot_id
+      title: AiAnalysisTaskRequest
+    AiTaskStatus:
+      type: string
+      enum:
+      - QUEUED
+      - RUNNING
+      - SUCCEEDED
+      - FAILED_VALIDATION
+      - FAILED_PROVIDER
+      - FAILED_INTERNAL
+      title: AiTaskStatus
+    AnalysisAudit:
+      properties:
+        prompt_version:
+          type: string
+          title: Prompt Version
+        provider:
+          type: string
+          title: Provider
+        model:
+          type: string
+          title: Model
+        model_revision:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Model Revision
+        started_at:
+          type: string
+          format: date-time
+          title: Started At
+        finished_at:
+          type: string
+          format: date-time
+          title: Finished At
+        input_tokens:
+          anyOf:
+          - type: integer
+            minimum: 0.0
+          - type: 'null'
+          title: Input Tokens
+        output_tokens:
+          anyOf:
+          - type: integer
+            minimum: 0.0
+          - type: 'null'
+          title: Output Tokens
+        cost:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Cost
+        cost_currency:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cost Currency
+        raw_response_sha256:
+          type: string
+          pattern: ^[a-f0-9]{64}$
+          title: Raw Response Sha256
+      additionalProperties: false
+      type: object
+      required:
+      - prompt_version
+      - provider
+      - model
+      - model_revision
+      - started_at
+      - finished_at
+      - cost
+      - cost_currency
+      - raw_response_sha256
+      title: AnalysisAudit
+    AnalysisOutcome:
+      properties:
+        outcome_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Outcome Id
+        analysis_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Analysis Id
+        horizon:
+          $ref: '#/components/schemas/OutcomeHorizon'
+        status:
+          $ref: '#/components/schemas/OutcomeStatus'
+        matures_at:
+          type: string
+          format: date-time
+          title: Matures At
+        reference_rule:
+          type: string
+          title: Reference Rule
+        start_price:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Start Price
+        end_price:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: End Price
+        return_fraction:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Return Fraction
+        maximum_favorable_excursion:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Maximum Favorable Excursion
+        maximum_adverse_excursion:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Maximum Adverse Excursion
+        computed_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Computed At
+        source_refs:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Source Refs
+        unavailable_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Unavailable Reason
+        observed_end_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Observed End At
+        evaluation_rule_version:
+          type: string
+          title: Evaluation Rule Version
+          default: legacy-unfilled
+        scenario_scoring_status:
+          type: string
+          enum:
+          - NOT_PRE_REGISTERED
+          - PLATFORM_RULES_NOT_MODEL_HIT_RATE
+          title: Scenario Scoring Status
+          default: NOT_PRE_REGISTERED
+      additionalProperties: false
+      type: object
+      required:
+      - outcome_id
+      - analysis_id
+      - horizon
+      - status
+      - matures_at
+      - reference_rule
+      - start_price
+      - end_price
+      - return_fraction
+      - maximum_favorable_excursion
+      - maximum_adverse_excursion
+      - computed_at
+      - source_refs
+      - unavailable_reason
+      title: AnalysisOutcome
+    AnalysisPage:
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/AnalysisSummary'
+          type: array
+          title: Items
+        page:
+          $ref: '#/components/schemas/PageMeta'
+      additionalProperties: false
+      type: object
+      required:
+      - items
+      - page
+      title: AnalysisPage
+    AnalysisSnapshot:
+      properties:
+        scenario_rules:
+          items:
+            $ref: '#/components/schemas/FrozenScenarioRule'
+          type: array
+          title: Scenario Rules
+        schema_version:
+          type: string
+          const: 1.0.0
+          title: Schema Version
+          default: 1.0.0
+        snapshot_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Snapshot Id
+        snapshot_sha256:
+          type: string
+          pattern: ^[a-f0-9]{64}$
+          title: Snapshot Sha256
+        subject:
+          $ref: '#/components/schemas/AnalysisSubject'
+        cutoff_at:
+          type: string
+          format: date-time
+          title: Cutoff At
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+        bars:
+          items:
+            $ref: '#/components/schemas/BarPage'
+          type: array
+          minItems: 1
+          title: Bars
+        indicator_bundles:
+          items:
+            $ref: '#/components/schemas/IndicatorBundle'
+          type: array
+          minItems: 1
+          title: Indicator Bundles
+        fundamentals:
+          anyOf:
+          - $ref: '#/components/schemas/EquityFundamentals'
+          - type: 'null'
+        market_context:
+          anyOf:
+          - $ref: '#/components/schemas/CryptoMarketContext'
+          - type: 'null'
+        evidence:
+          items:
+            $ref: '#/components/schemas/Evidence'
+          type: array
+          title: Evidence
+        sources:
+          items:
+            $ref: '#/components/schemas/SourceEnvelope'
+          type: array
+          title: Sources
+        missing_items:
+          items:
+            type: string
+          type: array
+          title: Missing Items
+        timeframe_coverage:
+          items:
+            $ref: '#/components/schemas/TimeframeCoverage'
+          type: array
+          title: Timeframe Coverage
+      additionalProperties: false
+      type: object
+      required:
+      - snapshot_id
+      - snapshot_sha256
+      - subject
+      - cutoff_at
+      - created_at
+      - bars
+      - indicator_bundles
+      - fundamentals
+      - market_context
+      - evidence
+      - sources
+      - missing_items
+      title: AnalysisSnapshot
+    AnalysisSubject:
+      properties:
+        subject_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Subject Id
+        subject_type:
+          $ref: '#/components/schemas/SubjectType'
+        symbol:
+          type: string
+          title: Symbol
+        primary_instrument_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Primary Instrument Id
+        instruments:
+          items:
+            $ref: '#/components/schemas/InstrumentRef'
+          type: array
+          maxItems: 2
+          minItems: 1
+          title: Instruments
+        analysis_scope:
+          type: string
+          const: SINGLE_UNDERLYING
+          title: Analysis Scope
+          default: SINGLE_UNDERLYING
+        portfolio_analysis:
+          type: boolean
+          const: false
+          title: Portfolio Analysis
+          default: false
+      additionalProperties: false
+      type: object
+      required:
+      - subject_id
+      - subject_type
+      - symbol
+      - primary_instrument_id
+      - instruments
+      title: AnalysisSubject
+    AnalysisSummary:
+      properties:
+        analysis_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Analysis Id
+        subject_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Subject Id
+        snapshot_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Snapshot Id
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+        provider:
+          type: string
+          title: Provider
+        model:
+          type: string
+          title: Model
+        confidence_score:
+          type: number
+          maximum: 1.0
+          minimum: 0.0
+          title: Confidence Score
+      additionalProperties: false
+      type: object
+      required:
+      - analysis_id
+      - subject_id
+      - snapshot_id
+      - created_at
+      - provider
+      - model
+      - confidence_score
+      title: AnalysisSummary
+    AnchorRef:
+      properties:
+        bar_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Bar Id
+        at:
+          type: string
+          format: date-time
+          title: At
+        field:
+          type: string
+          enum:
+          - high
+          - low
+          - close
+          - indicator
+          title: Field
+        value:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Value
+      additionalProperties: false
+      type: object
+      required:
+      - bar_id
+      - at
+      - field
+      - value
+      title: AnchorRef
+    AssetClass:
+      type: string
+      enum:
+      - US_EQUITY
+      - CRYPTO_SPOT
+      - CRYPTO_PERPETUAL
+      title: AssetClass
+    Bar:
+      properties:
+        bar_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Bar Id
+        instrument_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Instrument Id
+        interval:
+          $ref: '#/components/schemas/Interval'
+        open_at:
+          type: string
+          format: date-time
+          title: Open At
+        close_at:
+          type: string
+          format: date-time
+          title: Close At
+        open:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Open
+        high:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: High
+        low:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Low
+        close:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Close
+        volume:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Volume
+        trade_count:
+          anyOf:
+          - type: integer
+            minimum: 0.0
+          - type: 'null'
+          title: Trade Count
+        session:
+          $ref: '#/components/schemas/SessionType'
+        price_basis:
+          $ref: '#/components/schemas/PriceBasis'
+        raw_ohlcv:
+          anyOf:
+          - $ref: '#/components/schemas/RawOhlcv'
+          - type: 'null'
+        confirmed:
+          type: boolean
+          title: Confirmed
+        partial_interval:
+          type: boolean
+          title: Partial Interval
+          default: false
+        source_ref:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Source Ref
+        quality_flags:
+          items:
+            $ref: '#/components/schemas/QualityFlag'
+          type: array
+          title: Quality Flags
+      additionalProperties: false
+      type: object
+      required:
+      - bar_id
+      - instrument_id
+      - interval
+      - open_at
+      - close_at
+      - open
+      - high
+      - low
+      - close
+      - volume
+      - session
+      - price_basis
+      - confirmed
+      - source_ref
+      title: Bar
+    BarGap:
+      properties:
+        after_bar_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: After Bar Id
+        before_bar_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Before Bar Id
+        gap_start_at:
+          type: string
+          format: date-time
+          title: Gap Start At
+        gap_end_at:
+          type: string
+          format: date-time
+          title: Gap End At
+        missing_bar_count:
+          type: integer
+          minimum: 1.0
+          title: Missing Bar Count
+      additionalProperties: false
+      type: object
+      required:
+      - after_bar_id
+      - before_bar_id
+      - gap_start_at
+      - gap_end_at
+      - missing_bar_count
+      title: BarGap
+    BarPage:
+      properties:
+        instrument:
+          $ref: '#/components/schemas/InstrumentRef'
+        interval:
+          $ref: '#/components/schemas/Interval'
+        bars:
+          items:
+            $ref: '#/components/schemas/Bar'
+          type: array
+          title: Bars
+        sources:
+          items:
+            $ref: '#/components/schemas/SourceEnvelope'
+          type: array
+          title: Sources
+        quality:
+          $ref: '#/components/schemas/BarQualitySummary'
+        page:
+          $ref: '#/components/schemas/PageMeta'
+      additionalProperties: false
+      type: object
+      required:
+      - instrument
+      - interval
+      - bars
+      - sources
+      - quality
+      - page
+      title: BarPage
+    BarQualitySummary:
+      properties:
+        request_status:
+          $ref: '#/components/schemas/BarRequestStatus'
+        expected_interval_seconds:
+          anyOf:
+          - type: integer
+            minimum: 1.0
+          - type: 'null'
+          title: Expected Interval Seconds
+        observed_bar_count:
+          type: integer
+          minimum: 0.0
+          title: Observed Bar Count
+        missing_bar_count:
+          type: integer
+          minimum: 0.0
+          title: Missing Bar Count
+        gaps:
+          items:
+            $ref: '#/components/schemas/BarGap'
+          type: array
+          title: Gaps
+        requested_start_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Requested Start At
+        actual_start_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Actual Start At
+        latest_bar_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Latest Bar At
+        history_complete:
+          type: boolean
+          title: History Complete
+        stale_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Stale Reason
+        history_download_status:
+          type: string
+          enum:
+          - UNASSESSED
+          - LOCAL_PAGE_BUDGET
+          - TARGET_REACHED
+          - PROVIDER_EMPTY_PAGE
+          - REQUEST_FAILED
+          - NOT_STARTED
+          title: History Download Status
+          default: UNASSESSED
+        history_cursor_end:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: History Cursor End
+      additionalProperties: false
+      type: object
+      required:
+      - request_status
+      - observed_bar_count
+      - missing_bar_count
+      - gaps
+      - requested_start_at
+      - actual_start_at
+      - latest_bar_at
+      - history_complete
+      - stale_reason
+      title: BarQualitySummary
+    BarRequestStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - STALE_CACHE
+      - FIXTURE
+      title: BarRequestStatus
+    CalculationMode:
+      type: string
+      enum:
+      - BAR_RANGE_UNIFORM_ALLOCATION_ESTIMATE
+      - TRADE_LEVEL_ACTUAL
+      title: CalculationMode
+    Completeness:
+      type: string
+      enum:
+      - COMPLETE_FOR_SCOPE
+      - PARTIAL
+      - SAMPLED
+      - GAPPED
+      - STALE
+      - MISSING
+      - QUARANTINED
+      title: Completeness
+    Condition:
+      properties:
+        description:
+          type: string
+          title: Description
+        evidence_ids:
+          items:
+            type: string
+            pattern: ^ev_[A-Za-z0-9_-]+$
+          type: array
+          title: Evidence Ids
+      additionalProperties: false
+      type: object
+      required:
+      - description
+      - evidence_ids
+      title: Condition
+    Confidence:
+      properties:
+        score:
+          type: number
+          maximum: 1.0
+          minimum: 0.0
+          title: Score
+        is_calibrated_probability:
+          type: boolean
+          const: false
+          title: Is Calibrated Probability
+          default: false
+        basis:
+          type: string
+          title: Basis
+        limitations:
+          items:
+            type: string
+          type: array
+          title: Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - score
+      - basis
+      - limitations
+      title: Confidence
+    Confirmation:
+      properties:
+        status:
+          $ref: '#/components/schemas/ConfirmationStatus'
+        confirmed_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Confirmed At
+        left_window:
+          type: integer
+          minimum: 0.0
+          title: Left Window
+        right_window:
+          type: integer
+          minimum: 0.0
+          title: Right Window
+        can_repaint:
+          type: boolean
+          title: Can Repaint
+      additionalProperties: false
+      type: object
+      required:
+      - status
+      - confirmed_at
+      - left_window
+      - right_window
+      - can_repaint
+      title: Confirmation
+    ConfirmationStatus:
+      type: string
+      enum:
+      - CONFIRMED
+      - PROVISIONAL
+      - NOT_APPLICABLE
+      title: ConfirmationStatus
+    Conflict:
+      properties:
+        description:
+          type: string
+          title: Description
+        evidence_ids:
+          items:
+            type: string
+            pattern: ^ev_[A-Za-z0-9_-]+$
+          type: array
+          minItems: 2
+          title: Evidence Ids
+        impact:
+          $ref: '#/components/schemas/Impact'
+      additionalProperties: false
+      type: object
+      required:
+      - description
+      - evidence_ids
+      - impact
+      title: Conflict
+    CryptoMarketContext:
+      properties:
+        subject:
+          $ref: '#/components/schemas/AnalysisSubject'
+        as_of:
+          type: string
+          format: date-time
+          title: As Of
+        spot_price:
+          $ref: '#/components/schemas/MarketObservation'
+        perpetual_mark_price:
+          $ref: '#/components/schemas/MarketObservation'
+        index_price:
+          $ref: '#/components/schemas/MarketObservation'
+        funding_rate:
+          $ref: '#/components/schemas/MarketObservation'
+        open_interest:
+          $ref: '#/components/schemas/MarketObservation'
+        basis_absolute:
+          $ref: '#/components/schemas/MarketObservation'
+        basis_rate:
+          $ref: '#/components/schemas/MarketObservation'
+        liquidation_notional_observed:
+          $ref: '#/components/schemas/MarketObservation'
+        supply:
+          items:
+            $ref: '#/components/schemas/MarketObservation'
+          type: array
+          title: Supply
+        sources:
+          items:
+            $ref: '#/components/schemas/SourceEnvelope'
+          type: array
+          title: Sources
+        limitations:
+          items:
+            type: string
+          type: array
+          minItems: 1
+          title: Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - subject
+      - as_of
+      - spot_price
+      - perpetual_mark_price
+      - index_price
+      - funding_rate
+      - open_interest
+      - basis_absolute
+      - basis_rate
+      - liquidation_notional_observed
+      - supply
+      - sources
+      - limitations
+      title: CryptoMarketContext
+    DataProvider:
+      type: string
+      enum:
+      - FIXTURE_SYNTHETIC
+      - ALPACA
+      - TIINGO
+      - MASSIVE
+      - SEC_EDGAR
+      - BINANCE
+      - OKX
+      - COINGECKO
+      - TWELVE_DATA
+      - ALPHA_VANTAGE
+      - FRED
+      title: DataProvider
+    DataStatus:
+      type: string
+      enum:
+      - AVAILABLE
+      - MISSING
+      - NOT_APPLICABLE
+      - PARTIAL
+      - STALE
+      title: DataStatus
+    DelayClass:
+      type: string
+      enum:
+      - SYNTHETIC
+      - REALTIME_PUBLIC
+      - DELAYED_15M
+      - END_OF_DAY
+      - HISTORICAL
+      - UNKNOWN
+      title: DelayClass
+    Direction:
+      type: string
+      enum:
+      - BULLISH
+      - BEARISH
+      title: Direction
+    Disclaimer:
+      properties:
+        not_investment_advice:
+          type: boolean
+          const: true
+          title: Not Investment Advice
+          default: true
+        no_profit_guarantee:
+          type: boolean
+          const: true
+          title: No Profit Guarantee
+          default: true
+        data_limitations:
+          type: string
+          title: Data Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - data_limitations
+      title: Disclaimer
+    DivergenceKind:
+      type: string
+      enum:
+      - REGULAR_BULLISH
+      - HIDDEN_BULLISH
+      - REGULAR_BEARISH
+      - HIDDEN_BEARISH
+      title: DivergenceKind
+    DivergenceResult:
+      properties:
+        divergence_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Divergence Id
+        kind:
+          $ref: '#/components/schemas/DivergenceKind'
+        oscillator_component:
+          $ref: '#/components/schemas/OscillatorComponent'
+        algorithm_version:
+          type: string
+          title: Algorithm Version
+        price_anchors:
+          items:
+            $ref: '#/components/schemas/AnchorRef'
+          type: array
+          maxItems: 2
+          minItems: 2
+          title: Price Anchors
+        oscillator_anchors:
+          items:
+            $ref: '#/components/schemas/AnchorRef'
+          type: array
+          maxItems: 2
+          minItems: 2
+          title: Oscillator Anchors
+        pivot_left:
+          type: integer
+          minimum: 1.0
+          title: Pivot Left
+        pivot_right:
+          type: integer
+          minimum: 1.0
+          title: Pivot Right
+        maximum_anchor_gap_bars:
+          type: integer
+          minimum: 1.0
+          title: Maximum Anchor Gap Bars
+        signal_at:
+          type: string
+          format: date-time
+          title: Signal At
+        confirmation:
+          $ref: '#/components/schemas/Confirmation'
+        source_refs:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Source Refs
+      additionalProperties: false
+      type: object
+      required:
+      - divergence_id
+      - kind
+      - oscillator_component
+      - algorithm_version
+      - price_anchors
+      - oscillator_anchors
+      - pivot_left
+      - pivot_right
+      - maximum_anchor_gap_bars
+      - signal_at
+      - confirmation
+      - source_refs
+      title: DivergenceResult
+    EquityFundamentals:
+      properties:
+        subject:
+          $ref: '#/components/schemas/AnalysisSubject'
+        accepted_before:
+          type: string
+          format: date-time
+          title: Accepted Before
+        facts:
+          items:
+            $ref: '#/components/schemas/FundamentalFact'
+          type: array
+          title: Facts
+        filings:
+          items:
+            $ref: '#/components/schemas/FilingRef'
+          type: array
+          title: Filings
+        sources:
+          items:
+            $ref: '#/components/schemas/SourceEnvelope'
+          type: array
+          title: Sources
+        missing_items:
+          items:
+            type: string
+          type: array
+          title: Missing Items
+      additionalProperties: false
+      type: object
+      required:
+      - subject
+      - accepted_before
+      - facts
+      - filings
+      - sources
+      - missing_items
+      title: EquityFundamentals
+    ErrorCode:
+      type: string
+      enum:
+      - VALIDATION_ERROR
+      - NOT_FOUND
+      - DATA_UNAVAILABLE
+      - DATA_INCOMPLETE
+      - UPSTREAM_RATE_LIMITED
+      - UPSTREAM_UNAVAILABLE
+      - ANALYSIS_VALIDATION_FAILED
+      - PROVIDER_ERROR
+      - BUDGET_EXCEEDED
+      - IDEMPOTENCY_CONFLICT
+      - INTERNAL_ERROR
+      - NETWORK_DISABLED
+      title: ErrorCode
+    Evidence:
+      properties:
+        evidence_id:
+          type: string
+          pattern: ^ev_[A-Za-z0-9_-]+$
+          title: Evidence Id
+        claim:
+          type: string
+          title: Claim
+        rule:
+          type: string
+          title: Rule
+        observations:
+          items:
+            $ref: '#/components/schemas/EvidenceObservation'
+          type: array
+          minItems: 1
+          title: Observations
+        source_refs:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          minItems: 1
+          title: Source Refs
+        quality:
+          type: string
+          enum:
+          - HIGH
+          - MEDIUM
+          - LOW
+          title: Quality
+      additionalProperties: false
+      type: object
+      required:
+      - evidence_id
+      - claim
+      - rule
+      - observations
+      - source_refs
+      - quality
+      title: Evidence
+    EvidenceObservation:
+      properties:
+        ref_type:
+          $ref: '#/components/schemas/EvidenceRefType'
+        ref_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Ref Id
+        field:
+          type: string
+          title: Field
+        value:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Value
+        unit:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Unit
+        observed_at:
+          type: string
+          format: date-time
+          title: Observed At
+      additionalProperties: false
+      type: object
+      required:
+      - ref_type
+      - ref_id
+      - field
+      - value
+      - unit
+      - observed_at
+      title: EvidenceObservation
+    EvidenceRefType:
+      type: string
+      enum:
+      - BAR
+      - INDICATOR
+      - FUNDAMENTAL
+      - MARKET_CONTEXT
+      - FVG
+      - DIVERGENCE
+      - VPVR
+      title: EvidenceRefType
+    FilingRef:
+      properties:
+        accession_number:
+          type: string
+          title: Accession Number
+        form:
+          type: string
+          title: Form
+        filed_at:
+          type: string
+          format: date
+          title: Filed At
+        accepted_at:
+          type: string
+          format: date-time
+          title: Accepted At
+        report_period:
+          anyOf:
+          - type: string
+            format: date
+          - type: 'null'
+          title: Report Period
+        source_url:
+          type: string
+          title: Source Url
+        source_ref:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Source Ref
+      additionalProperties: false
+      type: object
+      required:
+      - accession_number
+      - form
+      - filed_at
+      - accepted_at
+      - report_period
+      - source_url
+      - source_ref
+      title: FilingRef
+    FrozenScenarioRule:
+      properties:
+        rule_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Rule Id
+        version:
+          type: string
+          const: VPVR_15M_CLOSE_ENVELOPE_V1
+          title: Version
+          default: VPVR_15M_CLOSE_ENVELOPE_V1
+        scenario:
+          type: string
+          enum:
+          - BULLISH
+          - NEUTRAL
+          - BEARISH
+          title: Scenario
+        instrument_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Instrument Id
+        lower:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Lower
+        upper:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Upper
+        frozen_at:
+          type: string
+          format: date-time
+          title: Frozen At
+        expires_at:
+          type: string
+          format: date-time
+          title: Expires At
+        confirmation_interval:
+          type: string
+          const: 15m
+          title: Confirmation Interval
+          default: 15m
+        trigger:
+          type: string
+          enum:
+          - CLOSE_ABOVE_UPPER
+          - CLOSE_INSIDE_INCLUSIVE
+          - CLOSE_BELOW_LOWER
+          title: Trigger
+        invalidation:
+          type: string
+          enum:
+          - CLOSE_BELOW_LOWER
+          - CLOSE_OUTSIDE
+          - CLOSE_ABOVE_UPPER
+          title: Invalidation
+        evidence_ids:
+          items:
+            type: string
+          type: array
+          title: Evidence Ids
+        limitation:
+          type: string
+          title: Limitation
+          default: Platform-defined close-only scenario protocol using estimated VPVR
+            bounds; not a trade, price target or model accuracy measurement.
+      additionalProperties: false
+      type: object
+      required:
+      - rule_id
+      - scenario
+      - instrument_id
+      - lower
+      - upper
+      - frozen_at
+      - expires_at
+      - trigger
+      - invalidation
+      - evidence_ids
+      title: FrozenScenarioRule
+    FundamentalFact:
+      properties:
+        fact_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Fact Id
+        name:
+          $ref: '#/components/schemas/FundamentalMetricName'
+        value:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Value
+        unit:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Unit
+        status:
+          $ref: '#/components/schemas/DataStatus'
+        accounting_basis:
+          $ref: '#/components/schemas/AccountingBasis'
+        fiscal_period:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Fiscal Period
+        period_start:
+          anyOf:
+          - type: string
+            format: date
+          - type: 'null'
+          title: Period Start
+        period_end:
+          anyOf:
+          - type: string
+            format: date
+          - type: 'null'
+          title: Period End
+        filed_at:
+          anyOf:
+          - type: string
+            format: date
+          - type: 'null'
+          title: Filed At
+        accepted_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Accepted At
+        source_ref:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Source Ref
+        missing_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Missing Reason
+        derivation:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Derivation
+        input_fact_ids:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Input Fact Ids
+      additionalProperties: false
+      type: object
+      required:
+      - fact_id
+      - name
+      - value
+      - unit
+      - status
+      - accounting_basis
+      - fiscal_period
+      - period_start
+      - period_end
+      - filed_at
+      - accepted_at
+      - source_ref
+      title: FundamentalFact
+    FundamentalMetricName:
+      type: string
+      enum:
+      - REVENUE
+      - NET_INCOME
+      - OPERATING_CASH_FLOW
+      - CAPITAL_EXPENDITURE
+      - FREE_CASH_FLOW
+      - CASH_AND_EQUIVALENTS
+      - TOTAL_DEBT
+      - DILUTED_SHARES
+      - REVENUE_GROWTH
+      - NET_INCOME_GROWTH
+      - MARKET_CAP
+      - TTM_EPS
+      - PE_TTM
+      title: FundamentalMetricName
+    FvgFillStatus:
+      type: string
+      enum:
+      - UNTOUCHED
+      - PARTIAL
+      - FILLED_50
+      - FULLY_FILLED
+      title: FvgFillStatus
+    FvgResult:
+      properties:
+        fvg_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Fvg Id
+        direction:
+          $ref: '#/components/schemas/Direction'
+        timeframe:
+          $ref: '#/components/schemas/Interval'
+        creation_rule_version:
+          type: string
+          const: FVG_WICK_3BAR_ATR_FROZEN_V1
+          title: Creation Rule Version
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+        lower:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Lower
+        upper:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Upper
+        midpoint:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Midpoint
+        atr_at_creation:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Atr At Creation
+        atr_period:
+          type: integer
+          const: 14
+          title: Atr Period
+        minimum_gap_atr_multiple:
+          type: string
+          const: '0.2'
+          title: Minimum Gap Atr Multiple
+        fill_status:
+          $ref: '#/components/schemas/FvgFillStatus'
+        max_fill_fraction:
+          type: number
+          maximum: 1.0
+          minimum: 0.0
+          title: Max Fill Fraction
+        validity_status:
+          $ref: '#/components/schemas/FvgValidityStatus'
+        invalidated_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Invalidated At
+        source_refs:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Source Refs
+        confirmation:
+          $ref: '#/components/schemas/Confirmation'
+      additionalProperties: false
+      type: object
+      required:
+      - fvg_id
+      - direction
+      - timeframe
+      - creation_rule_version
+      - created_at
+      - lower
+      - upper
+      - midpoint
+      - atr_at_creation
+      - atr_period
+      - minimum_gap_atr_multiple
+      - fill_status
+      - max_fill_fraction
+      - validity_status
+      - invalidated_at
+      - source_refs
+      - confirmation
+      title: FvgResult
+    FvgValidityStatus:
+      type: string
+      enum:
+      - VALID
+      - INVALIDATED
+      title: FvgValidityStatus
+    HealthResponse:
+      properties:
+        status:
+          type: string
+          enum:
+          - ok
+          - degraded
+          title: Status
+        checked_at:
+          type: string
+          format: date-time
+          title: Checked At
+        data_mode:
+          type: string
+          enum:
+          - fixture
+          - live
+          title: Data Mode
+        network_enabled:
+          type: boolean
+          title: Network Enabled
+        crypto_provider:
+          type: string
+          enum:
+          - binance
+          - okx
+          title: Crypto Provider
+        codex_cli_available:
+          type: boolean
+          title: Codex Cli Available
+        real_ai_cost_boundary:
+          type: string
+          title: Real Ai Cost Boundary
+        real_ai_model:
+          type: string
+          title: Real Ai Model
+        monthly_data_budget_usd:
+          type: integer
+          const: 0
+          title: Monthly Data Budget Usd
+          default: 0
+      additionalProperties: false
+      type: object
+      required:
+      - status
+      - checked_at
+      - data_mode
+      - network_enabled
+      - crypto_provider
+      - codex_cli_available
+      - real_ai_cost_boundary
+      - real_ai_model
+      title: HealthResponse
+    Impact:
+      type: string
+      enum:
+      - LOW
+      - MEDIUM
+      - HIGH
+      title: Impact
+    IndicatorBundle:
+      properties:
+        bundle_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Bundle Id
+        subject:
+          $ref: '#/components/schemas/AnalysisSubject'
+        instrument:
+          $ref: '#/components/schemas/InstrumentRef'
+        interval:
+          $ref: '#/components/schemas/Interval'
+        bars_as_of:
+          type: string
+          format: date-time
+          title: Bars As Of
+        indicators:
+          items:
+            $ref: '#/components/schemas/IndicatorResult'
+          type: array
+          title: Indicators
+        fvg:
+          items:
+            $ref: '#/components/schemas/FvgResult'
+          type: array
+          title: Fvg
+        divergences:
+          items:
+            $ref: '#/components/schemas/DivergenceResult'
+          type: array
+          title: Divergences
+        vpvr:
+          $ref: '#/components/schemas/VpvrResult'
+        support_resistance:
+          $ref: '#/components/schemas/SupportResistanceResult'
+        trend_structure:
+          $ref: '#/components/schemas/TrendStructureResult'
+        sources:
+          items:
+            $ref: '#/components/schemas/SourceEnvelope'
+          type: array
+          title: Sources
+        missing_items:
+          items:
+            type: string
+          type: array
+          title: Missing Items
+      additionalProperties: false
+      type: object
+      required:
+      - bundle_id
+      - subject
+      - instrument
+      - interval
+      - bars_as_of
+      - indicators
+      - fvg
+      - divergences
+      - vpvr
+      - support_resistance
+      - trend_structure
+      - sources
+      - missing_items
+      title: IndicatorBundle
+    IndicatorEvidenceView:
+      properties:
+        subject_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Subject Id
+        instrument:
+          $ref: '#/components/schemas/InstrumentRef'
+        interval:
+          $ref: '#/components/schemas/Interval'
+        cutoff_at:
+          type: string
+          format: date-time
+          title: Cutoff At
+        latest_bar:
+          $ref: '#/components/schemas/Bar'
+        quality:
+          $ref: '#/components/schemas/BarQualitySummary'
+        sources:
+          items:
+            $ref: '#/components/schemas/SourceEnvelope'
+          type: array
+          title: Sources
+        evidence:
+          items:
+            $ref: '#/components/schemas/Evidence'
+          type: array
+          title: Evidence
+        limitations:
+          items:
+            type: string
+          type: array
+          title: Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - subject_id
+      - instrument
+      - interval
+      - cutoff_at
+      - latest_bar
+      - quality
+      - sources
+      - evidence
+      - limitations
+      title: IndicatorEvidenceView
+    IndicatorName:
+      type: string
+      enum:
+      - SMA
+      - EMA
+      - RSI
+      - MACD
+      - ATR
+      - ADX
+      - OBV
+      - VWAP
+      - BOLLINGER_BANDS
+      - VOLUME_PRICE_RELATION
+      title: IndicatorName
+    IndicatorParameters:
+      properties:
+        input_field:
+          type: string
+          enum:
+          - close
+          - ohlcv
+          - typical_price
+          title: Input Field
+        length:
+          anyOf:
+          - type: integer
+            maximum: 10000.0
+            minimum: 1.0
+          - type: 'null'
+          title: Length
+        fast:
+          anyOf:
+          - type: integer
+            minimum: 1.0
+          - type: 'null'
+          title: Fast
+        slow:
+          anyOf:
+          - type: integer
+            minimum: 2.0
+          - type: 'null'
+          title: Slow
+        signal:
+          anyOf:
+          - type: integer
+            minimum: 1.0
+          - type: 'null'
+          title: Signal
+        multiplier:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Multiplier
+        seed_method:
+          type: string
+          enum:
+          - SMA
+          - WILDER_SMA
+          - CUMULATIVE
+          - NONE
+          title: Seed Method
+        reset_rule:
+          type: string
+          enum:
+          - NONE
+          - US_RTH_SESSION
+          - UTC_DAY
+          title: Reset Rule
+          default: NONE
+        stddev_ddof:
+          anyOf:
+          - type: integer
+            const: 0
+          - type: 'null'
+          title: Stddev Ddof
+      additionalProperties: false
+      type: object
+      required:
+      - input_field
+      - seed_method
+      title: IndicatorParameters
+    IndicatorPoint:
+      properties:
+        at:
+          type: string
+          format: date-time
+          title: At
+        values:
+          $ref: '#/components/schemas/IndicatorValues'
+      additionalProperties: false
+      type: object
+      required:
+      - at
+      - values
+      title: IndicatorPoint
+    IndicatorResult:
+      properties:
+        indicator_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Indicator Id
+        name:
+          $ref: '#/components/schemas/IndicatorName'
+        algorithm_version:
+          type: string
+          title: Algorithm Version
+        parameters:
+          $ref: '#/components/schemas/IndicatorParameters'
+        input_price_basis:
+          $ref: '#/components/schemas/PriceBasis'
+        status:
+          $ref: '#/components/schemas/IndicatorStatus'
+        current:
+          $ref: '#/components/schemas/IndicatorValues'
+        series:
+          items:
+            $ref: '#/components/schemas/IndicatorPoint'
+          type: array
+          title: Series
+        signal_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Signal At
+        anchors:
+          items:
+            $ref: '#/components/schemas/AnchorRef'
+          type: array
+          title: Anchors
+        confirmation:
+          $ref: '#/components/schemas/Confirmation'
+        source_refs:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Source Refs
+        evidence:
+          items:
+            $ref: '#/components/schemas/Evidence'
+          type: array
+          title: Evidence
+        warmup_bars:
+          type: integer
+          minimum: 0.0
+          title: Warmup Bars
+        missing_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Missing Reason
+      additionalProperties: false
+      type: object
+      required:
+      - indicator_id
+      - name
+      - algorithm_version
+      - parameters
+      - input_price_basis
+      - status
+      - current
+      - series
+      - signal_at
+      - anchors
+      - confirmation
+      - source_refs
+      - evidence
+      - warmup_bars
+      title: IndicatorResult
+    IndicatorStatus:
+      type: string
+      enum:
+      - READY
+      - WARMING_UP
+      - MISSING
+      title: IndicatorStatus
+    IndicatorValues:
+      properties:
+        primary:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Primary
+        signal:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Signal
+        histogram:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Histogram
+        upper:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Upper
+        middle:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Middle
+        lower:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Lower
+        plus_di:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Plus Di
+        minus_di:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Minus Di
+      additionalProperties: false
+      type: object
+      required:
+      - primary
+      title: IndicatorValues
+    InstrumentRef:
+      properties:
+        instrument_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Instrument Id
+        asset_class:
+          $ref: '#/components/schemas/AssetClass'
+        symbol:
+          type: string
+          title: Symbol
+        venue:
+          type: string
+          title: Venue
+        quote_currency:
+          type: string
+          title: Quote Currency
+        timezone:
+          type: string
+          enum:
+          - America/New_York
+          - UTC
+          title: Timezone
+        contract_type:
+          type: string
+          enum:
+          - COMMON_STOCK
+          - SPOT
+          - USDT_PERPETUAL
+          title: Contract Type
+        active:
+          type: boolean
+          title: Active
+          default: true
+        market_data_only:
+          type: boolean
+          const: true
+          title: Market Data Only
+          default: true
+      additionalProperties: false
+      type: object
+      required:
+      - instrument_id
+      - asset_class
+      - symbol
+      - venue
+      - quote_currency
+      - timezone
+      - contract_type
+      title: InstrumentRef
+    InstrumentSearchItem:
+      properties:
+        instrument_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Instrument Id
+        asset_class:
+          $ref: '#/components/schemas/AssetClass'
+        symbol:
+          type: string
+          title: Symbol
+        venue:
+          type: string
+          title: Venue
+        quote_currency:
+          type: string
+          title: Quote Currency
+        timezone:
+          type: string
+          enum:
+          - America/New_York
+          - UTC
+          title: Timezone
+        contract_type:
+          type: string
+          enum:
+          - COMMON_STOCK
+          - SPOT
+          - USDT_PERPETUAL
+          title: Contract Type
+        active:
+          type: boolean
+          title: Active
+          default: true
+        market_data_only:
+          type: boolean
+          const: true
+          title: Market Data Only
+          default: true
+        subject_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Subject Id
+      additionalProperties: false
+      type: object
+      required:
+      - instrument_id
+      - asset_class
+      - symbol
+      - venue
+      - quote_currency
+      - timezone
+      - contract_type
+      - subject_id
+      title: InstrumentSearchItem
+    InstrumentSearchResponse:
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/InstrumentSearchItem'
+          type: array
+          title: Items
+        page:
+          $ref: '#/components/schemas/PageMeta'
+        as_of:
+          type: string
+          format: date-time
+          title: As Of
+      additionalProperties: false
+      type: object
+      required:
+      - items
+      - page
+      - as_of
+      title: InstrumentSearchResponse
+    Interval:
+      type: string
+      enum:
+      - 15m
+      - 1h
+      - 2h
+      - 195m
+      - 4h
+      - 1d
+      - 1w
+      - 1mo
+      title: Interval
+    KeyLevel:
+      properties:
+        level_id:
+          type: string
+          pattern: ^level_[A-Za-z0-9_-]+$
+          title: Level Id
+        kind:
+          $ref: '#/components/schemas/KeyLevelKind'
+        price:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Price
+        raw_price_equivalent:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Raw Price Equivalent
+        price_basis:
+          $ref: '#/components/schemas/PriceBasis'
+        currency:
+          type: string
+          title: Currency
+        timeframe:
+          $ref: '#/components/schemas/Interval'
+        evidence_ids:
+          items:
+            type: string
+            pattern: ^ev_[A-Za-z0-9_-]+$
+          type: array
+          minItems: 1
+          title: Evidence Ids
+        confirmed:
+          type: boolean
+          title: Confirmed
+      additionalProperties: false
+      type: object
+      required:
+      - level_id
+      - kind
+      - price
+      - raw_price_equivalent
+      - price_basis
+      - currency
+      - timeframe
+      - evidence_ids
+      - confirmed
+      title: KeyLevel
+    KeyLevelKind:
+      type: string
+      enum:
+      - SUPPORT
+      - RESISTANCE
+      - POC
+      - VAH
+      - VAL
+      - FVG_BOUNDARY
+      - FVG_MIDPOINT
+      - OTHER
+      title: KeyLevelKind
+    LevelPosition:
+      properties:
+        level_id:
+          type: string
+          title: Level Id
+        price:
+          type: string
+          title: Price
+        relative_to_last_close:
+          type: string
+          enum:
+          - BELOW
+          - AT
+          - ABOVE
+          title: Relative To Last Close
+        declared_role:
+          type: string
+          title: Declared Role
+      additionalProperties: false
+      type: object
+      required:
+      - level_id
+      - price
+      - relative_to_last_close
+      - declared_role
+      title: LevelPosition
+    MacroObservation:
+      properties:
+        observation_date:
+          type: string
+          format: date
+          title: Observation Date
+        value:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Value
+        raw_value:
+          type: string
+          title: Raw Value
+        is_missing:
+          type: boolean
+          title: Is Missing
+      additionalProperties: false
+      type: object
+      required:
+      - observation_date
+      - value
+      - raw_value
+      - is_missing
+      title: MacroObservation
+      description: One FRED observation date (never a revision-free truth; see the
+        vintage on the snapshot).
+    MacroSeries:
+      properties:
+        series_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Series Id
+        label:
+          type: string
+          title: Label
+        title:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Title
+        units:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Units
+        frequency:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Frequency
+        role:
+          type: string
+          enum:
+          - RISK_FREE_RATE
+          - RATE_SPREAD
+          - POLICY_RATE
+          - INFLATION
+          - DOLLAR
+          - VOLATILITY
+          title: Role
+        status:
+          $ref: '#/components/schemas/DataStatus'
+        missing_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Missing Reason
+        latest:
+          anyOf:
+          - $ref: '#/components/schemas/MacroObservation'
+          - type: 'null'
+        latest_observation_date:
+          anyOf:
+          - type: string
+            format: date
+          - type: 'null'
+          title: Latest Observation Date
+        change_1_observation:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Change 1 Observation
+        change_5_observations:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Change 5 Observations
+        change_20_observations:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Change 20 Observations
+        percent_change_20_observations:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Percent Change 20 Observations
+        observations:
+          items:
+            $ref: '#/components/schemas/MacroObservation'
+          type: array
+          title: Observations
+        source_ref:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Source Ref
+        derivation:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Derivation
+        derived_from:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Derived From
+      additionalProperties: false
+      type: object
+      required:
+      - series_id
+      - label
+      - title
+      - units
+      - frequency
+      - role
+      - status
+      - missing_reason
+      - latest
+      - latest_observation_date
+      - change_1_observation
+      - change_5_observations
+      - change_20_observations
+      - percent_change_20_observations
+      - source_ref
+      title: MacroSeries
+    MacroSnapshot:
+      properties:
+        as_of:
+          type: string
+          format: date-time
+          title: As Of
+        vintage_date:
+          type: string
+          format: date
+          title: Vintage Date
+        vintage_note:
+          type: string
+          title: Vintage Note
+        series:
+          items:
+            $ref: '#/components/schemas/MacroSeries'
+          type: array
+          title: Series
+        sources:
+          items:
+            $ref: '#/components/schemas/SourceEnvelope'
+          type: array
+          title: Sources
+        limitations:
+          items:
+            type: string
+          type: array
+          title: Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - as_of
+      - vintage_date
+      - vintage_note
+      - series
+      - sources
+      title: MacroSnapshot
+    MarketObservation:
+      properties:
+        observation_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Observation Id
+        name:
+          $ref: '#/components/schemas/ObservationName'
+        value:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Value
+        unit:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Unit
+        status:
+          $ref: '#/components/schemas/DataStatus'
+        as_of:
+          type: string
+          format: date-time
+          title: As Of
+        source_ref:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Source Ref
+        completeness:
+          $ref: '#/components/schemas/Completeness'
+        missing_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Missing Reason
+      additionalProperties: false
+      type: object
+      required:
+      - observation_id
+      - name
+      - value
+      - unit
+      - status
+      - as_of
+      - source_ref
+      - completeness
+      title: MarketObservation
+    MarketScope:
+      type: string
+      enum:
+      - SYNTHETIC_TEST
+      - CONSOLIDATED_US_SIP
+      - EXCHANGE_ONLY
+      - VENUE_SPECIFIC_CRYPTO
+      - NETWORK_WIDE
+      - MACRO_ECONOMY
+      - UNKNOWN
+      title: MarketScope
+    MissingInformation:
+      properties:
+        field:
+          type: string
+          title: Field
+        reason_code:
+          $ref: '#/components/schemas/MissingReason'
+        impact:
+          $ref: '#/components/schemas/Impact'
+        detail:
+          type: string
+          title: Detail
+      additionalProperties: false
+      type: object
+      required:
+      - field
+      - reason_code
+      - impact
+      - detail
+      title: MissingInformation
+    MissingReason:
+      type: string
+      enum:
+      - SOURCE_UNAVAILABLE
+      - NOT_LICENSED
+      - NOT_CONFIGURED
+      - NOT_APPLICABLE
+      - OUTSIDE_HISTORY
+      - QUALITY_QUARANTINE
+      - UNRECONCILED
+      - UNKNOWN
+      title: MissingReason
+    ObservationName:
+      type: string
+      enum:
+      - SPOT_PRICE
+      - PERPETUAL_MARK_PRICE
+      - INDEX_PRICE
+      - FUNDING_RATE
+      - OPEN_INTEREST
+      - BASIS_ABSOLUTE
+      - BASIS_RATE
+      - LIQUIDATION_NOTIONAL_OBSERVED
+      - CIRCULATING_SUPPLY
+      - TOTAL_SUPPLY
+      - MARKET_CAP
+      title: ObservationName
+    OscillatorComponent:
+      type: string
+      enum:
+      - RSI_LINE
+      - MACD_LINE
+      - MACD_HISTOGRAM
+      title: OscillatorComponent
+    OutcomeHorizon:
+      type: string
+      enum:
+      - 1h
+      - 4h
+      - 1d
+      - 1w
+      title: OutcomeHorizon
+    OutcomePage:
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/AnalysisOutcome'
+          type: array
+          title: Items
+        page:
+          $ref: '#/components/schemas/PageMeta'
+      additionalProperties: false
+      type: object
+      required:
+      - items
+      - page
+      title: OutcomePage
+    OutcomeStatus:
+      type: string
+      enum:
+      - PENDING
+      - AWAITING_DATA
+      - MATURED
+      - UNAVAILABLE
+      title: OutcomeStatus
+    PageMeta:
+      properties:
+        limit:
+          type: integer
+          maximum: 5000.0
+          minimum: 1.0
+          title: Limit
+        cursor:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cursor
+        next_cursor:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Next Cursor
+        has_more:
+          type: boolean
+          title: Has More
+      additionalProperties: false
+      type: object
+      required:
+      - limit
+      - has_more
+      title: PageMeta
+    PriceBasis:
+      type: string
+      enum:
+      - RAW
+      - SPLIT_ADJUSTED
+      - TOTAL_RETURN_ADJUSTED
+      title: PriceBasis
+    ProblemDetail:
+      properties:
+        type:
+          type: string
+          title: Type
+        title:
+          type: string
+          title: Title
+        status:
+          type: integer
+          maximum: 599.0
+          minimum: 400.0
+          title: Status
+        code:
+          $ref: '#/components/schemas/ErrorCode'
+        detail:
+          type: string
+          title: Detail
+        trace_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Trace Id
+      additionalProperties: false
+      type: object
+      required:
+      - type
+      - title
+      - status
+      - code
+      - detail
+      - trace_id
+      title: ProblemDetail
+    QualityFlag:
+      type: string
+      enum:
+      - SYNTHETIC_FIXTURE
+      - PARTIAL_INTERVAL
+      - CORPORATE_ACTION_WINDOW
+      - SOURCE_GAP
+      - UNRECONCILED
+      - STALE_SOURCE
+      title: QualityFlag
+    RawOhlcv:
+      properties:
+        open:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Open
+        high:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: High
+        low:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Low
+        close:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Close
+        volume:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Volume
+      additionalProperties: false
+      type: object
+      required:
+      - open
+      - high
+      - low
+      - close
+      - volume
+      title: RawOhlcv
+    Scenario:
+      properties:
+        evaluation_rule_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Evaluation Rule Id
+        type:
+          $ref: '#/components/schemas/ScenarioType'
+        summary:
+          type: string
+          title: Summary
+        preconditions:
+          items:
+            $ref: '#/components/schemas/Condition'
+          type: array
+          title: Preconditions
+        evidence_ids:
+          items:
+            type: string
+            pattern: ^ev_[A-Za-z0-9_-]+$
+          type: array
+          minItems: 1
+          title: Evidence Ids
+        key_level_ids:
+          items:
+            type: string
+            pattern: ^level_[A-Za-z0-9_-]+$
+          type: array
+          title: Key Level Ids
+        invalidation_conditions:
+          items:
+            $ref: '#/components/schemas/Condition'
+          type: array
+          minItems: 1
+          title: Invalidation Conditions
+      additionalProperties: false
+      type: object
+      required:
+      - type
+      - summary
+      - preconditions
+      - evidence_ids
+      - key_level_ids
+      - invalidation_conditions
+      title: Scenario
+    ScenarioOutcomePage:
+      properties:
+        registration_status:
+          type: string
+          enum:
+          - NOT_PRE_REGISTERED
+          - PLATFORM_RULES_NOT_MODEL_HIT_RATE
+          title: Registration Status
+        items:
+          items:
+            $ref: '#/components/schemas/ScenarioState'
+          type: array
+          title: Items
+        page:
+          $ref: '#/components/schemas/PageMeta'
+      additionalProperties: false
+      type: object
+      required:
+      - registration_status
+      - items
+      - page
+      title: ScenarioOutcomePage
+    ScenarioState:
+      properties:
+        rule_id:
+          type: string
+          title: Rule Id
+        status:
+          type: string
+          enum:
+          - WAITING_TRIGGER
+          - TRIGGERED
+          - INVALIDATED
+          - EXPIRED_UNTRIGGERED
+          - EXPIRED_AFTER_TRIGGER
+          - DATA_GAP
+          title: Status
+        triggered_at:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Triggered At
+        invalidated_at:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Invalidated At
+        evaluated_at:
+          type: string
+          title: Evaluated At
+        prediction_hit:
+          type: 'null'
+          title: Prediction Hit
+      additionalProperties: false
+      type: object
+      required:
+      - rule_id
+      - status
+      - triggered_at
+      - invalidated_at
+      - evaluated_at
+      title: ScenarioState
+    ScenarioType:
+      type: string
+      enum:
+      - BULLISH
+      - NEUTRAL
+      - BEARISH
+      title: ScenarioType
+    SemanticIssue:
+      properties:
+        code:
+          type: string
+          enum:
+          - PRICE_DIRECTION
+          - LEVEL_ROLE
+          - INVALIDATED_FVG
+          - UNVERIFIED_SIGNAL_VALIDITY
+          - UNSUPPORTED_COMPARISON
+          title: Code
+        severity:
+          type: string
+          enum:
+          - ERROR
+          - REVIEW_REQUIRED
+          title: Severity
+        location:
+          type: string
+          title: Location
+        detail:
+          type: string
+          title: Detail
+        quote:
+          type: string
+          title: Quote
+      additionalProperties: false
+      type: object
+      required:
+      - code
+      - severity
+      - location
+      - detail
+      - quote
+      title: SemanticIssue
+    SemanticReview:
+      properties:
+        rule_version:
+          type: string
+          const: price-role-signal-zh-en-v1
+          title: Rule Version
+          default: price-role-signal-zh-en-v1
+        status:
+          type: string
+          enum:
+          - REJECTED
+          - REVIEW_REQUIRED
+          - CHECKED_SCOPE_ONLY
+          title: Status
+        analysis_id:
+          type: string
+          title: Analysis Id
+        issues:
+          items:
+            $ref: '#/components/schemas/SemanticIssue'
+          type: array
+          title: Issues
+        level_positions:
+          items:
+            $ref: '#/components/schemas/LevelPosition'
+          type: array
+          title: Level Positions
+        limits:
+          items:
+            type: string
+          type: array
+          title: Limits
+      additionalProperties: false
+      type: object
+      required:
+      - status
+      - analysis_id
+      - issues
+      - level_positions
+      title: SemanticReview
+    SessionType:
+      type: string
+      enum:
+      - US_RTH
+      - CRYPTO_24X7
+      title: SessionType
+    SnapshotRef:
+      properties:
+        snapshot_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Snapshot Id
+        snapshot_sha256:
+          type: string
+          pattern: ^[a-f0-9]{64}$
+          title: Snapshot Sha256
+        subject_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Subject Id
+        cutoff_at:
+          type: string
+          format: date-time
+          title: Cutoff At
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+        completeness:
+          $ref: '#/components/schemas/Completeness'
+        missing_items:
+          items:
+            type: string
+          type: array
+          title: Missing Items
+      additionalProperties: false
+      type: object
+      required:
+      - snapshot_id
+      - snapshot_sha256
+      - subject_id
+      - cutoff_at
+      - created_at
+      - completeness
+      - missing_items
+      title: SnapshotRef
+    SnapshotRequest:
+      properties:
+        subject_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Subject Id
+        intervals:
+          items:
+            $ref: '#/components/schemas/Interval'
+          type: array
+          maxItems: 8
+          minItems: 1
+          title: Intervals
+        cutoff_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Cutoff At
+        include_perpetual:
+          type: boolean
+          title: Include Perpetual
+          default: false
+      additionalProperties: false
+      type: object
+      required:
+      - subject_id
+      - intervals
+      title: SnapshotRequest
+    SourceEnvelope:
+      properties:
+        source_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Source Id
+        provider:
+          $ref: '#/components/schemas/DataProvider'
+        dataset:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Dataset
+        endpoint_id:
+          type: string
+          title: Endpoint Id
+        source_at:
+          type: string
+          format: date-time
+          title: Source At
+        received_at:
+          type: string
+          format: date-time
+          title: Received At
+        delay_class:
+          $ref: '#/components/schemas/DelayClass'
+        market_scope:
+          $ref: '#/components/schemas/MarketScope'
+        completeness:
+          $ref: '#/components/schemas/Completeness'
+        is_full_market:
+          type: boolean
+          title: Is Full Market
+        price_basis:
+          anyOf:
+          - $ref: '#/components/schemas/PriceBasis'
+          - type: 'null'
+        timezone:
+          type: string
+          enum:
+          - America/New_York
+          - UTC
+          title: Timezone
+        terms_version:
+          type: string
+          title: Terms Version
+        raw_sha256:
+          type: string
+          pattern: ^[a-f0-9]{64}$
+          title: Raw Sha256
+        limitations:
+          items:
+            type: string
+          type: array
+          title: Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - source_id
+      - provider
+      - dataset
+      - endpoint_id
+      - source_at
+      - received_at
+      - delay_class
+      - market_scope
+      - completeness
+      - is_full_market
+      - timezone
+      - terms_version
+      - raw_sha256
+      title: SourceEnvelope
+    SubjectType:
+      type: string
+      enum:
+      - EQUITY
+      - CRYPTO_ASSET
+      title: SubjectType
+    SupportResistanceResult:
+      properties:
+        result_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Result Id
+        algorithm_version:
+          type: string
+          const: pivot-cluster-3x3-atr025-v1
+          title: Algorithm Version
+        input_granularity:
+          $ref: '#/components/schemas/Interval'
+        lookback_bars:
+          type: integer
+          const: 120
+          title: Lookback Bars
+        pivot_left:
+          type: integer
+          const: 3
+          title: Pivot Left
+        pivot_right:
+          type: integer
+          const: 3
+          title: Pivot Right
+        cluster_tolerance_atr_multiple:
+          type: string
+          const: '0.25'
+          title: Cluster Tolerance Atr Multiple
+        levels:
+          items:
+            $ref: '#/components/schemas/TechnicalLevel'
+          type: array
+          title: Levels
+        source_refs:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Source Refs
+        evidence:
+          items:
+            $ref: '#/components/schemas/Evidence'
+          type: array
+          title: Evidence
+        limitations:
+          items:
+            type: string
+          type: array
+          title: Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - result_id
+      - algorithm_version
+      - input_granularity
+      - lookback_bars
+      - pivot_left
+      - pivot_right
+      - cluster_tolerance_atr_multiple
+      - levels
+      - source_refs
+      - evidence
+      - limitations
+      title: SupportResistanceResult
+    TechnicalLevel:
+      properties:
+        level_id:
+          type: string
+          pattern: ^tech_level_[A-Za-z0-9_-]+$
+          title: Level Id
+        kind:
+          $ref: '#/components/schemas/TechnicalLevelKind'
+        price:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Price
+        touch_count:
+          type: integer
+          minimum: 1.0
+          title: Touch Count
+        first_touch_at:
+          type: string
+          format: date-time
+          title: First Touch At
+        latest_touch_at:
+          type: string
+          format: date-time
+          title: Latest Touch At
+        anchor_bar_ids:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          minItems: 1
+          title: Anchor Bar Ids
+        confirmed:
+          type: boolean
+          title: Confirmed
+        role_status:
+          type: string
+          enum:
+          - LEGACY_UNASSESSED
+          - CORRECT_SIDE_ONLY
+          - BROKEN_HISTORICAL
+          - AT_LEVEL
+          title: Role Status
+          default: LEGACY_UNASSESSED
+        role_rule_version:
+          type: string
+          const: pivot-role-v1
+          title: Role Rule Version
+          default: pivot-role-v1
+        role_as_of:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Role As Of
+        reference_close:
+          anyOf:
+          - type: string
+            minLength: 1
+            pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          - type: 'null'
+          title: Reference Close
+      additionalProperties: false
+      type: object
+      required:
+      - level_id
+      - kind
+      - price
+      - touch_count
+      - first_touch_at
+      - latest_touch_at
+      - anchor_bar_ids
+      - confirmed
+      title: TechnicalLevel
+    TechnicalLevelKind:
+      type: string
+      enum:
+      - SUPPORT
+      - RESISTANCE
+      title: TechnicalLevelKind
+    TimeframeCoverage:
+      properties:
+        instrument_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Instrument Id
+        interval:
+          $ref: '#/components/schemas/Interval'
+        role:
+          type: string
+          enum:
+          - BACKGROUND
+          - STRUCTURE
+          - SIGNAL
+          title: Role
+        bars_as_of:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Bars As Of
+        status:
+          type: string
+          enum:
+          - AVAILABLE
+          - MISSING
+          title: Status
+        history_complete:
+          type: boolean
+          title: History Complete
+        evidence_ids:
+          items:
+            type: string
+          type: array
+          title: Evidence Ids
+        missing_reason:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Missing Reason
+      additionalProperties: false
+      type: object
+      required:
+      - instrument_id
+      - interval
+      - role
+      - bars_as_of
+      - status
+      - history_complete
+      - evidence_ids
+      - missing_reason
+      title: TimeframeCoverage
+    TimeframeSynthesis:
+      properties:
+        instrument_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Instrument Id
+        interval:
+          $ref: '#/components/schemas/Interval'
+        role:
+          type: string
+          enum:
+          - BACKGROUND
+          - STRUCTURE
+          - SIGNAL
+          title: Role
+        status:
+          type: string
+          enum:
+          - AVAILABLE
+          - MISSING
+          title: Status
+        assessment:
+          type: string
+          title: Assessment
+        evidence_ids:
+          items:
+            type: string
+          type: array
+          title: Evidence Ids
+      additionalProperties: false
+      type: object
+      required:
+      - instrument_id
+      - interval
+      - role
+      - status
+      - assessment
+      - evidence_ids
+      title: TimeframeSynthesis
+    TrendState:
+      type: string
+      enum:
+      - UPTREND
+      - DOWNTREND
+      - RANGE_OR_MIXED
+      - INSUFFICIENT_CONFIRMED_PIVOTS
+      title: TrendState
+    TrendStructureResult:
+      properties:
+        result_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Result Id
+        algorithm_version:
+          type: string
+          const: confirmed-pivot-hh-hl-3x3-v1
+          title: Algorithm Version
+        input_granularity:
+          $ref: '#/components/schemas/Interval'
+        state:
+          $ref: '#/components/schemas/TrendState'
+        pivot_left:
+          type: integer
+          const: 3
+          title: Pivot Left
+        pivot_right:
+          type: integer
+          const: 3
+          title: Pivot Right
+        high_anchors:
+          items:
+            $ref: '#/components/schemas/AnchorRef'
+          type: array
+          title: High Anchors
+        low_anchors:
+          items:
+            $ref: '#/components/schemas/AnchorRef'
+          type: array
+          title: Low Anchors
+        signal_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Signal At
+        confirmation:
+          $ref: '#/components/schemas/Confirmation'
+        source_refs:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Source Refs
+        evidence:
+          items:
+            $ref: '#/components/schemas/Evidence'
+          type: array
+          title: Evidence
+        limitations:
+          items:
+            type: string
+          type: array
+          title: Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - result_id
+      - algorithm_version
+      - input_granularity
+      - state
+      - pivot_left
+      - pivot_right
+      - high_anchors
+      - low_anchors
+      - signal_at
+      - confirmation
+      - source_refs
+      - evidence
+      - limitations
+      title: TrendStructureResult
+    VpvrBin:
+      properties:
+        bin_index:
+          type: integer
+          minimum: 0.0
+          title: Bin Index
+        lower:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Lower
+        upper:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Upper
+        allocated_volume:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Allocated Volume
+        is_poc:
+          type: boolean
+          title: Is Poc
+        is_hvn:
+          type: boolean
+          title: Is Hvn
+        is_lvn:
+          type: boolean
+          title: Is Lvn
+      additionalProperties: false
+      type: object
+      required:
+      - bin_index
+      - lower
+      - upper
+      - allocated_volume
+      - is_poc
+      - is_hvn
+      - is_lvn
+      title: VpvrBin
+    VpvrPosition:
+      type: string
+      enum:
+      - BELOW_VALUE
+      - IN_VALUE
+      - ABOVE_VALUE
+      title: VpvrPosition
+    VpvrResult:
+      properties:
+        vpvr_id:
+          type: string
+          minLength: 1
+          pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          title: Vpvr Id
+        algorithm_version:
+          type: string
+          title: Algorithm Version
+        calculation_mode:
+          $ref: '#/components/schemas/CalculationMode'
+        input_granularity:
+          $ref: '#/components/schemas/Interval'
+        is_estimate:
+          type: boolean
+          title: Is Estimate
+        window_start:
+          type: string
+          format: date-time
+          title: Window Start
+        window_end:
+          type: string
+          format: date-time
+          title: Window End
+        bin_count:
+          type: integer
+          maximum: 500.0
+          minimum: 2.0
+          title: Bin Count
+        value_area_fraction:
+          type: number
+          maximum: 1.0
+          exclusiveMinimum: 0.0
+          title: Value Area Fraction
+        bins:
+          items:
+            $ref: '#/components/schemas/VpvrBin'
+          type: array
+          minItems: 2
+          title: Bins
+        poc:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Poc
+        vah:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Vah
+        val:
+          type: string
+          minLength: 1
+          pattern: ^-?(0|[1-9][0-9]*)(\.[0-9]+)?$
+          title: Val
+        current_price_position:
+          $ref: '#/components/schemas/VpvrPosition'
+        source_refs:
+          items:
+            type: string
+            minLength: 1
+            pattern: ^[A-Za-z0-9][A-Za-z0-9._:@-]*$
+          type: array
+          title: Source Refs
+        market_scope:
+          $ref: '#/components/schemas/MarketScope'
+        completeness:
+          $ref: '#/components/schemas/Completeness'
+        limitations:
+          items:
+            type: string
+          type: array
+          minItems: 1
+          title: Limitations
+      additionalProperties: false
+      type: object
+      required:
+      - vpvr_id
+      - algorithm_version
+      - calculation_mode
+      - input_granularity
+      - is_estimate
+      - window_start
+      - window_end
+      - bin_count
+      - value_area_fraction
+      - bins
+      - poc
+      - vah
+      - val
+      - current_price_position
+      - source_refs
+      - market_scope
+      - completeness
+      - limitations
+      title: VpvrResult
+x-generated-by: scripts/generate_contracts.py
+x-contract-source:
+- app/models.py
+- app/main.py
+x-analysis-scope: SINGLE_UNDERLYING
+x-monthly-data-budget-usd: 0

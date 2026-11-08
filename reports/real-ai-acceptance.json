@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-09-06T03:04:45.506170+00:00",
+  "real_model": true,
+  "monthly_data_subscription_usd": 0,
+  "results": [
+    {
+      "subject": "crypto-btc",
+      "task": {
+        "task_id": "task-b99f832e0a96415b86eeff1b77e66d51",
+        "status": "SUCCEEDED",
+        "snapshot_id": "snapshot-62a6423a0e2847f68fa1e6817f9fa3b9",
+        "created_at": "2026-09-06T03:02:33.863749Z",
+        "started_at": "2026-09-06T03:02:33.878745Z",
+        "completed_at": "2026-09-06T03:03:22.903772Z",
+        "analysis_id": "analysis-effa2b2dec80458fbbc0b46d61dc5b9e",
+        "error": null
+      },
+      "cutoff_at": "2026-09-06T03:02:00.136964+00:00",
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 4999,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T03:02:00.136964Z",
+        "actual_start_at": "2026-07-16T01:15:00Z",
+        "latest_bar_at": "2026-09-06T03:00:00Z",
+        "history_complete": false,
+        "stale_reason": null
+      },
+      "evidence_count": 22,
+      "audit": {
+        "prompt_version": "scenario-v2",
+        "provider": "CODEX_CLI",
+        "model": "gpt-5.6-terra",
+        "model_revision": null,
+        "started_at": "2026-09-06T03:02:34.411405Z",
+        "finished_at": "2026-09-06T03:03:22.793126Z",
+        "input_tokens": 18231,
+        "output_tokens": 2164,
+        "cost": null,
+        "cost_currency": null,
+        "raw_response_sha256": "f1df16e965100332364c0cf61774da028e211369aa2dc8ac3b87936507fa397d"
+      },
+      "evidence_reference_validation": "PASS: IDs, conflicts, level IDs, exact cited prices",
+      "semantic_claim_validation": "MANUAL_REVIEW_REQUIRED: IDs alone do not prove prose claims"
+    },
+    {
+      "subject": "crypto-eth",
+      "task": {
+        "task_id": "task-d0af3c5dca1d40e08bfb1e3fb1f8062d",
+        "status": "SUCCEEDED",
+        "snapshot_id": "snapshot-c3b01ee57d8b4afb979d44c8b0f96379",
+        "created_at": "2026-09-06T03:03:56.165230Z",
+        "started_at": "2026-09-06T03:03:56.183086Z",
+        "completed_at": "2026-09-06T03:04:45.343994Z",
+        "analysis_id": "analysis-cb2947321c7d4413bd90b589881179b0",
+        "error": null
+      },
+      "cutoff_at": "2026-09-06T03:03:23.066926+00:00",
+      "quality": {
+        "request_status": "SUCCESS",
+        "expected_interval_seconds": 900,
+        "observed_bar_count": 4999,
+        "missing_bar_count": 0,
+        "gaps": [],
+        "requested_start_at": "2024-09-06T03:03:23.066926Z",
+        "actual_start_at": "2026-07-16T01:15:00Z",
+        "latest_bar_at": "2026-09-06T03:00:00Z",
+        "history_complete": false,
+        "stale_reason": null
+      },
+      "evidence_count": 22,
+      "audit": {
+        "prompt_version": "scenario-v2",
+        "provider": "CODEX_CLI",
+        "model": "gpt-5.6-terra",
+        "model_revision": null,
+        "started_at": "2026-09-06T03:03:56.649275Z",
+        "finished_at": "2026-09-06T03:04:45.234129Z",
+        "input_tokens": 17958,
+        "output_tokens": 2287,
+        "cost": null,
+        "cost_currency": null,
+        "raw_response_sha256": "039cd6af88c24cb9186e692c8dff2a37fb222a8387bc415580f72eeaef0d54e5"
+      },
+      "evidence_reference_validation": "PASS: IDs, conflicts, level IDs, exact cited prices",
+      "semantic_claim_validation": "MANUAL_REVIEW_REQUIRED: IDs alone do not prove prose claims"
+    }
+  ]
+}

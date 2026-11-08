@@ -1,0 +1,82 @@
+﻿# AD-HOC HORIZON STUDY 2026-09-12 — NOT a project module, NOT validated, NOT a probability
+# Source: verified OKX daily bars from cache/market/okx-base-volume-v2 (BTC/ETH spot, confirmed only)
+# Setup definition: >=240 days since running close-ATH AND drawdown -25%..-60% AND close > rising 200d SMA
+# Method: forward 21/63/126 trading-day close-to-close returns; clusters listed because windows overlap
+# Caveat: 1 asset per symbol, ~4 independent episodes per symbol, regime changes not adjusted for.
+
+########## BTC daily bars 2018-01-11 .. 2026-09-11 (3166) ##########
+  month_end=2025-08-01 O=   107140 H=   123226 L=   105100 C=   115755
+  month_end=2025-09-01 O=   115755 H=   124500 L=   107344 C=   108248
+  month_end=2025-10-01 O=   108248 H=   117910 L=   107250 C=   114047
+  month_end=2025-11-01 O=   114047 H=   126200 L=   101500 C=   109604
+  month_end=2025-12-01 O=   109604 H=   111246 L=    80636 C=    90367
+  month_end=2026-01-01 O=    90367 H=    94600 L=    83833 C=    87639
+  month_end=2026-02-01 O=    87639 H=    97925 L=    75678 C=    78739
+  month_end=2026-03-01 O=    78739 H=    79422 L=    60000 C=    66969
+  month_end=2026-04-01 O=    66969 H=    76012 L=    65000 C=    68278
+  month_end=2026-05-01 O=    68278 H=    79488 L=    65702 C=    76345
+  month_end=2026-06-01 O=    76345 H=    82842 L=    72508 C=    73682
+  month_end=2026-07-01 O=    73682 H=    74098 L=    58110 C=    58628
+  month_end=2026-08-01 O=    58628 H=    66955 L=    57809 C=    62891
+  month_end=2026-09-01 O=    62891 H=    81500 L=    62268 C=    78582
+
+===== BTC =====
+current: {'date': '2026-09-11', 'close': 77223.4, 'days_since_ath': 340, 'drawdown': -0.381, 'setup': True}
+  +21 trading days: setup {'n': 452, 'median': 0.017, 'min': -0.2493, 'max': 0.6837, 'positive_share': 0.56}
+      all days {'n': 2925, 'median': 0.0122, 'min': -0.5002, 'max': 0.7555, 'positive_share': 0.539}
+  +63 trading days: setup {'n': 452, 'median': 0.0998, 'min': -0.3115, 'max': 0.8289, 'positive_share': 0.631}
+      all days {'n': 2883, 'median': 0.0354, 'min': -0.5301, 'max': 1.7073, 'positive_share': 0.546}
+  +126 trading days: setup {'n': 452, 'median': 0.2148, 'min': -0.4794, 'max': 3.3795, 'positive_share': 0.719}
+       all days {'n': 2820, 'median': 0.0485, 'min': -0.5506, 'max': 3.9914, 'positive_share': 0.556}
+  setup days=461 in 11 clusters:
+    2019-05-19..2019-07-01 (35d) dd=-0.425
+    2019-07-14..2019-08-02 (18d) dd=-0.282
+    2019-08-14..2019-09-25 (41d) dd=-0.291
+    2019-10-26..2019-11-07 (13d) dd=-0.349
+    2020-05-08..2020-07-26 (80d) dd=-0.309
+    2020-09-03..2020-10-06 (18d) dd=-0.286
+    2023-03-17..2023-06-06 (67d) dd=-0.594
+    2023-06-20..2023-08-16 (58d) dd=-0.581
+    2023-08-29..2023-08-29 (1d) dd=-0.589
+    2023-10-16..2024-02-13 (121d) dd=-0.578
+    2026-09-03..2026-09-11 (9d) dd=-0.348
+  200-day close low: ('2026-06-30', 58628.0)
+
+########## ETH daily bars 2018-01-11 .. 2026-09-11 (3166) ##########
+  month_end=2025-08-01 O=     2485 H=     3942 L=     2373 C=     3699
+  month_end=2025-09-01 O=     3698 H=     4958 L=     3355 C=     4392
+  month_end=2025-10-01 O=     4392 H=     4767 L=     3823 C=     4145
+  month_end=2025-11-01 O=     4145 H=     4756 L=     3374 C=     3848
+  month_end=2025-12-01 O=     3848 H=     3918 L=     2623 C=     2992
+  month_end=2026-01-01 O=     2991 H=     3448 L=     2719 C=     2972
+  month_end=2026-02-01 O=     2972 H=     3403 L=     2240 C=     2452
+  month_end=2026-03-01 O=     2452 H=     2476 L=     1744 C=     1964
+  month_end=2026-04-01 O=     1964 H=     2387 L=     1907 C=     2106
+  month_end=2026-05-01 O=     2106 H=     2466 L=     2017 C=     2258
+  month_end=2026-06-01 O=     2258 H=     2424 L=     1968 C=     2007
+  month_end=2026-07-01 O=     2007 H=     2021 L=     1504 C=     1572
+  month_end=2026-08-01 O=     1572 H=     1981 L=     1553 C=     1863
+  month_end=2026-09-01 O=     1863 H=     2566 L=     1822 C=     2468
+
+===== ETH =====
+current: {'date': '2026-09-11', 'close': 2516.5, 'days_since_ath': 385, 'drawdown': -0.479, 'setup': True}
+  +21 trading days: setup {'n': 288, 'median': 0.0122, 'min': -0.3083, 'max': 1.0107, 'positive_share': 0.531}
+      all days {'n': 2925, 'median': 0.0042, 'min': -0.5818, 'max': 1.0107, 'positive_share': 0.51}
+  +63 trading days: setup {'n': 288, 'median': 0.0938, 'min': -0.4496, 'max': 2.1952, 'positive_share': 0.684}
+      all days {'n': 2883, 'median': 0.0523, 'min': -0.6747, 'max': 2.3811, 'positive_share': 0.552}
+  +126 trading days: setup {'n': 288, 'median': 0.0975, 'min': -0.4941, 'max': 4.0478, 'positive_share': 0.521}
+       all days {'n': 2820, 'median': 0.0793, 'min': -0.6637, 'max': 4.3546, 'positive_share': 0.548}
+  setup days=297 in 12 clusters:
+    2020-11-22..2021-01-03 (39d) dd=-0.595
+    2023-04-13..2023-04-20 (8d) dd=-0.582
+    2023-05-05..2023-05-05 (1d) dd=-0.586
+    2023-06-30..2023-07-15 (8d) dd=-0.598
+    2023-11-19..2024-03-05 (107d) dd=-0.582
+    2024-03-16..2024-05-19 (62d) dd=-0.267
+    2024-06-11..2024-07-31 (41d) dd=-0.273
+    2024-11-25..2024-11-29 (4d) dd=-0.29
+    2024-12-19..2024-12-23 (5d) dd=-0.29
+    2025-01-23..2025-02-01 (10d) dd=-0.306
+    2025-08-01..2025-08-03 (3d) dd=-0.275
+    2026-09-03..2026-09-11 (9d) dd=-0.481
+  200-day close low: ('2026-06-25', 1567.82)

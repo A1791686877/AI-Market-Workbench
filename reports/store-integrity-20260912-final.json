@@ -1,0 +1,247 @@
+{
+  "checked_at": "2026-09-12T15:50:07.501677+00:00",
+  "database": "E:\\AI-Market-Workbench\\data\\workbench.db",
+  "database_bytes": 666021888,
+  "snapshot_dir": "E:\\AI-Market-Workbench\\data\\snapshots",
+  "snapshot_files": 57,
+  "snapshot_files_bytes": 646013638,
+  "largest_snapshot_bytes": 87628873,
+  "table_rows": {
+    "snapshots": 57,
+    "analyses": 13,
+    "analysis_tasks": 14,
+    "outcomes": 52,
+    "scenario_outcomes": 0
+  },
+  "hash_check_enabled": true,
+  "max_hash_payload_mb": 32.0,
+  "problems": {
+    "orphan_snapshot_files": [],
+    "missing_snapshot_files": [],
+    "snapshot_hash_mismatch": [],
+    "snapshot_hash_unchecked": [
+      {
+        "snapshot_id": "snapshot-5013f57091df494d8d45444f5aeec134",
+        "reason": "payload_over_size_guard",
+        "bytes": 87555514
+      },
+      {
+        "snapshot_id": "snapshot-e12bad22a67e46b1b43b7da4a06d5620",
+        "reason": "payload_over_size_guard",
+        "bytes": 86868988
+      },
+      {
+        "snapshot_id": "snapshot-932511e8643241278117b0e436fd64a1",
+        "reason": "payload_over_size_guard",
+        "bytes": 87628873
+      },
+      {
+        "snapshot_id": "snapshot-53879ba89b844b609e5fbda8b4a71c71",
+        "reason": "payload_over_size_guard",
+        "bytes": 86870721
+      },
+      {
+        "snapshot_id": "snapshot-268f530e697d46aeb580b580a558891f",
+        "reason": "payload_over_size_guard",
+        "bytes": 86870478
+      },
+      {
+        "snapshot_id": "snapshot-c7a53095b5e341be93bb34a0c79cd599",
+        "reason": "payload_over_size_guard",
+        "bytes": 86908071
+      }
+    ],
+    "snapshot_schema_unchecked": [
+      {
+        "snapshot_id": "snapshot-5013f57091df494d8d45444f5aeec134",
+        "reason": "payload_over_size_guard",
+        "bytes": 87555514
+      },
+      {
+        "snapshot_id": "snapshot-e12bad22a67e46b1b43b7da4a06d5620",
+        "reason": "payload_over_size_guard",
+        "bytes": 86868988
+      },
+      {
+        "snapshot_id": "snapshot-932511e8643241278117b0e436fd64a1",
+        "reason": "payload_over_size_guard",
+        "bytes": 87628873
+      },
+      {
+        "snapshot_id": "snapshot-53879ba89b844b609e5fbda8b4a71c71",
+        "reason": "payload_over_size_guard",
+        "bytes": 86870721
+      },
+      {
+        "snapshot_id": "snapshot-268f530e697d46aeb580b580a558891f",
+        "reason": "payload_over_size_guard",
+        "bytes": 86870478
+      },
+      {
+        "snapshot_id": "snapshot-c7a53095b5e341be93bb34a0c79cd599",
+        "reason": "payload_over_size_guard",
+        "bytes": 86908071
+      }
+    ],
+    "broken_references": [],
+    "unreadable_records": [
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-e72342d534cc414080a27cc6e3fe894e",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-5f4862ad25ee4984a77b1d48649f7fe9",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-96ac17a7472d40689ff20a6623143f33",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-c4c57bd29b1f451aa247197bef34ce07",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-07d2c18de7344c8d99240f0d19c249bb",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-903c4d0f457848cbb57c0855e5bcbc3d",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-2dab37a3afa740e0afd83aa245eb4025",
+        "error_type": "ValidationError",
+        "detail": "12 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-9d2bfe100c5f4d2cbe158dd7b48c67b4",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-b97c81a5f2b24dd6b7c7186bd8102247",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-3b95510fc6de415faa67dd1e592f55e0",
+        "error_type": "ValidationError",
+        "detail": "12 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-3dfd1bb2a776471e83809f98521d2b9b",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-fe341d4363e94134a6ada318465eed84",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-b6a2a175fbbb4606ab137013cc6e2914",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-0be154f4eb2b43ca9da6800a883bff97",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-6024e245fc614c998a32ab72877d6142",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-d59dfe9492054a069cc6376a9a9f55e5",
+        "error_type": "ValidationError",
+        "detail": "8 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-b949c3ea06004ee0abc3bc4b64ba8538",
+        "error_type": "ValidationError",
+        "detail": "6 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-4b08dc6f017b4d58826f47136300a474",
+        "error_type": "ValidationError",
+        "detail": "6 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-6ae165674fac4092ba6df17f8a6aa24d",
+        "error_type": "ValidationError",
+        "detail": "6 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-17ea1ffc48914a8fb0c9117f97c1ed5e",
+        "error_type": "ValidationError",
+        "detail": "6 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-96752cc21a64426ab304781beb13f280",
+        "error_type": "ValidationError",
+        "detail": "4 validation errors for AnalysisSnapshot"
+      },
+      {
+        "table": "snapshots",
+        "kind": "snapshot",
+        "snapshot_id": "snapshot-580c93053ed84a6ba50ce298b78e2bad",
+        "error_type": "ValidationError",
+        "detail": "4 validation errors for AnalysisSnapshot"
+      }
+    ]
+  },
+  "problem_count": 34,
+  "actionable_problem_count": 0,
+  "observation_count": 34
+}

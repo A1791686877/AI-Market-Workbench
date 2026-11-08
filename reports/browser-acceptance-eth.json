@@ -1,0 +1,41 @@
+{
+  "status": "已加载",
+  "modelMode": "CODEX_CLI",
+  "candleCount": 240,
+  "fvgIds": [
+    "fvg-okx-eth-usdt-15m-1788462000000",
+    "fvg-okx-eth-usdt-15m-1788474600000",
+    "fvg-okx-eth-usdt-15m-1788490800000",
+    "fvg-okx-eth-usdt-15m-1788496200000",
+    "fvg-okx-eth-usdt-15m-1788509700000",
+    "fvg-okx-eth-usdt-15m-1788512400000",
+    "fvg-okx-eth-usdt-15m-1788525900000",
+    "fvg-okx-eth-usdt-15m-1788535800000",
+    "fvg-okx-eth-usdt-15m-1788540300000",
+    "fvg-okx-eth-usdt-15m-1788542100000",
+    "fvg-okx-eth-usdt-15m-1788549300000",
+    "fvg-okx-eth-usdt-15m-1788593400000",
+    "fvg-okx-eth-usdt-15m-1788598800000",
+    "fvg-okx-eth-usdt-15m-1788603300000",
+    "fvg-okx-eth-usdt-15m-1788612300000",
+    "fvg-okx-eth-usdt-15m-1788625800000",
+    "fvg-okx-eth-usdt-15m-1788626700000",
+    "fvg-okx-eth-usdt-15m-1788628500000",
+    "fvg-okx-eth-usdt-15m-1788643800000",
+    "fvg-okx-eth-usdt-15m-1788644700000",
+    "fvg-okx-eth-usdt-15m-1788654600000",
+    "fvg-okx-eth-usdt-15m-1788659100000"
+  ],
+  "divergenceIds": [
+    "div-rsi_line-okx-eth-usdt-15m-1788469200000",
+    "div-macd_histogram-okx-eth-usdt-15m-1788469200000",
+    "div-macd_histogram-okx-eth-usdt-15m-1788508800000",
+    "div-macd_histogram-okx-eth-usdt-15m-1788601500000"
+  ],
+  "sources": "来源OKX数据集okx_crypto_spot_15m_bars数据时间2026-09-06T03:15:00Z接收时间2026-09-06T03:24:41.028128Z延迟REALTIME_PUBLIC范围VENUE_SPECIFIC_CRYPTO完整性COMPLETE_FOR_SCOPE完整市场否OKX venue-specific public data; not a consolidated global crypto market.Volume normalization v2: base currency; SPOT=vol (row 5), perpetual=volCcy (row 6). Not all-exchange volume.Retrieved 5000 bars from the requested window; history completeness is reported separately.Provider paging stopped at the phase-one 5,000-bar safety cap or requested start.请求状态SUCCESS观测K线4999缺柱数量0历史完整否实际起点2026-07-16T01:30:00Z最新K线2026-09-06T03:15:00Z",
+  "evidenceMatches": true,
+  "candleMatches": true,
+  "checkedAt": "2026-09-06T03:24:44.934Z",
+  "errors": [],
+  "taskPosts": []
+}

@@ -1,0 +1,52 @@
+{
+  "phase": "phase-1-mcp-live-stdio-acceptance",
+  "created_at": "2026-09-05T16:38:22.993048+00:00",
+  "actual_stdio_subprocess": true,
+  "external_llm_used": false,
+  "result": {
+    "server_name": "ai-market-workbench-read-only",
+    "server_version": "0.1.0",
+    "protocol_version": "2026-07-28",
+    "tool_count": 10,
+    "tool_names": [
+      "market_search_instruments",
+      "market_get_bars",
+      "market_get_indicator_bundle",
+      "market_get_equity_fundamentals",
+      "market_get_crypto_context",
+      "market_create_analysis_snapshot",
+      "market_run_ai_analysis",
+      "market_get_ai_task",
+      "market_get_ai_analysis",
+      "market_get_analysis_outcomes"
+    ],
+    "search_first_instrument": "CRYPTO:BTCUSDT:PERP",
+    "bars": {
+      "provider": "OKX",
+      "source_at": "2026-09-05T16:30:00Z",
+      "received_at": "2026-09-05T16:34:34.236590Z",
+      "delay_class": "REALTIME_PUBLIC",
+      "request_status": "SUCCESS",
+      "bar_count": 4999,
+      "missing_bar_count": 0,
+      "history_complete": false,
+      "synthetic_fallback": false
+    },
+    "indicator_evidence_ids": [
+      "ev_sma-okx-btc-usdt-15m-1788624900000",
+      "ev_ema-okx-btc-usdt-15m-1788624900000",
+      "ev_rsi-okx-btc-usdt-15m-1788624900000",
+      "ev_macd-okx-btc-usdt-15m-1788624900000",
+      "ev_atr-okx-btc-usdt-15m-1788624900000",
+      "ev_bollinger_bands-okx-btc-usdt-15m-1788624900000",
+      "ev_adx-okx-btc-usdt-15m-1788624900000",
+      "ev_obv-okx-btc-usdt-15m-1788624900000",
+      "ev_vwap-okx-btc-usdt-15m-1788624900000",
+      "ev_volume_price_relation-okx-btc-usdt-15m-1788624900000"
+    ],
+    "vpvr_calculation_mode": "BAR_RANGE_UNIFORM_ALLOCATION_ESTIMATE",
+    "trend_state": "UPTREND",
+    "market_context_provider": "OKX",
+    "account_or_trading_tools_present": false
+  }
+}

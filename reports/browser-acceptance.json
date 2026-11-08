@@ -1,0 +1,47 @@
+{
+  "status": "加载中…",
+  "modelMode": "CODEX_CLI",
+  "candleCount": 240,
+  "fvgIds": [
+    "fvg-okx-btc-usdt-15m-1788462000000",
+    "fvg-okx-btc-usdt-15m-1788496200000",
+    "fvg-okx-btc-usdt-15m-1788507900000",
+    "fvg-okx-btc-usdt-15m-1788510600000",
+    "fvg-okx-btc-usdt-15m-1788516900000",
+    "fvg-okx-btc-usdt-15m-1788525900000",
+    "fvg-okx-btc-usdt-15m-1788535800000",
+    "fvg-okx-btc-usdt-15m-1788540300000",
+    "fvg-okx-btc-usdt-15m-1788542100000",
+    "fvg-okx-btc-usdt-15m-1788559200000",
+    "fvg-okx-btc-usdt-15m-1788573600000",
+    "fvg-okx-btc-usdt-15m-1788599700000",
+    "fvg-okx-btc-usdt-15m-1788602400000",
+    "fvg-okx-btc-usdt-15m-1788612300000",
+    "fvg-okx-btc-usdt-15m-1788625800000",
+    "fvg-okx-btc-usdt-15m-1788626700000",
+    "fvg-okx-btc-usdt-15m-1788637500000",
+    "fvg-okx-btc-usdt-15m-1788643800000"
+  ],
+  "divergenceIds": [
+    "div-rsi_line-okx-btc-usdt-15m-1788460200000",
+    "div-rsi_line-okx-btc-usdt-15m-1788471000000",
+    "div-macd_histogram-okx-btc-usdt-15m-1788584400000",
+    "div-macd_histogram-okx-btc-usdt-15m-1788605100000",
+    "div-macd_histogram-okx-btc-usdt-15m-1788615900000",
+    "div-macd_histogram-okx-btc-usdt-15m-1788471000000"
+  ],
+  "sources": "来源OKX数据集okx_crypto_spot_15m_bars数据时间2026-09-06T03:15:00Z接收时间2026-09-06T03:23:51.125970Z延迟REALTIME_PUBLIC范围VENUE_SPECIFIC_CRYPTO完整性COMPLETE_FOR_SCOPE完整市场否OKX venue-specific public data; not a consolidated global crypto market.Volume normalization v2: base currency; SPOT=vol (row 5), perpetual=volCcy (row 6). Not all-exchange volume.Retrieved 5000 bars from the requested window; history completeness is reported separately.Provider paging stopped at the phase-one 5,000-bar safety cap or requested start.请求状态SUCCESS观测K线4999缺柱数量0历史完整否实际起点2026-07-16T01:30:00Z最新K线2026-09-06T03:15:00Z",
+  "evidenceMatches": true,
+  "candleMatches": true,
+  "aiStatus": "真实 AI 回答与证据已记录",
+  "aiText": "分析对象=crypto-btc / 主现货标的；周期=15m。合约上下文未同步，暂不进入模型。\n\n行情截止时间 2026-09-06T03:23:55.530259Z；快照 snapshot-8d888339aad54530815e646a55346de3\n\n任务 task-f8808c060049426bbfd34509f4a30201；离开页面不会重复调用。\n\n真实外部模型回答 | CODEX_CLI / gpt-5.6-terra\n\n生成 2026-09-06T03:24:03.929860Z → 2026-09-06T03:25:05.363417Z；输入 20170 / 输出 2754 tokens；金额 未知（使用既有 Codex 登录配额）\n\n回答哈希 6009800cbf502a8e6b29be3d0a0169b5ffdee2f5910a2e26d6ca681a599953fc\n\nBULLISH\n\n若上升摆动结构延续，并有效突破80064.5，偏多情景成立；这不是买卖建议。\n\n条件：15分钟确认价格保持在SMA 79881.495和EMA 79901.1941053967之上。 [ev_sma-okx-btc-usdt-15m-1788663600000, ev_ema-okx-btc-usdt-15m-1788663600000]\n\n条件：向上突破并维持在80064.5之上。 [ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000]\n\n失效：15分钟确认价格回落至SMA 79881.495下方且未能维持。 [ev_sma-okx-btc-usdt-15m-1788663600000]\n\n失效：跌破已确认支撑79691.4666666667。 [ev_tech_level_support_okx-btc-usdt-15m-1788651000000]\n\n证据：ev_trend_crypto-btcusdt-spot_15m, ev_sma-okx-btc-usdt-15m-1788663600000, ev_ema-okx-btc-usdt-15m-1788663600000, ev_macd-okx-btc-usdt-15m-1788663600000, ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000\nNEUTRAL\n\n若未突破80064.5也未跌破79691.4666666667，低ADX环境更符合震荡/等待确认情景；79706.659375为估算POC参考。\n\n条件：价格仍位于79691.4666666667与80064.5之间，且ADX维持低趋势强度特征。 [ev_tech_level_support_okx-btc-usdt-15m-1788651000000, ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000, ev_adx-okx-btc-usdt-15m-1788663600000]\n\n失效：向上突破并维持在80064.5之上。 [ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000]\n\n失效：向下跌破79691.4666666667。 [ev_tech_level_support_okx-btc-usdt-15m-1788651000000]\n\n证据：ev_adx-okx-btc-usdt-15m-1788663600000, ev_vwap-okx-btc-usdt-15m-1788663600000, ev_vpvr_vpvr-crypto-btcusdt-spot-15m, ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000, ev_tech_level_support_okx-btc-usdt-15m-1788651000000\nBEARISH\n\n若跌破79691.4666666667且不能收复，79706.659375估算POC及79577.2666666667支撑成为下方参考；历史熊背离仅为背景冲突证据，非当前有效性确认。\n\n条件：15分钟确认价格跌破79691.4666666667，且未能收复。 [ev_tech_level_support_okx-btc-usdt-15m-1788651000000]\n\n条件：价格仍未重新站上VWAP 79937.3008666896。 [ev_vwap-okx-btc-usdt-15m-1788663600000]\n\n失效：价格重新站稳79691.4666666667之上。 [ev_tech_level_support_okx-btc-usdt-15m-1788651000000]\n\n失效：价格突破并维持在80064.5之上。 [ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000]\n\n证据：ev_tech_level_support_okx-btc-usdt-15m-1788651000000, ev_tech_level_support_okx-btc-usdt-15m-1788605100000, ev_vpvr_vpvr-crypto-btcusdt-spot-15m, ev_vwap-okx-btc-usdt-15m-1788663600000, ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788471000000\n\nRESISTANCE: 80064.5 USDT (15m) [ev_tech_level_resistance_okx-btc-usdt-15m-1788658200000]\n\nSUPPORT: 79691.4666666667 USDT (15m) [ev_tech_level_support_okx-btc-usdt-15m-1788651000000]\n\nSUPPORT: 79577.2666666667 USDT (15m) [ev_tech_level_support_okx-btc-usdt-15m-1788605100000]\n\nPOC: 79706.659375 USDT (15m) [ev_vpvr_vpvr-crypto-btcusdt-spot-15m]\n\nFVG_MIDPOINT: 79817.85 USDT (15m) [ev_fvg_fvg-okx-btc-usdt-15m-1788643800000]\n\nRESISTANCE: 79768.6666666667 USDT (15m) [ev_tech_level_resistance_okx-btc-usdt-15m-1788611400000]\n\n冲突：已确认的UPTREND、价格高于SMA与EMA、RSI略偏强和正MACD支持上行结构；但ADX为15.6383271148，表明趋势强度偏弱，且现价略低于VWAP 79937.3008666896，短线确认不足。 [ev_trend_crypto-btcusdt-spot_15m, ev_sma-okx-btc-usdt-15m-1788663600000, ev_ema-okx-btc-usdt-15m-1788663600000, ev_rsi-okx-btc-usdt-15m-1788663600000, ev_macd-okx-btc-usdt-15m-1788663600000, ev_adx-okx-btc-usdt-15m-1788663600000, ev_vwap-okx-btc-usdt-15m-1788663600000]\n\n冲突：历史MACD柱体熊背离存在，但锚点均早于当前结构，不能单独视作末根K线仍有效的反转信号。 [ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788221700000, ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788365700000, ev_divergence_div-macd_histogram-okx-btc-usdt-15m-1788471000000]\n\n缺失：15m历史 / 请求起点为2024-09-06T03:23:55.530259Z，但可用15分钟历史实际始于2026-07-16T01:30:00Z；history_complete为false。\n\n缺失：衍生品上下文 / 永续合约及其他衍生品上下文因采集未与快照截止时间同步而省略；没有资金费率、未平仓量、基差或清算数据。\n\n缺失：VPVR成交量分布 / VPVR为K线区间均匀成交量分配估计，不是逐笔成交或全交易所成交量分布。\n\n置信度 0.56，不是盈利概率；截至2026-09-06T03:15:00Z，15分钟收盘79934.4，高于SMA 79881.495及EMA 79901.1941053967，RSI为54.124809149、MACD为23.2990802115，且已确认摆动结构为UPTREND；但ADX仅15.6383271148，趋势强度有限。\n\n置信度为基于冻结技术证据的主观强弱评估，不是经校准的概率。\n\n15分钟历史未完整覆盖请求区间。\n\nVPVR为基于K线高低区间均匀分配的估算，非逐笔成交量分布。\n\n衍生品上下文未与快照截止时间同步，且已省略。\n\n不是投资建议，不承诺盈利。仅使用冻结的OKX场内BTCUSDT现货15分钟公开数据；历史从2026-07-16T01:30:00Z开始，未完整覆盖请求区间。衍生品数据因未与快照截止时间同步而省略。VPVR是15分钟K线高低范围内均匀分配成交量的估算，受窗口、48个分箱及K线粒度限制，不代表逐笔或全市场成交量。\n\n核对本次冻结的指标证据（不是刷新后的行情）",
+  "aiSucceeded": true,
+  "checkedAt": "2026-09-06T03:25:07.159Z",
+  "errors": [],
+  "taskPosts": [
+    {
+      "url": "http://127.0.0.1:8080/v1/ai-analysis-tasks",
+      "status": 202
+    }
+  ]
+}
